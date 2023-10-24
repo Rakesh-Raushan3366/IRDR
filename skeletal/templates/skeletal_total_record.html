@@ -1,0 +1,110 @@
+{%  extends 'main.html' %}
+{% load extra %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+<script>
+  $(function () {
+
+    $('#example1').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : true
+    })
+  })
+
+
+</script>
+<body>
+
+<br>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Total Record</h3>
+                </div>
+                <div class="box-body">
+
+
+                    <br>
+
+
+                    <table class="table table-bordered table-condensed table-striped" id="example1">
+                        <thead class="bg-black">
+                        <tr>
+                            <th>id</th>
+                            <th>Patient Name</th>
+                            <th>Mobile</th>
+                            <th>Gender</th>
+                            <th>Govt. Id</th>
+                            <th>Edit profile</th>
+                            <th>View</th>
+                            <th>Update</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in register %}
+                        <tr>
+
+                            <td>{{i.sk_patient_name}}</td>
+                            <td>{{i.sk_Patient_mobile_no}}</td>
+                            <td>{{i.sk_gender}}</td>
+                            <td>{{i.sk_patient_id_no}}</td>
+
+                            <td>
+                                <a class="btn bg-maroon" href="{% url 'update_patient_record_skeletal' i.id%}">View </a>
+
+                            </td>
+                            <td>
+                                <a class="btn btn-primary" href="{% url 'view_skeletal_record' i.id%}">View </a>
+
+                            </td>
+                            <td>
+                                <a class="btn btn-warning" href="{% url 'update_skeletal_demographic' i.id%}">Update </a>
+
+                            </td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+	                    <tfoot>
+	                    <tr>
+                            <th>id</th>
+                            <th>Patient Name</th>
+                            <th>Mobile</th>
+                            <th>Gender</th>
+                            <th>Govt. Id</th>
+                            <th>Edit profile</th>
+                            <th>View</th>
+                            <th>Update</th>
+
+                        </tr>
+	                    </tfoot>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</section>
+<br>
+<br>
+
+</body>
+</html>
+{% endblock %}

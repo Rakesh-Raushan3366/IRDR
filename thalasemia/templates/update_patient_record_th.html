@@ -1,0 +1,639 @@
+
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+	$(document).ready(function(){
+	$("#id_th_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view
+	console.log(data)
+	$("#id_th_district").html(data);
+	}
+	});
+	});
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script>
+    /* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_referred_by').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any others'){
+	$("#id_th_referred_by_desc").show();
+    $("label[for='referedby_others']").show();
+	}
+	else
+	{
+	$("#id_th_referred_by_desc").hide();
+    $("label[for='referedby_others']").hide();
+
+	}
+	});
+<!--	$("#id_th_referred_by_desc").hide();-->
+<!--	$("label[for='referedby_others']").hide();-->
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_consent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_consent_upload").show();
+
+	}
+	else
+	{
+	$("#id_th_consent_upload").hide();
+
+
+	}
+	});
+<!--	$("#id_th_consent_upload").hide();-->
+
+	});
+
+	$(document).ready(function(){
+	$('#id_th_referred_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".referred_by").show();
+
+	}
+	else
+	{
+	$(".referred_by").hide();
+
+
+	}
+	});
+<!--	$(".referred_by").hide();-->
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_assent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_assent_upload").show();
+
+	}
+	else
+	{
+	$("#id_th_assent_upload").hide();
+
+
+	}
+	});
+<!--	$("#id_th_assent_upload").hide();-->
+
+	});
+
+
+
+
+    $(document).ready(function(){
+	$('#id_th_religion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_th_religion_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_religion_other_specify").hide();
+
+
+	}
+	});
+<!--	$("#id_th_religion_other_specify").hide();-->
+
+	});
+$(document).ready(function(){
+	$('#id_th_caste').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_th_caste_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_caste_other_specify").hide();
+
+
+	}
+	});
+<!--	$("#id_th_caste_other_specify").hide();-->
+
+	});
+
+<!--$(document).ready(function(){-->
+<!--	$('#id_th_patient_adhaar_no').on('change', function(){-->
+<!--	var demovalue = $(this).val();-->
+<!--	if(demovalue == 'Yes'){-->
+<!--	$("#id_th_patient_adhaar_no_specify").show();-->
+
+<!--	}-->
+<!--	else-->
+<!--	{-->
+<!--	$("#id_th_patient_adhaar_no_specify").hide();-->
+
+
+<!--	}-->
+<!--	});-->
+<!--	$("#id_th_patient_adhaar_no_specify").hide();-->
+
+<!--	});-->
+
+<!--	$(document).ready(function(){-->
+<!--	$('#id_th_paitent_id').on('change', function(){-->
+<!--	var demovalue = $(this).val();-->
+<!--	if(demovalue == 'Yes'){-->
+<!--	$(".patient_id_rule").show();-->
+
+<!--	}-->
+<!--	else-->
+<!--	{-->
+<!--	$(".patient_id_rule").hide();-->
+
+
+<!--	}-->
+<!--	});-->
+<!--	$(".patient_id_rule").hide();-->
+
+<!--	});-->
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_father_adhaar_no').on('change', function(){
+	var demovalue = $(this).val();
+<!--	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){-->
+	if(demovalue == 'Yes'){
+	$(".th_father_adhaar_no").show();
+
+	}
+	else
+	{
+	$(".th_father_adhaar_no").hide();
+
+
+	}
+	});
+<!--	$(".th_father_adhaar_no").hide();-->
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_patient_adhaar_no').on('change', function(){
+	var demovalue = $(this).val();
+<!--	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){-->
+	if(demovalue == 'Yes'){
+	$(".patient_id_rule").show();
+	}
+	else
+	{
+	$(".patient_id_rule").hide();
+	}
+	});
+<!--	$(".patient_id_rule").hide();-->
+
+	});
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+   var today = new Date();
+   var minDate= new Date();
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var mini = today.getMonth(); //January is 0!
+   if(dd<10){
+         dd='0'+dd
+     }
+     if(mm<10){
+        mm='0'+mm
+     }
+     if(mini<10){
+         mini='0'+mini
+     }
+   today = yyyy+'-'+mm+'-'+dd;
+   minDate= '1900'+'-'+ '01' +'-'+'01';
+   newdate = String(minDate)
+<!--   console.log('{{sample|date:"Y-m-d"}}',newdate)-->
+   $("#id_th_date_record").attr("max", today );
+   $("#id_th_date_record").attr("min", newdate);
+   });
+
+
+
+
+
+$(document).ready(function(){
+   var today = new Date();
+   var minDate= new Date();
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var mini = today.getMonth(); //January is 0!
+   if(dd<10){
+         dd='0'+dd
+     }
+     if(mm<10){
+        mm='0'+mm
+     }
+     if(mini<10){
+         mini='0'+mini
+     }
+   today = yyyy+'-'+mm+'-'+dd;
+   minDate= '1900'+'-'+ '01' +'-'+'01';
+   newdate = String(minDate)
+<!--   console.log('{{sample|date:"Y-m-d"}}',newdate)-->
+   $("#id_date_clinical_examination").attr("max", today );
+   $("#id_date_clinical_examination").attr("min", newdate);
+   });
+
+
+
+
+
+$(document).ready(function(){
+   var today = new Date();
+   var minDate= new Date();
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var mini = today.getMonth(); //January is 0!
+   if(dd<10){
+         dd='0'+dd
+     }
+     if(mm<10){
+        mm='0'+mm
+     }
+     if(mini<10){
+         mini='0'+mini
+     }
+   today = yyyy+'-'+mm+'-'+dd;
+   minDate= '1900'+'-'+ '01' +'-'+'01';
+   newdate = String(minDate)
+<!--   console.log('{{sample|date:"Y-m-d"}}',newdate)-->
+   $("#id_th_date_of_birth").attr("max", today );
+   $("#id_th_date_of_birth").attr("min", newdate);
+   });
+
+
+
+
+ $(document).ready(function(){
+$("#id_th_mother_mobile_no").change(function () {
+		var start = $('#id_th_mother_mobile_no').val();
+console.log(start)
+if (start > 9999999999 || start < 999999999)
+{
+console.log('error')
+               alert ("Phone number should be 10 digit");
+					document.getElementById('id_th_mother_mobile_no').value = "";
+				}
+// get days
+        });
+         });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+
+  .required:after {
+    content:" *";
+    color: red;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<style>
+    input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:optional {
+  border-color: gray;
+}
+input:required:valid {
+  border-color: green;
+
+}
+
+input:invalid {
+  border-color: red;
+
+
+}
+select:invalid {
+  border-color: red;
+
+
+}
+select:required:valid {
+  border-color: green;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<form action="" data-district-url="{% url 'load_district' %}" enctype="multipart/form-data" id="personForm" method="POST">
+	{% csrf_token %}
+	{% if form1.errors %}
+	{% for field in form1 %}
+	{% for error in field.errors %}
+	<div class="alert alert-danger">
+		<strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+	{% endfor %}
+	{% endfor %}
+	{% endif %}
+	<br>
+	
+	<div class="box-body">
+		
+		<div class="box-group" id="accordion">
+			
+			
+			<div class="row ">
+				<div class="col-md-3 ">
+					<label class="col-md font-weight-bolder text-dark text-left">Final Diagnosis</label>
+					{{form1.th_final_diagnosis|addclass:'form-control'}}
+				</div>
+				<div class="col-md-2 ">
+					<label class="col-md font-weight-bolder text-dark text-left">Date of Record:</label>
+					{{form1.th_date_record|addclass:'form-control'}}
+				</div>
+				<div class="col-md-3  ">
+					<label class="col-md font-weight-bolder text-dark text-left">Date of Clinical examination:</label>
+					{{form1.date_clinical_examination|addclass:'form-control'}}
+				</div>
+				<div class="col-md-2">
+					<label class="col-md font-weight-bolder text-dark text-left required">Date of birth</label>
+					{{form1.th_date_of_birth|addclass:'form-control'}}
+				</div>
+				<div class="col-md-2">
+					<label class="col-md font-weight-bolder text-dark text-left">If exact date is not known, please select the 1st date of birth month</label>
+				</div>
+<!--				<div class="col-md-2">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">Age</label>-->
+<!--					{{form1.th_patient_age|addclass:'form-control'}}-->
+<!--				-->
+<!--				</div>-->
+			
+			</div>
+			<br>
+			<div class="box box-secondary">
+				<div class="box-header">
+					<h3 class="box-title">Common Demography data</h3>
+				</div>
+				
+				<div class="box-body">
+					<div class="row ">
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left required">Patient's Name</label>
+							{{form1.th_patient_name|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left">Father's Name</label>
+							{{form1.th_father_name|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4  ">
+							<label class="col-md font-weight-bolder text-dark text-left">Mother's Name </label>
+							{{form1.th_mother_name|addclass:'form-control'}}
+						</div>
+					</div>
+					<br>
+					<div class="row ">
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left required">Patient's ID</label>
+							{{form1.th_patient_adhaar_no|addclass:'form-control'}}
+						
+						</div>
+						<div class="col-md-4 patient_id_rule">
+							<label class="col-md font-weight-bolder text-dark text-left"> Enter patient ID</label>
+							{{form1.th_paitent_id|addclass:'form-control'}}
+							{{form1.th_patient_id_no|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left"> Enter mother's/fathers's ID </label>
+							{{form1.th_father_adhaar_no|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4 th_father_adhaar_no">
+							<label class="col-md font-weight-bolder text-dark text-left"> Enter ID</label>
+							{{form1.th_father_id|addclass:'form-control'}}
+							{{form1.th_father_id_no|addclass:'form-control'}}
+						</div>
+					</div>
+					<br>
+					<div class="row ">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Permanent Address</label>
+							{{form1.th_permanent_addr|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">State </label>
+							{{form1.th_state|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">District </label>
+							{{form1.th_district|addclass:'form-control'}}
+						</div>
+					
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">City / Town of Birth</label>
+							{{form1.th_city_name|addclass:'form-control'}}
+						</div>
+						
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Country Name</label>
+							{{form1.th_country_name|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Landline number with code</label>
+							{{form1.th_land_line_no|addclass:'form-control'}}
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">Mobile No. patient/mother/father</label>
+							{{form1.th_mother_mobile_no|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Alternate Mobile no</label>
+							{{form1.th_father_mobile_no|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Email</label>
+							{{form1.th_email|addclass:'form-control'}}
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Religion</label>
+							{{form1.th_religion|addclass:'form-control'}}
+							{{form1.th_religion_other_specify|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Caste</label>
+							{{form1.th_caste|addclass:'form-control'}}
+							{{form1.th_caste_other_specify|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Gender</label>
+							{{form1.th_gender|addclass:'form-control'}}
+						</div>
+					
+					
+					</div>
+					<br>
+					<div class="row">
+						
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Referred from another facility</label>
+							{{form1.th_referred_status|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4 referred_by">
+							<label class="col-md font-weight-bolder text-dark text-left">Referred By</label>
+							{{form1.th_referred_by|addclass:'form-control'}}
+							{{form1.th_referred_by_desc|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">Consent Given</label>
+							{{form1.th_consent_given|addclass:'form-control'}}
+							{{form1.th_consent_upload}}
+						</div>
+					
+					</div>
+					<br>
+					
+					<div class="row">
+						
+						
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">Assent Given</label>
+							{{form1.th_assent_given|addclass:'form-control'}}
+							{{form1.th_assent_upload}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Hospital Name</label>
+							{{form1.th_hospital_name|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Hospital Registration number</label>
+							{{form1.th_hospital_reg_no|addclass:'form-control'}}
+						</div>
+					
+					</div>
+					<br>
+					<div class="row">
+						
+						
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Nationality</label>
+							{{form1.th_nationality|addclass:'form-control'}}
+						</div>
+					
+					</div>
+					<br>
+					
+					<div class="row">
+						
+						<div class="col-md-12">
+							<label class="col-md font-weight-bolder text-danger text-left">Note: Field mark with * are mandatory fields</label>
+						
+						</div>
+					
+					</div>
+				</div>
+			
+			</div>
+		</div>
+		<br>
+		<center>
+			<button class="btn btn-primary" id="submit1" type="submit">Submit</button>
+		</center>
+		<br>
+	</div>
+	</div>
+</form>
+{% endblock %}

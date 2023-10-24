@@ -1,0 +1,709 @@
+{%  extends 'main.html' %}
+{% load extra %}
+{% block content %}
+{% load static %}
+{% load l10n %}
+{% load tz %}
+<html lang="en">
+	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+	<script>
+		$(function () {
+			//Date picker
+			$('#id_date_of_sample_collection_0').datepicker({
+				autoclose: true
+			})
+			$('#id_date_of_sample_collection_1').datepicker({
+				autoclose: true
+			})
+		})
+	</script>
+	<script>
+		$(function () {
+			var intVal = function ( i ) {
+                return typeof i === 'string' ?
+				i.replace(/[\$,]/g, '')*1 :
+				typeof i === 'number' ?
+				i : 0;
+			};
+			$('#example').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'autoWidth'   : true,
+				"pageLength": 100
+			})
+			var table1 = $('#example').DataTable();
+			var column = table1.column(1);
+			$(column.footer()).html(
+			column.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column1 = table1.column(2);
+			$(column1.footer()).html(
+			column1.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column2 = table1.column(3);
+			$(column2.footer()).html(
+			column2.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column3 = table1.column(4);
+			$(column3.footer()).html(
+			column3.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column4 = table1.column(5);
+			$(column4.footer()).html(
+			column4.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column5 = table1.column(6);
+			$(column5.footer()).html(
+			column5.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column6 = table1.column(7);
+			$(column6.footer()).html(
+			column6.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column7 = table1.column(8);
+			$(column7.footer()).html(
+			column7.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column8 = table1.column(9);
+			$(column8.footer()).html(
+			column8.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column9 = table1.column(10);
+			$(column9.footer()).html(
+			column9.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column10 = table1.column(11);
+			$(column10.footer()).html(
+			column10.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column11 = table1.column(12);
+			$(column11.footer()).html(
+			column11.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column12 = table1.column(13);
+			$(column12.footer()).html(
+			column12.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+		})
+	</script>
+		<script>
+		$(function () {
+			var intVal = function ( i ) {
+                return typeof i === 'string' ?
+				i.replace(/[\$,]/g, '')*1 :
+				typeof i === 'number' ?
+				i : 0;
+			};
+			$('#example1').DataTable({
+				'paging'      : true,
+				'lengthChange': true,
+				'searching'   : true,
+				'ordering'    : true,
+				'info'        : true,
+				'autoWidth'   : true,
+				"pageLength": 100
+			})
+			var table1 = $('#example1').DataTable();
+			var column = table1.column(1);
+			$(column.footer()).html(
+			column.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column1 = table1.column(2);
+			$(column1.footer()).html(
+			column1.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column2 = table1.column(3);
+			$(column2.footer()).html(
+			column2.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column3 = table1.column(4);
+			$(column3.footer()).html(
+			column3.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column4 = table1.column(5);
+			$(column4.footer()).html(
+			column4.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column5 = table1.column(6);
+			$(column5.footer()).html(
+			column5.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column6 = table1.column(7);
+			$(column6.footer()).html(
+			column6.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column7 = table1.column(8);
+			$(column7.footer()).html(
+			column7.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column8 = table1.column(9);
+			$(column8.footer()).html(
+			column8.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column9 = table1.column(10);
+			$(column9.footer()).html(
+			column9.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column10 = table1.column(11);
+			$(column10.footer()).html(
+			column10.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column11 = table1.column(12);
+			$(column11.footer()).html(
+			column11.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+			var column12 = table1.column(13);
+			$(column12.footer()).html(
+			column12.data().reduce(function(a, b) {
+				return intVal(a) + intVal(b);
+			})
+			);
+		})
+	</script>
+	<!--	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>-->
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+	<body>
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header">
+						<h3 class="box-title">RARE DISEASE REGISTRY RECORDS -- {{total}}</h3>
+					</div>
+					<div class="box-body">
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-aqua"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Fabry disease</span>
+										<span class="info-box-number">{{profile_fabry1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-green"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Thalassemia</span>
+										<span class="info-box-number">{{profile_thalassemia1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-yellow"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Glycogen</span>
+										<span class="info-box-number">{{profile_glycogen1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-red"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Bleeding disorder</span>
+										<span class="info-box-number">{{profile_bleeding1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-maroon"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">IEM</span>
+										<span class="info-box-number">{{profile_metabolism1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-purple"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Pompe disease</span>
+										<span class="info-box-number">{{profile_pompe1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-olive"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Storage Disorder</span>
+										<span class="info-box-number">{{profile_storage1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-navy"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Skeletal Dysplasia</span>
+										<span class="info-box-number">{{profile_skeletal1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-teal"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">NMD</span>
+										<span class="info-box-number">{{profile_nmd1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-orange"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Mucopolysaccharidosis</span>
+										<span class="info-box-number">{{profile_mucopolysaccharidosis1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-black"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">Small Molecule</span>
+										<span class="info-box-number">{{profile_smallmolecule1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+							<!-- /.col -->
+							<div class="col-md-3 col-sm-6 col-xs-12">
+								<div class="info-box">
+									<span class="info-box-icon bg-gray"><i class="fa fa-files-o"></i></span>
+									<div class="info-box-content">
+										<span class="info-box-text">PID</span>
+										<span class="info-box-number">{{profile_pid1}}</span>
+									</div>
+									<!-- /.info-box-content -->
+								</div>
+								<!-- /.info-box -->
+							</div>
+						</div>
+					</div>
+					<div class="box-body table-responsive">
+						<br>
+						<center><h4> Table: Record of Quality control samples -- PASS</h4></center>
+						<br>
+						<table class="table table-condensed table-striped table-bordered" id="example">
+							<thead class="bg-black">
+								<tr>
+									<th>Hospital name</th>
+									<th>Fabry</th>
+									<th>Thalassemia</th>
+									<th>Glycogen</th>
+									<th>Bleeding disorder</th>
+									<th>Inborn errors of metabolism</th>
+									<th>Pompe disease</th>
+									<th>Storage Disorder</th>
+									<th>Skeletal Dysplasia</th>
+									<th>NMD</th>
+									<th>Mucopolysaccharidosis Group</th>
+									<th>Small Molecule</th>
+									<th>PID</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for i in cars_list %}
+								{% if i.testing1 == 0 %}
+								{% else %}
+								<tr>
+									<td>{{ i.institute_name }}</td>
+									<td>{{ i.profile_fabry }}</td>
+									<td>{{ i.profile_thalassemia }}</td>
+									<td>{{ i.profile_glycogen }}</td>
+									<td>{{ i.profile_bleeding }}</td>
+									<td>{{ i.profile_metabolism }}</td>
+									<td>{{ i.profile_pompe }}</td>
+									<td>{{ i.profile_storage }}</td>
+									<td>{{ i.profile_skeletal }}</td>
+									<td>{{ i.profile_nmd }}</td>
+									<td>{{ i.profile_mucopolysaccharidosis }}</td>
+									<td>{{ i.profile_smallmolecule }}</td>
+									<td>{{ i.profile_pid }}</td>
+									<td>{{ i.profile_total }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</tbody>
+							<tfoot class="bg-black">
+								<tr>
+									<th>COUNT</th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</tfoot>
+						</table>
+						<hr>
+					</div>
+					<br>
+					<div class="box-body table-responsive">
+						<br>
+						<center><h4> Table: Record of Quality control samples -- FAIL</h4></center>
+						<br>
+						<table class="table table-condensed table-striped table-bordered" id="example1">
+							<thead class="bg-black">
+								<tr>
+									<th>Hospital name</th>
+									<th>Fabry</th>
+									<th>Thalassemia</th>
+									<th>Glycogen</th>
+									<th>Bleeding disorder</th>
+									<th>Inborn errors of metabolism</th>
+									<th>Pompe disease</th>
+									<th>Storage Disorder</th>
+									<th>Skeletal Dysplasia</th>
+									<th>NMD</th>
+									<th>Mucopolysaccharidosis Group</th>
+									<th>Small Molecule</th>
+									<th>PID</th>
+									<th>Total</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for i in cars_list1 %}
+								{% if i.testing1 == 0 %}
+								{% else %}
+								<tr>
+									<td>{{ i.institute_name }}</td>
+									<td>{{ i.profile_fabry }}</td>
+									<td>{{ i.profile_thalassemia }}</td>
+									<td>{{ i.profile_glycogen }}</td>
+									<td>{{ i.profile_bleeding }}</td>
+									<td>{{ i.profile_metabolism }}</td>
+									<td>{{ i.profile_pompe }}</td>
+									<td>{{ i.profile_storage }}</td>
+									<td>{{ i.profile_skeletal }}</td>
+									<td>{{ i.profile_nmd }}</td>
+									<td>{{ i.profile_mucopolysaccharidosis }}</td>
+									<td>{{ i.profile_smallmolecule }}</td>
+									<td>{{ i.profile_pid }}</td>
+									<td>{{ i.profile_total }}</td>
+								</tr>
+								{% endif %}
+								{% endfor %}
+							</tbody>
+							<tfoot class="bg-black">
+								<tr>
+									<th>COUNT</th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+									<th></th>
+								</tr>
+							</tfoot>
+						</table>
+						<hr>
+					</div>
+
+					
+				</div>
+			</div>
+		</div>
+	</body>
+	<script>
+		// setup
+		<!-- let data = { -->
+		<!-- labels: [ {% for i in vv %} '{{i.month|date:" M Y"}}', {% endfor %}], -->
+		<!-- datasets: [{ -->
+		<!-- label: "Hospital Settings count", -->
+		<!-- backgroundColor: "#20c997", -->
+		<!-- data: [{% for i in sample1 %} {{ i.count }}, {% endfor %}], -->
+		<!-- fill: false, -->
+		<!-- datalabels: { -->
+		<!-- color: 'blue', -->
+		<!-- offset: 10, -->
+		<!-- align: 'center', -->
+		<!-- anchor: 'center', -->
+		<!-- display: 'auto', -->
+		<!-- }, -->
+		<!-- }, -->
+		<!-- { -->
+		<!-- label: 'Community Settings count', -->
+		<!-- borderColor: "#00bfff", -->
+		<!-- data: [{% for i in sample2 %} {{ i.count }}, {% endfor %}], -->
+		<!-- backgroundColor: "#ffbf00", -->
+		<!-- fill: false, -->
+		<!-- }, -->
+		<!-- ] -->
+		<!-- }; -->
+		<!-- // config -->
+		<!-- let config = { -->
+		<!-- type: 'bar', -->
+		<!-- data, -->
+		<!-- options: { -->
+		<!-- title: { -->
+		<!-- display: true, -->
+		<!-- text: 'Analysis -- Hospital Setting / Community Settings' -->
+		<!-- }, -->
+		<!-- tooltips: { -->
+		<!-- displayColors: true, -->
+		<!-- callbacks:{ -->
+		<!-- mode: 'x', -->
+		<!-- }, -->
+		<!-- }, -->
+		<!-- scales: { -->
+		<!-- xAxes: [{ -->
+		<!-- stacked: true, -->
+		<!-- gridLines: { -->
+		<!-- display: false, -->
+		<!-- } -->
+		<!-- }], -->
+		<!-- yAxes: [{ -->
+		<!-- stacked: true, -->
+		<!-- ticks: { -->
+		<!-- beginAtZero: true, -->
+		<!-- }, -->
+		<!-- type: 'linear', -->
+		<!-- }] -->
+		<!-- }, -->
+		<!-- responsive: true, -->
+		<!-- maintainAspectRatio: true, -->
+		<!-- legend: { position: 'bottom' }, -->
+		<!-- }, -->
+		<!-- }; -->
+		<!-- // render init block -->
+		<!-- const myChart77 = new Chart( -->
+		<!-- document.getElementById('mixed-chart77'), -->
+		<!-- config -->
+		<!-- ); -->
+		<!-- var image1 = myChart77.toBase64Image(); -->
+		<!-- console.log(image1); -->
+		<!-- document.getElementById('btn-download7').onclick = function() { -->
+		<!-- // Trigger the download -->
+		<!-- var a = document.createElement('a'); -->
+		<!-- a.href = myChart77.toBase64Image(); -->
+		<!-- a.download = 'my_file_name.png'; -->
+		<!-- a.click(); -->
+		<!-- } -->
+		var ctx = document.getElementById('mixed-chart77').getContext('2d');
+		var myChart77 = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: [ {% for i in vv %} '{{i.month|date:" M Y"}}', {% endfor %}],
+				datasets: [{
+					label: "Hospital Settings count",
+					backgroundColor: "#20c997",
+					data: [{% for i in sample1 %} {{ i.count }}, {% endfor %}],
+				},
+				{
+					label: 'Community Settings count',
+					data: [{% for i in sample2 %} {{ i.count }}, {% endfor %}],
+					backgroundColor: "#ffbf00",
+				},
+				]
+			},
+			options: {
+				title: {
+					display: true,
+					<!--					text: 'Analysis &#45;&#45; Hospital Setting / Community Settings'-->
+				},
+				tooltips: {
+					displayColors: true,
+					callbacks:{
+						mode: 'x',
+					},
+				},
+				scales: {
+					xAxes: [{
+						stacked: true,
+						gridLines: {
+							display: false,
+						}
+					}],
+					yAxes: [{
+						stacked: true,
+						ticks: {
+							beginAtZero: true,
+						},
+						type: 'linear',
+					}]
+				},
+				responsive: true,
+				maintainAspectRatio: true,
+				legend: { position: 'bottom' },
+			}
+		});
+		var image1 = myChart77.toBase64Image();
+		console.log(image1);
+		document.getElementById('btn-download7').onclick = function() {
+			// Trigger the download
+			var a = document.createElement('a');
+			a.href = myChart77.toBase64Image();
+			a.download = 'my_file_name.png';
+			a.click();
+		}
+	</script>
+	<script>
+		var ctx = document.getElementById('mixed-chart88').getContext('2d');
+		var myChart88 = new Chart(ctx, {
+			type: 'bar',
+			data: {
+				labels: [ {% for i in vv %} '{{i.month|date:" M Y"}}', {% endfor %}],
+				datasets: [
+				{
+					label: 'ILI SAMPLES COUNT',
+					data: [{% for i in sample4 %} {{ i.count }}, {% endfor %}],
+					backgroundColor: "#ffbf00",
+				},
+				{
+					label: "SARI SAMPLES COUNT",
+					backgroundColor: "#20c997",
+					data: [{% for i in sample3 %} {{ i.count }}, {% endfor %}],
+				},
+				]
+			},
+			options: {
+				title: {
+					display: true,
+					<!--					text: 'Analysis &#45;&#45; Hospital Setting / Community Settings'-->
+				},
+				tooltips: {
+					displayColors: true,
+					callbacks:{
+						mode: 'x',
+					},
+				},
+				scales: {
+					xAxes: [{
+						stacked: true,
+						gridLines: {
+							display: false,
+						}
+					}],
+					yAxes: [{
+						stacked: true,
+						ticks: {
+							beginAtZero: true,
+						},
+						type: 'linear',
+					}]
+				},
+				responsive: true,
+				maintainAspectRatio: true,
+				legend: { position: 'bottom' },
+			}
+		});
+		var image88 = myChart88.toBase64Image();
+		console.log(image88);
+		document.getElementById('btn-download8').onclick = function() {
+			// Trigger the download
+			var a = document.createElement('a');
+			a.href = myChart88.toBase64Image();
+			a.download = 'my_file_name.png';
+			a.click();
+		}
+	</script>
+</html>
+{% endblock %}

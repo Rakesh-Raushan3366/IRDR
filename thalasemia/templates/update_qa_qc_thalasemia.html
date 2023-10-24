@@ -1,0 +1,305 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#submit1').click(function(e) {
+			var isValid = true;
+			$('.required1').each(function() {
+				if ($.trim($(this).val()) == '') {
+					isValid = false;
+					$(this).css({
+						"border": "1px solid red",
+						"background": "#FFCECE"
+					});
+					alert($(this).attr("name") + " " + 'field is empty')
+				}
+				else {
+					$(this).css({
+						"border": "",
+						"background": ""
+					});
+				}
+			});
+			if (isValid == false)
+			e.preventDefault();
+			else
+			alert('Thank you for submitting');
+		});
+	});
+
+</script>
+
+<script>
+	$(document).ready(function(){
+	$("#id_muco_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view
+	console.log(data)
+	$("#id_muco_district").html(data);
+	}
+	});
+	});
+	});
+
+
+</script>
+
+<script>
+    /* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_referred_by').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any others'){
+	$("#id_muco_referred_by_desc").show();
+    $("label[for='referedby_others']").show();
+	}
+	else
+	{
+	$("#id_muco_referred_by_desc").hide();
+    $("label[for='referedby_others']").hide();
+
+	}
+	});
+	$("#id_muco_referred_by_desc").hide();
+	$("label[for='referedby_others']").hide();
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_consent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_muco_consent_upload").show();
+    $("label[for='consent_upload']").show();
+	}
+	else
+	{
+	$("#id_muco_consent_upload").hide();
+    $("label[for='consent_upload']").hide();
+
+	}
+	});
+	$("#id_muco_consent_upload").hide();
+	$("label[for='consent_upload']").hide();
+	});
+
+$(document).ready(function(){
+	$('#id_mt_religion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_muco_religion_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_muco_religion_other_specify").hide();
+
+
+	}
+	});
+	$("#id_muco_religion_other_specify").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_muco_caste').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_muco_caste_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_muco_caste_other_specify").hide();
+
+
+	}
+	});
+	$("#id_muco_caste_other_specify").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_muco_referred_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".reffered_by").show();
+
+	}
+	else
+	{
+	$(".reffered_by").hide();
+
+
+	}
+	});
+	$(".reffered_by").hide();
+
+	});
+
+	$(document).ready(function(){
+	$('#id_muco_paitent_id_yes_no').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".patient_id_rule").show();
+
+	}
+	else
+	{
+	$(".patient_id_rule").hide();
+
+
+	}
+	});
+	$(".patient_id_rule").hide();
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_assent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_muco_assent_upload").show();
+    $("label[for='assent_upload']").show();
+	}
+	else
+	{
+	$("#id_muco_assent_upload").hide();
+    $("label[for='assent_upload']").hide();
+
+	}
+	});
+	$("#id_muco_assent_upload").hide();
+	$("label[for='assent_upload']").hide();
+	});
+
+$(document).ready(function(){
+	$("#id_muco_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view function
+	$("#id_muco_district").html(data);
+	}
+	});
+	});
+	});
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_paitent_id').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){
+	$("#id_muco_patient_id_no").show();
+
+	}
+	else
+	{
+	$("#id_muco_patient_id_no").hide();
+
+
+	}
+	});
+	$("#id_muco_patient_id_no").hide();
+
+	});
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_father_mother_id').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){
+	$("#id_muco_mother_father_id_no").show();
+
+	}
+	else
+	{
+	$("#id_muco_mother_father_id_no").hide();
+
+
+	}
+	});
+	$("#id_muco_mother_father_id_no").hide();
+
+	});
+
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+	.required:after {
+    content:" *";
+    color: red;
+  }
+</style>
+
+<style>
+		
+		.required1{
+		border-color: red;
+		padding: 0.5rem;
+	
+		}
+</style>
+<form method="POST"  enctype="multipart/form-data" data-district-url="{% url 'load_district' %}" id="personForm" action="">
+
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+
+    <div class="box-body">
+
+        <div class="box-group" id="accordion">
+
+
+                    
+                    <div class="box-body">
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Quality result</label>
+                                {{form2.quality_result|addclass:'form-control required1'}}
+                            </div>
+                            <div class="col-md-8 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Remark </label>
+                                {{form2.quality_reason|addclass:'form-control required1'}}
+                            </div>
+                            
+                        </div>
+                        
+                       </div>
+
+              
+        </div>
+            <br>
+            <center>
+                <button class="btn btn-primary" type="submit" id="submit1">Submit</button>
+            </center>
+            <br>
+        </div>
+    </div>
+</form>
+{% endblock %}

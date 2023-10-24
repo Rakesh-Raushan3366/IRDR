@@ -1,0 +1,1659 @@
+
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %} {% load add_attr %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js" xmlns="http://www.w3.org/1999/html"
+xmlns="http://www.w3.org/1999/html"></script>
+<script>
+	$(document).ready(function() {
+		$('.submitbtn').click(function(e) {
+			var isValid = true;
+			$('.required1').each(function() {
+				if ($.trim($(this).val()) == '') {
+					isValid = false;
+					$(this).css({
+						"border": "1px solid red",
+						"background": "#FFCECE"
+					});
+					alert($(this).attr("name") + " " + 'field is empty')
+				}
+				else {
+					$(this).css({
+						"border": "",
+						"background": ""
+					});
+				}
+			});
+			if (isValid == false)
+			e.preventDefault();
+			else
+			alert('Thank you for submitting');
+		});
+	});
+</script>
+<script>
+	$(document).ready(function(){
+		$('#id_positive_family_history').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$("#id_family_history_specify").show();
+				$("label[for='positive_family_history_lebel']").show();
+			}
+			else
+			{
+				$("#id_family_history_specify").hide();
+				<!--	$("#id_positive_family_history_detail").val('');-->
+				$("label[for='positive_family_history_lebel']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_consanguinity').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='Yes'){
+				$('#id_consanguinity_mention_degree').show();
+				$("label[for='consanguinity_label']").show();
+			}
+			else{
+				$('#id_consanguinity_mention_degree').hide();
+				$("label[for='consanguinity_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_antenatal_findings').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".antinatal_class").show();
+			}
+			else
+			{
+				$(".antinatal_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_resuscitation_required').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".resuscitation_class").show();
+			}
+			else
+			{
+				$(".resuscitation_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_developmental_milestones').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Delayed'){
+				$(".developmental_milestones_class").show();
+			}
+			else
+			{
+				$(".developmental_milestones_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Causative_DNA_sequence_variation').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='Yes'){
+				$('#id_molecular_upload').show();
+				$("label[for='Causative_DNA_sequence_variation_label']").show();
+			}
+			else{
+				$('#id_molecular_upload').hide();
+				$("label[for='Causative_DNA_sequence_variation_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_IQ').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='done'){
+				$('#id_iq_value').show();
+				$("label[for='IQ_label']").show();
+			}
+			else{
+				$('#id_iq_value').hide();
+				$("label[for='IQ_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_DQ').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='done'){
+				$('#id_dq_value').show();
+				$("label[for='DQ_label']").show();
+			}
+			else{
+				$('#id_dq_value').hide();
+				$("label[for='DQ_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hepatomegaly').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".hepatomegaly_class").show();
+			}
+			else
+			{
+				$(".hepatomegaly_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Splenomegaly').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".Splenomegaly_class").show();
+			}
+			else
+			{
+				$(".Splenomegaly_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hernia').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='Yes'){
+				$('#id_specify_if').show();
+				$("label[for='hernia_label']").show();
+			}
+			else{
+				$('#id_specify_if').hide();
+				$("label[for='hernia_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Echocardiography').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='abnormal'){
+				$('#id_abnormal_finding').show();
+				$("label[for='Echocardiography_label']").show();
+			}
+			else{
+				$('#id_abnormal_finding').hide();
+				$("label[for='Echocardiography_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Ultrasonography').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".Ultrasonography_class").show();
+			}
+			else
+			{
+				$(".Ultrasonography_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Dexa_Z_score').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='done'){
+				$('#id_if_done_specify').show();
+				$("label[for='Dexa_Z_score_label']").show();
+			}
+			else{
+				$('#id_if_done_specify').hide();
+				$("label[for='Dexa_Z_score_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_EPS_for_CTS').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue =='abnormal'){
+				$('#id_developmental_findings').show();
+				$("label[for='EPS_for_CTS_label']").show();
+			}
+			else{
+				$('#id_developmental_findings').hide();
+				$("label[for='EPS_for_CTS_label']").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Pulmonary_function_test').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".Pulmonary_function_test_class").show();
+			}
+			else
+			{
+				$(".Pulmonary_function_test_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_CT_Scan').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".CT_Scan_class").show();
+			}
+			else
+			{
+				$(".CT_Scan_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_MRI_Brain').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".MRI_Brain_class").show();
+			}
+			else
+			{
+				$(".MRI_Brain_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_EEG').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".EEG_class").show();
+			}
+			else
+			{
+				$(".EEG_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Fundus').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".Fundus_class").show();
+			}
+			else
+			{
+				$(".Fundus_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Hearing_Assessment').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".Hearing_Assessment_class").show();
+			}
+			else
+			{
+				$(".Hearing_Assessment_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Sleep_Studies').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'abnormal'){
+				$(".Sleep_Studies_class").show();
+			}
+			else
+			{
+				$(".Sleep_Studies_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Enzyme_Replacement_Therapy').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".Enzyme_Replacement_Therapy_class").show();
+			}
+			else
+			{
+				$(".Enzyme_Replacement_Therapy_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Adverse_events').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".Adverse_events_class").show();
+			}
+			else
+			{
+				$(".Adverse_events_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Any_interruption').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".Any_interruption_class").show();
+			}
+			else
+			{
+				$(".Any_interruption_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_developmental_delay').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Yes'){
+				$(".Bone_Marrow_Transplantation_class").show();
+			}
+			else
+			{
+				$(".Bone_Marrow_Transplantation_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('input:radio[name="developmental_findings"]').change(function(){
+			if($(this).val() == 'Yes'){
+				alert("test");
+			}
+		});
+	});
+	/*j query for first symptoms OF SMALL MOLECULE */
+	$(document).ready(function(){
+		$('#id_developmental_delay').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_developmental_delay_0').is(':checked')){
+				$("#id_developmental_findings").show();
+			}
+			else
+			{
+				$("#id_developmental_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_vomiting').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_vomiting_0').is(':checked')){
+				$("#id_vomiting_finding").show();
+			}
+			else
+			{
+				$("#id_vomiting_finding").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_loose_stools').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_loose_stools_0').is(':checked')){
+				$("#id_stools_findings").show();
+			}
+			else
+			{
+				$("#id_stools_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_pneumonia').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_pneumonia_0').is(':checked')){
+				$("#id_pneumonia_findings").show();
+			}
+			else
+			{
+				$("#id_pneumonia_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_fever').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_fever_0').is(':checked')){
+				$("#id_fever_findings").show();
+			}
+			else
+			{
+				$("#id_fever_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_lethargy').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_lethargy_0').is(':checked')){
+				$("#id_lethargy_findings").show();
+			}
+			else
+			{
+				$("#id_lethargy_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_seizures').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_seizures_0').is(':checked')){
+				$("#id_seizures_findings").show();
+			}
+			else
+			{
+				$("#id_seizures_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_history_admission').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_history_admission_0').is(':checked')){
+				$("#id_history_findings").show();
+			}
+			else
+			{
+				$("#id_history_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_abdominal_distention').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_abdominal_distention_0').is(':checked')){
+				$("#id_abdominal_distention_findings").show();
+			}
+			else
+			{
+				$("#id_abdominal_distention_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_any_surgery').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_surgery_0').is(':checked')){
+				$("#id_surgery_findings").show();
+			}
+			else
+			{
+				$("#id_surgery_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_aversion_sweet_protein').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_aversion_sweet_protein_0').is(':checked')){
+				$("#id_sweet_protein_findings").show();
+			}
+			else
+			{
+				$("#id_sweet_protein_findings").hide();
+			}
+		});
+	});
+	/* j Query for symptoms of small molecule ->any other info */
+	$(document).ready(function(){
+		$('#id_encephalopathy').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_encephalopathy_0').is(':checked')){
+				$("#id_encephalopathy_findings").show();
+			}
+			else
+			{
+				$("#id_encephalopathy_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_deafness').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_deafness_0').is(':checked')){
+				$("#id_deafness_findings").show();
+			}
+			else
+			{
+				$("#id_deafness_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_extra_pyramidal_symp').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_extra_pyramidal_symp_0').is(':checked')){
+				$("#id_extra_pyramidal_symp_findings").show();
+			}
+			else
+			{
+				$("#id_extra_pyramidal_symp_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hypotonia').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_hypotonia_0').is(':checked')){
+				$("#id_encephalopathy_findings").show();
+			}
+			else
+			{
+				$("#id_hypotonia_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hypertonia').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_hypertonia_0').is(':checked')){
+				$("#id_hypertonia_findings").show();
+			}
+			else
+			{
+				$("#id_hypertonia_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_facial_dysmorphism').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_facial_dysmorphism_0').is(':checked')){
+				$("#id_facial_dysmorphism_findings").show();
+			}
+			else
+			{
+				$("#id_facial_dysmorphism_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_congential_heart_disease').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_congential_heart_disease_0').is(':checked')){
+				$("#id_congential_heart_disease_findings").show();
+			}
+			else
+			{
+				$("#id_congential_heart_disease_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_cardiomyopathy').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_cardiomyopathy_0').is(':checked')){
+				$("#id_cardiomyopathy_findings").show();
+			}
+			else
+			{
+				$("#id_cardiomyopathy_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hepatomegaly').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_hepatomegaly_0').is(':checked')){
+				$("#id_hepatomegaly_findings").show();
+			}
+			else
+			{
+				$("#id_hepatomegaly_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_splenomegaly').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_splenomegaly_0').is(':checked')){
+				$("#id_splenomegaly_findings").show();
+			}
+			else
+			{
+				$("#id_splenomegaly_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_pigmentary').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_pigmentary_0').is(':checked')){
+				$("#id_pigmentary_findings").show();
+			}
+			else
+			{
+				$("#id_pigmentary_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_deranged_LFT').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_deranged_LFT_0').is(':checked')){
+				$("#id_deranged_LFT_findings").show();
+			}
+			else
+			{
+				$("#id_deranged_LFT_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_deranged_RFT').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_deranged_RFT_0').is(':checked')){
+				$("#id_deranged_RFT_findings").show();
+			}
+			else
+			{
+				$("#id_deranged_RFT_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hypoglycemia').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_hypoglycemia_0').is(':checked')){
+				$("#id_hypoglycemia_findings").show();
+			}
+			else
+			{
+				$("#id_hypoglycemia_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_metabolic_acidosis').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_metabolic_acidosis_0').is(':checked')){
+				$("#id_metabolic_acidosis_findings").show();
+			}
+			else
+			{
+				$("#id_metabolic_acidosis_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_metabolic_alkalosis').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_metabolic_alkalosis_0').is(':checked')){
+				$("#id_metabolic_alkalosis_findings").show();
+			}
+			else
+			{
+				$("#id_metabolic_alkalosis_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_hyper_ammonia').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_hyper_ammonia_0').is(':checked')){
+				$("#id_hyper_ammonia_findings").show();
+			}
+			else
+			{
+				$("#id_hyper_ammonia_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_high_lactate').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_high_lactate_0').is(':checked')){
+				$("#id_high_lactate_findings").show();
+			}
+			else
+			{
+				$("#id_high_lactate_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_urine_ketones').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_urine_ketones_0').is(':checked')){
+				$("#id_urine_ketones_findings").show();
+			}
+			else
+			{
+				$("#id_urine_ketones_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_cherry_red_spot').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_cherry_red_spot_0').is(':checked')){
+				$("#id_cherry_red_spot_findings").show();
+			}
+			else
+			{
+				$("#id_cherry_red_spot_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_retinitis_pigmentosa').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_retinitis_pigmentosa_0').is(':checked')){
+				$("#id_retinitis_pigmentosa_findings").show();
+			}
+			else
+			{
+				$("#id_retinitis_pigmentosa_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_optic_atrophy').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_optic_atrophy_0').is(':checked')){
+				$("#id_optic_atrophy_findings").show();
+			}
+			else
+			{
+				$("#id_optic_atrophy_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_mechanical_ventilation').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_mechanical_ventilation_0').is(':checked')){
+				$("#id_mechanical_ventilation_findings").show();
+			}
+			else
+			{
+				$("#id_mechanical_ventilation_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_dialysis').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_dialysis_0').is(':checked')){
+				$("#id_dialysis_findings").show();
+			}
+			else
+			{
+				$("#id_dialysis_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_regression').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_regression_0').is(':checked')){
+				$("#id_regression_findings").show();
+			}
+			else
+			{
+				$("#id_regression_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_distonia_abnormal_movement').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_distonia_abnormal_movement_0').is(':checked')){
+				$("#id_distonia_abnormal_findings").show();
+			}
+			else
+			{
+				$("#id_distonia_abnormal_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_high_cpk').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_high_cpk_0').is(':checked')){
+				$("#id_high_cpk_findings").show();
+			}
+			else
+			{
+				$("#id_high_cpk_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_generic_analysis').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_generic_analysis_0').is(':checked')){
+				$("#id_generic_analysis_findings").show();
+			}
+			else
+			{
+				$("#id_generic_analysis_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_final_dagnosis').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_final_dagnosis_0').is(':checked')){
+				$("#id_final_dagnosis_findings").show();
+			}
+			else
+			{
+				$("#id_final_dagnosis_findings").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_dna_storage').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_dna_storage_0').is(':checked')){
+				$("#id_dna_storage_findings").show();
+			}
+			else
+			{
+				$("#id_dna_storage_findings").hide();
+			}
+		});
+	});
+	/* j Query for symptoms of small molecule->any other info */
+	$(document).ready(function(){
+		$('#id_CT_brain').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".CT_brain_class").show();
+			}
+			else
+			{
+				$(".CT_brain_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_mri_brain').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".mri_brain_class").show();
+			}
+			else
+			{
+				$(".mri_brain_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_mrs_brain').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".mrs_brain_class").show();
+			}
+			else
+			{
+				$(".mrs_brain_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_ms_ms').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".ms_ms_class").show();
+			}
+			else
+			{
+				$(".ms_ms_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_gcms').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".gcms_class").show();
+			}
+			else
+			{
+				$(".gcms_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_enzyme_assay').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".enzyme_assay_class").show();
+			}
+			else
+			{
+				$(".enzyme_assay_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_quantitative_plasma').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".quantitative_plasma_class").show();
+			}
+			else
+			{
+				$(".quantitative_plasma_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_quantitative_csf').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".quantitative_csf_class").show();
+			}
+			else
+			{
+				$(".quantitative_csf_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_muscle_biopsy').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".muscle_biopsy_class").show();
+			}
+			else
+			{
+				$(".muscle_biopsy_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_ncv').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".ncv_class").show();
+			}
+			else
+			{
+				$(".ncv_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_ief_cdg').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".ief_cdg_class").show();
+			}
+			else
+			{
+				$(".ief_cdg_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_glycine').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Abnormal'){
+				$(".glycine_class").show();
+			}
+			else
+			{
+				$(".glycine_class").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_other_info').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_other_info_0').is(':checked')){
+				$("#id_other_info_age").show();
+				$("#id_other_info_date").show();
+			}
+			else
+			{
+				$("#id_other_info_age").hide();
+				$("#id_other_info_date").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_tms').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_tms_0').is(':checked')){
+				$("#id_tms_age").show();
+				$("#id_tms_date").show();
+			}
+			else
+			{
+				$("#id_tms_age").hide();
+				$("#id_tms_date").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_molecular_studies').on('change', function(){
+			var demovalue = $(this).val();
+			if($('#id_molecular_studies_0').is(':checked')){
+				$("#id_molecular_studies_place").show();
+				$("#id_molecular_studies_date").show();
+				$("#id_upload_studies").show();
+			}
+			else
+			{
+				$("#id_molecular_studies_place").hide();
+				$("#id_molecular_studies_date").hide();
+				$("#id_upload_studies").hide();
+			}
+		});
+	});
+	$(document).ready(function(){
+		$('#id_Final_Outcome').on('change', function(){
+			var demovalue = $(this).val();
+			if(demovalue == 'Death'){
+				<!--	$("#id_death_cause").show();-->
+				<!--	$("#id_age_timedeath").show();-->
+				<!--	}-->
+				<!--	else-->
+				<!--	{-->
+				<!--	$("#id_death_cause").hide();-->
+				<!--	$("#id_age_timedeath").hide();-->
+				<!--	}-->
+				<!--	});-->
+				<!--	$("#id_death_cause").hide();-->
+				<!--	$("#id_age_timedeath").hide();-->
+				<!--	});-->
+				$(".Final_Outcome_class").show();
+			}
+			else
+			{
+				$(".Final_Outcome_class").hide();
+			}
+		});
+	});
+</script>
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+	hr {
+	width:95%;
+    border: 1px solid rgb(240, 240, 240);
+	}
+</style>
+
+<style>
+		
+		.required1{
+		border-color: red;
+		padding: 0.5rem;
+	
+		}
+</style>
+<form method="POST" enctype="multipart/form-data"  id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form1.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form1.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form1.errors %}
+    {% for field in form4 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <div class="nav-tabs-custom">
+        <div class="tab-pane" id="tab_2">
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Birth History</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+							class="fa fa-minus"></i>
+						</button>
+					</div>
+                    <!-- /.box-tools -->
+				</div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <!--                        <div class="alert alert-success">-->
+                    <!--                            <strong>Socio-demographic Data Sheet</strong>-->
+                    <!--                        </div>-->
+					<div class="row ">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Head Circumference *</label>
+							{{form1.head_circumference|addclass:'form-control required1'}}
+						</div>
+					</div>
+					<br>
+					<div class="row ">
+						<div class="col-md-4 id_sample_source_0">
+							<label class="col-md font-weight-bolder text-dark text-left">Age at First Symptoms</label>
+							{{form1.age_at_first_symptom|addclass:'form-control'}}
+						</div>
+						<div class="col-md-4 id_sample_source_0">
+							<label class="col-md font-weight-bolder text-dark text-left">Visual Problem *</label>
+							{{form1.visual_problem|addclass:'form-control required1'}}
+						</div>
+						<div class="col-md-4 id_sample_source_0 id_tick_other">
+							<label class="col-md font-weight-bolder text-dark text-left">Any Malformation *</label>
+							{{form1.any_malformation|addclass:'form-control required1'}}
+						</div>
+					</div>
+					<!--                        </div>-->
+					<hr>
+					<!--					<h3><class="box-title">First Symptom:-</h3>-->
+                    <div class="row ">
+						<div class="col-md-6 ">
+							<table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+								<colgroup>
+									<col span="1" style="width: 15%;">
+									<col span="1" style="width: 10%;">
+									<col span="1" style="width: 10%;">
+								</colgroup>
+								<thead class="bg-info">
+									<tr>
+										<th>First Symptoms</th>
+										<th>Yes/No</th>
+										<th>Findings</th>
+									</tr>
+								</thead>
+                                <tbody>
+									<tr>
+										<td> Developmental Delay</td>
+										<td>{{form1.developmental_delay}}</td>
+										<td>{{form1.developmental_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td> Vomiting</td>
+										<td>{{form1.vomiting}}</td>
+										<td>{{form1.vomiting_finding|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td> Loose Stools</td>
+										<td>{{form1.loose_stools}}</td>
+										<td>{{form1.stools_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td> Pneumonia</td>
+										<td>{{form1.pneumonia}}</td>
+										<td>{{form1.pneumonia_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td> Fever</td>
+										<td>{{form1.fever}}</td>
+										<td>{{form1.fever_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td> Lethargy</td>
+										<td>{{form1.lethargy}}</td>
+										<td>{{form1.lethargy_findings|addclass:'form-control'}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+						<div class="col-md-6 ">
+							<table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+								<colgroup>
+									<col span="1" style="width: 15%;">
+									<col span="1" style="width: 10%;">
+									<col span="1" style="width: 10%;">
+								</colgroup>
+								<thead class="bg-info">
+									<tr>
+										<th>First Symptoms</th>
+										<th>Yes/No</th>
+										<th>Findings</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>Seizures</td>
+										<td>{{form1.seizures}}</td>
+										<td>{{form1.seizures_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td>Abdominal Distention</td>
+										<td>{{form1.abdominal_distention}}</td>
+										<td>{{form1.abdominal_distention_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td>History Admission</td>
+										<td>{{form1.history_admission}}</td>
+										<td>{{form1.history_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td>Any Surgery</td>
+										<td>{{form1.any_surgery}}</td>
+										<td>{{form1.surgery_findings|addclass:'form-control'}}</td>
+									</tr>
+									<tr>
+										<td> Aversion to Sweet/Protein</td>
+										<td>{{form1.aversion_sweet_protein}}</td>
+										<td>{{form1.sweet_protein_findings|addclass:'form-control'}}</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box box-primary box-solid">
+			<div class="box-header with-border">
+				<h3 class="box-title">SYMPTOM</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+						class="fa fa-minus"></i>
+					</button>
+				</div>
+			</div>
+			<div class="box-body" style="">
+				<div class="row">
+					<div class="col-md-6">
+						<table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 35%;">
+	                            <col span="1" style="width: 35%;">
+							</colgroup>
+							<thead class="bg-info ">
+                                <tr>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Findings</th>
+								</tr>
+							</thead>
+							<tbody>
+                                <tr>
+                                    <td> Encephalopathy</td>
+                                    <td>{{form1.encephalopathy}}</td>
+                                    <td>{{form1.encephalopathy_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Deafness</td>
+                                    <td>{{form1.deafness}}</td>
+                                    <td>{{form1.deafness_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Extra Pyramidal Symp</td>
+                                    <td>{{form1.extra_pyramidal_symp}}</td>
+                                    <td>{{form1.extra_pyramidal_symp_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Hypotonia</td>
+                                    <td>{{form1.hypotonia}}</td>
+                                    <td>{{form1.hypotonia_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Hypertonia</td>
+                                    <td>{{form1.hypertonia}}</td>
+                                    <td>{{form1.hypertonia_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Facial Dysmorphism</td>
+                                    <td>{{form1.facial_dysmorphism}}</td>
+                                    <td>{{form1.facial_dysmorphism_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Congential Heart Disease</td>
+                                    <td>{{form1.congential_heart_disease}}</td>
+                                    <td>{{form1.congential_heart_disease_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Cardiomyopathy</td>
+                                    <td>{{form1.cardiomyopathy}}</td>
+                                    <td>{{form1.cardiomyopathy_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Hepatomegaly</td>
+                                    <td>{{form1.hepatomegaly}}</td>
+                                    <td>{{form1.hepatomegaly_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Splenomegaly</td>
+                                    <td>{{form1.splenomegaly}}</td>
+                                    <td>{{form1.splenomegaly_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Pigmentary</td>
+                                    <td>{{form1.pigmentary}}</td>
+                                    <td>{{form1.pigmentary_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Deranged LFT</td>
+                                    <td>{{form1.deranged_LFT}}</td>
+                                    <td>{{form1.deranged_LFT_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Deranged RFT</td>
+                                    <td>{{form1.deranged_RFT}}</td>
+                                    <td>{{form1.deranged_RFT_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Hypoglycemia</td>
+                                    <td>{{form1.hypoglycemia}}</td>
+                                    <td>{{form1.hypoglycemia_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Metabolic Acidosis</td>
+                                    <td>{{form1.metabolic_acidosis}}</td>
+                                    <td>{{form1.metabolic_acidosis_findings|addclass:'form-control'}}</td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<div class="col-md-6">
+						<table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 35%;">
+	                            <col span="1" style="width: 35%;">
+							</colgroup>
+							<thead class="bg-info ">
+								<tr>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Findings</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+                                    <td> Metabolic Alkalosis</td>
+                                    <td>{{form1.metabolic_alkalosis}}</td>
+                                    <td>{{form1.metabolic_alkalosis_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Hyper Ammonia</td>
+                                    <td>{{form1.hyper_ammonia}}</td>
+                                    <td>{{form1.hyper_ammonia_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> High Lactate</td>
+                                    <td>{{form1.high_lactate}}</td>
+                                    <td>{{form1.high_lactate_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Urine Ketones</td>
+                                    <td>{{form1.urine_ketones}}</td>
+                                    <td>{{form1.urine_ketones_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Cherry Red Spot</td>
+                                    <td>{{form1.cherry_red_spot}}</td>
+                                    <td>{{form1.cherry_red_spot_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Retinitis Pigmentosa</td>
+                                    <td>{{form1.retinitis_pigmentosa}}</td>
+                                    <td>{{form1.retinitis_pigmentosa_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Optic Atrophy</td>
+                                    <td>{{form1.optic_atrophy}}</td>
+                                    <td>{{form1.optic_atrophy_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Mechanical Ventilation</td>
+                                    <td>{{form1.mechanical_ventilation}}</td>
+                                    <td>{{form1.mechanical_ventilation_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Dialysis</td>
+                                    <td>{{form1.dialysis}}</td>
+                                    <td>{{form1.dialysis_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Regression</td>
+                                    <td>{{form1.regression}}</td>
+                                    <td>{{form1.regression_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td>Distonia Abnormal Movement</td>
+                                    <td>{{form1.distonia_abnormal_movement}}</td>
+                                    <td>{{form1.distonia_abnormal_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> High CPK</td>
+                                    <td>{{form1.high_cpk}}</td>
+                                    <td>{{form1.high_cpk_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Generic Analysis LFT</td>
+                                    <td>{{form1.generic_analysis}}</td>
+                                    <td>{{form1.generic_analysis_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Final Dagnosis RFT</td>
+                                    <td>{{form1.final_dagnosis}}</td>
+                                    <td>{{form1.final_dagnosis_findings|addclass:'form-control'}}</td>
+								</tr>
+								<tr>
+                                    <td> Dna Storage</td>
+                                    <td>{{form1.dna_storage}}</td>
+                                    <td>{{form1.dna_storage_findings|addclass:'form-control'}}</td>
+								</tr>
+								<!--								<tr>-->
+								<!--                                    <td> Any Other Information</td>-->
+								<!--                                    <td>{{form1.other_info}}</td>-->
+								<!--                                    <td>{{form1.other_info_date|addclass:'form-control'}}</td>-->
+								<!--									<td>{{form1.other_info_age|addclass:'form-control'}}</td>-->
+								<!--                                </tr>-->
+							</tbody>
+						</table>
+					</div>
+				</div>
+				<hr>
+				<table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+					<colgroup>
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 25%;">
+					</colgroup>
+					<thead class="bg-info ">
+						<tr>
+							<th>Symptoms</th>
+							<th>Select</th>
+							<th>Date</th>
+							<th>Age</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td> CT Brain</td>
+							<td>{{form1.CT_brain|addclass:'form-control'}}</td>
+							<td class="ct_brain_class">{{form1.CT_brain_date|addclass:'form-control'}}</td>
+							<td class="ct_brain_class">{{form1.CT_brain_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> MRI Brain</td>
+							<td>{{form1.mri_brain|addclass:'form-control'}}</td>
+							<td class="mri_brain_class">{{form1.mri_brain_date|addclass:'form-control'}}</td>
+							<td class="mri_brain_class">{{form1.mri_brain_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> MRS Brain</td>
+							<td>{{form1.mrs_brain |addclass:'form-control'}}</td>
+							<td class="mrs_brain_class">{{form1.mrs_brain_date|addclass:'form-control'}}</td>
+							<td class="mrs_brain_class">{{form1.mrs_brain_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> MS MS</td>
+							<td>{{form1.ms_ms |addclass:'form-control'}}</td>
+							<td class="ms_ms_class">{{form1.ms_date|addclass:'form-control'}}</td>
+							<td class="ms_ms_class">{{form1.ms_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> GCMS</td>
+							<td>{{form1.gcms |addclass:'form-control'}}</td>
+							<td class="gcms_class">{{form1.gcms_date|addclass:'form-control'}}</td>
+							<td class="gcms_class">{{form1.gcms_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> Enzyme Assay</td>
+							<td>{{form1.enzyme_assay |addclass:'form-control'}}</td>
+							<td class="enzyme_assay_class">{{form1.enzyme_assay_date|addclass:'form-control'}}</td>
+							<td class="enzyme_assay_class">{{form1.enzyme_assay_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> Quantitative Amino Acids(Plasma)</td>
+							<td>{{form1.quantitative_plasma |addclass:'form-control'}}</td>
+							<td class="quantitative_plasma_class">{{form1.quantitative_plasma_date|addclass:'form-control'}}</td>
+							<td class="quantitative_plasma_class">{{form1.quantitative_plasma_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> Quantitative Amino Acids(CSF)</td>
+							<td>{{form1.quantitative_csf |addclass:'form-control'}}</td>
+							<td class="quantitative_csf_class">{{form1.quantitative_csf_date|addclass:'form-control'}}</td>
+							<td class="quantitative_csf_class">{{form1.quantitative_csf_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> Muscle Biopsy</td>
+							<td>{{form1.muscle_biopsy |addclass:'form-control'}}</td>
+							<td class="muscle_biopsy_class">{{form1.muscle_biopsy_date|addclass:'form-control'}}</td>
+							<td class="muscle_biopsy_class">{{form1.muscle_biopsy_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> NCV</td>
+							<td>{{form1.ncv |addclass:'form-control'}}</td>
+							<td class="ncv_class">{{form1.ncv_date|addclass:'form-control'}}</td>
+							<td class="ncv_class">{{form1.ncv_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> IEF for CDG</td>
+							<td>{{form1.ief_cdg|addclass:'form-control'}}</td>
+							<td class="ief_cdg_class">{{form1.ief_cdg_date|addclass:'form-control'}}</td>
+							<td class="ief_cdg_class">{{form1.ief_cdg_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> CSF Glycine</td>
+							<td>{{form1.glycine |addclass:'form-control'}}</td>
+							<td class="glycine_class">{{form1.glycine_date|addclass:'form-control'}}</td>
+							<td class="glycine_class">{{form1.glycine_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> Any Other Information</td>
+							<td>{{form1.other_info}}</td>
+							<td>{{form1.other_info_date|addclass:'form-control'}}</td>
+							<td>{{form1.other_info_age|addclass:'form-control'}}</td>
+						</tr>
+						<tr>
+							<td> TMS</td>
+							<td>{{form1.tms}}</td>
+							<td class="tms_class">{{form1.tms_date|addclass:'form-control'}}</td>
+							<td class="tms_class">{{form1.tms_age|addclass:'form-control'}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<hr>
+				<div class="row ">
+					<div class="col-md-3">
+						<label for="photos" class="col-sm col-form-label">Photos</label>
+						{{form1.photos|addclass:'form-control'}}
+					</div>
+					<div class="col-md-9 ">
+						<label for="photos_specify" class="col-sm col-form-label">Photos(Specify)</label>
+						{{form1.photos_specify|addclass:'form-control'}}
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="box box-primary box-solid">
+			<div class="box-header with-border">
+				<h3 class="box-title">MOLECULR DIAGNOSIS</h3>
+				<div class="box-tools pull-right">
+					<button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+						class="fa fa-minus"></i>
+					</button>
+				</div>
+			</div>
+			<div class="box-body" style="">
+				<table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+					<colgroup>
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 25%;">
+						<col span="1" style="width: 25%;">
+					</colgroup>
+					<thead class="bg-info ">
+						<tr>
+							<th>Molecular Studies</th>
+							<th>Date</th>
+							<th>Place</th>
+							<th>Upload Studies</th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>{{form1.molecular_studies}}</td>
+							<td>{{form1.molecular_studies_date|addclass:'form-control'}}</td>
+							<td>{{form1.molecular_studies_place|addclass:'form-control'}}</td>
+							<td>{{form1.upload_studies}}</td>
+						</tr>
+					</tbody>
+				</table>
+				<h3 class="text-dark">Final Outcome</h3>
+				<div class="form-group row ">
+					<div class="col-md-4">
+						<label for="Final_Outcome" class="col-sm col-form-label">Final Outcome *</label>
+						<div class="col-sm">
+							{{form1.Final_Outcome|addclass:'form-control required1'}}
+						</div>
+					</div>
+					<div class="col-md-4 Final_Outcome_class">
+						<label for="death_cause" class="col-sm col-form-label">Death Cause *</label>
+						<div class="col-sm">
+							{{form1.death_cause |addclass:'form-control required1'}}
+						</div>
+					</div>
+					<div class="col-md-4 Final_Outcome_class">
+						<label for="age_timedeath" class="col-sm col-form-label">Age at the time of Death</label>
+						<div class="col-sm">
+							{{form1.age_timedeath |addclass:'form-control'}}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--        </div>-->
+	<!--    </div>-->
+    <!---->
+    <!--    </div>-->
+    <!--    </div>-->
+	<center>
+		<button class="btn btn-primary submitbtn" type="submit" id="submit1" name="save">Save</button>
+		<button type="submit" class="btn  btn-success submitbtn" name="submitandexit"><b>Final submit</b></button>
+		 {% if patient.quality_result == 'Fail' %}
+       <button type="submit" class="btn  btn-warning submitbtn" name="submitandqc"><b>send result to QC</b></button>
+
+       {% endif %}
+	</center>
+</form>
+{% endblock %}

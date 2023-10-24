@@ -1,0 +1,2270 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %} {% load add_attr %}
+
+<center><button class="btn bg-maroon" onclick="window.print()">Print</button></center>
+<form method="POST" id="personForm" action="">
+    {% csrf_token %}
+
+
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form4 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    <div class="nav-tabs-custom">
+
+        <div class="tab-pane" id="tab_2">
+
+            <div class="box box-info box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Socio-demographic Data Sheet</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <!--                        <div class="alert alert-success">-->
+                    <!--                            <strong>Socio-demographic Data Sheet</strong>-->
+                    <!--                        </div>-->
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <!--                                    <label class="col-md font-weight-bolder text-dark text-left">current_status</label>-->
+                            <!--                                    {{form2.current_status|default_if_none:""}}-->
+                            <!--                                </div>-->
+                            <!--                                <div class="col-md-4">-->
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of
+                                Patient</label>
+                            {{form2.education_status_of_patient|default_if_none:""}}
+                        </div>
+
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation Of Patient</label>
+                            {{form2.occupation_of_patient|default_if_none:""}}
+                        </div>
+
+                        <!--                        <div class="row ">-->
+
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status Of
+                                Father</label>
+                            {{form2.education_status_of_father|default_if_none:""}}
+                        </div>
+                        <!--                                    <div class="col-md-4 id_sample_source_0">-->
+                        <!--                                    <label class="col-md font-weight-bolder text-dark text-left">Education Status Of Father</label>-->
+                        <!--                                    {{form2.education_status_of_father|default_if_none:""}}-->
+                        <!--                                </div>-->
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <!--                            <div class="col-md-4 id_sample_source_0">-->
+                        <!--                                    <label class="col-md font-weight-bolder text-dark text-left">Education Status Of Father</label>-->
+                        <!--                                    {{form2.education_status_of_father|default_if_none:""}}-->
+                        <!--                                </div>-->
+                        <!--                            <div class="row ">-->
+                        <div class="col-md-4 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation Of Father</label>
+                            {{form2.occupation_of_father|default_if_none:""}}
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status Of
+                                Mother</label>
+                            {{form2.education_status_of_mother|default_if_none:""}}
+                        </div>
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation Of Mother</label>
+                            {{form2.occupation_of_mother|default_if_none:""}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <!--                            <div class="col-md-4 id_sample_source_0">-->
+                        <!--                                    <label class="col-md font-weight-bolder text-dark text-left">Occupation Of Mother</label>-->
+                        <!--                                    {{form2.occupation_of_mother|default_if_none:""}}-->
+                        <!--                                </div>-->
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Family Income</label>
+                            {{form2.family_income|default_if_none:""}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+ <div class="box-body" style="">
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Anthropometry Details</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-md-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Anthropometry</h4></label>
+                            </div>
+                             <div class="col-md-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>PRESENTING COMPLAINTS</h4></label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-md-6">
+                        <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+    
+                                <colgroup>
+                                    <col span="1" style="width: 10%;">
+                                    <col span="1" style="width: 10%;">
+                                    <col span="1" style="width: 10%;">
+                                    <col span="1" style="width: 10%;">
+    
+                                </colgroup>
+                         <thead class="bg-info ">                            <tr>
+                                    <th></th>
+                                    <th>Patient</th>
+                                    <th>Percentile</th>
+                                    <th>SD</th>
+                                </tr>
+                         </thead>
+                        <tr>
+                            <th> Weight (kg)</th>
+                            <td>
+                                {{form2.gl_anth_wght_pat|default_if_none:""}}
+                            </td>
+                            <!-- <td>
+                                {{form2.gl_anth_wght_exp|default_if_none:""}}
+                            </td> -->
+                            <td>
+                                {{form2.gl_anth_wght_per|default_if_none:""}}
+                            </td>
+                            <td>
+                                {{form2.gl_anth_wght_sd|default_if_none:""}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Height (cm)</th>
+                            <td>
+                                {{form2.gl_anth_height_pat|default_if_none:""}}
+                            </td>
+                            <!-- <td>
+                                {{form2.gl_anth_height_exp|default_if_none:""}}
+                            </td> -->
+                            <td>
+                                {{form2.gl_anth_height_per|default_if_none:""}}
+                            </td>
+                            <td>
+                                {{form2.gl_anth_height_sd|default_if_none:""}}
+                            </td>
+
+                        </tr>
+                        <!-- <tr>
+                            <th> Lower segment</th>
+                            <td>
+                                {{form2.gl_anth_seg_pat|default_if_none:""}}
+                            </td>
+                            <td>
+                                {{form2.gl_anth_seg_exp|default_if_none:""}}
+                            </td>
+                            <td>
+                                {{form2.gl_anth_seg_per|default_if_none:""}}
+                            </td>
+                            <td>
+                                {{form2.gl_anth_seg_sd|default_if_none:""}}
+                            </td>
+
+                        </tr>
+                        <th> US:LS Ratio</th>
+                        <td>
+                            {{form2.gl_anth_ratio_pat|default_if_none:""}}
+                        </td>
+                        <td>
+                            {{form2.gl_anth_ratio_exp|default_if_none:""}}
+                        </td>
+                        <td>
+                            {{form2.gl_anth_ratio_per|default_if_none:""}}
+                        </td>
+                        <td>
+                            {{form2.gl_anth_ratio_sd|default_if_none:""}}
+                        </td>
+
+                        </tr> -->
+                        <tr>
+                            <th> Head Circumference (cm)</th>
+                            <td>
+                                {{form2.gl_anth_head_cir_pat|default_if_none:""}}
+                            </td>
+                            <!-- <td>
+                                {{form2.gl_anth_head_cir_exp|default_if_none:""}}
+                            </td> -->
+                            <td>
+                                {{form2.gl_anth_head_cir_per|default_if_none:""}}
+                            </td>
+                            <td>
+                                {{form2.gl_anth_head_cir_sd|default_if_none:""}}
+                            </td>
+
+                        </tr>
+                    </tbody>
+                    </table>
+                    </div>
+                    <div class="col-md-6">
+
+                        <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+                                <colgroup>
+                                    <col span="1" style="width: 15%;">
+                                    <col span="1" style="width: 10%;">
+                                    <col span="1" style="width: 10%;">
+                                    <col span="1" style="width: 10%;">
+                                    <col span="1" style="width: 10%;">
+    
+                                </colgroup>
+                            <thead class="bg-info ">
+                                <tr>
+                                    <th></th>
+                                    <th>Years</th>
+                                    <th>Months</th>
+                                    <th>Day</th>
+                                    <th>Intrauterine</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>Age at onset of symptoms: *</th>
+                                    <td>
+                                            {{form2.Age_at_Onset_of_symptoms_years|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_Onset_of_symptoms_months|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_Onset_of_symptoms_day|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_Onset_of_symptoms_intrauterine|default_if_none:""}}
+                                    </td>
+    
+                                </tr>
+                                <tr>
+                                    <th>Age at presentation *</th>
+                                    <td>
+                                            {{form2.Age_at_Presentation_years|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_Presentation_months|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_Presentation_day|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_Presentation_intrauterine|default_if_none:""}}
+                                    </td>
+    
+                                </tr>
+                               <tr>
+                                    <th> Age at diagnosis: *</th>
+                                    <td>
+                                            {{form2.Age_at_diagnosis_years|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_diagnosis_months|default_if_none:""}}
+                                    </td>
+                                    <td>
+                                            {{form2.Age_at_diagnosis_day|default_if_none:""}}
+                                    </td>
+                                   <td>
+                                            {{form2.Age_at_diagnosis_intrauterine|default_if_none:""}}
+                                    </td>
+    
+                                </tr>
+                            </tbody>
+    
+                        </table>
+                   </div>
+                    </div>
+                    
+                    <!-- <hr>
+                    <div class="row">
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Presenting Complaints</label>
+                            {{form2.Presenting_Complaints|default_if_none:""}}
+                        </div>
+
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at Onset of symptoms</label>
+                            {{form2.Age_at_Onset_of_symptoms|default_if_none:""}}
+                        </div>
+
+
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at Presentation</label>
+                            {{form2.Age_at_Presentation|default_if_none:""}}
+                        </div>
+
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at diagnosis</label>
+                            {{form2.Age_at_diagnosis|default_if_none:""}}
+                        </div>
+                    </div> -->
+                        <hr>
+                    <div class="row">
+                        <div class="col-xs-4 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Pedigree generation upload</label>
+
+                             <a href="/media/{{form2.Pedigree_generation_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                        </div>
+
+                    </div>
+                     <hr>
+                    <div class="row">
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Positive Family History</label>
+                            {{form2.positive_family_history|default_if_none:""}}
+                        </div>
+
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left"
+                                   for='positive_family_history_lebel'>If Yes Specify</label>
+                            {{form2.family_history_specify|default_if_none:""}}
+                        </div>
+
+
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left">Consanguinity</label>
+                            {{form2.consanguinity|default_if_none:""}}
+                        </div>
+
+                        <div class="col-md-3 id_sample_source_0 id_tick_other">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="consanguinity_label">If
+                                yes, mention degree</label>
+                            {{form2.consanguinity_mention_degree|default_if_none:""}}
+                        </div>
+
+                    </div>
+                </div>
+            <h>** WHO growth charts till 5 years and IAP charts for > 5 years</h>
+
+        </div>
+    </div>
+
+<!--    <div class="tab-pane" id="tab_3">-->
+<!--        <div class="alert alert-warning">-->
+<!--            <strong>HISTORY</strong>-->
+<!--        </div>-->
+
+        <div class="box box-info box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">HISTORY</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+<!--            <div class="box-body" style="">-->
+<!--                <div class="box box-info box-solid">-->
+<!--                    <div class="box-header with-border">-->
+<!--                        <h3 class="box-title">Antenatal /Perinatal HISTORY</h3>-->
+<!--                        <div class="box-tools pull-right">-->
+<!--                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i-->
+<!--                                    class="fa fa-minus"></i>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                        &lt;!&ndash; /.box-tools &ndash;&gt;-->
+<!--                    </div>-->
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>ANTENATAL ULTRASOUND</strong>-->
+                        <!--                        </div>-->
+            <div class="col-md-12">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Antenatal /Perinatal HISTORY</h4></label>
+                            </div>
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Antenatal
+                                    Ultrasound</label>
+                                {{form2.antenatal_findings|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 antinatal_class">
+                                <label class="col-md font-weight-bolder text-dark text-left "
+                                       for='antenatal_findings_lebel'>If abnormal specify</label>
+                                {{form2.if_abnormal_specify|default_if_none:""}}
+                            </div>
+
+                            <!-- <div class="col-md-4 antinatal_class">
+                                <label class="col-md font-weight-bolder text-dark text-left ">Select</label>
+                                {{form2.antenatal_present_absent|default_if_none:""}}
+                            </div> -->
+
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Other Specify</label>
+                                {{form2.antenatal_other_specify|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0 id_tick_other">
+                                <label class="col-md font-weight-bolder text-dark text-left">Type Of
+                                    Delivery</label>
+                                {{form2.type_of_delivery|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Baby Cried Immediately
+                                    After Delivery</label>
+                                {{form2.baby_cried_immediately_after_delivery|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Resuscitation
+                                    Required</label>
+                                {{form2.resuscitation_required|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 resuscitation_class">
+                                <label class="col-md font-weight-bolder text-dark text-left "
+                                       for='Resuscitation Required_lebel'>If Yes Details</label>
+                                {{form2.yes_specify|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 resuscitation_class">
+                                <label class="col-md font-weight-bolder text-dark text-left ">Ventilation</label>
+                                {{form2.specify|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Birth
+                                    Weight(grams)</label>
+                                {{form2.birth_weight|default_if_none:""}}
+                            </div>
+
+                            <div class="row ">
+                                <!--                             <div class="col-md-4 id_sample_source_0 id_tick_other">-->
+                                <!--                                    <label class="col-md font-weight-bolder text-dark text-left">Consanguinity</label>-->
+                                <!--                                    {{form2.consanguinity|default_if_none:""}}-->
+                                <!--                                </div>-->
+
+                            </div>
+                            <!--                        <br>-->
+                            <!--                        <div class="row ">-->
+                            <!--                             <div class="col-md-4 id_sample_source_0 id_tick_other">-->
+                            <!--                                    <label class="col-md font-weight-bolder text-dark text-left">Consanguinity</label>-->
+                            <!--                                    {{form2.consanguinity|default_if_none:""}}-->
+                            <!--                                </div>-->
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Developmental Milestones</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Developmental Milestones</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0 id_tick_other">
+                                <label class="col-md font-weight-bolder text-dark text-left">Developmental
+                                    Milestones</label>
+                                {{form2.developmental_milestones|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 developmental_milestones_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Motor</label>
+                                {{form2.motor|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 developmental_milestones_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Global</label>
+                                {{form2.globall|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 developmental_milestones_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Congnitive</label>
+                                {{form2.cognitive|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <!--                        <br>-->
+                        <!--                        <div class="row ">-->
+                        <!--                           <div class="col-md-4 id_sample_source_0">-->
+                        <!--                                    <label class="col-md font-weight-bolder text-dark text-left">Cognitive</label>-->
+                        <!--                                    {{form2.cognitive|default_if_none:""}}-->
+                        <!--                                </div>-->
+
+
+                        <!--                        </div>-->
+
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">History Of</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>History Of</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Developmental
+                                    Delay</label>
+                                {{form2.mental_retardation_Delay|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Neuroregression</label>
+                                {{form2.Neuroregression|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Behavioural
+                                    Problems</label>
+                                {{form2.behavioural_problems|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hyperactivity</label>
+                                {{form2.Hyperactivity|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">On Some Drugs </label>
+                                {{form2.On_some_drugs|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Seizures</label>
+                                {{form2.Seizures|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">On Some Antiepileptics
+                                    Drugs</label>
+                                {{form2.On_some_antiepileptics_drugs|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Symptoms</label>
+                                {{form2.Symptoms|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Recurrent
+                                    diarrheoa</label>
+                                {{form2.Recurrent_diarrheoa|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Recurrent
+                                    Pneumonia</label>
+                                {{form2.Recurrent_pneumonia|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Recurrent/Persistent
+                                    Upper
+                                    Respiratory Symptoms</label>
+                                {{form2.persistent_upper_respiratory_symptoms|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Sleep
+                                    Disturbance</label>
+                                {{form2.Sleep_disturbance|default_if_none:""}}
+                            </div>
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Snoring</label>
+                                {{form2.Snoring|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Visual Problem</label>
+                                {{form2.Visual_problem|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Deafness</label>
+                                {{form2.Deafness|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Chronic Otitis
+                                    Media</label>
+                                {{form2.Chronic_otitis_media|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Use Of Hearing
+                                    Aid</label>
+                                {{form2.Use_of_hearing_aid|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">PE Ear Tube
+                                    Placement </label>
+                                {{form2.PE_ear_tube_placement|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Any Surgery For Hernia
+                                    Or
+                                    Others</label>
+                                {{form2.Any_surgery_for_hernia_or_others|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Functional
+                                    Status</label>
+                                {{form2.Functional_status|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Clinical Examination Finding</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Clinical Examination Finding</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Face(Coarse)</label>
+                                {{form2.face_coarse|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Enlarged Tongue</label>
+                                {{form2.enlarged_tongue|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Head Shape</label>
+                                {{form2.head_shape|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Skin:</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Skin</strong>-->
+                        <!--                        </div>-->
+                        <!-- <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Skin</label>
+                                {{form2.skin|default_if_none:""}}
+                            </div> -->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Pebbly(MPSII)</label>
+                                {{form2.pebbly_MPSII|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mongolian Spots At
+                                    Back</label>
+                                {{form2.mongolian_spots_at_back|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Ichthyosis</label>
+                                {{form2.ichthyosis|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Stiff/Thick
+                                    Skin</label>
+                                {{form2.stiff_thick_skin|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Telangiectasia</label>
+                                {{form2.telangiectasia|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Edema</label>
+                                {{form2.edema|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hydrops</label>
+                                {{form2.hydrops|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Neurological</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Neurological</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Tone</label>
+                                {{form2.Tone|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Power</label>
+                                {{form2.Power|default_if_none:""}}
+                            </div>
+                        </div>
+
+                        <br>
+                       <div class="row ">
+                            <div class="col-md-6">
+                        <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 35%;">
+	                            <col span="1" style="width: 35%;">
+
+
+
+                            </colgroup>
+                        <thead class="bg-success ">
+                            <tr>
+                                <th>Upper limb</th>
+                                <th>R</th>
+                                <th>L</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th> Specify</th>
+                                <td>
+                                    {{form2.upper_r|default_if_none:""}}
+                                </td>
+                                <td>
+                                    {{form2.upper_l|default_if_none:""}}
+
+                            </tr>
+                            
+                            </tbody>
+
+                        </table>
+                       </div>
+                        <div class="col-md-6">
+
+                         <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 35%;">
+	                            <col span="1" style="width: 35%;">
+
+
+
+                            </colgroup>
+                        <thead class="bg-success ">
+                            <tr>
+                                <th>Lower limb</th>
+                                <th>R</th>
+                                <th>L</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Specify</th>
+                                <td>
+                                    {{form2.lower_0r|default_if_none:""}}
+                                </td>
+                                <td>
+                                    {{form2.lower_0l|default_if_none:""}}
+
+                            </tr>
+                            
+                        </tbody>
+                        </table>
+                       </div>
+                    </div>
+                    <hr>
+                        <!--                            <div class="row ">-->
+                     <div class="row">
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Reflexes</label>
+                            {{form2.Reflexes|default_if_none:""}}
+                        </div>
+                        <!--                        </div>-->
+                        <!--                        <br>-->
+                        <!--                        <div class="row ">-->
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Ataxia</label>
+                            {{form2.ataxia |default_if_none:""}}
+                        </div>
+                        <div class="col-md-4 id_sample_source_0">
+                            <label class="col-md font-weight-bolder text-dark text-left">Sign Of Raised ICT(for
+                                hydrocephalus)</label>
+                            {{form2.Signs_of_raised_ICT|default_if_none:""}}
+                        </div>
+                     </div>
+                        <br>
+                        <div class="row ">
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Carpal Tunnel Syndrome</label>
+                                {{form2.Symptoms_of_CTS|default_if_none:""}}
+                            </div>
+
+                            <!--                        </div>-->
+                            <!--                        <br>-->
+                            <!--                        <div class="row ">-->
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">IQ</label>
+                                {{form2.IQ|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for='IQ_label'>Value</label>
+                                {{form2.iq_value|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">DQ</label>
+                                {{form2.DQ|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for='DQ_label'>Value</label>
+                                {{form2.dq_value|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Ophthalmologic</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                                <div class="alert alert-success">-->
+                        <!--                                    <strong>Ophthalmologic</strong>-->
+                        <!--                                </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Corneal
+                                    Clouding</label>
+                                {{form2.corneal_clouding|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Papilledema</label>
+                                {{form2.papilledema|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Glaucoma</label>
+                                {{form2.glaucoma|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Optic Nerve
+                                    Atrophy</label>
+                                {{form2.optic_nerve_atrophy|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Retinal
+                                    Degeneration/Pigmentation</label>
+                                {{form2.retinal_degeneration_pigmentation|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Coneal Opacity</label>
+                                {{form2.corneal_opacity|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Cataract</label>
+                                {{form2.cataract|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Squint</label>
+                                {{form2.squint|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Nystagmus</label>
+                                {{form2.nystagmus|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Any
+                                    Other(specify)</label>
+                                {{form2.any_other_specify|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Cardiovascular</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                                <div class="alert alert-success">-->
+                        <!--                                    <strong>Cardiovascular</strong>-->
+                        <!--                                </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Cardiomyopathy</label>
+                                {{form2.Cardiomyopathy|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Congestive Heart
+                                    Failure</label>
+                                {{form2.Congestive_Heart_failure|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Cor Pulomonale</label>
+                                {{form2.Cor_pulomonale|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Valvular
+                                    Involment(specify)</label>
+                                {{form2.Valvular_involvement|default_if_none:""}}
+                            </div></div>
+                            <br>
+                         <div class="row">
+                            <div class="col-md-6 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Stenosis Which
+                                    Valve</label></div></div>
+
+                                <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Mitral</label>
+                                    {{form2.Stenosis_which_valve_mitral}}
+                                </div>
+                                    <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Tricuspid</label>
+                                    {{form2.Stenosis_which_valv_tricuspid}}
+                                </div>
+                                    <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Aortic</label>
+                                    {{form2.Stenosis_which_val_aortic}}
+                                </div>
+
+                                    <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Pulmonary</label>
+                                    {{form2.Stenosis_which_va_pulmonary}}
+                                    </div>
+
+                    <br>
+                    <div class="row">
+                            <div class="col-md-6 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Regurgitation Which
+                                    Valve</label>
+                            </div></div>
+                            <div class="col-xs-2">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Mitral</label>
+                                {{form2.Regurgitation_which_valve_mitral}}
+                            </div>
+                                <div class="col-xs-2">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Tricuspid</label>
+                                {{form2.Regurgitation_which_valv_tricuspid}}
+                            </div>
+                                <div class="col-xs-2">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Aortic</label>
+                                {{form2.Regurgitation_which_val_aortic}}
+                            </div>
+
+                                <div class="col-xs-2">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Pulmonary</label>
+                                {{form2.Regurgitation_which_va_pulmonary}}
+                            </div>
+                    </div></div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Respiratory</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                                <div class="alert alert-success">-->
+                        <!--                                    <strong>Respiratory</strong>-->
+                        <!--                                </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Enlarged
+                                    Tonsils</label>
+                                {{form2.Enlarged_tonsils|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Sleep Apnea</label>
+                                {{form2.Sleep_apnea|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Reactive Airway
+                                    Disease</label>
+                                {{form2.Reactive_Airway_Disease|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Dyspnea</label>
+                                {{form2.Dyspnea|default_if_none:""}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Gastrointestinal</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                                <div class="alert alert-success">-->
+                        <!--                                    <strong>Gastrointestinal</strong>-->
+                        <!--                                </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gum Hyperplasia</label>
+                                {{form2.Gum_hyperplasia|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hepatomegaly</label>
+                                {{form2.hepatomegaly|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 hepatomegaly_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Size BCM(cm)</label>
+                                {{form2.size_hepatomegaly|default_if_none:""}}
+                            </div>
+
+                            <!--                        </div>-->
+                            <!--                        <br>-->
+                            <!--                        <div class="row ">-->
+                            <div class="col-md-4 hepatomegaly_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Span(cm)</label>
+                                {{form2.span_hepatomegaly|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Splenomegaly</label>
+                                {{form2.Splenomegaly|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Splenomegaly_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Size BCM(cm)</label>
+                                {{form2.size_splenomegaly|default_if_none:""}}
+                            </div>
+                            <!--                        </div>-->
+                            <!--                        <br>-->
+                            <!--                        <div class="row ">-->
+                            <div class="col-md-4 id_sample_source_0">
+
+                                <label class="col-md font-weight-bolder text-dark text-left">Hernia</label>
+                                {{form2.hernia|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left" for='hernia_label'>Hernia
+                                    (specify)</label>
+                                {{form2.specify_if|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Umbilical
+                                    Hernia</label>
+                                {{form2.Umbilical_hernia|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Inguinal Hernia</label>
+                                {{form2.Inguinal_hernia|default_if_none:""}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Skeltal</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                                <div class="alert alert-success">-->
+                        <!--                                    <strong>Skeltal</strong>-->
+                        <!--                                </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Joint Contractures
+                                    </label>
+                                {{form2.Joint_Contractures|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Joint
+                                    Arthitis</label>
+                                {{form2.Joint_arthritis|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Joint Laxity</label>
+                                {{form2.Joint_laxity|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Scoliosis</label>
+                                {{form2.Scoliosis|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Kyphosis/Gibbus</label>
+                                {{form2.Kyphosis_Gibbus|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Genu Valgum</label>
+                                {{form2.Genu_valgum|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Pes Cavus</label>
+                                {{form2.Pes_Cavus|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Toe Walking</label>
+                                {{form2.Toe_Walking|default_if_none:""}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+<!--    </div>-->
+
+<!--    <div class="tab-pane" id="tab_4">-->
+<!--        <div class="alert alert-warning">-->
+<!--            <strong>INVESTIGATIONS</strong>-->
+<!--        </div>-->
+
+        <div class="box box-info box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">INVESTIGATIONS</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="box box-info box-solid">
+<!--                    <div class="box-header with-border">-->
+<!--                        <h3 class="box-title">Echocardiography</h3>-->
+<!--                        <div class="box-tools pull-right">-->
+<!--                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i-->
+<!--                                    class="fa fa-minus"></i>-->
+<!--                            </button>-->
+<!--                        </div>-->
+                        <!-- /.box-tools -->
+<!--                    </div>-->
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Echocardiography</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Echocardiography</label>
+                                {{form2.Echocardiography|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for='Echocardiography_label'>Specify findings (if abnormal)</label>
+                                {{form2.abnormal_finding|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Ultrasonography</label>
+                                {{form2.Ultrasonography|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Ultrasonography_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Liver
+                                    Size/Volume</label>
+                                {{form2.Liver_Size_volume|default_if_none:""}}
+                            </div>
+
+                            <!--                        </div>-->
+                            <!--                        <br>-->
+                            <!--                        <div class="row ">-->
+                            <div class="col-md-4 Ultrasonography_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Spleen
+                                    Size/Volume</label>
+                                {{form2.Spleen_Size_Volume|default_if_none:""}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Skeletal Survey</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Developmental Milestones</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Skull J Shaped
+                                    Sella</label>
+                                {{form2.Skull_J_shaped_sella|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Spine Beaked
+                                    Vertebra</label>
+                                {{form2.Spine_Beaked_vertebra|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Central/Lower</label>
+                                {{form2.Central_lower_tick|default_if_none:""}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0 id_tick_other">
+                                <label class="col-md font-weight-bolder text-dark text-left">Metacarpals Bullet
+                                    Shaped</label>
+                                {{form2.Metacarpals_Bullet_shaped|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0 id_tick_other">
+                                <label class="col-md font-weight-bolder text-dark text-left">Ribs-Oar Shaped</label>
+                                {{form2.Ribs_oar_shaped|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Pelvis-hip
+                                    Dysplasia</label>
+                                {{form2.Pelvis_Hip_dysplasia|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Dislocation Of
+                                    Hip</label>
+                                {{form2.Dislocation_of_hip|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Flared Iliac
+                                    Wings</label>
+                                {{form2.Flared_iliac_wings|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Long Bones</label>
+                                {{form2.Long_bones|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Dexa (z score)</label>
+                                {{form2.Dexa_Z_score |default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for='Dexa_Z_score_label'>If
+                                    Done Specify</label>
+                                {{form2.if_done_specify|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">EPS for Carpal Tunnel Syndrome</label>
+                                {{form2.EPS_for_CTS|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for='EPS_for_CTS_label'>If
+                                    abnormal specify findings </label>
+                                {{form2.If_abnormal_specify_findings|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Echocardiography</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>Echocardiography</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Pulmonary Function
+                                    Test</label>
+                                {{form2.Pulmonary_function_test|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Pulmonary_function_test_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">if yes</label>
+                                {{form2.if_yes|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Pulmonary_function_test_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">If abnormal Specify
+                                    findings</label>
+                                {{form2.if_abnormal_finding_specify|default_if_none:""}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Neuroimaging</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="">
+                        <!--                        <div class="alert alert-success">-->
+                        <!--                            <strong>CT Scan</strong>-->
+                        <!--                        </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">CT Scan</label>
+                                {{form2.CT_Scan |default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 CT_Scan_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Specify Finding If
+                                    Abnormal</label>
+                                {{form2.Specify_findings_if_abnormall|default_if_none:""}}
+                            </div>
+                        </div>
+
+
+                    </div>
+
+
+                    <!--                        <div class="box box-info box-solid">-->
+                    <!--                    <div class="box-header with-border">-->
+                    <!--                        <h3 class="box-title">MRI</h3>-->
+                    <!--                        <div class="box-tools pull-right">-->
+                    <!--                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i-->
+                    <!--                                    class="fa fa-minus"></i>-->
+                    <!--                            </button>-->
+                    <!--                        </div>-->
+                    <!--                        &lt;!&ndash; /.box-tools &ndash;&gt;-->
+                    <!--                    </div>-->
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <!--                    <div class="alert alert-success">-->
+                        <!--                        <strong>MRI</strong>-->
+                        <!--                    </div>-->
+                        <hr>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">MRI Brain/ Cervical spine</label>
+                                {{form2.MRI_Brain|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 MRI_Brain_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">specify finding if
+                                    abnormal</label>
+                                {{form2.Specify_findings_if_abnormal_mri|default_if_none:""}}
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!--                    <br>-->
+
+                    <hr>
+
+                    <!--                    <div class="alert alert-success">-->
+                    <!--                        <strong>EEG</strong>-->
+                    <!--                    </div>-->
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">EEG</label>
+                                {{form2.EEG|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 EEG_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Specify finding if
+                                    abnormal</label>
+                                {{form2.Specify_findings_if_abnormal_eeg|default_if_none:""}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Ocular Examination</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+
+                        <!-- /.box-tools -->
+                    </div>
+                    <div class="box-body" style="">
+
+                        <!--                    <div class="alert alert-success">-->
+                        <!--                        <strong>Ocular Examination</strong>-->
+                        <!--                    </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Corneal
+                                    Clouding</label>
+                                {{form2.Corneal_clouding1|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Fundus</label>
+                                {{form2.Fundus|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Fundus_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">If Abnormal
+                                    Specify</label>
+                                {{form2.Specify_if_abnormal|default_if_none:""}}
+                            </div>
+
+
+                            <!--                    </div>-->
+                            <!--                    <br>-->
+                            <!--                    <div class="row ">-->
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Glaucoma</label>
+                                {{form2.Glaucoma1|default_if_none:""}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Hearing Assessment</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+
+                        <!-- /.box-tools -->
+                    </div>
+                    <div class="box-body" style="">
+
+                        <!--                    <div class="alert alert-success">-->
+                        <!--                        <strong>Hearing Assessment</strong>-->
+                        <!--                    </div>-->
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hearing
+                                    Assessment</label>
+                                {{form2.Hearing_Assessment|default_if_none:""}}
+                            </div>
+                           </div>
+
+                            <div class="col-md-4 Hearing_Assessment_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">If Abnormal</label><br>
+
+<!--                                {{form2.if_abnormal|default_if_none:""}}-->
+                                 <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Unilateral</label>
+                                    {{form2.If_abnormal_sel_Unilateral}}
+                                </div>
+                                    <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Bilateral</label>
+                                    {{form2.If_abnorma_sel_Bilateral}}
+                                </div>
+                                    <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Mild</label>
+                                    {{form2.If_abnorm_sel_Mild}}
+                                </div>
+
+                                    <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Moderate</label>
+                                    {{form2.If_abnor_sel_Moderate}}
+                                    </div>
+                                <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Severe</label>
+                                    {{form2.If_abno_sel_Severe}}
+                                    </div>
+                                <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Profound</label>
+                                    {{form2.If_abn_sel_Profound}}
+                                    </div>
+                    </div>
+                    </div>
+                </div>
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Sleep Studies </h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Sleep Studies</label>
+                                {{form2.Sleep_Studies|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 Sleep_Studies_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">if abnormal,specify
+                                    findings</label>
+                                {{form2.Specify_findings_if_abnormal|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <br>
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Biochemical estimations</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="">
+
+                        <div class="row ">
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Urine Spot Test</label>
+                                {{form2.Urine_spot_test|default_if_none:""}}
+                            </div>
+
+                            <!--                        <div class="row ">-->
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Urinary GAGs
+                                    Analysis</label>
+                                {{form2.Urinary_GAGs_analysis|default_if_none:""}}
+                            </div>
+
+                            <!--                       <div class="row ">-->
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Patient</label>
+                                {{form2.Patient_urine|default_if_none:""}}
+                            </div>
+
+                            <!--                    </div>-->
+                            <!--                </div>-->
+                            <br>
+                            <!--                        <div class="row ">-->
+
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Normal Control:</label>
+                                {{form2.Normal_Control_urine|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Normal Range</label>
+                                {{form2.Normal_range_urine|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <br>
+
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Enzyme assay: (Upload Report)</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="">
+
+                        <div class="row ">
+
+                             <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Enzyme Name*</label>
+                                {{form2.enzyme_var|default_if_none:""}}
+                            </div>
+                             <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Other specify </label>
+                                {{form2.Other_specify|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Enzyme Sample*</label>
+                                {{form2.enzyme_sam|default_if_none:""}}
+                            </div>
+
+<!--                            <div class="col-md-4 id_sample_source_0">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">Alpha-L-Iduronidase</label>-->
+<!--                                {{form2.Alpha_L_iduronidase|default_if_none:""}}-->
+<!--                            </div>-->
+<!--                            <div class="col-md-4 id_sample_source_0">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">Iduronate-->
+<!--                                    Sulfatase</label>-->
+<!--                                {{form2.Iduronate_sulfatase|default_if_none:""}}-->
+<!--                            </div>-->
+
+
+<!--                            &lt;!&ndash;                        <div class="row ">&ndash;&gt;-->
+<!--                            <div class="col-md-4 id_sample_source_0">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">GALNS</label>-->
+<!--                                {{form2.gALNS|default_if_none:""}}-->
+<!--                            </div>-->
+
+<!--                        </div>-->
+
+<!--                        <br>-->
+
+
+<!--                        <div class="row ">-->
+<!--                            <div class="col-md-4 id_sample_source_0">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">β-galactosidase</label>-->
+<!--                                {{form2.b_galactosidase|default_if_none:""}}-->
+<!--                            </div>-->
+
+
+                            <!--                        </div>-->
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Patient</label>
+                                {{form2.Patient_enzyme|default_if_none:""}}
+                            </div>
+                        </div>
+
+                        <br>
+
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Normal Control:</label>
+                                {{form2.Normal_Control|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Normal Range</label>
+                                {{form2.Normal_range|default_if_none:""}}
+                            </div>
+                               <div class="col-xs-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Upload report</label>
+
+                                 <a href="/media/{{form2.Enzyme_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+
+                <br>
+                <!--                                    <div>-->
+
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Molecular Diagnostics</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="box-body" style="">
+
+                        <div class="row ">
+                             <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Molecular test report </label>
+                                {{form2.Causative_DNA_sequence_variation|default_if_none:""}}
+                            </div>
+                               <div class="col-xs-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for="Causative_DNA_sequence_variation_label">If Done Upload</label>
+
+                                 <a href="/media/{{form2.molecular_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+
+
+
+
+                            <!--                        </div>-->
+
+                            <!--                        <br>-->
+
+                            <!--                        <div class="row ">-->
+                        </div>
+                             <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gene</label>
+                                {{form2.Gene_molecula|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Transcript ID</label>
+                                {{form2.trans_molecul|default_if_none:""}}
+                            </div>
+
+<!--                            <div class="col-md-4 id_sample_source_0">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">Patient</label>-->
+<!--                                {{form2.Patient_molecular|default_if_none:""}}-->
+<!--                            </div>-->
+                            <br>
+                            <div class="col-xs-12 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 1</label>
+                            </div>
+                              <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form2.mul_dna1|default_if_none:""}}
+						</div>
+
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form2.mul_pro1|default_if_none:""}}
+                        </div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form2.mul_var1|default_if_none:""}}
+						</div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form2.mul_var_cla1|default_if_none:""}}
+						</div>
+                           <div class="col-md-4 id_sample_source_0">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form2.mul_zygo1|default_if_none:""}}
+                          </div>
+                             <br>
+                            <div class="col-xs-12 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 2</label>
+                            </div>
+                              <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form2.mul_dna2|default_if_none:""}}
+						</div>
+
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form2.mul_pro2|default_if_none:""}}
+                        </div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form2.mul_var2|default_if_none:""}}
+						</div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form2.mul_var_cla2|default_if_none:""}}
+						</div>
+                           <div class="col-md-4 id_sample_source_0">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form2.mul_zygo2|default_if_none:""}}
+                          </div>
+                        </div>
+                        <div class="row ">
+                          <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Segregation  in Parents</label>
+                            {{form2.mul_seg|default_if_none:""}}
+						</div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Father</label>
+                                {{form2.father|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother</label>
+                                {{form2.mother|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+
+            <!-- /.box-tools -->
+        </div>
+
+
+        <!-- /.box-header -->
+
+        <div class="box box-info box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">TREATMENT</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!--            /.box-header-->
+<!--            <div class="box-body" style="">-->
+
+<!--                <div class="box box-info box-solid">-->
+<!--                    <div class="box-header with-border">-->
+<!--                        <h3 class="box-title">Enzyme Replacement Therapy (ERT)</h3>-->
+<!--                        <div class="box-tools pull-right">-->
+<!--                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i-->
+<!--                                    class="fa fa-minus"></i>-->
+<!--                            </button>-->
+<!--                        </div>-->
+<!--                    </div>-->
+
+                    <div class="box-body" style="">
+                         <div class="col-md-12">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Enzyme Replacement Therapy (ERT)</h4></label>
+                            </div>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Enzyme Replacement
+                                    Therapy
+                                    (ERT)</label>
+                                {{form2.Enzyme_Replacement_Therapy|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Enzyme_Replacement_Therapy_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Date Of
+                                    Initiation</label>
+                                {{form2.Date_of_initiation|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 Enzyme_Replacement_Therapy_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Age Of Start</label>
+                                {{form2.Age_of_Start|default_if_none:""}}
+                            </div>
+                        </div>
+
+
+                        <br>
+
+                        <div class="row ">
+
+                            <div class="col-md-4 Enzyme_Replacement_Therapy_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Dosages</label>
+                                {{form2.Dosage|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Enzyme_Replacement_Therapy_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Duration(year)</label>
+                                {{form2.Duration|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Adverse Events</label>
+                                {{form2.Adverse_events|default_if_none:""}}
+                            </div>
+                            <!--                </div>-->
+                            <!--                <br>-->
+                            <!--                <div class="row ">-->
+                            <div class="col-md-4 Adverse_events_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">If Yes Specify</label>
+                                {{form2.if_yes_specify|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Current ERT Status
+                                    Ongoing
+                                    Any
+                                    interruption</label>
+                                {{form2.Any_interruption|default_if_none:""}}
+                            </div>
+
+                            <!--                    <div class="row ">-->
+                            <div class="col-md-4 Any_interruption_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Reason Of
+                                    Interruption</label>
+                                {{form2.Reason_for_interruption |default_if_none:""}}
+                            </div>
+                            <!--                    </div>-->
+
+
+                            <!--                    <br>-->
+                            <div class="col-md-4 Any_interruption_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Duration Of
+                                    Interruption</label>
+                                {{form2.Duration_of_interruption|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Any_interruption_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Response</label>
+                                {{form2.Response|default_if_none:""}}
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Bone Marrow Transplantation</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Bone Marrow
+                                    Transplantation</label>
+                                {{form2.Bone_Marrow_Transplantation|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 Bone_Marrow_Transplantation_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">If Yes Date</label>
+                                {{form2.date|default_if_none:""}}
+                            </div>
+                            <div class="col-md-4 Bone_Marrow_Transplantation_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Donor</label>
+                                {{form2.Donor|default_if_none:""}}
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row ">
+                            <div class="col-md-4 Bone_Marrow_Transplantation_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital</label>
+                                {{form2.Hospital|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 Bone_Marrow_Transplantation_class">
+                                <label class="col-md font-weight-bolder text-dark text-left">Response</label>
+                                {{form2.Response|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!--                </div>-->
+
+
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Surgery</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Surgery</label>
+                                {{form2.Surgery|default_if_none:""}}
+                            </div>
+
+                            <!--                        >-->
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hernia</label>
+                                {{form2.Hernia_surgery|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Age At Surgery</label>
+                                {{form2.Age_at_surgery|default_if_none:""}}
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="box box-info box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Supportive</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Calcium And
+                                    Multivitamin
+                                    Supplimants</label>
+                                {{form2.Calcium_and_multivitamin_supplements|default_if_none:""}}
+                            </div>
+
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Regular
+                                    Physiotherapy </label>
+                                {{form2.Regular_Physiotherapy|default_if_none:""}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Any Ocular
+                                    Medication</label>
+                                {{form2.Any_ocular_medication|default_if_none:""}}
+                            </div>
+
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">CPAP/BiPAP for Sleep
+                                    Apnea</label>
+                                {{form2.CPAP_BiPAP_for_sleep_apnea|default_if_none:""}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+<!--    </div>-->
+    <!---->
+
+    <!--    </div>-->
+    <!--    </div>-->
+         <div class="box box-info box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Final Diagnosis</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+    <div class="box-body" style="">
+        <div class="row ">
+        <div class="col-xs-3">
+         <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">Finaldiagnosis</label>
+         {{form2.Finaldiagnosis|default_if_none:""}}
+     </div>
+     </div>
+    </div>
+         </div>
+        <br>
+
+    <div class="box box-info box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Final Outcomes</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                </button>
+            </div>
+        </div>
+
+    <div class="box-body" style="">
+        <div class="row ">
+            <div class="col-xs-3">
+             <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">Finaloutcomes Type</label>
+
+             {{form2.Finaloutcomes|default_if_none:""}}
+         </div>
+        </div>
+
+          <hr>
+                    <div class="row ">
+
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Filled By D.E.O Name:-</label>
+                            {{form2.mg_filed_by_name|default_if_none:""}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Clinician Name</label>
+                            {{form2.mg_clinician_name|default_if_none:""}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Date</label>
+                            {{form2.mg_filled_date|default_if_none:""}}
+						</div>
+
+					</div>
+
+                </div>
+
+</form>
+{% endblock %}

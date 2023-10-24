@@ -1,0 +1,308 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script>
+    /* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_referred_by').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any others'){
+	$("#id_th_referred_by_desc").show();
+    $("label[for='referedby_others']").show();
+	}
+	else
+	{
+	$("#id_th_referred_by_desc").hide();
+    $("label[for='referedby_others']").hide();
+
+	}
+	});
+	$("#id_th_referred_by_desc").hide();
+	$("label[for='referedby_others']").hide();
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_consent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_consent_upload").show();
+
+	}
+	else
+	{
+	$("#id_th_consent_upload").hide();
+
+
+	}
+	});
+	$("#id_th_consent_upload").hide();
+
+	});
+
+	$(document).ready(function(){
+	$('#id_th_referred_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".referred_by").show();
+
+	}
+	else
+	{
+	$(".referred_by").hide();
+
+
+	}
+	});
+	$(".referred_by").hide();
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_assent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_assent_upload").show();
+
+	}
+	else
+	{
+	$("#id_th_assent_upload").hide();
+
+
+	}
+	});
+	$("#id_th_assent_upload").hide();
+
+	});
+
+
+
+
+    $(document).ready(function(){
+	$('#id_th_religion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_th_religion_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_religion_other_specify").hide();
+
+
+	}
+	});
+	$("#id_th_religion_other_specify").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_caste').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_th_caste_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_caste_other_specify").hide();
+
+
+	}
+	});
+	$("#id_th_caste_other_specify").hide();
+
+	});
+
+<!--$(document).ready(function(){-->
+<!--	$('#id_th_patient_adhaar_no').on('change', function(){-->
+<!--	var demovalue = $(this).val();-->
+<!--	if(demovalue == 'Yes'){-->
+<!--	$("#id_th_patient_adhaar_no_specify").show();-->
+
+<!--	}-->
+<!--	else-->
+<!--	{-->
+<!--	$("#id_th_patient_adhaar_no_specify").hide();-->
+
+
+<!--	}-->
+<!--	});-->
+<!--	$("#id_th_patient_adhaar_no_specify").hide();-->
+
+<!--	});-->
+
+
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_father_adhaar_no').on('change', function(){
+	var demovalue = $(this).val();
+<!--	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){-->
+	if(demovalue == 'Yes'){
+	$(".th_father_adhaar_no").show();
+
+	}
+	else
+	{
+	$(".th_father_adhaar_no").hide();
+
+
+	}
+	});
+	$(".th_father_adhaar_no").hide();
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_patient_adhaar_no').on('change', function(){
+	var demovalue = $(this).val();
+<!--	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){-->
+	if(demovalue == 'Yes'){
+	$(".patient_id_rule").show();
+	}
+	else
+	{
+	$(".patient_id_rule").hide();
+	}
+	});
+	$(".patient_id_rule").hide();
+
+	});
+
+</script>
+
+<script>
+	$(document).ready(function(){
+	$("#id_th_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view
+	console.log(data)
+	$("#id_th_district").html(data);
+	}
+	});
+	});
+	});
+</script>
+
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+
+  .required:after {
+    content:" *";
+    color: red;
+  }
+
+</style>
+<style>
+    input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:optional {
+  border-color: gray;
+}
+input:required:valid {
+  border-color: green;
+
+}
+
+input:invalid {
+  border-color: red;
+
+
+}
+select:invalid {
+  border-color: red;
+
+
+}
+select:required:valid {
+  border-color: green;
+
+
+}
+
+
+
+</style>
+<form action="" data-district-url="{% url 'load_district' %}" enctype="multipart/form-data" id="personForm" method="POST">
+	{% csrf_token %}
+	{% if form1.errors %}
+	{% for field in form1 %}
+	{% for error in field.errors %}
+	<div class="alert alert-danger">
+		<strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+	{% endfor %}
+	{% endfor %}
+	{% endif %}
+
+
+
+		<br>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.3"></script>
+	<body>
+		<div class="box-body table-responsive">
+            <center>
+					<h3 class="box-title col-md font-weight-bolder text-dark">Record of Weekly Prevalence Calculation for Rare Diseases</h3></center>
+				<table class="table table-condensed table-striped table-bordered" id="example">
+				<thead class="bg-black"><hr>
+                    <tr>
+
+						<th>User name</th>
+                        <th>Month</th>
+                        <th>Name of RD</th>
+						<th>No. of RD Cases</th>
+						<th>No. of All OPD Cases</th>
+						<th>No. of All New Admission</th>
+						<th>Prevalence (OPD Attendance)</th>
+						<th>Prevalence (New Admission)</th>
+						<th>Prevalence (OPD Attendance + New Admission)</th>
+
+					</tr>
+				</thead>
+		</div>
+				<tbody>
+				{% for i in Opd_attendance2 %}
+                    <tr>
+						<td>{{ i.user.register }}</td>
+                        <td>{{ i.date }}</td>
+                        <td>{{ i.name_of_rdei}}</td>
+						<td>{{ i.no_of_cases }}</td>
+						<td>{{ i.no_of_opd_cases }}</td>
+						<td>{{ i.no_of_new_adminission }}</td>
+						<td>{{ i.pre_opd_att|floatformat}}</td>
+						<td>{{ i.pre_new_admi|floatformat }}</td>
+						<td>{{ i.pre_total|floatformat  }}</td>
+					</tr>
+				 {% endfor %}
+				</tbody>
+			</table>
+
+			<hr>
+		</div>
+	<br>
+</form>
+
+{% endblock %}

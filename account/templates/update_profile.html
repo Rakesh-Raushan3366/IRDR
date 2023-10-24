@@ -1,0 +1,446 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+<script>
+    /* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_referred_by').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any others'){
+	$("#id_th_referred_by_desc").show();
+    $("label[for='referedby_others']").show();
+	}
+	else
+	{
+	$("#id_th_referred_by_desc").hide();
+    $("label[for='referedby_others']").hide();
+
+	}
+	});
+	$("#id_th_referred_by_desc").hide();
+	$("label[for='referedby_others']").hide();
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_consent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_consent_upload").show();
+
+	}
+	else
+	{
+	$("#id_th_consent_upload").hide();
+
+
+	}
+	});
+	$("#id_th_consent_upload").hide();
+
+	});
+
+	$(document).ready(function(){
+	$('#id_th_referred_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".referred_by").show();
+
+	}
+	else
+	{
+	$(".referred_by").hide();
+
+
+	}
+	});
+	$(".referred_by").hide();
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_assent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_assent_upload").show();
+
+	}
+	else
+	{
+	$("#id_th_assent_upload").hide();
+
+
+	}
+	});
+	$("#id_th_assent_upload").hide();
+
+	});
+
+
+
+
+    $(document).ready(function(){
+	$('#id_th_religion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_th_religion_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_religion_other_specify").hide();
+
+
+	}
+	});
+	$("#id_th_religion_other_specify").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_caste').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_th_caste_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_caste_other_specify").hide();
+
+
+	}
+	});
+	$("#id_th_caste_other_specify").hide();
+
+	});
+
+<!--$(document).ready(function(){-->
+<!--	$('#id_th_patient_adhaar_no').on('change', function(){-->
+<!--	var demovalue = $(this).val();-->
+<!--	if(demovalue == 'Yes'){-->
+<!--	$("#id_th_patient_adhaar_no_specify").show();-->
+
+<!--	}-->
+<!--	else-->
+<!--	{-->
+<!--	$("#id_th_patient_adhaar_no_specify").hide();-->
+
+
+<!--	}-->
+<!--	});-->
+<!--	$("#id_th_patient_adhaar_no_specify").hide();-->
+
+<!--	});-->
+
+
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_father_adhaar_no').on('change', function(){
+	var demovalue = $(this).val();
+<!--	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){-->
+	if(demovalue == 'Yes'){
+	$(".th_father_adhaar_no").show();
+
+	}
+	else
+	{
+	$(".th_father_adhaar_no").hide();
+
+
+	}
+	});
+	$(".th_father_adhaar_no").hide();
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_th_patient_adhaar_no').on('change', function(){
+	var demovalue = $(this).val();
+<!--	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){-->
+	if(demovalue == 'Yes'){
+	$(".patient_id_rule").show();
+	}
+	else
+	{
+	$(".patient_id_rule").hide();
+	}
+	});
+	$(".patient_id_rule").hide();
+
+	});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+<script>
+	$(document).ready(function(){
+	$("#id_th_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view
+	console.log(data)
+	$("#id_th_district").html(data);
+	}
+	});
+	});
+	});
+</script>
+
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+
+  .required:after {
+    content:" *";
+    color: red;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<style>
+    input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:optional {
+  border-color: gray;
+}
+input:required:valid {
+  border-color: green;
+
+}
+
+input:invalid {
+  border-color: red;
+
+
+}
+select:invalid {
+  border-color: red;
+
+
+}
+select:required:valid {
+  border-color: green;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+</style>
+<form action="" data-district-url="{% url 'load_district' %}" enctype="multipart/form-data" id="personForm" method="POST">
+	{% csrf_token %}
+	{% if form1.errors %}
+	{% for field in form1 %}
+	{% for error in field.errors %}
+	<div class="alert alert-danger">
+		<strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+	{% endfor %}
+	{% endfor %}
+	{% endif %}
+
+<!--<div class="box box-secondary">-->
+<!--	<div class="box-header">-->
+<!--	<div class="box-body">-->
+
+<!--		<div class="box-group" id="accordion">-->
+
+
+<!--			<div class="row ">-->
+<!--				<div class="col-md-3 ">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">User Name</label>-->
+<!--					{{form1.user}}-->
+<!--				</div>-->
+<!--				<div class="col-md-3 ">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">Institute Name</label>-->
+<!--					{{form1.institute_name}}-->
+<!--				</div>-->
+<!--				<div class="col-md-3  ">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">Address</label>-->
+<!--					{{form1.address}}-->
+<!--				</div>-->
+<!--				<div class="col-md-3">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">Email Id</label>-->
+<!--					{{form1.email}}-->
+<!--				</div>-->
+<!--				<div class="col-md-3">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">Investigator Name</label>-->
+<!--					{{form1.investigator_name}}-->
+
+<!--				</div>-->
+<!--			</div>-->
+<!--			</div>-->
+
+			<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+					<h3 class="box-title col-md font-weight-bolder text-dark text-left">Common Demography data</h3>
+				</div>
+
+
+					<br>
+<!--                   <div class="box-body">-->
+<!--					 <div class="row ">-->
+<!--						<div class="col-md-12 ">-->
+<!--							<label class="col-md font-weight-bolder text-dark text-left">Facility</label>-->
+<!--							{{form1.}}-->
+<!--						</div>-->
+				 <table class="table table-bordered table-condensed table-striped" id="example1">
+                        <thead class="bg-black">
+
+                        <tbody>
+					<div class="box box-secondary">
+				<div class="box-header">
+					<h3 class="box-title col-md font-weight-bolder text-dark text-left">Facility</h3>
+				</div>
+
+						<div class="row ">
+												<td><label class="col-md font-weight-bolder text-dark text-left"> 1. Cytogenetic workstation with software with Fluorescent in situ hybridization</label></td>
+
+ <td>{{form1.cytogenetic}}</td></tr>
+					<tr>
+						<td><label class="col-md font-weight-bolder text-dark text-left">
+								2. DNA Sequencer with 8 capillary sequencer</label>	</td>
+							<td>{{form1.dna_sequencer}}</td>
+
+
+</tr>
+					<tr><td><label class="col-md font-weight-bolder text-dark text-left"> 3. Mi Seq next generation sequencer  </label>
+<td>
+							{{form1.mi_seq}} </td>
+						</td></tr>
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left"> 4. Next Seq next generation sequencer </label>
+<td>
+							{{form1.next_seq}} </td>
+						</td></tr>
+
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left">5. Real Time PCR (96 well format) for real time polymerase chain reaction </label>
+<td>
+							{{form1.real_time_pcr}} </td>
+						</td></tr>
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left">6. High throughput rNA and DNA extraction systems  </label>
+<td>
+							{{form1.high_throughput_rna_dna}} </td>
+						</td></tr>
+
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left">7. Quality Check stations and microtips station </label>
+<td>
+							{{form1.quality_check}} </td>
+						</td></tr>
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left">8. Chromosomal Micro array platform </label>
+<td>
+							{{form1.chromosomal_micro}} </td>
+						</td></tr>
+
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left">9. Newborn Screening platfrom for fluroimmunoassay </label>
+<td>
+							{{form1.newborn_screening}} </td>
+						</td></tr>
+
+					  <tr><td><label class="col-md font-weight-bolder text-dark text-left">10. Antenatal screening equipment (one stop screening for pre-ecclampsia and chromosomal aneuploidies) </label>
+<td>
+							{{form1.antenatal_screening}} </td>
+						</td></tr>
+
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">11. Eonis tm system for DNA based newborn screening for rare disorders </label>
+<td>
+							{{form1.eonis_tm_system}} </td>
+						</td></tr>
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">12. Capillary Electrophoresis system for newborn screening of hemoglobinopathies </label>
+<td>
+							{{form1.capillary_electrophoresis}} </td>
+						</td></tr>
+
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">13. Multimode readers for both ELISA and fluorescent enzyme assays</label>
+<td>
+							{{form1.multimode_reader}} </td>
+						</td></tr>
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">14. Liquid chromatography Mass Spectroscopy (Tandem Mass Spectrometry)  </label>
+<td>
+							{{form1.liquid_chromatography}} </td>
+						</td></tr>
+
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">15. HPLC (quarternery pump high Performance Liquid Chromatography) </label>
+<td>
+							{{form1.hplc}} </td>
+						</td></tr>
+
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">16. GCMS (gas chromatography Mass Spectrometry)  </label>
+<td>
+							{{form1.gcms}} </td>
+						</td></tr>
+
+						<tr><td><label class="col-md font-weight-bolder text-dark text-left">17. Microfluidics platform </label>
+
+						</td><td>
+							{{form1.microfluidics_platform}} </td></tr>
+
+							<tr><td><label class="col-md font-weight-bolder text-dark text-left">18. Any other facility (specify name in the space provided) </label> {{form1.any_other_facility|addclass:'form-control'}}
+						</td>
+							</tr>
+						</tbody>
+  </table>
+		<center>
+			<button class="btn btn-primary" id="submit1" type="submit">Save</button>
+		</center>
+		<br>
+
+			</div>
+	</div>
+	</div>
+			</section>
+</form>
+{% endblock %}

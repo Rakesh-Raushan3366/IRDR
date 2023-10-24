@@ -1,0 +1,1660 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+		
+		.required1{
+		border-color: red;
+		padding: 0.5rem;
+	
+		}
+</style>
+
+
+<script>
+			$(document).ready(function() {
+		$('.submitbtn').click(function(e) {
+			var isValid = true;
+			$('.required1').each(function() {
+				if ($.trim($(this).val()) == '') {
+					isValid = false;
+					$(this).css({
+						"border": "1px solid red",
+						"background": "#FFCECE"
+					});
+					alert($(this).attr("name") + " " + 'field is empty')
+				}
+				else {
+					$(this).css({
+						"border": "",
+						"background": ""
+					});
+				}
+			});
+			if (isValid == false)
+			e.preventDefault();
+			else
+			alert('Thank you for submitting');
+		});
+	});
+
+</script>
+<script>
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_fam_hist_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".positive_family_history").show();
+
+	}
+	else
+	{
+	$(".positive_family_history").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_cons_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Consanguinity_status").show();
+
+	}
+	else
+	{
+	$(".Consanguinity_status").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_proteinuria').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Kidney_dysfunction_Proteinuria").show();
+
+	}
+	else
+	{
+	$(".Kidney_dysfunction_Proteinuria").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_microalbuminuri').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Kidney_dysfunction_Microalbuminuria").show();
+
+	}
+	else
+	{
+	$(".Kidney_dysfunction_Microalbuminuria").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_albumin_creatinine').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Kidney_dysfunction_Albumin").show();
+
+	}
+	else
+	{
+	$(".Kidney_dysfunction_Albumin").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_renal_biops').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Kidney_Renal_Biopsy").show();
+
+	}
+	else
+	{
+	$(".Kidney_Renal_Biopsy").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_renal_biops_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$("#id_fb_renal_biops_abnorm_specify").show();
+	$("label[for='renatal_biops_abnormal']").show();
+
+	}
+	else
+	{
+	$("#id_fb_renal_biops_abnorm_specify").hide();
+	$("label[for='renatal_biops_abnormal']").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_renal_transplant').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_fb_renal_transplant_specify").show();
+	$("label[for='renal_transplant_yes']").show();
+
+	}
+	else
+	{
+	$("#id_fb_renal_transplant_specify").hide();
+	$("label[for='renal_transplant_yes']").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_mri_brain').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$("#id_fb_mri_brain_abnormal_spcify").show();
+	$("label[for='mri_brain_abnormal']").show();
+
+	}
+	else
+	{
+	$("#id_fb_mri_brain_abnormal_spcify").hide();
+	$("label[for='mri_brain_abnormal']").hide();
+
+
+	}
+	});
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_pain_medication_name').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_fb_pain_killers_spcify").show();
+	$("label[for='pain_medication_name']").show();
+
+	}
+	else
+	{
+	$("#id_fb_pain_killers_spcify").hide();
+	$("label[for='pain_medication_name']").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_ace_inhibitors').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_fb_ace_inhibitors_name").show();
+	$("label[for='ace_inhibitors']").show();
+
+	}
+	else
+	{
+	$("#id_fb_ace_inhibitors_name").hide();
+	$("label[for='ace_inhibitors']").hide();
+
+
+	}
+	});
+
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_fever').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".fever_history").show();
+
+	}
+	else
+	{
+	$(".fever_history").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_acroparesthesia').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Acroparesthesia_history").show();
+
+	}
+	else
+	{
+	$(".Acroparesthesia_history").hide();
+
+
+	}
+	});
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_improvement_after_medication').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_fb_improvement_after_medication_specify").show();
+
+	}
+	else
+	{
+	$("#id_fb_improvement_after_medication_specify").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_angiokeratoma').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Angiokeratoma_history").show();
+
+	}
+	else
+	{
+	$(".Angiokeratoma_history").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_ert_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".treatment_recieved_Enzyme_replacement").show();
+
+	}
+	else
+	{
+	$(".treatment_recieved_Enzyme_replacement").hide();
+
+
+	}
+	});
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_adverse_events').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".adverse_event_yes").show();
+
+	}
+	else
+	{
+	$(".adverse_event_yes").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_any_interuption').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Enzyme_interuption").show();
+
+	}
+	else
+	{
+	$(".Enzyme_interuption").hide();
+
+
+	}
+	});
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_neropsychiatric_symp').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".neropsychiatric_symptoms").show();
+
+	}
+	else
+	{
+	$(".neropsychiatric_symptoms").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_stroke').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".stroke_class").show();
+
+	}
+	else
+	{
+	$(".stroke_class").hide();
+
+
+	}
+	});
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_visual_prob').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".visual_problems").show();
+
+	}
+	else
+	{
+	$(".visual_problems").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_hearing_loss').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".hearing_loss").show();
+
+	}
+	else
+	{
+	$(".hearing_loss").hide();
+
+
+	}
+	});
+
+
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_cardiomyopathy').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Cardiomyopathy_class").show();
+
+	}
+	else
+	{
+	$(".Cardiomyopathy_class").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_ecg').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".ecg_class").show();
+
+	}
+	else
+	{
+	$(".ecg_class").hide();
+
+
+	}
+	});
+
+
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_fb_any_rhythm_abnormality').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".rhythm_abnormal").show();
+
+	}
+	else
+	{
+	$(".rhythm_abnormal").hide();
+
+
+	}
+	});
+
+
+	});
+
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+	hr {
+
+	width:100%;
+    border: 1px solid rgb(240, 240, 240);
+}
+</style>
+<form action="" enctype="multipart/form-data"
+      id="personForm" method="POST">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		            <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Patient</label>
+                            {{form1.fb_patient_edu_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.fb_patient_occupation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Father</label>
+                            {{form1.fb_father_edu_status|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.fb_father_occupation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of  Mother</label>
+                            {{form1.fb_mother_edu_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.fb_mother_occupation|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Monthly Family Income (INR)As Per Kuppuswamy SES 2018</label>
+                            {{form1.fb_monthly_income_status|addclass:'form-control'}}
+                        </div>
+                        <br>
+                    </div>
+		                <!-- /.box-body -->
+                </div>
+		            <!---- box end ----->
+                </div>
+                <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Anthropometry</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-6">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Anthropometry</h4></label>
+					    </div>
+                         <div class="col-md-6">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>PRESENTING COMPLAINTS</h4></label>
+					    </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+	                        <colgroup>
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+
+                            </colgroup>
+                     <thead class="bg-info ">                            <tr>
+                                <th></th>
+                                <th>Patient*</th>
+                                <th>Percentile*</th>
+                                <th>SD*</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                            <tr>
+                                <th> Weight (kg)</th>
+                                <td>
+                                        {{form1.fb_anth_wght_pat|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_anth_wght_per|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_anth_wght_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Height (cm)</th>
+                                <td>
+                                        {{form1.fb_anth_height_pat|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_anth_height_per|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_anth_height_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                           <tr>
+                                <th> Head Circumference (cm)</th>
+                                <td>
+                                        {{form1.fb_anth_head_cir_pat|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_anth_head_cir_perc|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_anth_head_cir_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                     </tbody>
+                    </table>
+                        </div>
+                    <div class="col-md-6">
+
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 15%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+                                <col span="1" style="width: 10%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Years*</th>
+                                <th>Months*</th>
+                                <th>Day*</th>
+                                <th>Intrauterine*</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <th>Age at onset of symptoms: *</th>
+                                <td>
+                                        {{form1.fb_presenting_complaints_years|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_months|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_day|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_intrauterine|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th>Age at presentation *</th>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_presentation_years|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_presentation_months|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_presentation_day|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_presentation_intrauterine|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                           <tr>
+                                <th> Age at diagnosis: *</th>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_diagnosis_years|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_diagnosis_months|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.fb_presenting_complaints_age_diagnosis_day|addclass:'form-control required1'}}
+                                </td>
+                               <td>
+                                        {{form1.fb_presenting_complaints_age_diagnosis_intrauterine|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                        </tbody>
+
+                    </table>
+               </div>
+                </div>
+
+                    <hr>
+                    <div class="row ">
+                        <div class="col-md-2">
+                            <label class="col-md font-weight-bolder text-dark text-left">Upload pedigree (3 generation):</label>
+
+                        </div>
+                        <div class="col-md-6">
+                            {{form1.fb_pedigree_upload|addclass:'form-control'}}
+                        </div>
+                    </div>
+                </div>
+                </div>
+                <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">History details</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Positive Family History: *</label>
+                            {{form1.fb_fam_hist_status|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-3 positive_family_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.fb_fam_hist_descr|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Consanguinity:</label>
+                            {{form1.fb_cons_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Consanguinity_status">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.fb_cons_degree_specify|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                    <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">GI symptoms (with age at onset)</label>
+<!--                            {{form1.fb_gi_symtoms|addclass:'form-control'}}-->
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Fever</label>
+                            {{form1.fb_fever|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3 fever_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Abdominal pain</label>
+                            {{form1.fb_abdominal_pain|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 fever_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Diarrhea</label>
+                            {{form1.fb_diarrhea|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 fever_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Constipation</label>
+                            {{form1.fb_constipation|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <div class="row fever_history">
+
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Nausea</label>
+                            {{form1.fb_nausea|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Vomiting</label>
+                            {{form1.fb_vomiting|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Irritable bowel</label>
+                            {{form1.fb_irritable_bowel|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Acroparesthesia: *</label>
+                            {{form1.fb_acroparesthesia|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-3 Acroparesthesia_history ">
+                            <label class="col-md font-weight-bolder text-dark text-left">Neuronopathic Pain:</label>
+                            {{form1.fb_neuronopathic_pain|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3 Acroparesthesia_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at onset</label>
+                            {{form1.fb_onset_age|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Acroparesthesia_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Please tick, if applicable</label><br>
+                            <label class="col-md font-weight-bolder text-dark text-left">Hand</label>
+                            {{form1.fb_hand}} &nbsp;&nbsp;&nbsp;
+                            <label class="col-md font-weight-bolder text-dark text-left">feet</label>
+                            {{form1.fb_feet}}&nbsp;&nbsp;&nbsp;
+                            <label class="col-md font-weight-bolder text-dark text-left">both </label>
+                            {{form1.fb_both}}
+                        </div>
+                    </div>
+<br>
+                    <div class="row Acroparesthesia_history">
+                        <div class="col-md-12">
+                            <label class="col-md font-weight-bolder text-dark text-left">Pain Medication taken</label></div><br>
+                       <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Morphine</label>
+                            {{form1.fb_medication_Morphine}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">CBZ</label>
+                            {{form1.fb_medication_CBZ}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Phenytoin</label>
+                            {{form1.fb_medication_Phenytoin}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Improvement after ERT</label>
+                            {{form1.fb_improvement_after_ert|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Improvement after pain medication</label>
+                            {{form1.fb_improvement_after_medication|addclass:'form-control'}}
+                            {{form1.fb_improvement_after_medication_specify|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Effect after medication for pain</label>-->
+<!--                            {{form1.fb_medication_effect|addclass:'form-control'}}-->
+<!--                        </div>-->
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Angiokeratoma:</label>
+                            {{form1.fb_angiokeratoma|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Angiokeratoma_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at onset (Angiokeratoma)</label>
+                            {{form1.fb_angiok_onset_age|addclass:'form-control'}}
+                        </div>
+
+                   </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Hypohidrosis</label>
+                            {{form1.fb_hypohidrosis|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Interference with physical activity</label>
+                            {{form1.fb_inter_physical_act|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Improvement after ERT (Hypohidrosis)</label>
+                            {{form1.fb_hydro_impro_after_ert|addclass:'form-control'}}
+                        </div>
+                   </div>
+
+                  </div>
+		
+		                <!-- /.box-body -->
+                </div>
+            <!---- box end ----->
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Cardiac Symptoms</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		            <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left">Cardiac symptoms *</label>
+					        {{form1.fb_cardiac_symtoms|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Myocardial Infarction</label>
+                            {{form1.fb_myocardial_infarction|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Unstable angina</label>
+                            {{form1.fb_unstable_angina|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hypertension</label>
+                            {{form1.fb_hypertension|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">ECHO</label>
+                            {{form1.fb_echo|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>
+                            {{form1.fb_echo_date|addclass:'form-control '}}
+                        </div>
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Left Ventricular End diastolic diameter</label>
+                            {{form1.fb_left_vent_diastolic_dia|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">specify date</label>-->
+<!--                            {{form1.fb_left_vent_diastolic_dia_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+
+                    </div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">PWT (mm), Septum (mm) LVM (mm)</label>
+                            {{form1.fb_pwt_septum_lvm|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">specify date</label>-->
+<!--                            {{form1.fb_left_vent_diastolic_dia_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">CO (L/mm)</label>
+                            {{form1.fb_co|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>-->
+<!--                            {{form1.fb_co_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">EF%</label>
+                            {{form1.fb_ef_per|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>-->
+<!--                            {{form1.fb_ef_per_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">LVH</label>
+                            {{form1.fb_lvh|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>-->
+<!--                            {{form1.fb_lvh_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">MR/TR</label>
+                            {{form1.fb_mr_tr|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>-->
+<!--                            {{form1.fb_mr_tr_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">LVMI</label>
+                            {{form1.fb_lvmi|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>-->
+<!--                            {{form1.fb_mr_tr_date|addclass:'form-control'}}-->
+<!--                        </div>-->
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Cardiomyopathy</label>
+                            {{form1.fb_cardiomyopathy|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Cardiomyopathy_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify date</label>
+                            {{form1.fb_cardiomyopathy_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Cardiomyopathy_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.fb_cardiomyopathy_specify|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">ECG</label>
+                            {{form1.fb_ecg|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 ecg_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.fb_ecg_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 ecg_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">PR interval</label>
+                            {{form1.fb_ecg_abnormal_pr_select|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 ecg_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">QRS duration</label>
+                            {{form1.fb_ecg_abnormal_pr_select|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                    <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Any rhythm abnormality</label>
+                            {{form1.fb_any_rhythm_abnormality|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 rhythm_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">If yes, specify</label>
+                            {{form1.fb_any_rhythm_abnormality_specify|addclass:'form-control'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">  Neurological</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		            <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Neuropsychiatric symptoms *</label>
+                            {{form1.fb_neropsychiatric_symp|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-3 neropsychiatric_symptoms">
+                            <label class="col-md font-weight-bolder text-dark text-left">Neuropsychiatric symptoms type</label>
+                            {{form1.fb_neuropsychiatric_types|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-md-3 neropsychiatric_symptoms">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Select(Yes/No)</label>-->
+<!--                            {{form1.fb_depression_status|addclass:'form-control'}}-->
+<!--                        </div>-->
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Stroke:</label>
+                            {{form1.fb_stroke|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3 stroke_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at stroke (year)</label>
+                            {{form1.fb_stroke_age|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 stroke_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Recurrent stroke</label>
+                            {{form1.fb_rec_stroke|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 stroke_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Transient Ischemic attack</label>
+                            {{form1.fb_trans_isch_attack|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left">Visual problems</label>
+					        {{form1.fb_visual_prob|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 visual_problems">
+                            <label class="col-md font-weight-bolder text-dark text-left">Cornea verticillata</label>
+                            {{form1.fb_cornea_vertic|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3 visual_problems">
+                            <label class="col-md font-weight-bolder text-dark text-left">Corneal opacities (Slit lamp)</label>
+                            {{form1.fb_corneal_opacity|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"> Hearing loss</label>
+					        {{form1.fb_hearing_loss|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 hearing_loss">
+                            <label class="col-md font-weight-bolder text-dark text-left">Type</label>
+                            {{form1.fb_sensory_type|addclass:'form-control'}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Renal System</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		            <!-- /.box-header -->
+                <div class="box-body" style="">
+
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left"> Proteinuria *</label>
+                            {{form1.fb_proteinuria|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-3 Kidney_dysfunction_Proteinuria">
+                            <label class="col-md font-weight-bolder text-dark text-left"> Age onset</label>
+                            {{form1.fb_proteinuria_age_onset|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Microalbuminuria</label>
+                            {{form1.fb_microalbuminuri|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Kidney_dysfunction_Microalbuminuria">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.fb_microalbuminuri_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Kidney_dysfunction_Microalbuminuria">
+                            <label class="col-md font-weight-bolder text-dark text-left">Value</label>
+                            {{form1.fb_microalbuminuri_value|addclass:'form-control'}}
+                        </div>
+
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Albumin:creatinine(Highest value)</label>
+                            {{form1.fb_albumin_creatinine|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Kidney_dysfunction_Albumin">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.fb_albumin_creatinine_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Kidney_dysfunction_Albumin">
+                            <label class="col-md font-weight-bolder text-dark text-left">Value</label>
+                            {{form1.fb_albumin_creatinine_val|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                    <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">eGFR</label>
+
+                        </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Urea(Base line Value)</label>
+                            {{form1.fb_urea_base_line_value|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Urea(Date)</label>
+                            {{form1.fb_urea_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Createline(Base line Value)</label>
+                            {{form1.fb_creatinine_base_value|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Createline(Date)</label>
+                            {{form1.fb_creatinine_date|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left"> Renal Biopsy</label>
+                            {{form1.fb_renal_biops|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Kidney_Renal_Biopsy">
+                            <label class="col-md font-weight-bolder text-dark text-left">Renal Biopsy status</label>
+                            {{form1.fb_renal_biops_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Kidney_Renal_Biopsy">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="renatal_biops_abnormal">If abnormal, specify</label>
+                            {{form1.fb_renal_biops_abnorm_specify|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Renal Transplant</label>
+                            {{form1.fb_renal_transplant|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="renal_transplant_yes">Specify</label>
+                            {{form1.fb_renal_transplant_specify|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                    <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Dialysis</label>
+                            {{form1.fb_dialysis|addclass:'form-control'}}
+                        </div>
+                    </div>
+		
+		
+		                <!-- /.box-body -->
+                </div>
+		            <!---- box end ----->
+                </div>
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Other Investigations</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		            <!-- /.box-header -->
+
+                <div class="box-body" style="">
+
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Plasma GL – 3(lab name)</label>
+                            {{form1.fb_plasma_gl_3_lab_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.fb_plasma_gl_3_date|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Value</label>
+                            {{form1.fb_plasma_gl_3_value|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <div class="row ">
+
+                    </div>
+                    <br>
+
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Urine   GL – 3(lab name)</label>
+                            {{form1.fb_urine_gl_3_lab_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.fb_urine_gl_3_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">value</label>
+                            {{form1.fb_urine_gl_3_lab_value|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">MRI brain (For Neurological)</label>
+                            {{form1.fb_mri_brain|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="mri_brain_abnormal">Specify</label>
+                            {{form1.fb_mri_brain_abnormal_spcify|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Enzyme assay(Name of the lab)</label>
+                            {{form1.fb_enzyme_assy_lab_name|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Patient *</label>
+                            {{form1.fb_enzyme_assy_report_details|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Control</label>
+                            {{form1.fb_enzyme_assy_cont|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Ref range</label>
+                            {{form1.fb_enzyme_assy_ref_range|addclass:'form-control '}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row ">
+                    <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left"> Upload report</label>
+
+                        </div>
+                        <div class="col-md-6">
+                            {{form1.fb_enzyme_assy_upload_report}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+                    <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Molecular Report</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                       <div class="box-body" style="">
+                        <div class="row ">
+                             <div class="col-md-2 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Molecular test report </label>
+                            {{form1.fb_mutaion_rep_lab_name|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-2">
+                             <label class="col-md font-weight-bolder text-dark text-left"> Upload Report</label>
+                                        {{form1.fb_mutaion_rep_upload_report}}
+                        </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Gene name</label>
+                            {{form1.fb_gene_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Transcript id</label>
+                            {{form1.fb_transcript_id|addclass:'form-control'}}
+                        </div>
+                        </div>
+                        <br>
+                             <div class="row ">
+                            <div class="col-xs-12 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 1</label>
+                            </div>
+
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">cDNA change *</label>
+                            {{form1.fb_cDNA_change1|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Protein change</label>
+                            {{form1.fb_protein_change1|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Variant</label>
+                            {{form1.fb_variant1|addclass:'form-control '}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.fb_variant_class1|addclass:'form-control '}}
+                        </div>
+                                 <div class="col-md-4 id_sample_source_0">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                                     {{form1.fb_enzyme_assy1|addclass:'form-control'}}
+                          </div>
+                             </div>
+<!--                        <br>-->
+<!--                        <div class="col-md-3">-->
+<!--                            <label class="col-md font-weight-bolder text-dark text-left">Segregation in parents</label>-->
+<!--                            {{form1.fb_segregation_parents|addclass:'form-control'}}-->
+<!--                        </div>-->
+                                 <br>
+                                  <div class="row ">
+                                  <div class="col-xs-12 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 2</label>
+                            </div>
+   <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">cDNA change</label>
+                            {{form1.fb_cDNA_change2|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Protein change</label>
+                            {{form1.fb_protein_change2|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Variant</label>
+                            {{form1.fb_variant2|addclass:'form-control '}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.fb_variant_class2|addclass:'form-control '}}
+                        </div>
+                                 <div class="col-md-4 id_sample_source_0">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                                     {{form1.fb_enzyme_assy2|addclass:'form-control'}}
+                          </div>
+                             </div>
+                            <div class="row ">
+                          <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Segregation  in Parents</label>
+                            {{form1.fb_mul_seg|addclass:'form-control'}}
+						</div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Father</label>
+                                {{form1.fb_father|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother</label>
+                                {{form1.fb_mother|addclass:'form-control'}}
+                            </div>
+                    </div>
+                </div>
+            </div>
+
+                    <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Treatment received</h3>
+                    <div class="box-tools pull-right">
+                        <button class="btn btn-box-tool" data-widget="collapse" type="button"><i
+		                        class="fa fa-minus"></i>
+                        </button>
+                    </div>
+		                <!-- /.box-tools -->
+                </div>
+		                    <!-- /.box-header -->
+
+                <div class="box-body" style="">
+
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Enzyme replacement therapy (ERT)</label>
+                            {{form1.fb_ert_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 treatment_recieved_Enzyme_replacement">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date of initiation</label>
+                            {{form1.fb_ert_initial_date|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 treatment_recieved_Enzyme_replacement">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age of Start (year)</label>
+                            {{form1.fb_ert_start_age|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 treatment_recieved_Enzyme_replacement">
+                            <label class="col-md font-weight-bolder text-dark text-left">Dosage</label>
+                            {{form1.fb_ert_dosage|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <div class="row treatment_recieved_Enzyme_replacement">
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Duration</label>
+                            {{form1.fb_ert_duration|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Adverse events</label>
+                            {{form1.fb_adverse_events|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 adverse_event_yes">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.fb_adverse_events_specify|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Current ERT Status</label>
+                            {{form1.fb_curr_ert_status|addclass:'form-control'}}
+                        </div>
+
+                     </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Any interruption</label>
+                            {{form1.fb_any_interuption|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Enzyme_interuption">
+                            <label class="col-md font-weight-bolder text-dark text-left">Reseason for interruption</label>
+                            {{form1.fb_reseason_interrupt|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Enzyme_interuption">
+                            <label class="col-md font-weight-bolder text-dark text-left">Duration of interruption</label>
+                            {{form1.fb_dur_interrupt|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Fabry disease pain score may be checked</label>
+                            {{form1.fb_fabri_disease_pain_score|addclass:'form-control'}}
+                        </div>
+
+                      </div>
+                    <br>
+                      <div class="row ">
+                        <div class="col-md-12">
+                            <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left">Drugs received</label>
+<!--                            {{form1.fb_drugs_recieved|addclass:'form-control'}}-->
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Pain Medication</label>
+                            {{form1.fb_pain_killers|addclass:'form-control'}}
+                        </div>
+                         <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Pain Medication Name</label>
+                            {{form1.fb_pain_medication_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="pain_medication_name">Specify</label>
+                            {{form1.fb_pain_killers_spcify|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">ACE inhibitors</label>
+                            {{form1.fb_ace_inhibitors|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 ">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="ace_inhibitors">Start date</label>
+                            {{form1.fb_ace_inhibitors_name|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any other</label>
+                            {{form1.fb_any_other|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Treatment Borne by</label>
+                            {{form1.fb_treatment|addclass:'form-control'}}
+                        </div>
+                    </div>
+                </div>
+                    </div>
+            <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Final Outcome</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                 <div class="box-body" style="">
+        <div class="row ">
+        <div class="col-xs-3">
+         <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left ">Final outcome *</label>
+            {{form1.fb_Finaloutcomes|addclass:'form-control required1'}}
+     </div>
+     </div>
+         <hr>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Filled By D.E.O Name</label>
+                            {{form1.fb_filled_by_deo_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Name of the clinician</label>
+                            {{form1.fb_clinicial_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.fb_date|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+		
+		                <!-- /.box-body -->
+                </div>
+		                    <!---- box end ----->
+
+
+<br>
+
+    <!---- box start ----->
+
+    <center>
+            <button class="btn btn-primary submitbtn" id="submit1" name="save" type="submit">Save</button>
+            <button class="btn  btn-success submitbtn" name="submitandexit" type="submit"><b>Final submit</b></button>
+         {% if patient.quality_result == 'Fail' %}
+       <button type="submit" class="btn  btn-warning submitbtn" name="submitandqc"><b>send result to QC</b></button>
+
+       {% endif %}
+		</center>
+<br>
+</form>
+{% endblock %}

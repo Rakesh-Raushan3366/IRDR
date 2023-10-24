@@ -1,0 +1,103 @@
+{%  extends 'main.html' %}
+{% load extra %}
+{% block content %}
+{% load static %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+	$(function () {
+		$('#example1').DataTable({
+			'paging'      : true,
+			'lengthChange': true,
+			'searching'   : true,
+			'ordering'    : true,
+			'info'        : true,
+			'autoWidth'   : true
+		})
+	})
+</script>
+<body>
+	<br>
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header">
+						<h3 class="box-title">Total Record</h3>
+					</div>
+					<div class="box-body">
+						<center>
+							<a class="btn btn-success" href="{% url 'add_record_pompe'  %}">Add new record</a>
+						<a class="btn btn-warning" href="{% url 'export_pompe'  %}">Export records</a></center>
+						<br>
+						<table class="table table-bordered table-condensed table-striped" id="example1">
+							<thead class="bg-black">
+								<tr>
+									<th>Id</th>
+									<th>Patient name</th>
+									<th>Gender</th>
+									<th>Father name</th>
+									<th>Patient Govt. Id.</th>
+									<th>Date created</th>
+									<th>View Profile</th>
+									<th>Edit Profile</th>
+									<th>View</th>
+									<th>Update</th>
+<!--									<th>Delete</th>-->
+									<th>QC result</th>
+								</tr>
+							</thead>
+							<tbody>
+								{% for i in register %}
+								<tr>
+									<!--                            <td>{{forloop.counter}}</td>-->
+									<td>{{ i.pmp_icmr_unique_no }}</td>
+									<td>{{ i.pmp_patient_name }}</td>
+									<td>{{ i.pmp_gender }}</td>
+									<td>{{ i.pmp_father_name }}</td>
+									<td>{{ i.pmp_patient_id_no }}</td>
+									<td>{{ i.pmp_date_created|date:" d-m-Y, " }}{{ i.fb_date_created|time:"H:i" }}</td>
+									<td>
+										<a class="btn btn-primary" href="{% url 'view_profile_pm' i.id %}">View profile</a>
+									</td>
+									<td>
+										<a class="btn bg-maroon" href="{% url 'update_patient_record_pompe' i.id %}">Edit </a>
+									</td>
+									<td>
+										<a class="btn btn-primary" href="{% url 'view_pompe_record' i.id %}">View </a>
+									</td>
+									<td>
+										<a class="btn btn-warning" href="{% url 'update_pompe_demographic' i.id %}">Update </a>
+									</td>
+<!--									<td>-->
+<!--										<a class="btn btn-danger" href="{% url 'delete_record_pm' i.id %}">Delete </a>-->
+<!--									</td>-->
+									<td>{{i.quality_result}}
+										<a class="btn bg-maroon" href="{% url 'view_qa_qc_pompe' i.id %}">View </a>
+									</td>
+									{% endfor %}
+								</tbody>
+								<tfoot class="bg-black">
+									<tr>
+										<th>Id</th>
+										<th>Patient name</th>
+										<th>Gender</th>
+										<th>Father name</th>
+										<th>Patient Govt. Id.</th>
+										<th>Date created</th>
+										<th>View Profile</th>
+										<th>Edit Profile</th>
+										<th>View</th>
+										<th>Update</th>
+<!--										<th>Delete</th>-->
+										<th>QC result</th>
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+{% endblock %}

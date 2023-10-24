@@ -1,0 +1,699 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %} {% load add_attr %}
+
+<form method="POST"  enctype="multipart/form-data" id="personForm" action="">
+    {% csrf_token %}
+
+
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form4 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    <div class="nav-tabs-custom">
+
+        <div class="tab-pane" id="tab_2">
+
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Birth History</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <!--                        <div class="alert alert-success">-->
+                    <!--                            <strong>Socio-demographic Data Sheet</strong>-->
+                    <!--                        </div>-->
+
+					<div class="row ">
+                                <div class="col-md-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Head Circumference</label>
+                                    {{form1.head_circumference|default_if_none:""}}
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="row ">
+
+                                <div class="col-md-4 id_sample_source_0">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Age at First Symptoms</label>
+                                    {{form1.age_at_first_symptom|default_if_none:""}}
+                                </div>
+                                <div class="col-md-4 id_sample_source_0">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Visual Problem</label>
+                                    {{form1.visual_problem|default_if_none:""}}
+                                </div>
+
+                                <div class="col-md-4 id_sample_source_0 id_tick_other">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Any Malformation</label>
+                                    {{form1.any_malformation|default_if_none:""}}
+                                </div>
+                                </div>
+
+<!--                        </div>-->
+					<hr>
+
+<!--					<h3><class="box-title">First Symptom:-</h3>-->
+                    <div class="row ">
+
+                                <div class="col-md-6 ">
+					 <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 15%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info">
+                        <tr>
+                                    <th>First Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Findings</th>
+
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td> Developmental Delay</td>
+                                    <td>{{form1.developmental_delay|default_if_none:""}}</td>
+                                    <td>{{form1.developmental_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Vomiting</td>
+                                    <td>{{form1.vomiting|default_if_none:""}}</td>
+                                    <td>{{form1.vomiting_finding|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Loose Stools</td>
+                                    <td>{{form1.loose_stools|default_if_none:""}}</td>
+                                    <td>{{form1.stools_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Pneumonia</td>
+                                    <td>{{form1.pneumonia|default_if_none:""}}</td>
+                                    <td>{{form1.pneumonia_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Fever</td>
+                                    <td>{{form1.fever|default_if_none:""}}</td>
+                                    <td>{{form1.fever_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Lethargy</td>
+                                    <td>{{form1.lethargy|default_if_none:""}}</td>
+                                    <td>{{form1.lethargy_findings|default_if_none:""}}</td>
+
+                                </tr>
+                                </tbody>
+                     </table>
+                                </div>
+                         <div class="col-md-6 ">
+					 <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 15%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info">
+                        <tr>
+                                    <th>First Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Findings</th>
+
+                                </tr>
+                        </thead>
+                         <tbody>
+								<tr>
+                                    <td>Seizures</td>
+                                    <td>{{form1.seizures|default_if_none:""}}</td>
+                                    <td>{{form1.seizures_findings|default_if_none:""}}</td>
+
+                                </tr>
+
+								<tr>
+                                    <td>Abdominal Distention</td>
+                                    <td>{{form1.abdominal_distention|default_if_none:""}}</td>
+                                    <td>{{form1.abdominal_distention_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>History Admission</td>
+                                    <td>{{form1.history_admission|default_if_none:""}}</td>
+                                    <td>{{form1.history_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Any Surgery</td>
+                                    <td>{{form1.any_surgery|default_if_none:""}}</td>
+                                    <td>{{form1.surgery_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Aversion to Sweet/Protein</td>
+                                    <td>{{form1.aversion_sweet_protein|default_if_none:""}}</td>
+                                    <td>{{form1.sweet_protein_findings|default_if_none:""}}</td>
+
+                                </tr>
+								</tbody>
+					</table>
+                         </div>
+
+                     </div>
+
+						 </div>
+
+
+
+
+
+        </div>
+    </div>
+
+		<div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">SYMPTOM</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="box-body" style="">
+                        <div class="row">
+                            <div class="col-md-6">
+						  <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 35%;">
+	                            <col span="1" style="width: 35%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                                <tr>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Findings</th>
+
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td> Encephalopathy</td>
+                                    <td>{{form1.encephalopathy|default_if_none:""}}</td>
+                                    <td>{{form1.encephalopathy_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Deafness</td>
+                                    <td>{{form1.deafness|default_if_none:""}}</td>
+                                    <td>{{form1.deafness_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Extra Pyramidal Symp</td>
+                                    <td>{{form1.extra_pyramidal_symp|default_if_none:""}}</td>
+                                    <td>{{form1.extra_pyramidal_symp_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Hypotonia</td>
+                                    <td>{{form1.hypotonia|default_if_none:""}}</td>
+                                    <td>{{form1.hypotonia_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Hypertonia</td>
+                                    <td>{{form1.hypertonia|default_if_none:""}}</td>
+                                    <td>{{form1.hypertonia_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Facial Dysmorphism</td>
+                                    <td>{{form1.facial_dysmorphism|default_if_none:""}}</td>
+                                    <td>{{form1.facial_dysmorphism_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Congential Heart Disease</td>
+                                    <td>{{form1.congential_heart_disease|default_if_none:""}}</td>
+                                    <td>{{form1.congential_heart_disease_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Cardiomyopathy</td>
+                                    <td>{{form1.cardiomyopathy|default_if_none:""}}</td>
+                                    <td>{{form1.cardiomyopathy_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Hepatomegaly</td>
+                                    <td>{{form1.hepatomegaly|default_if_none:""}}</td>
+                                    <td>{{form1.hepatomegaly_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Splenomegaly</td>
+                                    <td>{{form1.splenomegaly|default_if_none:""}}</td>
+                                    <td>{{form1.splenomegaly_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Pigmentary</td>
+                                    <td>{{form1.pigmentary|default_if_none:""}}</td>
+                                    <td>{{form1.pigmentary_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Deranged LFT</td>
+                                    <td>{{form1.deranged_LFT|default_if_none:""}}</td>
+                                    <td>{{form1.deranged_LFT_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Deranged RFT</td>
+                                    <td>{{form1.deranged_RFT|default_if_none:""}}</td>
+                                    <td>{{form1.deranged_RFT_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Hypoglycemia</td>
+                                    <td>{{form1.hypoglycemia|default_if_none:""}}</td>
+                                    <td>{{form1.hypoglycemia_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Metabolic Acidosis</td>
+                                    <td>{{form1.metabolic_acidosis|default_if_none:""}}</td>
+                                    <td>{{form1.metabolic_acidosis_findings|default_if_none:""}}</td>
+
+                                </tr>
+                                </tbody>
+                          </table>
+                            </div>
+                          <div class="col-md-6">
+                           <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 35%;">
+	                            <col span="1" style="width: 35%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                        <tr>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Findings</th>
+
+                                </tr>
+                                </thead>
+                        <tbody>
+								<tr>
+                                    <td> Metabolic Alkalosis</td>
+                                    <td>{{form1.metabolic_alkalosis|default_if_none:""}}</td>
+                                    <td>{{form1.metabolic_alkalosis_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Hyper Ammonia</td>
+                                    <td>{{form1.hyper_ammonia|default_if_none:""}}</td>
+                                    <td>{{form1.hyper_ammonia_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> High Lactate</td>
+                                    <td>{{form1.high_lactate|default_if_none:""}}</td>
+                                    <td>{{form1.high_lactate_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Urine Ketones</td>
+                                    <td>{{form1.urine_ketones|default_if_none:""}}</td>
+                                    <td>{{form1.urine_ketones_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Cherry Red Spot</td>
+                                    <td>{{form1.cherry_red_spot|default_if_none:""}}</td>
+                                    <td>{{form1.cherry_red_spot_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Retinitis Pigmentosa</td>
+                                    <td>{{form1.retinitis_pigmentosa|default_if_none:""}}</td>
+                                    <td>{{form1.retinitis_pigmentosa_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Optic Atrophy</td>
+                                    <td>{{form1.optic_atrophy|default_if_none:""}}</td>
+                                    <td>{{form1.optic_atrophy_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Mechanical Ventilation</td>
+                                    <td>{{form1.mechanical_ventilation|default_if_none:""}}</td>
+                                    <td>{{form1.mechanical_ventilation_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Dialysis</td>
+                                    <td>{{form1.dialysis|default_if_none:""}}</td>
+                                    <td>{{form1.dialysis_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Regression</td>
+                                    <td>{{form1.regression|default_if_none:""}}</td>
+                                    <td>{{form1.regression_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td>Distonia Abnormal Movement</td>
+                                    <td>{{form1.distonia_abnormal_movement|default_if_none:""}}</td>
+                                    <td>{{form1.distonia_abnormal_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> High CPK</td>
+                                    <td>{{form1.high_cpk|default_if_none:""}}</td>
+                                    <td>{{form1.high_cpk_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Generic Analysis LFT</td>
+                                    <td>{{form1.generic_analysis|default_if_none:""}}</td>
+                                    <td>{{form1.generic_analysis_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Final Dagnosis RFT</td>
+                                    <td>{{form1.final_dagnosis|default_if_none:""}}</td>
+                                    <td>{{form1.final_dagnosis_findings|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Dna Storage</td>
+                                    <td>{{form1.dna_storage|default_if_none:""}}</td>
+                                    <td>{{form1.dna_storage_findings|default_if_none:""}}</td>
+
+                                </tr>
+<!--								<tr>-->
+<!--                                    <td> Any Other Information</td>-->
+<!--                                    <td>{{form1.other_info|default_if_none:""}}</td>-->
+<!--                                    <td>{{form1.other_info_date|default_if_none:""}}</td>-->
+<!--									<td>{{form1.other_info_age|default_if_none:""}}</td>-->
+
+<!--                                </tr>-->
+								</tbody>
+						 </table>
+                          </div>
+                          </div>
+						<hr>
+
+						  <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                                <tr>
+                                    <th>Symptoms</th>
+                                    <th>Select</th>
+                                    <th>Date</th>
+									<th>Age</th>
+
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td> CT Brain</td>
+                                    <td>{{form1.CT_brain|default_if_none:""}}</td>
+                                    <td class="ct_brain_class">{{form1.CT_brain_date|default_if_none:""}}</td>
+									<td class="ct_brain_class">{{form1.CT_brain_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> MRI Brain</td>
+                                    <td>{{form1.mri_brain|default_if_none:""}}</td>
+                                    <td class="mri_brain_class">{{form1.mri_brain_date|default_if_none:""}}</td>
+									<td class="mri_brain_class">{{form1.mri_brain_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> MRS Brain</td>
+                                    <td>{{form1.mrs_brain |default_if_none:""}}</td>
+                                    <td class="mrs_brain_class">{{form1.mrs_brain_date|default_if_none:""}}</td>
+									<td class="mrs_brain_class">{{form1.mrs_brain_age|default_if_none:""}}</td>
+
+                                </tr>
+
+								<tr>
+                                    <td> MS MS</td>
+                                    <td>{{form1.ms_ms |default_if_none:""}}</td>
+                                    <td class="ms_ms_class">{{form1.ms_date|default_if_none:""}}</td>
+									<td class="ms_ms_class">{{form1.ms_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> GCMS</td>
+                                    <td>{{form1.gcms |default_if_none:""}}</td>
+                                    <td class="gcms_class">{{form1.gcms_date|default_if_none:""}}</td>
+									<td class="gcms_class">{{form1.gcms_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Enzyme Assay</td>
+                                    <td>{{form1.enzyme_assay |default_if_none:""}}</td>
+                                    <td class="enzyme_assay_class">{{form1.enzyme_assay_date|default_if_none:""}}</td>
+									<td class="enzyme_assay_class">{{form1.enzyme_assay_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Quantitative Amino Acids(Plasma)</td>
+                                    <td>{{form1.quantitative_plasma |default_if_none:""}}</td>
+                                    <td class="quantitative_plasma_class">{{form1.quantitative_plasma_date|default_if_none:""}}</td>
+									<td class="quantitative_plasma_class">{{form1.quantitative_plasma_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Quantitative Amino Acids(CSF)</td>
+                                    <td>{{form1.quantitative_csf |default_if_none:""}}</td>
+                                    <td class="quantitative_csf_class">{{form1.quantitative_csf_date|default_if_none:""}}</td>
+									<td class="quantitative_csf_class">{{form1.quantitative_csf_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Muscle Biopsy</td>
+                                    <td>{{form1.muscle_biopsy |default_if_none:""}}</td>
+                                    <td class="muscle_biopsy_class">{{form1.muscle_biopsy_date|default_if_none:""}}</td>
+									<td class="muscle_biopsy_class">{{form1.muscle_biopsy_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> NCV</td>
+                                    <td>{{form1.ncv |default_if_none:""}}</td>
+                                    <td class="ncv_class">{{form1.ncv_date|default_if_none:""}}</td>
+									<td class="ncv_class">{{form1.ncv_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> IEF for CDG</td>
+                                    <td>{{form1.ief_cdg|default_if_none:""}}</td>
+                                    <td class="ief_cdg_class">{{form1.ief_cdg_date|default_if_none:""}}</td>
+									<td class="ief_cdg_class">{{form1.ief_cdg_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> CSF Glycine</td>
+                                    <td>{{form1.glycine |default_if_none:""}}</td>
+                                    <td class="glycine_class">{{form1.glycine_date|default_if_none:""}}</td>
+									<td class="glycine_class">{{form1.glycine_age|default_if_none:""}}</td>
+
+                                </tr>
+								<tr>
+                                    <td> Any Other Information</td>
+                                    <td>{{form1.other_info|default_if_none:""}}</td>
+                                    <td>{{form1.other_info_date|default_if_none:""}}</td>
+									<td>{{form1.other_info_age|default_if_none:""}}</td>
+
+                                </tr>
+                                <tr>
+                                    <td> TMS</td>
+                                    <td>{{form1.tms|default_if_none:""}}</td>
+                                    <td class="tms_class">{{form1.tms_date|default_if_none:""}}</td>
+									<td class="tms_class">{{form1.tms_age|default_if_none:""}}</td>
+
+                                </tr>
+								</tbody>
+						 </table>
+
+                        <hr>
+
+
+						<div class="row ">
+							<div class="col-md-3">
+							<label for="photos" class="col-sm col-form-label">Photos</label>
+								{{form1.photos|default_if_none:""}}
+							</div>
+						<div class="col-md-9 ">
+							<label for="photos_specify" class="col-sm col-form-label">Photos(Specify)</label>
+								{{form1.photos_specify|default_if_none:""}}
+						</div>
+						</div>
+
+
+
+
+
+
+
+
+
+
+
+
+					</div>
+		</div>
+
+
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">MOLECULR DIAGNOSIS</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                    </div>
+					<div class="box-body" style="">
+
+						  <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                                <tr>
+                                    <th>Molecular Studies</th>
+                                    <th>Date</th>
+                                    <th>Place</th>
+									<th>Upload Studies</th>
+
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>{{form1.molecular_studies|default_if_none:""}}</td>
+                                    <td>{{form1.molecular_studies_date|default_if_none:""}}</td>
+                                    <td>{{form1.molecular_studies_place|default_if_none:""}}</td>
+									<td>{{form1.upload_studies|default_if_none:""}}</td>
+
+                                </tr>
+								</tbody>
+						 </table>
+
+						<h3 class="text-dark">Final Outcome</h3>
+
+                        <div class="form-group row ">
+							<div class="col-md-4">
+							<label for="Final_Outcome" class="col-sm col-form-label">Final Outcome</label>
+							<div class="col-sm">
+								{{form1.Final_Outcome|default_if_none:""}}
+							</div>
+						</div>
+
+						<div class="col-md-4 Final_Outcome_class">
+							<label for="death_cause" class="col-sm col-form-label">Death Cause</label>
+							<div class="col-sm">
+								{{form1.death_cause |default_if_none:""}}
+							</div>
+						</div>
+						<div class="col-md-4 Final_Outcome_class">
+							<label for="age_timedeath" class="col-sm col-form-label">Age at the time of Death</label>
+							<div class="col-sm">
+								{{form1.age_timedeath |default_if_none:""}}
+							</div>
+                        </div>
+						</div>
+                </div>
+            </div>
+    </div>
+<!--        </div>-->
+
+
+
+<!--    </div>-->
+    <!---->
+
+    <!--    </div>-->
+    <!--    </div>-->
+
+
+
+</form>
+{% endblock %}

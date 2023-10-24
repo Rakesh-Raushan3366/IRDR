@@ -1,0 +1,469 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> -->
+<style>
+    input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:optional {
+  border-color: gray;
+}
+input:required:valid {
+  border-color: green;
+
+}
+
+input:invalid {
+  border-color: red;
+
+
+}
+select:invalid {
+  border-color: red;
+
+
+}
+select:required:valid {
+  border-color: green;
+
+
+}
+</style>
+<script>
+	$(document).ready(function(){
+	$("#id_bd_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view
+	console.log(data)
+	$("#id_bd_district").html(data);
+	}
+	});
+	});
+	});
+
+
+</script>
+
+<script>
+    /* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_mt_referred_by').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any others'){
+	$("#id_mt_referred_by_desc").show();
+    $("label[for='referedby_others']").show();
+	}
+	else
+	{
+	$("#id_mt_referred_by_desc").hide();
+    $("label[for='referedby_others']").hide();
+
+	}
+	});
+	$("#id_mt_referred_by_desc").hide();
+	$("label[for='referedby_others']").hide();
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_mt_consent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_mt_consent_upload").show();
+    $("label[for='consent_upload']").show();
+	}
+	else
+	{
+	$("#id_mt_consent_upload").hide();
+    $("label[for='consent_upload']").hide();
+
+	}
+	});
+	$("#id_mt_consent_upload").hide();
+	$("label[for='consent_upload']").hide();
+	});
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_mt_paitent_id_yes_no').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".patient_id_rule").show();
+
+	}
+	else
+	{
+	$(".patient_id_rule").hide();
+
+
+	}
+	});
+	$(".patient_id_rule").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_mt_religion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_mt_religion_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_mt_religion_other_specify").hide();
+
+
+	}
+	});
+	$("#id_mt_religion_other_specify").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_mt_caste').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_mt_caste_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_mt_caste_other_specify").hide();
+
+
+	}
+	});
+	$("#id_mt_caste_other_specify").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_mt_referred_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".reffered_by").show();
+
+	}
+	else
+	{
+	$(".reffered_by").hide();
+
+
+	}
+	});
+	$(".reffered_by").hide();
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_mt_assent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_mt_assent_upload").show();
+    $("label[for='assent_upload']").show();
+	}
+	else
+	{
+	$("#id_mt_assent_upload").hide();
+    $("label[for='assent_upload']").hide();
+
+	}
+	});
+	$("#id_mt_assent_upload").hide();
+	$("label[for='assent_upload']").hide();
+	});
+
+$(document).ready(function(){
+	$("#id_mt_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view function
+	$("#id_mt_district").html(data);
+	}
+	});
+	});
+	});
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_mt_paitent_id').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){
+	$("#id_mt_patient_id_no").show();
+
+	}
+	else
+	{
+	$("#id_mt_patient_id_no").hide();
+
+
+	}
+	});
+	$("#id_mt_patient_id_no").hide();
+
+	});
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_mt_father_mother_id').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'){
+	$("#id_mt_mother_father_id_no").show();
+
+	}
+	else
+	{
+	$("#id_mt_mother_father_id_no").hide();
+
+
+	}
+	});
+	$("#id_mt_mother_father_id_no").hide();
+
+	});
+
+
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+	.required:after {
+    content:" *";
+    color: red;
+  }
+</style>
+<form method="POST"  enctype="multipart/form-data" data-district-url="{% url 'load_district' %}" id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+
+    <div class="box-body">
+
+        <div class="box-group" id="accordion">
+
+
+                        <div class="row ">
+                            <div class="col-md-3 ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Final Diagnosis</label>
+                                {{form1.mt_final_diagnosis}}
+                            </div>
+                            <div class="col-md-3 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Date of Record:</label>
+                                {{form1.mt_date_of_records}}
+                            </div>
+                            <div class="col-md-3  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Date of Clinical examination:</label>
+                                {{form1.mt_date_of_clinical_exam}}
+                            </div>
+                            <div class="col-md-3  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Date of birth</label>
+                                {{form1.mt_date_of_birth}}
+                            </div>
+<!--                            <div class="col-md-2">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">Age</label>-->
+<!--                                {{form1.mt_patient_age}}-->
+
+<!--                            </div>-->
+                        </div>
+                        <br>
+                                <div class="box box-secondary">
+	                    <div class="box-header">
+		                    <h3 class="box-title text-primary">Common Demography data</h3>
+	                    </div>
+
+                    <div class="box-body">
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Patient's Name</label>
+                                {{form1.mt_patient_name}}
+                            </div>
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Father's Name</label>
+                                {{form1.mt_father_name}}
+                            </div>
+                            <div class="col-md-4  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother's Name </label>
+                                {{form1.mt_mother_name}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Patient ID</label>
+                                {{form1.mt_paitent_id_yes_no}}
+
+                            </div>
+                            <div class="col-md-4 patient_id_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Select Patient ID</label>
+                                {{form1.mt_paitent_id}}
+                                  {{form1.mt_patient_id_no}}
+                            </div>
+                            <div class="col-md-4 " >
+                                <label class="col-md font-weight-bolder text-dark text-left" > Parent Id</label>
+                                {{form1.mt_father_mother_id}}
+                                {{form1.mt_mother_father_id_no}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Permanent Address</label>
+                                {{form1.mt_permanent_addr}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">State </label>
+                                {{form1.mt_state}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">District </label>
+                                {{form1.mt_district}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">City / Town of Birth</label>
+                                {{form1.mt_city_name}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Country Name</label>
+                                {{form1.mt_country_name}}
+                            </div>
+                            <div class="col-md-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Landline number with code</label>
+                                    {{form1.mt_land_line_no}}
+                                </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Mobile No. parent/patient</label>
+                                {{form1.mt_mother_mobile_no}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Alternate Mobile no</label>
+                                {{form1.mt_father_mobile_no}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Email</label>
+                                {{form1.mt_email}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Religion</label>
+                                {{form1.mt_religion}}
+                                {{form1.mt_religion_other_specify}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Caste</label>
+                                {{form1.mt_caste}}
+                                {{form1.mt_caste_other_specify}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gender</label>
+                                {{form1.mt_gender}}
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Referred from another facility</label>
+                                {{form1.mt_referred_status}}
+                            </div>
+                            <div class="col-md-4 reffered_by">
+                                <label class="col-md font-weight-bolder text-dark text-left">Referred By</label>
+                                {{form1.mt_referred_by}}
+                                 {{form1.mt_referred_by_desc}}
+                            </div>
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Consent Given</label>
+                                {{form1.mt_consent_given}}
+<!--                                <label class="col-md font-weight-bolder text-dark text-left" for="consent_upload">Please upload</label>-->
+                                {{form1.mt_consent_upload}}
+                                 <a href="/media/{{form1.md_consent_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Assent Given</label>
+                                {{form1.mt_assent_given}}
+<!--                                <label class="col-md font-weight-bolder text-dark text-left" for="assent_upload">Please Upload</label>-->
+                                {{form1.mt_assent_upload}}
+                                <a href="/media/{{form1.md_assent_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital Name</label>
+                                {{form1.mt_hospital_name}}
+                            </div>
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital Registration number</label>
+                                {{form1.mt_hospital_reg_no}}
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <label class="col-md font-weight-bolder text-danger text-left">Note: Field mark with * are mandatory fields</label>
+
+                            </div>
+
+                        </div>
+
+                       </div>
+
+                </div>
+        </div>
+
+            <br>
+        </div>
+    </div>
+</form>
+{% endblock %}

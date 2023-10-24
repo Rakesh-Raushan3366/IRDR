@@ -1,0 +1,3321 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+			$(document).ready(function() {
+		$('.submitbtn').click(function(e) {
+			var isValid = true;
+			$('.required1').each(function() {
+				if ($.trim($(this).val()) == '') {
+					isValid = false;
+					$(this).css({
+						"border": "1px solid red",
+						"background": "#FFCECE"
+					});
+					alert($(this).attr("name") + " " + 'field is empty')
+				}
+				else {
+					$(this).css({
+						"border": "",
+						"background": ""
+					});
+				}
+			});
+			if (isValid == false)
+			e.preventDefault();
+			else
+			alert('Thank you for submitting');
+		});
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sd_positive_family_history').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".positive").show();
+
+	}
+	else
+	{
+	$(".positive").hide();
+
+	}
+	});
+	$(".positive").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sd_Consanguinity').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".consang").show();
+
+	}
+	else
+	{
+	$(".consang").hide();
+
+	}
+	});
+	$(".consang").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sd_Consanguinity').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".consang").show();
+
+	}
+	else
+	{
+	$(".consang").hide();
+
+	}
+	});
+	$(".consang").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Resuscitation_required').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".resuscitation").show();
+
+	}
+	else
+	{
+	$(".resuscitation").hide();
+
+	}
+	});
+	$(".resuscitation").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_NICU_stay').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".NICU_specify").show();
+
+	}
+	else
+	{
+	$(".NICU_specify").hide();
+
+	}
+	});
+	$(".NICU_specify").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_EEG').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".specify_Findings").show();
+
+	}
+	else
+	{
+	$(".specify_Findings").hide();
+
+	}
+	});
+	$(".specify_Findings").hide();
+	});
+
+</script>
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Sleep_Studies').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".Studies_Findings").show();
+
+	}
+	else
+	{
+	$(".Studies_Findings").hide();
+
+	}
+	});
+	$(".Studies_Findings").hide();
+	});
+
+</script>
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Seizures').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Seizures_rule").show();
+
+	}
+	else
+	{
+	$(".Seizures_rule").hide();
+
+	}
+	});
+	$(".Seizures_rule").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_On_some_antiepileptics_drugs').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".antiepileptics_rule").show();
+
+	}
+	else
+	{
+	$(".antiepileptics_rule").hide();
+
+	}
+	});
+	$(".antiepileptics_rule").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_Any_surgery').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Any_surgery").show();
+
+	}
+	else
+	{
+	$(".Any_surgery").hide();
+
+	}
+	});
+	$(".Any_surgery").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_IQ_done').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".IQ_value_rule").show();
+
+	}
+	else
+	{
+	$(".IQ_value_rule").hide();
+
+	}
+	});
+	$(".IQ_value_rule").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_sd_DQ_done').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".DQ_value_rule").show();
+
+	}
+	else
+	{
+	$(".DQ_value_rule").hide();
+
+	}
+	});
+	$(".DQ_value_rule").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_DQ_done').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".DQ_value_rule").show();
+
+	}
+	else
+	{
+	$(".DQ_value_rule").hide();
+
+	}
+	});
+	$(".DQ_value_rule").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Opthalmological_Examination').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".if_abnormal").show();
+
+	}
+	else
+	{
+	$(".if_abnormal").hide();
+
+	}
+	});
+	$(".if_abnormal").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_BERA_Audiogram').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".describe").show();
+
+	}
+	else
+	{
+	$(".describe").hide();
+
+	}
+	});
+	$(".describe").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Unilat_bilat').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".if_abnormal").show();
+
+	}
+	else
+	{
+	$(".if_abnormal").hide();
+
+	}
+	});
+	$(".if_abnormal").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_Hepatomegaly').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Hepatomegaly_rule").show();
+
+	}
+	else
+	{
+	$(".Hepatomegaly_rule").hide();
+
+	}
+	});
+	$(".Hepatomegaly_rule").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_Splenomegaly').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Splenomegaly_rule").show();
+
+	}
+	else
+	{
+	$(".Splenomegaly_rule").hide();
+
+	}
+	});
+	$(".Splenomegaly_rule").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Nerve_Conduction_Study').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".describe_abnormal").show();
+
+	}
+	else
+	{
+	$(".describe_abnormal").hide();
+
+	}
+	});
+	$(".describe_abnormal").hide();
+	});
+
+</script>
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Nerve_Conduction_Study').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".describe_abnormal").show();
+
+	}
+	else
+	{
+	$(".describe_abnormal").hide();
+
+	}
+	});
+	$(".describe_abnormal").hide();
+	});
+
+</script>
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Chitrotriosidase_Study').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".abnormal").show();
+
+	}
+	else
+	{
+	$(".abnormal").hide();
+
+	}
+	});
+	$(".abnormal").hide();
+	});
+
+</script><script>
+        $(document).ready(function(){
+	$('#id_sd_Radiological_Ultrasonography').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Radiological_rule").show();
+
+	}
+	else
+	{
+	$(".Radiological_rule").hide();
+
+	}
+	});
+	$(".Radiological_rule").hide();
+	});
+
+</script>
+
+<script>
+        $(document).ready(function(){
+	$('#id_Any_Other_Biomarker2').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".biomarker").show();
+
+	}
+	else
+	{
+	$(".biomarker").hide();
+
+	}
+	});
+	$(".biomarker").hide();
+	});
+
+</script>
+<script>
+        $(document).ready(function(){
+	$('#id_sd_Pulmonary_function_test').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".Pulmonary_function_rule").show();
+
+	}
+	else
+	{
+	$(".Pulmonary_function_rule").hide();
+
+	}
+	});
+	$(".Pulmonary_function_rule").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_sd_Hydrops').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others (Specify)'){
+	$(".sd_Hydrops_rule").show();
+
+	}
+	else
+	{
+	$(".sd_Hydrops_rule").hide();
+
+	}
+	});
+	$(".sd_Hydrops_rule").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_sd_MRI_abdomen').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".mri_rule").show();
+
+	}
+	else
+	{
+	$(".mri_rule").hide();
+
+	}
+	});
+	$(".mri_rule").hide();
+	});
+
+
+
+
+ $(document).ready(function(){
+	$('#id_sd_CT_scan').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".ct_scan_rule").show();
+
+	}
+	else
+	{
+	$(".ct_scan_rule").hide();
+
+	}
+	});
+	$(".ct_scan_rule").hide();
+	});
+
+
+ $(document).ready(function(){
+	$('#id_sd_MRI_Brain').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".mri_brain_rule").show();
+
+	}
+	else
+	{
+	$(".mri_brain_rule").hide();
+
+	}
+	});
+	$(".mri_brain_rule").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_sd_MRI_Spine_limbs_pelvis').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".MRI_Spine_limbs_pelvis_rule").show();
+
+	}
+	else
+	{
+	$(".MRI_Spine_limbs_pelvis_rule").hide();
+
+	}
+	});
+	$(".MRI_Spine_limbs_pelvis_rule").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_sd_VEP').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".vep_rule").show();
+
+	}
+	else
+	{
+	$(".vep_rule").hide();
+
+	}
+	});
+	$(".vep_rule").hide();
+	});
+
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Enzyme').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$(".sd_Enzyme_rule").show();
+
+	}
+	else
+	{
+	$(".sd_Enzyme_rule").hide();
+
+	}
+	});
+	$(".sd_Enzyme_rule").hide();
+	});
+
+$(document).ready(function(){
+	$('#id_sd_Surgery1').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Surgery1_rule").show();
+
+	}
+	else
+	{
+	$(".Surgery1_rule").hide();
+
+	}
+	});
+	$(".Surgery1_rule").hide();
+	});
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Blood_Transfusion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Blood_Transfusion_rule").show();
+
+	}
+	else
+	{
+	$(".Blood_Transfusion_rule").hide();
+
+	}
+	});
+	$(".Blood_Transfusion_rule").hide();
+	});
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Platlet_Transfusion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Platlet_Transfusion_RULE").show();
+
+	}
+	else
+	{
+	$(".Platlet_Transfusion_RULE").hide();
+
+	}
+	});
+	$(".Platlet_Transfusion_RULE").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_sd_rad_ultrasono_type').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Abnormal'){
+	$(".Ultrasonography_class_if_abnormal").show();
+
+	}
+	else
+	{
+	$(".Ultrasonography_class_if_abnormal").hide();
+
+	}
+	});
+	$(".Ultrasonography_class_if_abnormal").hide();
+	});
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_renal_par_pathalogy').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Renal_parenchymal_pathology").show();
+
+	}
+	else
+	{
+	$(".Renal_parenchymal_pathology").hide();
+
+	}
+	});
+	$(".Renal_parenchymal_pathology").hide();
+	});
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_final_diagnosis').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$(".final_diagnosis_rule").show();
+
+	}
+	else
+	{
+	$(".final_diagnosis_rule").hide();
+
+	}
+	});
+	$(".final_diagnosis_rule").hide();
+	});
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Final_Outcome').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Death'){
+	$(".Final_Outcome_class").show();
+
+	}
+	else
+	{
+	$(".Final_Outcome_class").hide();
+
+	}
+	});
+	$(".Final_Outcome_class").hide();
+	});
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Surgery').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'other'){
+	$(".Any_surgery_other").show();
+
+	}
+	else
+	{
+	$(".Any_surgery_other").hide();
+
+	}
+	});
+	$(".Any_surgery_other").hide();
+	});
+
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Valvular_involvement').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Valvular_involvement_rule").show();
+
+	}
+	else
+	{
+	$(".Valvular_involvement_rule").hide();
+
+	}
+	});
+	$(".Valvular_involvement_rule").hide();
+	});
+
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Valvular_Regurgitation').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Valvular_Regurgitation_rule").show();
+
+	}
+	else
+	{
+	$(".Valvular_Regurgitation_rule").hide();
+
+	}
+	});
+	$(".Valvular_Regurgitation_rule").hide();
+	});
+
+
+
+
+
+$(document).ready(function(){
+	$('#id_sd_Causative_DNA_sequence_variat').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Causative_DNA_sequence_variat_rule").show();
+
+	}
+	else
+	{
+	$(".Causative_DNA_sequence_variat_rule").hide();
+
+	}
+	});
+	$(".Causative_DNA_sequence_variat_rule").hide();
+	});
+
+
+$(document).ready(function(){
+<!--  $('#id_su_drink_alcohal, #id_su_drinking, #id_su_occasion, #id_su_stop_drinking,#id_su_normally_expected,#id_su_firstdrink-->
+<!--     #id_su_remorse,#id_su_remember,#id_su_injured_drinking,#id_su_health_concern').on('change', function(){-->
+    $('*').on('change',function(){
+	var val1 =  parseFloat($('#id_sd_gaze_palsy').val());
+	var val2 =  parseInt($('#id_sd_Ophthalmology').val());
+	var val3 =  parseInt($('#id_sd_Epilepsy').val());
+	var val4 =  parseInt($('#id_sd_Age_seizure').val());
+	var val5 =  parseInt($('#id_sd_Development_Cognitive_ability').val());
+	var val6 =  parseInt($('#id_sd_Ataxia_of_gait').val());
+	var val7 =  parseFloat($('#id_sd_Cerebellar_tremor').val());
+	var val8 =  parseInt($('#id_sd_Pyramidal').val());
+	var val9 =  parseInt($('#id_sd_Extrapyramidal').val());
+	var val10 =  parseInt($('#id_sd_Swallowing_difficulties_Oral_bulbar_function').val());
+	var val11 =  parseInt($('#id_sd_Speech').val());
+	var val12=  parseInt($('#id_sd_Spinal_alignement').val());
+
+	if (val1 != null)
+    {
+        aa = val1 || 0
+    }
+    else
+    {
+        aa = 0
+    }if (val2 != null)
+    {
+        bb = val2 || 0
+    }
+    else
+    {
+        bb = 0
+    }if (val3 != null)
+    {
+        cc = val3 || 0
+    }
+    else
+    {
+        cc = 0
+    }if (val4 != null)
+    {
+        dd = val4 || 0
+    }
+    else
+    {
+        dd = 0
+    }
+    if (val5 != null)
+    {
+        ee = val5 || 0
+    }
+    else
+    {
+        ee = 0
+    }if (val6 != null)
+    {
+        ff = val6 || 0
+    }
+    else
+    {
+        ff = 0
+    }if (val7 != null)
+    {
+        gg = val7 || 0
+    }
+    else
+    {
+        gg = 0
+    }if (val8 != null)
+    {
+        hh = val8 || 0
+    }
+    else
+    {
+        hh = 0
+    }
+    if (val9 != null)
+    {
+        ii = val9 || 0
+    }
+    else
+    {
+        ii = 0
+    }if (val10 != null)
+    {
+        jj = val10 || 0
+    }
+    else
+    {
+        jj = 0
+    }
+    if (val11 != null)
+    {
+        kk = val11 || 0
+    }
+    else
+    {
+        kk = 0
+    }
+    if (val10 != null)
+    {
+        ll = val12 || 0
+    }
+    else
+    {
+        ll = 0
+    }
+
+	var totalsum = parseFloat(aa) + parseInt(bb) + parseInt(cc) + parseInt(dd)+ parseInt(ee) + parseInt(ff) + parseFloat(gg) + parseInt(hh) + parseInt(ii) + parseInt(jj)+ parseInt(kk) + parseInt(ll)
+
+
+	$('#id_sd_final_score').val(totalsum);
+
+
+	});
+
+	});
+
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+
+	hr {
+
+	width:95%;
+    border: 1px solid rgb(240, 240, 240);
+}
+
+</style>
+
+<style>
+		
+		.required1{
+		border-color: red;
+		padding: 0.5rem;
+	
+		}
+</style>
+<form method="POST" id="personForm" action=""  enctype="multipart/form-data" >
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+
+    {% if form1.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+
+    <br>
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of
+                                Patient</label>
+                            {{form1.sd_Patient_education|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.sd_Patient_occupation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of
+                                Father</label>
+                            {{form1.sd_Father_education|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.sd_Father_occupation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of
+                                Mother</label>
+                            {{form1.sd_Mother_education|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.sd_Mother_occupation|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Monthly Family Income (INR)As
+                                Per Kuppuswamy SES 2018</label>
+                            {{form1.sd_Monthly_family_income|addclass:'form-control'}}
+                        </div>
+                        <br>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+            </div>
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Anthropometry</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <i class="fa fa-fw fa-square"></i><label class="col-xs font-weight-bolder text-dark text-left"><h4>Anthropometry Details</h4>
+                            </label>
+
+                        </div>
+                    </div>
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+                        <colgroup>
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+
+                        </colgroup>
+                        <thead class="bg-info ">
+                        <tr>
+                            <th></th>
+                            <th>Patient</th>
+                            <th>Percentile**</th>
+                            <th>SD</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th> Weight (kg) *</th>
+                            <td>
+                                {{form1.sd_weight_patient|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_weight_percentile|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_weight_SD|addclass:'form-control required1'}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Height (cm)*</th>
+                            <td>
+                                {{form1.sd_height_patient|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_height_percentile|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_height_SD|addclass:'form-control required1'}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Head Circumference (cm)*</th>
+                            <td>
+                                {{form1.sd_Head_circumference_patient|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Head_circumference_percentile|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Head_circumference_sd|addclass:'form-control required1'}}
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                           <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>PRESENTING COMPLAINTS</h4>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+                        <colgroup>
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+
+                        </colgroup>
+                        <thead class="bg-info ">
+                        <tr>
+                            <th></th>
+                            <th>Years</th>
+                            <th>Month</th>
+                            <th>Day</th>
+                            <th>Intrauterine</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th> Age at onset of symptoms: *</th>
+                            <td>
+                                {{form1.sd_Age_at_onset_of_symptoms_year|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_onset_of_symptoms_month|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_onset_of_symptoms_day|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_onset_of_symptoms_Intrauterine|addclass:'form-control required1'}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Age at presentation *</th>
+                            <td>
+                                {{form1.sd_Age_at_presentation_year|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_presentation_month|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_presentation_day|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_presentation_Intrauterine|addclass:'form-control required1'}}
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <th> Age at diagnosis: *</th>
+                            <td>
+                                {{form1.sd_Age_at_diagnosis_year|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_diagnosis_month|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_diagnosis_day|addclass:'form-control required1'}}
+                            </td>
+                            <td>
+                                {{form1.sd_Age_at_diagnosis_Intrauterine|addclass:'form-control required1'}}
+                            </td>
+
+
+                        </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Upload pedigree (3
+                                generation):</label>
+
+                        </div>
+                         <div class="col-xs-4">
+                             {{form1.sd_Pedigree_to_be_uploaded}}
+
+                         </div>
+                    </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Positive Family
+                                History: *</label>
+                            {{form1.sd_positive_family_history|addclass:'form-control required1'}}
+                        </div>
+                        <div class="col-xs-3 positive">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.sd_family_history_specify|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Consanguinity:</label>
+                            {{form1.sd_Consanguinity|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3 consang">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.sd_Consanguinity_specify|addclass:'form-control'}}
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+            </div>
+        </div>
+        <!---- box start ----->
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Antenatal Investigation</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="row ">
+                    <div class="col-xs-6">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Antenatal Investigation</h4>
+                        </label>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left "><h4>Ultrasound findings</h4>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left ">Antenatal Ultrasound</label>
+                        {{form1.sd_Antenatal_Ultrasound|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left ">Polyhydramnios</label>
+                        {{form1.sd_Polyhydramnios|addclass:'form-control'}}
+                    </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Hydrops</label>
+                            {{form1.sd_Hydrops|addclass:'form-control'}}
+                        </div>
+                    <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Other findings</label>
+                            {{form1.sd_Hydrops_specify|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <hr>
+                    <!-- /.box-header -->
+                        <div class="row ">
+                            <div class="col-xs-6">
+                               <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>History</h4></label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Type of delivery:</label>
+                                {{form1.sd_Type_of_delivery|addclass:'form-control'}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Baby cried immediately
+                                    after delivery:</label>
+                                {{form1.sd_Baby_cried_immediately_after_delivery|addclass:'form-control'}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Resuscitation
+                                    required:</label>
+                                {{form1.sd_Resuscitation_required|addclass:'form-control'}}
+                            </div>
+                            <div class="col-xs-3 resuscitation">
+                                <label class="col-xs font-weight-bolder text-dark text-left">If Yes Details</label>
+				                {{form1.sk_Resuscitation_specify|addclass:'form-control'}}
+                           </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Ventilation</label>
+                                {{form1.sd_Resuscitation_ventilation|addclass:'form-control'}}
+                            </div>
+                        </div>
+                       <br>
+
+                <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">NICU Stay</label>
+                            {{form1.sd_NICU_stay|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3 NICU_specify">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.sd_NICU_specify|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-xs-3">-->
+<!--                            <label class="col-xs font-weight-bolder text-dark text-left">Others</label>-->
+<!--                            {{form1.sd_NICU_stay_other|addclass:'form-control'}}-->
+<!--                        </div>-->
+                        <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Birth weight (Kg)</label>
+                                {{form1.sd_Birth_weight|addclass:'form-control'}}
+                            </div>
+                    </div>
+
+                    <!-- /.box-header -->
+                        <hr>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-sm font-weight-bolder text-dark text-left">Developmental
+                                    milestones:</label>
+                                {{form1.sd_Development_milestones|addclass:'form-control'}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Motor</label>
+                                {{form1.sd_delayed_Motor|addclass:'form-control'}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left"> Global</label>
+                                {{form1.sd_delayed_Global|addclass:'form-control'}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cognitive</label>
+                                {{form1.sd_delayed_Cognitive|addclass:'form-control'}}
+                            </div>
+                        </div>
+            </div>
+        </div>
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">History details</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+
+<!--                        <div class="row ">-->
+<!--                            <div class="col-xs-3">-->
+<!--                                <i class="fa fa-fw fa-circle"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>History detials</h4> </label>-->
+<!--                            </div>-->
+<!--                        </div>-->
+
+                    <div class="row ">
+                        <div class="col-md-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 15%;">
+	                            <col span="1" style="width: 10%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td>Abdominal distension *</td>
+                                <td>
+                                        {{form1.sd_Abdominal_distentesion|addclass:'form-control required1'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Increasing pallor</td>
+                                <td>
+                                        {{form1.sd_Increasing_pallor|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Bleeding</td>
+                                <td>
+                                        {{form1.sd_Bleeding|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Developmental Delay *</td>
+                                <td>
+                                        {{form1.sd_Developmental_Delay|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td>Neuroregression</td>
+                                <td>
+                                        {{form1.sd_Neuroregression|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Behavioral problems</td>
+                                <td>
+                                        {{form1.sd_Behavioral_problems|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Hyperactivity</td>
+                                <td>
+                                        {{form1.sd_Hyperactivity|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Psychomotor arrest</td>
+                                <td>
+                                        {{form1.sd_Psychomotor_arrest|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Seizures *</td>
+                                <td>
+                                        {{form1.sd_Seizures|addclass:'form-control required1'}}
+                                </td>
+                        </tr>
+                        <tr class="Seizures_rule">
+                             <td>If Yes,Seizures specify</td>
+                                <td>
+                                        {{form1.sd_Seizures_specify|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>On some antiepileptics</td>
+                                <td>
+                                        {{form1.sd_On_some_antiepileptics_drugs|addclass:'form-control'}}
+                                </td>
+                            </tr>
+                        <tr class="antiepileptics_rule">
+                             <td>If yes, specify</td>
+                                <td>
+                                        {{form1.sd_antiepileptics_specify|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Decreased attention span</td>
+                                <td>
+                                        {{form1.sd_Decreased_attention_span|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                        </div>
+                    <div class="col-md-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 15%;">
+	                            <col span="1" style="width: 10%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        <tr>
+                             <td>Stiffness</td>
+                                <td>
+                                        {{form1.sd_Stiffness|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Poor feeding</td>
+                                <td>
+                                        {{form1.sd_Poor_feeding|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Choking</td>
+                                <td>
+                                        {{form1.sd_Choking|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Loss of Vision</td>
+                                <td>
+                                        {{form1.sd_Loss_of_Vision|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Hearing loss</td>
+                                <td>
+                                        {{form1.sd_Hearing_loss|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Recurrent/persistent upper
+                            respiratory symptoms</td>
+                                <td>
+                                        {{form1.sd_Recurrent_persistent_upper_respiratory_symptoms|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Fractures</td>
+                                <td>
+                                        {{form1.sd_Fractures|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Gait disturbances</td>
+                                <td>
+                                        {{form1.sd_Gait_disturbances|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                             <td>Speech disturbances</td>
+                                <td>
+                                        {{form1.sd_Speech_disturbances|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Any surgery</td>
+                                <td>
+                                        {{form1.sd_Any_surgery|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Any_surgery">
+                             <td>Surgery</td>
+                                <td>
+                                        {{form1.sd_Surgery|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Any_surgery">
+                             <td>Age at Surgery</td>
+                                <td>
+                                        {{form1.sd_Surgery_age_history|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Any_surgery_other">
+                             <td>Other (specify)</td>
+                                <td>
+                                        {{form1.sd_Surgery_other_specify|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Functional status</td>
+                                <td>
+                                        {{form1.sd_Functional_status|addclass:'form-control'}}
+                                </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+                    </div>
+                    </div>
+
+
+                <!-- /.box-body -->
+            </div>
+            <!---- box end ----->
+        </div>
+
+        <!---- box start ----->
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Clinical Examination Findings: </h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-xs font-weight-bolder text-dark text-left"><h4>Findings</h4></label>
+                    </div> <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-xs font-weight-bolder text-dark text-left"><h4>Neurological</h4></label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-6">
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Head shape Abnormal </td>
+                                <td>
+                                        {{form1.sd_Head_shape_Abnormal|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Mongolian spots at back </td>
+                                <td>
+                                        {{form1.sd_Mongolian_spots_at_back|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Ichthyosis </td>
+                                <td>
+                                        {{form1.sd_Ichthyosis|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Stiff thick skin </td>
+                                <td>
+                                        {{form1.sd_Stiff_Thick_skin|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Telangiectasia</td>
+                                <td>
+                                        {{form1.sd_Telangiectasia|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td> Edema</td>
+                                <td>
+                                        {{form1.sd_Edema|addclass:'form-control'}}
+                                </td>
+                        </tr>
+<!--                        <tr>-->
+<!--                                <td> Hydrops</td>-->
+<!--                                <td>-->
+<!--                                        {{form1.sd_Hydrops1|addclass:'form-control'}}-->
+<!--                                </td>-->
+<!--                        </tr>-->
+                        <tr>
+                                <td> Angiokeratomas</td>
+                                <td>
+                                        {{form1.sd_Angiokeratomas|addclass:'form-control'}}
+                                </td>
+                        </tr>
+
+                        </tbody>
+                </table>
+                    </div>
+                <div class="col-md-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Exaggerated startle reflex </td>
+                                <td>
+                                        {{form1.sd_Exaggerated_startle_reflex|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Hypotonia </td>
+                                <td>
+                                        {{form1.sd_Hypotonia|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Hypertonia </td>
+                                <td>
+                                        {{form1.sd_Hypertonia|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Brisk reflexes </td>
+                                <td>
+                                        {{form1.sd_Brisk_reflexes|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Hyporeflexia </td>
+                                <td>
+                                        {{form1.sd_Hyporeflexia|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Gait abnormalities </td>
+                                <td>
+                                        {{form1.sd_Gait_abnormalities|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Opisthotonus </td>
+                                <td>
+                                        {{form1.sd_Opisthotonus|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Dystonia </td>
+                                <td>
+                                        {{form1.sd_Dystonia|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td> IQ </td>
+                                <td>
+                                        {{form1.sd_IQ_done|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="IQ_value_rule">
+                                <td> Value </td>
+                                <td>
+                                        {{form1.sd_IQ_done_value|addclass:'form-control'}}
+                                </td>
+                             <tr>
+                                <td> DQ </td>
+                                <td>
+                                        {{form1.sd_DQ_done|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="DQ_value_rule">
+                                <td> Value </td>
+                                <td>
+                                        {{form1.sd_DQ_done_value|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                    </table>
+
+                </div>
+                </div>
+
+                <hr>
+
+                <div class="row ">
+                    <div class="col-xs-12">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Gaucherm mSST score</h4></label>
+                    </div>
+                </div>
+                <br>
+
+                        <div class="box-body" style="">
+
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" >
+                        <thead class="bg-info">
+                        <tr>
+                            <th>Gaucherm mSST score</th>
+                            <th></th>
+
+                        </tr>
+                        </thead>
+
+                        <tbody>
+
+                        <tr>
+                            <td>1.Gaze palsy</td>
+                            <td>{{form1.sd_gaze_palsy|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>2.Ophthalmology</td>
+                            <td>{{form1.sd_Ophthalmology|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>3.Epilepsy</td>
+                            <td>{{form1.sd_Epilepsy|addclass:'form-control'}}</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>4.Age at first seizure</td>
+                            <td>{{form1.sd_Age_seizure|addclass:'form-control'}}</td>
+
+
+                        </tr>
+                        <tr>
+                            <td>5. Development Cognitive ability</td>
+                            <td>{{form1.sd_Development_Cognitive_ability|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td> 6.Ataxia of gait</td>
+                            <td>{{form1.sd_Ataxia_of_gait|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>7.Cerebellar tremor</td>
+                            <td>{{form1.sd_Cerebellar_tremor|addclass:'form-control'}}</td>
+                        </tr>
+                        <tr>
+                            <td>8.Pyramidal</td>
+                            <td>{{form1.sd_Pyramidal|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>9.Extrapyramidal</td>
+                            <td>{{form1.sd_Extrapyramidal|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>10.Swallowing difficulties Oral bulbar function</td>
+                            <td>{{form1.sd_Swallowing_difficulties_Oral_bulbar_function|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>11.Speech</td>
+                            <td>{{form1.sd_Speech|addclass:'form-control'}}</td>
+
+                        </tr>
+                        <tr>
+                            <td>12.Spinal alignement</td>
+                            <td>{{form1.sd_Spinal_alignement|addclass:'form-control'}}</td>
+
+                        </tr>
+                         <tr>
+                            <td>Total</td>
+                            <td>{{form1.sd_final_score|addclass:'form-control'}}</td>
+
+                        </tr>
+
+                        </tbody>
+                    </table>
+                        </div>
+
+
+                <br>
+                <div class="row ">
+                    <div class="col-xs-6">
+                       <i class="fa fa-fw fa-circle"></i> <label class="col-xs font-weight-bolder text-dark text-left "><h4>Ophthalmologic</h4></label>
+                    </div><div class="col-xs-6">
+                       <i class="fa fa-fw fa-circle"></i> <label class="col-xs font-weight-bolder text-dark text-left "><h4>Cardiovascular</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                <div class="col-md-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Oculomotor apraxia </td>
+                                <td>
+                                        {{form1.sd_Oculomotor_apraxia|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Saccades </td>
+                                <td>
+                                        {{form1.sd_Saccades|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Corneal clouding opacity </td>
+                                <td>
+                                        {{form1.sd_Corneal_clouding_opacity|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Glaucoma </td>
+                                <td>
+                                        {{form1.sd_Glaucoma|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Optic Nerve atrophy </td>
+                                <td>
+                                        {{form1.sd_Optic_Nerve_atrophy|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Retinal degeneration
+                            pigmentation</td>
+                                <td>
+                                        {{form1.sd_Retinal_degeneration_pigmentation|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Cataract</td>
+                                <td>
+                                        {{form1.sd_Cataract|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Squint</td>
+                                <td>
+                                        {{form1.sd_Squint|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Nystagmus</td>
+                                <td>
+                                        {{form1.sd_Nystagmus|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Supranuclear gaze palsy</td>
+                                <td>
+                                        {{form1.sd_Supranuclear_gaze_palsy|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Fundus abnormal</td>
+                                <td>
+                                        {{form1.sd_Fundus_abnormal|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Cherry Red Spot</td>
+                                <td>
+                                        {{form1.sd_Cherry_Red_Spot|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Pigmentary changes</td>
+                                <td>
+                                        {{form1.sd_Pigmentary_changes|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+                    <div class="col-md-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td>Congestive Heart Failure</td>
+                                <td>
+                                        {{form1.sd_Cardiovascular_Congestive_Heart_Failure|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Cor Pulmonale</td>
+                                <td>
+                                        {{form1.sd_Cardiovascular_Cor_Pulomonale|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                    <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Respiratory </h4></label>
+                     <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Enlarged tonsils </td>
+                                <td>
+                                        {{form1.sd_Respiratory_Enlarged_tonsils|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Sleep apnea </td>
+                                <td>
+                                        {{form1.sd_Respiratory_Sleep_apnea|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Reactive Airway Disease </td>
+                                <td>
+                                        {{form1.sd_Respiratory_Reactive_Airway_Disease|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Dyspnea </td>
+                                <td>
+                                        {{form1.sd_Respiratory_Dyspnea|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                     </table>
+                         <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Abdominal </h4></label>
+                        <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Hepatomegaly *</td>
+                                <td>
+                                        {{form1.sd_Hepatomegaly|addclass:'form-control required1'}}
+                                </td>
+                        </tr>
+                        <tr class="Hepatomegaly_rule">
+                                <td> Size BCM (cm)</td>
+                                <td>
+                                        {{form1.sd_if_yes_size_bcm|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Hepatomegaly_rule">
+                                <td> Span(cm)</td>
+                                <td>
+                                        {{form1.sd_if_yes_span|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Hepatomegaly_rule">
+                                <td> Consistency</td>
+                                <td>
+                                        {{form1.sd_if_yes_Consistency|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Hepatomegaly_rule">
+                                <td> Surface</td>
+                                <td>
+                                        {{form1.sd_if_yes_surface|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr class="Hepatomegaly_rule">
+                                <td> Margin</td>
+                                <td>
+                                        {{form1.sd_if_yes_margin|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td> Splenomegaly *</td>
+                                <td>
+                                        {{form1.sd_Splenomegaly|addclass:'form-control required1'}}
+                                </td>
+                        </tr>
+                        <tr class="Splenomegaly_rule">
+                                <td> Size BCM(cm)</td>
+                                <td>
+                                        {{form1.sd_if_Splenomegaly|addclass:'form-control'}}
+                                </td>
+                        </tr>
+
+
+                        </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+
+
+                <hr>
+                <div class="row ">
+                    <div class="col-xs-12">
+                       <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Skeletal</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-6">
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Joint stiffness</td>
+                                <td>
+                                        {{form1.sd_Joint_stiffness|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td> Scoliosis</td>
+                                <td>
+                                        {{form1.sd_Scoliosis|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Kyphosis Gibbus</td>
+                                <td>
+                                        {{form1.sd_Kyphosis_Gibbus|addclass:'form-control'}}
+                                </td>
+                            </tr>
+                        </tbody>
+                </table>
+                    </div>
+                        <div class="col-xs-6">
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Genu valgum</td>
+                                <td>
+                                        {{form1.sd_Genu_valgum|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Pes Cavus</td>
+                                <td>
+                                        {{form1.sd_Pes_Cavus|addclass:'form-control'}}
+                                </td>
+                            </tr>
+                        <tr>
+                                <td>Toe Walking</td>
+                                <td>
+                                        {{form1.sd_Toe_Walking|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                </table>
+                        </div>
+                    </div>
+
+            <!-- /.box-body -->
+        </div>
+        <!---- box end ----->
+        </div>
+
+        <!---- box start ----->
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Investigations (As applicable) Routine (Baseline)</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="row ">
+                    <div class="col-xs-12">
+                       <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Test details</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-6">
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th>Test</th>
+                                <th>Value</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td> Hb (g/dl)*</td>
+                                <td>
+                                        {{form1.sd_Hb|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td> WBC Total Count (/cumm)</td>
+                                <td>
+                                        {{form1.sd_WBC_Total_Count|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Platelet Count (lakh/cumm) *</td>
+                                <td>
+                                        {{form1.sd_Platelet_Count|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td> WBC Differential</td>
+                                <td>
+                                        {{form1.sd_WBC_Differnetial|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> Absolute neutrophil counts</td>
+                                <td>
+                                        {{form1.sd_Absolute_neutrophil_counts|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> PT sec</td>
+                                <td>
+                                        {{form1.sd_PT_sec|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> aPTT sec</td>
+                                <td>
+                                        {{form1.sd_APTT_sec|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td> S calcium(mg/dl)</td>
+                                <td>
+                                        {{form1.sd_S_calcium_mg_dl|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>S Phosphorus(mg/dl)</td>
+                                <td>
+                                        {{form1.sd_S_Phosphorus_mg_dl|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>S Alkaline phosphatase(IU/L)</td>
+                                <td>
+                                        {{form1.sd_S_alkaline_phosphatise_IU|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>S Acid phosphatase (IU/L)</td>
+                                <td>
+                                        {{form1.sd_S_Acid_phosphatise_IU|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                </table>
+                    </div>
+                    <div class="col-xs-6">
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th>Test</th>
+                                <th>Value</th>
+
+
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                        <tr>
+                                <td>Total protein (g/dl)</td>
+                                <td>
+                                        {{form1.sd_S_Total_protein_g_dl|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Albumin(g/dl)</td>
+                                <td>
+                                        {{form1.sd_S_Serum_albumin_g_dl|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>SGPT (IU/L)</td>
+                                <td>
+                                        {{form1.sd_SGPT_IU|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>SGOT (IU/L)</td>
+                                <td>
+                                        {{form1.sd_GGT|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>GGT U/L</td>
+                                <td>
+                                        {{form1.sd_GGT|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>IRON (mg/dl)</td>
+                                <td>
+                                        {{form1.sd_IRON_mg_dl|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>TIBC (mcg/dl)</td>
+                                <td>
+                                        {{form1.sd_TIBC_mg_dl|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Vit B12(pg/ml)</td>
+                                <td>
+                                        {{form1.sd_Vit_B12_pg_ml|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Vit D (ng/ml)</td>
+                                <td>
+                                        {{form1.sd_Vit_D_ng_ml|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>PTH (pg/ml)</td>
+                                <td>
+                                        {{form1.sd_PTH_ng_ml|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title"> Radiological</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Skeletal survey</h4></label>
+                    </div><div class="col-xs-6">
+                       <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Pulmonary function test</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-6">
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Yes/No</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td>Skeletal Survey *</td>
+                                <td>
+                                        {{form1.sd_Skeletal_survey|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td>Erlenmeyer flask deformity*</td>
+                                <td>
+                                        {{form1.sd_Erlenmeyer_flask_deformity|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td>Osteopenia*</td>
+                                <td>
+                                        {{form1.sd_Osteopenia|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td>Scoliosis*</td>
+                                <td>
+                                        {{form1.sd_Skeletal_Scoliosis|addclass:'form-control required1'}}
+                                </td>
+                        </tr><tr>
+                                <td>Dysostosis multiplex*</td>
+                                <td>
+                                        {{form1.sd_Dysostosis_multiplex|addclass:'form-control required1'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Dexa Z Score</td>
+                                <td>
+                                        {{form1.sd_Dexa_Z_Score|addclass:'form-control'}}
+                                </td>
+
+                        </tr>
+
+                        <tr>
+                                <td>Xray for bone age</td>
+                                <td>
+                                        {{form1.sd_xray_bone_age|addclass:'form-control'}}
+                                </td>
+
+                        </tr>
+                        </tbody>
+                </table>
+                    </div>
+                    <div class="col-xs-6">
+
+
+                        <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+	                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                        <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Normal/Abnormal</th>
+
+
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                                <td>Pulmonary function test *</td>
+                                <td>
+                                        {{form1.sd_Pulmonary_function_test|addclass:'form-control required1'}}
+                                </td>
+                        </tr ><tr">
+                                <td>Sitting FEV1</td>
+                                <td>
+                                        {{form1.sd_sitting_FEV1|addclass:'form-control'}}
+                                </td>
+                        </tr><tr>
+                                <td>Sitting FVC</td>
+                                <td>
+                                        {{form1.sd_sittingFVC|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Supine FEV1</td>
+                                <td>
+                                        {{form1.sd_Supine_FEV1|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        <tr>
+                                <td>Supine FVC</td>
+                                <td>
+                                        {{form1.sd_SupineFVC|addclass:'form-control'}}
+                                </td>
+                        </tr>
+                        </tbody>
+                        </table>
+
+                    </div>
+                </div>
+
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-3">
+                            <i class="fa fa-fw fa-circle"></i><label class="col-md font-weight-bolder text-dark text-left"><h4>Ultrasonography *</h4></label>
+                            {{form1.sd_rad_ultrasono_type|addclass:'form-control required1'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-md-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Liver Size (cc) </label>
+                            {{form1.sd_rad_liversize|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Liver echotexture</label>
+                            {{form1.sd_rad_liverEchotexture|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Nodule/Adenoma</label>
+                            {{form1.sd_rad_hepatic|addclass:'form-control'}}
+                        </div>
+                         <div class="col-md-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Kidney Nephromegaly</label>
+                            {{form1.sd_rad_Kidney|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+                    <div class="row Ultrasonography_class_if_abnormal ">
+
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Spleen size (cc) </label>
+                            {{form1.sd_rad_kidney_size|addclass:'form-control'}}
+                        </div>
+                         <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Echotexture</label>
+                            {{form1.sd_rad_kidney_size|addclass:'form-control'}}
+                        </div>
+
+
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Lymphnodes Enlarged</label>
+                            {{form1.sd_rad_lymphnodes_size|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Portal vein diameter(mm)</label>
+                            {{form1.sd_rad_portal_vien_dia|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+
+                    <div class="row Ultrasonography_class_if_abnormal">
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any adenoma</label>
+                            {{form1.sd_rad_adenoma|addclass:'form-control'}}
+                        </div>
+                         <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Renal parenchymal pathology</label>
+                            {{form1.sd_renal_par_pathalogy|addclass:'form-control'}}
+                        </div>
+
+                        <div class="col-md-3 Renal_parenchymal_pathology">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.sd_renal_par_pathalogy_specify|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Nephrocalcinosis or Urolithiasis</label>
+                            {{form1.sd_nephrocalcinosis|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Pancreatitis</label>
+                            {{form1.sd_pancreatitis|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Cholethiasis</label>
+                            {{form1.sd_cholethiasis|addclass:'form-control'}}
+                        </div>
+
+                    </div>
+
+            <!-- /.box-header -->
+
+
+
+            <hr>
+            <!-- /.box-header -->
+
+                <div class="row ">
+                    <div class="col-xs-6">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Neuroimaging</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">CT Scan</label>
+                    {{form1.sd_CT_scan|addclass:'form-control'}}
+                </div>
+                    <div class="col-xs-3 ct_scan_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                    {{form1.sd_CT_scan_specify|addclass:'form-control'}}
+                </div>
+                </div>
+                    <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">MRI Brain</label>
+                    {{form1.sd_MRI_Brain|addclass:'form-control'}}
+                </div>
+                <div>
+                    <label class="col-xs font-weight-bolder text-dark text-left mri_brain_rule">Specify findings if abnormal </label>
+
+            </div>
+                     <div class="col-xs-2 mri_brain_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Cerebral Atrophy</label>
+                    {{form1.cerebral_atrophy}}
+                </div>
+                <div class="col-xs-2 mri_brain_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Hydrocephalus</label>
+                    {{form1.hydrocephalus}}
+                </div>
+                <div class="col-xs-2 mri_brain_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Basal Ganglia Hypointensities</label>
+                    {{form1.basal_ganglia_hypo}}
+                </div>
+                <div class="col-xs-3 mri_brain_rule ">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Basal Ganglia Hyperintensities</label>
+                    {{form1.hyperintensity}}
+                </div>
+                    <div class="col-xs-2  mri_brain_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Thalamic Hyperintensities</label>
+                    {{form1.thalamic}}
+                </div>
+                <div class="col-xs-2 mri_brain_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Dysmyelination</label>
+                    {{form1.dysmyelination}}
+                </div>
+                <div class="col-xs-3 mri_brain_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any Other</label>
+                    {{form1.Any_other_MRI|addclass:'form-control'}}
+                </div>
+                </div>
+                    <br>
+                <div class="row ">
+
+                     <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">MRI/Spine/limbs/pelvis</label>
+                    {{form1.sd_MRI_Spine_limbs_pelvis|addclass:'form-control'}}
+                </div>
+
+                <div class="col-xs-2 MRI_Spine_limbs_pelvis_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Osteonecrosis</label>
+                    {{form1.sd_Osteonecrosis}}
+                </div>
+                <div class="col-xs-2 MRI_Spine_limbs_pelvis_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Compression spine deformity/fractures</label>
+                    {{form1.sd_Compression_spine_deformity_fractures}}
+                </div>
+                <div class="col-xs-2 MRI_Spine_limbs_pelvis_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Marrow infiltration</label>
+                    {{form1.sd_Marrow_infiltration}}
+                </div>
+                <div class="col-xs-3 MRI_Spine_limbs_pelvis_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any Other</label>
+                    {{form1.sd_marrow_Any_other|addclass:'form-control'}}
+                </div>
+            </div>
+
+
+                    <div class="row ">
+                    <div class="col-xs-6">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>MRI Abdomen</h4></label>
+                    </div>
+                     </div>
+                     <div class="row ">
+                      <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">MRI abdomen</label>
+                        {{form1.sd_MRI_abdomen|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 mri_rule">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Liver volume (cc)</label>
+                        {{form1.sd_Liver_volume|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 mri_rule">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Spleen volume(cc)</label>
+                        {{form1.sd_Spleen_volume|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 mri_rule">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Gaucheroma related nodules</label>
+                        {{form1.sd_Gaucher_related_nodules|addclass:'form-control'}}
+                    </div>
+                     </div>
+
+
+                </div>
+                <br>
+
+            <!-- /.box-header -->
+
+
+            <hr>
+            <!-- /.box-header -->
+
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Echocardiography Test</h4>
+                        </label>
+                        {{form1.sd_Echocardiography_test|addclass:'form-control'}}
+                    </div>
+                </div>
+                <br>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Specify findings</label>
+                    {{form1.sd_Specify_findings_Cardiomyopathy|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Cardiomyopathy</label>
+                    {{form1.Cardiomyopathy|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">if yes</label>
+                    {{form1.sd_Cardiomyopathy|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Mention LVMI</label>
+                    {{form1.sd_Mention_LVMI|addclass:'form-control'}}
+                </div>
+                </div>
+                <br>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Valvular stenosis</label>
+                    {{form1.sd_Valvular_involvement|addclass:'form-control'}}
+                </div>
+                <div>
+                    <label class="col-xs font-weight-bolder text-dark text-left Valvular_involvement_rule">if yes</label>
+
+                </div>
+                     <div class="col-xs-2 Valvular_involvement_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Mitral</label>
+                    {{form1.Valvular_Stenosis_mitral}}
+                </div>
+                    <div class="col-xs-2 Valvular_involvement_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Tricuspid</label>
+                    {{form1.Valvular_Stenosis_tricuspid}}
+                </div>
+                    <div class="col-xs-2 Valvular_involvement_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Aortic</label>
+                    {{form1.Valvular_Stenosis_aortic}}
+                </div>
+                    <div class="col-xs-2 Valvular_involvement_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Pulmonary</label>
+                    {{form1.Valvular_Stenosis_pulmonary}}
+                </div>
+                </div>
+                <br>
+                <div class="row ">
+
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Valvular Regurgitation</label>
+                    {{form1.sd_Valvular_Regurgitation|addclass:'form-control'}}
+                </div>
+                    <div>
+                    <label class="col-xs font-weight-bolder text-dark text-left Valvular_Regurgitation_rule">if yes</label>
+
+                </div>
+                     <div class="col-xs-2 Valvular_Regurgitation_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Mitral</label>
+                    {{form1.Valvular_Regurgitation_mitral}}
+                </div>
+                    <div class="col-xs-2 Valvular_Regurgitation_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Tricuspid</label>
+                    {{form1.Valvular_Regurgitation_tricuspid}}
+                </div>
+                    <div class="col-xs-2 Valvular_Regurgitation_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Aortic</label>
+                    {{form1.Valvular_Regurgitation_aortic}}
+                </div>
+                    <div class="col-xs-2 Valvular_Regurgitation_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Pulmonary</label>
+                    {{form1.Valvular_Regurgitation_pulmonary}}
+                </div>
+                     </div>
+                <br>
+                <div class="row ">
+
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Ejection fraction</label>
+                    {{form1.sd_Ejection_fraction|addclass:'form-control'}}
+                </div>
+            </div>
+            <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>EEG</h4></label>
+
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-3 ">
+                        <label class="col-xs font-weight-bolder text-dark text-left">EEG </label>
+                         {{form1.sd_EEG|addclass:'form-control'}}
+                    </div>
+
+                    <div class="col-xs-3 specify_Findings">
+                        <label class="col-xs font-weight-bolder text-dark text-left">if abnormal specify
+                            Findings </label>
+                        {{form1.sd_EEG_specify_Findings|addclass:'form-control'}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Sleep Studies</h4></label>
+
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-sm font-weight-bolder text-dark text-left">Sleep Studies</label>
+                        {{form1.sd_Sleep_Studies|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 Studies_Findings">
+                        <label class="col-xs font-weight-bolder text-dark text-left">if abnormal specify
+                            Findings </label>
+                        {{form1.sd_Sleep_Studies_Findings|addclass:'form-control'}}
+                    </div>
+<!--                    <div class="col-xs-3">-->
+<!--                        <label class="col-xs font-weight-bolder text-dark text-left">SLIT lamp examination</label>-->
+<!--                        {{form1.sd_SLIT_lamp_examination|addclass:'form-control'}}-->
+<!--                    </div>-->
+                </div>
+                <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Ophthalmological Examination</h4></label>
+
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-sm font-weight-bolder text-dark text-left">VEP</label>
+                        {{form1.sd_VEP|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 VEP_rule">
+                        <label class="col-sm font-weight-bolder text-dark text-left">Specify(abnormal)</label>
+                        {{form1.sd_ved_specify|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Opthalmological Examination</label>
+                        {{form1.sd_Opthalmological_Examination|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 if_abnormal">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Describe if abnormal</label>
+                        {{form1.sd_Describe_if_abnormal|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Slit Lamp corneal clouding</label>
+                    {{form1.sd_SLIT_Lamp|addclass:'form-control'}}
+                </div>
+                </div>
+                           <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>BERA/Audiogram</h4></label>
+
+                    </div>
+                </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-sm font-weight-bolder text-dark text-left">BERA/Audiogram</label>
+                    {{form1.sd_BERA_Audiogram|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 describe">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Describe if abnormal</label>
+                    {{form1.sd_BERA_Describe_if_abnormal|addclass:'form-control'}}
+                </div>
+            </div>
+                <br>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Severity</label>
+                    {{form1.sd_Servirity|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Unilat/bilat</label>
+                    {{form1.sd_Unilat_bilat|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Nerve Conduction Study</h4></label>
+
+                    </div>
+                </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-sm font-weight-bolder text-dark text-left">Nerve Conduction Study</label>
+                    {{form1.sd_Nerve_Conduction_Study|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 describe_abnormal">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Describe if abnormal</label>
+                    {{form1.sd_Nerve_Describe_if_abnormal|addclass:'form-control'}}
+                </div>
+            </div>
+            <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Biomarkers:</h4></label>
+
+                    </div>
+                </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-sm font-weight-bolder text-dark text-left">Chitrotriosidase (nmol/ml/hr)</label>
+                    {{form1.sd_Chitrotriosidase_Study|addclass:'form-control required1'}}
+                </div>
+                <div class="col-xs-3 abnormal">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Describe if abnormal</label>
+                    {{form1.sd_Chitrotriosidase_if_abnormal|addclass:'form-control'}}
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+
+                <div class="col-xs-3">
+                    <label class="col-sm font-weight-bolder text-dark text-left">Any Other Biomarker</label>
+                    {{form1.Any_Other_Biomarker2|addclass:'form-control'}}
+                </div>
+
+                <div class="col-xs-3 biomarker">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Describe if abnormal</label>
+                    {{form1.sd_Biomarker_if_abnormal|addclass:'form-control'}}
+                </div>
+            </div>
+                </div>
+            <!-- /.box-body -->
+        </div>
+        <!---- box end ----->
+
+        <!---- box start ----->
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Genetic Diagnostic tests</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Enzyme assay *</label>
+                        {{form1.sd_Enzyme_assay|addclass:'form-control required1'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Sample used</label>
+                        {{form1.sd_Sample_used|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Enzyme</label>
+                        {{form1.sd_Enzyme|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 sd_Enzyme_rule">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Other(specify)</label>
+                        {{form1.sd_Enzyme_other|addclass:'form-control'}}
+                    </div>
+                </div>
+                 <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Patient*</label>
+                        {{form1.mt_enzyme_patient_control|addclass:'form-control required1'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Control</label>
+                        {{form1.mt_enzyme_control_range|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Normal Range</label>
+                        {{form1.mt_enzyme_normal_range|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3 ">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Upload Report</label>
+                        {{form1.sd_Enzyme_upload|addclass:'form-control'}}
+                    </div>
+                </div>
+                <br>
+
+
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Molecular Diagnostic</h4></label>
+                    </div>
+                </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <div class="box-body" style="">
+                        <div class="row ">
+                             <div class="col-md-2 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Molecular test report *</label>
+                                {{form1.4|addclass:'form-control required1'}}
+                            </div>
+                            <div class="col-md-2 Causative_DNA_sequence_variat_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left"
+                                       for="Causative_DNA_sequence_variation_label">If Done Upload</label>
+                                {{form1.sd_molecular_upload}}
+                            </div>
+
+                            <div class="col-md-4 Causative_DNA_sequence_variat_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gene</label>
+                                {{form1.sd_Gene_molecula|addclass:'form-control'}}
+                            </div>
+
+                            <div class="col-md-4 Causative_DNA_sequence_variat_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left">Transcript ID</label>
+                                {{form1.sd_trans_molecul|addclass:'form-control'}}
+                            </div>
+
+                            <br>
+                            <div class="col-xs-12 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 1</label>
+                            </div>
+                              <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change *</label>
+                            {{form1.sd_mul_dna1|addclass:'form-control required1'}}
+						</div>
+
+                        <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form1.sd_mul_pro1|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form1.sd_mul_var1|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.sd_mul_var_cla1|addclass:'form-control'}}
+						</div>
+                           <div class="col-md-4 Causative_DNA_sequence_variat_rule">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form1.sd_mul_zygo1|addclass:'form-control'}}
+                          </div>
+                             <br>
+                            <div class="col-xs-12 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 2</label>
+                            </div>
+                              <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form1.sd_mul_dna2|addclass:'form-control'}}
+						</div>
+
+                        <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form1.sd_mul_pro2|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form1.sd_mul_var2|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.sd_mul_var_cla2|addclass:'form-control'}}
+						</div>
+                           <div class="col-md-4 Causative_DNA_sequence_variat_rule">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form1.sd_mul_zygo2|addclass:'form-control'}}
+                          </div>
+                        </div>
+                        <div class="row ">
+                          <div class="col-xs-4 Causative_DNA_sequence_variat_rule">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Segregation  in Parents</label>
+                            {{form1.sd_mul_seg|addclass:'form-control'}}
+						</div>
+
+                            <div class="col-md-4 Causative_DNA_sequence_variat_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left">Father</label>
+                                {{form1.sd_father|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4 Causative_DNA_sequence_variat_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother</label>
+                                {{form1.sd_mother|addclass:'form-control'}}
+                            </div>
+                        </div>
+                        <br>
+
+
+                <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Treatment Recieved</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">ERT *</label>
+                    {{form1.sd_ERT|addclass:'form-control required1'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Date of initiation</label>
+                    {{form1.sd_Date_of_initiation|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">age of start</label>
+                    {{form1.sd_age_of_start|addclass:'form-control'}}
+                </div>
+
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Dosage</label>
+                    {{form1.sd_Dosage|addclass:'form-control'}}
+                </div>
+                </div>
+                <br>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Duration</label>
+                    {{form1.sd_Duration|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Adverse events</label>
+                    {{form1.sd_Adverse_events|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">if yes specify</label>
+                    {{form1.sd_Adverse_events_specify|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">ERT Status</label>
+                    {{form1.sd_ERT_Status|addclass:'form-control'}}
+                </div>
+            </div>
+            <br>
+            <!-- /.box-header -->
+
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Response to therapy </label>
+                        {{form1.sd_Response_to_therapy |addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Any interruption</label>
+                        {{form1.sd_Any_interruption|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Reason interruption</label>
+                        {{form1.sd_Reason_interruption|addclass:'form-control'}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-xs font-weight-bolder text-dark text-left">Duration interruption</label>
+                        {{form1.sd_Duration_interruption|addclass:'form-control'}}
+                    </div>
+                </div>
+                <hr>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Bone Marrow Transplantation </label>
+                    {{form1.sd_Bone_Marrow_Transplantation|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Bone Marrow Date</label>
+                    {{form1.sd_Bone_Marrow_Date|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Donor</label>
+                    {{form1.sd_Donor|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Hospital</label>
+                    {{form1.sd_Hospital|addclass:'form-control'}}
+                </div>
+                </div>
+                <br>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Response</label>
+                    {{form1.sd_Response|addclass:'form-control'}}
+                </div>
+            <div class="col-xs-3">
+                <label class="col-xs font-weight-bolder text-dark text-left">Surgery</label>
+                {{form1.sd_Surgery1|addclass:'form-control'}}
+            </div>
+            <div>
+                <label class="col-xs font-weight-bolder text-dark text-left Surgery1_rule"> Surgery status</label>
+            </div>
+                    <div class="col-xs-2 Surgery1_rule">
+                <label class="col-xs font-weight-bolder text-dark text-left">Splenectomy</label>
+                {{form1.Surgery_Splenectomy}}
+            </div>
+                    <div class="col-xs-2 Surgery1_rule">
+                <label class="col-xs font-weight-bolder text-dark text-left">Hernia</label>
+                {{form1.Surgery_Hernia}}
+            </div>
+                    <div class="col-xs-2 Surgery1_rule">
+                <label class="col-xs font-weight-bolder text-dark text-left">Other</label>
+                {{form1.Surgery_others}}
+                        {{form1.Surgery_others_text|addclass:'form-control'}}
+            </div>
+            <div class="col-xs-3 Surgery1_rule">
+                <label class="col-xs font-weight-bolder text-dark text-left">Surgery age</label>
+                {{form1.sd_Surgery_age|addclass:'form-control'}}
+            </div>
+                </div>
+                <br>
+                <div class="row ">
+                    <div class="col-xs-6">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Supportive</h4></label>
+                    </div>
+                </div>
+                <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Calcium and multivitamin
+                        supplements</label>
+                    {{form1.sd_Calcium_and_multivitamin_supplements|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Regular Physiotherapy</label>
+                    {{form1.sd_Regular_Physiotherapy|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Antiepileptics</label>
+                    {{form1.sd_Antiepileptics|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Blood Transfusion</label>
+                    {{form1.sd_Blood_Transfusion|addclass:'form-control'}}
+                </div>
+                </div>
+                <br>
+                <div class="row ">
+                <div class="col-xs-3 Blood_Transfusion_RULE">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Frequency</label>
+                    {{form1.sd_BL_freq|addclass:'form-control'}}
+                </div>
+                    <div class="col-xs-3 Blood_Transfusion_RULE">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Last Transfusion</label>
+                    {{form1.sd_BL_Trans|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 ">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Platelet Transfusion</label>
+                    {{form1.sd_Platlet_Transfusion|addclass:'form-control'}}
+                </div>
+                 <div class="col-xs-3 Platlet_Transfusion_RULE">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Frequency</label>
+                    {{form1.sd_PL_freq|addclass:'form-control'}}
+                </div>
+                    <div class="col-xs-3 Platlet_Transfusion_RULE">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Last Transfusion</label>
+                    {{form1.sd_PL_Trans|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any other</label>
+                    {{form1.PL_Any_other|addclass:'form-control'}}
+                </div>
+              </div>
+                        <br>
+                    <div class="row">
+                    <div class="col-xs-4">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Final Diagnosis *</h4></label>
+                        {{form1.sd_final_diagnosis|addclass:'form-control required1'}}
+                    </div>
+                        <br>
+
+
+                <div class="col-xs-3 final_diagnosis_rule">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                    {{form1.sd_final_diagnosis_other|addclass:'form-control'}}
+                </div>
+                </div>
+
+
+
+            </div>
+        </div>
+
+        <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Final Outcome</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-4">
+						<label for="Final_Outcome" class="col-sm col-form-label">Final Outcome* </label>
+						<div class="col-sm">
+							{{form1.sd_Final_Outcome|addclass:'form-control required1'}}
+						</div>
+					</div>
+                       <div class="col-md-4 Final_Outcome_class">
+						<label for="death_cause" class="col-sm col-form-label">Death Cause </label>
+						<div class="col-sm">
+							{{form1.sd_death_cause |addclass:'form-control'}}
+						</div>
+					</div>
+					<div class="col-md-4 Final_Outcome_class">
+						<label for="age_timedeath" class="col-sm col-form-label">Age at the time of Death</label>
+						<div class="col-sm">
+							{{form1.sd_age_timedeath |addclass:'form-control'}}
+						</div>
+					</div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                         <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Filled By D.E.O. Name</label>
+                            {{form1.sd_filed_by_DEO_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Clinician Name</label>
+                            {{form1.sd_clinician_name|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.sd_filled_date|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+            </div>
+
+
+
+
+
+
+
+
+    <center>
+            <button class="btn btn-success submitbtn" type="submit" id="submit1" name="save">Save</button>
+            <button type="submit" class="btn  btn-success submitbtn" name="submitandexit"><b>Save and Exit!</b></button>
+		</center>
+
+
+    </div>
+</form>
+
+{% endblock %}

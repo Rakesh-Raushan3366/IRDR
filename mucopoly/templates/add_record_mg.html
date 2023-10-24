@@ -1,0 +1,602 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+		$('#id_muco_date_of_birth').on('change', function(){
+			var today = new Date();
+			var dd = String(today.getDate()).padStart(2, '0');
+			var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+			var yyyy = today.getFullYear();
+			var year = $('#id_muco_date_of_birth').val();
+			nowDate = new Date();
+			today1 = mm + '/' + dd + '/' + yyyy;
+			today2 = new Date(today1)
+			input = year;
+			today3 = new Date(input)
+			<!--                            console.log(today2, today2.getTime(), input, today3, today3.getTime() )-->
+			var diff = nowDate.getTime() - today3.getTime();
+			var ageDate = new Date(diff); // miliseconds from epoch
+			var age = Math.abs(ageDate.getUTCFullYear() - 1970);
+			$("#id_muco_patient_age").val(age);
+			console.log( age)
+		});
+	});
+</script>
+<style>
+    input {
+  border: 2px solid;
+  border-radius: 4px;
+  font-size: 1rem;
+  margin: 0.25rem;
+  min-width: 125px;
+  padding: 0.5rem;
+  transition: border-color 0.5s ease-out;
+}
+input:optional {
+  border-color: gray;
+}
+input:required:valid {
+  border-color: green;
+
+}
+
+input:invalid {
+  border-color: red;
+
+
+}
+select:invalid {
+  border-color: red;
+
+
+}
+select:required:valid {
+  border-color: green;
+
+
+}
+</style>
+<script>
+	$(document).ready(function(){
+	$("#id_muco_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view
+	console.log(data)
+	$("#id_muco_district").html(data);
+	}
+	});
+	});
+	});
+
+
+</script>
+
+<script>
+    /* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_referred_by').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any others'){
+	$("#id_muco_referred_by_desc").show();
+    $("label[for='referedby_others']").show();
+	}
+	else
+	{
+	$("#id_muco_referred_by_desc").hide();
+    $("label[for='referedby_others']").hide();
+
+	}
+	});
+	$("#id_muco_referred_by_desc").hide();
+	$("label[for='referedby_others']").hide();
+	});
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_consent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_muco_consent_upload").show();
+    $("label[for='consent_upload']").show();
+	}
+	else
+	{
+	$("#id_muco_consent_upload").hide();
+    $("label[for='consent_upload']").hide();
+
+	}
+	});
+	$("#id_muco_consent_upload").hide();
+	$("label[for='consent_upload']").hide();
+	});
+
+$(document).ready(function(){
+	$('#id_mt_religion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_muco_religion_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_muco_religion_other_specify").hide();
+
+
+	}
+	});
+	$("#id_muco_religion_other_specify").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_muco_caste').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_muco_caste_other_specify").show();
+
+	}
+	else
+	{
+	$("#id_muco_caste_other_specify").hide();
+
+
+	}
+	});
+	$("#id_muco_caste_other_specify").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_muco_referred_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".reffered_by").show();
+
+	}
+	else
+	{
+	$(".reffered_by").hide();
+
+
+	}
+	});
+	$(".reffered_by").hide();
+
+	});
+
+	$(document).ready(function(){
+	$('#id_muco_paitent_id_yes_no').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".patient_id_rule").show();
+
+	}
+	else
+	{
+	$(".patient_id_rule").hide();
+
+
+	}
+	});
+	$(".patient_id_rule").hide();
+
+	});
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_assent_given').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_muco_assent_upload").show();
+    $("label[for='assent_upload']").show();
+	}
+	else
+	{
+	$("#id_muco_assent_upload").hide();
+    $("label[for='assent_upload']").hide();
+
+	}
+	});
+	$("#id_muco_assent_upload").hide();
+	$("label[for='assent_upload']").hide();
+	});
+
+$(document).ready(function(){
+	$("#id_muco_state").change(function () {
+	const url = $("#personForm").attr("data-district-url");
+	const DistrictId = $(this).val();  // get the selected country ID from the HTML input
+	$.ajax({                       // initialize an AJAX request
+	url: url,                    // set the url of the request (= /persons/ajax/load-cities/ )
+	data: {
+	'district_id': DistrictId       // add the town id to the GET parameters
+	},
+	success: function (data) {   // `data` is the return of the `load_cities` view function
+	$("#id_muco_district").html(data);
+	}
+	});
+	});
+	});
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_paitent_id').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'|| demovalue == 'Aabha Id' || demovalue == 'SECC card'){
+	$("#id_muco_patient_id_no").show();
+
+	}
+	else
+	{
+	$("#id_muco_patient_id_no").hide();
+
+
+	}
+	});
+	$("#id_muco_patient_id_no").hide();
+
+	});
+
+	/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_muco_father_mother_id').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Aadhar card' || demovalue == 'Driving license'|| demovalue == 'Driving license'|| demovalue == 'Voter id'|| demovalue == 'Rations card'|| demovalue == 'PAN card' || demovalue == 'BPL card'|| demovalue == 'Aabha Id' || demovalue == 'SECC card'){
+	$("#id_muco_mother_father_id_no").show();
+
+	}
+	else
+	{
+	$("#id_muco_mother_father_id_no").hide();
+
+
+	}
+	});
+	$("#id_muco_mother_father_id_no").hide();
+
+	});
+
+
+
+
+
+
+
+
+$(document).ready(function(){
+   var today = new Date();
+   var minDate= new Date();
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var mini = today.getMonth(); //January is 0!
+   if(dd<10){
+         dd='0'+dd
+     }
+     if(mm<10){
+        mm='0'+mm
+     }
+     if(mini<10){
+         mini='0'+mini
+     }
+   today = yyyy+'-'+mm+'-'+dd;
+   minDate= '1900'+'-'+ '01' +'-'+'01';
+   newdate = String(minDate)
+<!--   console.log('{{sample|date:"Y-m-d"}}',newdate)-->
+   $("#id_muco_date_of_records").attr("max", today );
+   $("#id_muco_date_of_records").attr("min", newdate);
+   });
+
+
+
+
+
+$(document).ready(function(){
+   var today = new Date();
+   var minDate= new Date();
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var mini = today.getMonth(); //January is 0!
+   if(dd<10){
+         dd='0'+dd
+     }
+     if(mm<10){
+        mm='0'+mm
+     }
+     if(mini<10){
+         mini='0'+mini
+     }
+   today = yyyy+'-'+mm+'-'+dd;
+   minDate= '1900'+'-'+ '01' +'-'+'01';
+   newdate = String(minDate)
+<!--   console.log('{{sample|date:"Y-m-d"}}',newdate)-->
+   $("#id_muco_date_of_clinical_exam").attr("max", today );
+   $("#id_muco_date_of_clinical_exam").attr("min", newdate);
+   });
+
+
+
+
+
+$(document).ready(function(){
+   var today = new Date();
+   var minDate= new Date();
+   var dd = today.getDate();
+   var mm = today.getMonth()+1; //January is 0!
+   var yyyy = today.getFullYear();
+   var mini = today.getMonth(); //January is 0!
+   if(dd<10){
+         dd='0'+dd
+     }
+     if(mm<10){
+        mm='0'+mm
+     }
+     if(mini<10){
+         mini='0'+mini
+     }
+   today = yyyy+'-'+mm+'-'+dd;
+   minDate= '1900'+'-'+ '01' +'-'+'01';
+   newdate = String(minDate)
+<!--   console.log('{{sample|date:"Y-m-d"}}',newdate)-->
+   $("#id_muco_date_of_birth").attr("max", today );
+   $("#id_muco_date_of_birth").attr("min", newdate);
+   });
+
+
+
+
+ $(document).ready(function(){
+$("#id_muco_mother_mobile_no").change(function () {
+		var start = $('#id_muco_mother_mobile_no').val();
+console.log(start)
+if (start > 9999999999 || start < 999999999)
+{
+console.log('error')
+               alert ("Phone number should be 10 digit");
+					document.getElementById('id_muco_mother_mobile_no').value = "";
+				}
+// get days
+        });
+         });
+
+
+
+
+
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+	.required:after {
+    content:" *";
+    color: red;
+  }
+</style>
+<form method="POST"  enctype="multipart/form-data" data-district-url="{% url 'load_district' %}" id="personForm" action="">
+
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+
+    <div class="box-body">
+
+        <div class="box-group" id="accordion">
+
+
+                        <div class="row ">
+                            <div class="col-md-3 ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Final Diagnosis</label>
+                                {{form1.muco_final_diagnosis|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-2 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Date of Record:</label>
+                                {{form1.muco_date_of_records|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-3  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Date of Clinical examination:</label>
+                                {{form1.muco_date_of_clinical_exam|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-2  ">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Date of birth</label>
+                                {{form1.muco_date_of_birth|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-2">
+					<label class="col-md font-weight-bolder text-dark text-left">If exact date is not known, please select the 1st date of birth month</label>
+				</div>
+<!--                            <div class="col-md-2">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">Age</label>-->
+<!--                                {{form1.muco_patient_age|addclass:'form-control'}}-->
+
+<!--                            </div>-->
+                        </div>
+                        <br>
+                                <div class="box box-secondary">
+	                    <div class="box-header">
+		                    <h3 class="box-title">Common Demography data</h3>
+	                    </div>
+
+                    <div class="box-body">
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Patient's Name</label>
+                                {{form1.muco_patient_name|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Father's Name</label>
+                                {{form1.muco_father_name|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother's Name </label>
+                                {{form1.muco_mother_name|addclass:'form-control'}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Patient ID</label>
+                                {{form1.muco_paitent_id_yes_no|addclass:'form-control'}}
+
+                            </div>
+                            <div class="col-md-4 patient_id_rule">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Enter patient ID</label>
+                                {{form1.muco_paitent_id|addclass:'form-control'}}
+                                  {{form1.muco_patient_id_no|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4 " >
+                                <label class="col-md font-weight-bolder text-dark text-left" > Parent ID</label>
+                                {{form1.muco_father_mother_id|addclass:'form-control'}}
+                                {{form1.muco_mother_father_id_no|addclass:'form-control'}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Permanent Address</label>
+                                {{form1.muco_permanent_addr|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">State </label>
+                                {{form1.muco_state|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">District </label>
+                                {{form1.muco_district|addclass:'form-control'}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">City / Town of Birth</label>
+                                {{form1.muco_city_name|addclass:'form-control'}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Country Name</label>
+                                {{form1.muco_country_name|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Landline number with code</label>
+                                    {{form1.muco_land_line_no|addclass:'form-control'}}
+                                </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Patient/Parent mobile No. </label>
+                                {{form1.muco_mother_mobile_no|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Alternate Mobile no</label>
+                                {{form1.muco_father_mobile_no|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Email</label>
+                                {{form1.muco_email|addclass:'form-control'}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Religion</label>
+                                {{form1.muco_religion|addclass:'form-control'}}
+
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Caste</label>
+                                {{form1.muco_caste|addclass:'form-control'}}
+
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gender</label>
+                                {{form1.muco_gender|addclass:'form-control'}}
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Referred from another facility</label>
+                                {{form1.muco_referred_status|addclass:'form-control'}}
+                            </div>
+                            <div class="col-md-4 reffered_by">
+                                <label class="col-md font-weight-bolder text-dark text-left">Referred By</label>
+                                {{form1.muco_referred_by|addclass:'form-control'}}
+                                 {{form1.muco_referred_by_desc|addclass:'form-control'}}
+                            </div>
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Consent Given</label>
+                                {{form1.muco_consent_given|addclass:'form-control'}}
+
+                                {{form1.muco_consent_upload}}
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="row">
+
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Assent Given</label>
+                                {{form1.muco_assent_given|addclass:'form-control'}}
+
+                                {{form1.muco_assent_upload}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital Name</label>
+                                {{form1.muco_hospital_name|addclass:'form-control'}}
+                            </div>
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital Registration number</label>
+                                {{form1.muco_hospital_reg_no|addclass:'form-control'}}
+                            </div>
+
+
+                        </div>
+                         <br>
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <label class="col-md font-weight-bolder text-danger text-left">Note: Field mark with * are mandatory fields</label>
+
+                            </div>
+
+                        </div>
+
+                       </div>
+
+                </div>
+        </div>
+            <br>
+            <center>
+                <button class="btn btn-primary" type="submit" id="submit1">Submit</button>
+            </center>
+            <br>
+        </div>
+    </div>
+</form>
+{% endblock %}

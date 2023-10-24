@@ -1,0 +1,120 @@
+{%  extends 'main.html' %}
+{% load extra %}
+{% block content %}
+{% load static %}
+{% load custom_tags %}
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script>
+	$(function () {
+		$('#example1').DataTable({
+			'paging'      : true,
+			'lengthChange': true,
+			'searching'   : true,
+			'ordering'    : true,
+			'info'        : true,
+			'autoWidth'   : true
+		})
+	})
+</script>
+<body>
+	<br>
+	<section class="content">
+		<div class="row">
+			<div class="col-xs-12">
+				<div class="box box-primary">
+					<div class="box-header">
+						<h3 class="box-title">Total Record</h3>
+					</div>
+					<div class="box-body">
+						<center>
+							<!--                        <a class="btn btn-warning" href="">Export records</a></center>-->
+							<br>
+							<table class="table table-bordered table-condensed table-striped" id="example1">
+								<thead class="bg-black">
+									<tr>
+										<th>Id</th>
+										<th>Institute Name</th>
+										{% if request.user|has_group:'Admin' %}
+										<th>Patient name</th>
+										<th>Gender</th>
+										<th>Father name</th>
+										<th>Patient Govt. ID</th>
+										<th>QC result</th>
+										<th>QC status</th>
+											<th>View</th>
+										{% else %}
+										<th>Date created</th>
+										<th>View</th>
+										<th>QC status</th>
+										<th>QC result</th>
+										{% endif %}
+									</tr>
+								</thead>
+								<tbody>
+									{% for i in patient %}
+									<tr>
+										<!--                            <td>{{forloop.counter}}</td>-->
+										<td>{{ i.sd_icmr_unique_no }}</td>
+										<td>{{i.register.institute_name}}</td>
+										{% if request.user|has_group:'Admin' %}
+										<td>{{ i.sd_Patient_name }}</td>
+										<td>{{ i.sd_gender }}</td>
+										<td>{{ i.sd_Father_name }}</td>
+										<td>{{ i.sd_patient_id_no }}</td>
+										<td>{{i.quality_result|default_if_none:"to be checked"}}
+											<a class="btn bg-maroon" href="{% url 'view_qa_qc_storage' i.id %}">View </a>
+										</td>
+										<td>{{i.quality_status|default_if_none:"to be checked"}}
+										</td>
+										<td>
+											<a class="btn btn-primary" href="{% url 'view_storage_record' i.id %}">View </a>
+										</td>
+										{% else %}
+										<td>{{ i.sd_date_created|date:" d-m-Y, " }}{{ i.bd_date_created|time:"H:i" }}</td>
+										<td>
+											<a class="btn btn-primary" href="{% url 'view_storage_record' i.id %}">View </a>
+										</td>
+										<td>{{i.quality_status|default_if_none:"to be checked"}}
+										</td>
+										<td>
+											{% if i.quality_result is None or i.quality_status == 'Resubmitted' %}
+											<a class="btn btn-success" href="{% url 'update_qa_qc_storage' i.id %}">Update result </a>
+											{% endif %}
+											{% if i.quality_result is not None %}
+											{{i.quality_result|default_if_none:"to be checked"}}
+											<a class="btn bg-maroon" href="{% url 'view_qa_qc_storage' i.id %}">View </a>
+											{% endif %}
+										</td>
+										{% endif %}
+									</tr>
+									{% endfor %}
+								</tbody>
+								<tfoot class="bg-black">
+									<tr>
+										<th>Id</th>
+										<th>Institute Name</th>
+										{% if request.user|has_group:'Admin' %}
+										<th>Patient name</th>
+										<th>Gender</th>
+										<th>Father name</th>
+										<th>Patient Govt. ID</th>
+										<th>QC result</th>
+										<th>QC status</th>
+											<th>View</th>
+										{% else %}
+										<th>Date created</th>
+										<th>View</th>
+										<th>QC status</th>
+										<th>QC result</th>
+										{% endif %}
+									</tr>
+								</tfoot>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+</body>
+{% endblock %}

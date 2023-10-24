@@ -1,0 +1,225 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+
+<form action="" data-district-url="{% url 'load_district' %}" enctype="multipart/form-data" id="personForm" method="POST">
+	{% csrf_token %}
+	{% if form1.errors %}
+	{% for field in form1 %}
+	{% for error in field.errors %}
+	<div class="alert alert-danger">
+		<strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+	</div>
+	{% endfor %}
+	{% endfor %}
+	{% endif %}
+	<br>
+
+	<div class="box-body">
+
+		<div class="box-group" id="accordion">
+
+
+			<div class="row ">
+				<div class="col-md-3 ">
+					<label class="col-md font-weight-bolder text-dark text-left">Final Diagnosis</label>
+					{{form1.th_final_diagnosis|default_if_none:""}}
+				</div>
+				<div class="col-md-3 ">
+					<label class="col-md font-weight-bolder text-dark text-left">Date of Record:</label>
+					{{form1.th_date_record|default_if_none:""}}
+				</div>
+				<div class="col-md-3  ">
+					<label class="col-md font-weight-bolder text-dark text-left">Date of Clinical examination:</label>
+					{{form1.date_clinical_examination|default_if_none:""}}
+				</div>
+				<div class="col-md-3">
+					<label class="col-md font-weight-bolder text-dark text-left">Date of birth</label>
+					{{form1.th_date_of_birth|default_if_none:""}}
+				</div>
+<!--				<div class="col-md-2">-->
+<!--					<label class="col-md font-weight-bolder text-dark text-left">Age</label>-->
+<!--					{{form1.th_patient_age|default_if_none:""}}-->
+
+<!--				</div>-->
+
+			</div>
+			<br>
+			<div class="box box-secondary">
+				<div class="box-header">
+					<h3 class="box-title text-primary">Common Demography data</h3>
+				</div>
+
+				<div class="box-body">
+					<div class="row ">
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left required">Patient's Name</label>
+							{{form1.th_patient_name|default_if_none:""}}
+						</div>
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left">Father's Name</label>
+							{{form1.th_father_name|default_if_none:""}}
+						</div>
+						<div class="col-md-4  ">
+							<label class="col-md font-weight-bolder text-dark text-left">Mother's Name </label>
+							{{form1.th_mother_name|default_if_none:""}}
+						</div>
+					</div>
+					<br>
+					<div class="row ">
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left required">Patient's ID</label>
+							{{form1.th_patient_adhaar_no|default_if_none:""}}
+
+						</div>
+						<div class="col-md-4 patient_id_rule">
+							<label class="col-md font-weight-bolder text-dark text-left"> Enter patient ID</label>
+							{{form1.th_paitent_id|default_if_none:""}}
+							{{form1.th_patient_id_no|default_if_none:""}}
+						</div>
+						<div class="col-md-4 ">
+							<label class="col-md font-weight-bolder text-dark text-left"> Enter mother's/fathers's ID </label>
+							{{form1.th_father_adhaar_no|default_if_none:""}}
+						</div>
+						<div class="col-md-4 th_father_adhaar_no">
+							<label class="col-md font-weight-bolder text-dark text-left"> Enter ID</label>
+							{{form1.th_father_id|default_if_none:""}}
+							{{form1.th_father_id_no|default_if_none:""}}
+						</div>
+					</div>
+					<br>
+					<div class="row ">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Permanent Address</label>
+							{{form1.th_permanent_addr|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">State </label>
+							{{form1.th_state|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">District </label>
+							{{form1.th_district|default_if_none:""}}
+						</div>
+
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">City / Town of Birth</label>
+							{{form1.th_city_name|default_if_none:""}}
+						</div>
+
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Country Name</label>
+							{{form1.th_country_name|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Landline number with code</label>
+							{{form1.th_land_line_no|default_if_none:""}}
+						</div>
+					</div>
+					<br>
+					<div class="row">
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">Mobile No. patient/mother/father</label>
+							{{form1.th_mother_mobile_no|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Alternate Mobile no</label>
+							{{form1.th_father_mobile_no|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Email</label>
+							{{form1.th_email|default_if_none:""}}
+						</div>
+					</div>
+					<br>
+					<div class="row">
+
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Religion</label>
+							{{form1.th_religion|default_if_none:""}}
+							{{form1.th_religion_other_specify|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Caste</label>
+							{{form1.th_caste|default_if_none:""}}
+							{{form1.th_caste_other_specify|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Gender</label>
+							{{form1.th_gender|default_if_none:""}}
+						</div>
+
+
+					</div>
+					<br>
+					<div class="row">
+
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Referred from another facility</label>
+							{{form1.th_referred_status|default_if_none:""}}
+						</div>
+						<div class="col-md-4 referred_by">
+							<label class="col-md font-weight-bolder text-dark text-left">Referred By</label>
+							{{form1.th_referred_by|default_if_none:""}}
+							{{form1.th_referred_by_desc|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">Consent Given</label>
+							{{form1.th_consent_given|default_if_none:""}}
+							{{form1.th_consent_upload|default_if_none:""}}
+							<a href="/media/{{form1.th_consent_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+						</div>
+
+					</div>
+					<br>
+
+					<div class="row">
+
+
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left required">Assent Given</label>
+							{{form1.th_assent_given|default_if_none:""}}
+							{{form1.th_assent_upload|default_if_none:""}}
+							<a href="/media/{{form1.th_assent_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Hospital Name</label>
+							{{form1.th_hospital_name|default_if_none:""}}
+						</div>
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Hospital Registration number</label>
+							{{form1.th_hospital_reg_no|default_if_none:""}}
+						</div>
+
+					</div>
+					<br>
+					<div class="row">
+
+
+						<div class="col-md-4">
+							<label class="col-md font-weight-bolder text-dark text-left">Nationality</label>
+							{{form1.th_nationality|default_if_none:""}}
+						</div>
+
+					</div>
+					<br>
+
+					<div class="row">
+
+						<div class="col-md-12">
+							<label class="col-md font-weight-bolder text-danger text-left">Note: Field mark with * are mandatory fields</label>
+
+						</div>
+
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<br>
+
+	</div>
+	</div>
+</form>
+{% endblock %}

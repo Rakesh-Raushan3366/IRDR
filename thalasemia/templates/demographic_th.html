@@ -1,0 +1,1729 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+
+$(document).ready(function(){
+	$('#id_th_tribal').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'No'){
+	$(".nont_tribal_caste").show();
+
+	}
+	else
+	{
+	$(".nont_tribal_caste").hide();
+
+
+	}
+	});
+	$(".nont_tribal_caste").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_diagnosis_type').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any other'){
+	$(".diagnosis_other").show();
+
+	}
+	else
+	{
+	$(".diagnosis_other").hide();
+
+
+	}
+	});
+	$(".diagnosis_other").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_hist_infection_opt').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$(".history_other_rule").show();
+
+	}
+	else
+	{
+	$(".history_other_rule").hide();
+
+
+	}
+	});
+	$(".history_other_rule").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_other_family_mem').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".other_family_member_affected").show();
+
+	}
+	else
+	{
+	$(".other_family_member_affected").hide();
+
+
+	}
+	});
+	$(".other_family_member_affected").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_f_any_other').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".symptoms_any_other_").show();
+
+	}
+	else
+	{
+	$(".symptoms_any_other_").hide();
+
+
+	}
+	});
+	$(".symptoms_any_other_").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_iron_overload_yes_no').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".iron_overload_rule").show();
+
+	}
+	else
+	{
+	$(".iron_overload_rule").hide();
+
+
+	}
+	});
+	$(".iron_overload_rule").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_other_illness').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Any_other_illness").show();
+
+	}
+	else
+	{
+	$(".Any_other_illness").hide();
+
+
+	}
+	});
+	$(".Any_other_illness").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_any_systematic_anom').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_any_sys_ab_specify").show();
+
+	}
+	else
+	{
+	$("#id_th_any_sys_ab_specify").hide();
+
+
+	}
+	});
+	$("#id_th_any_sys_ab_specify").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_neurological_abnor').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Neurological_abnormalities_type").show();
+
+	}
+	else
+	{
+	$(".Neurological_abnormalities_type").hide();
+
+
+	}
+	});
+	$(".Neurological_abnormalities_type").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_renal_involvement').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Renal_involvement").show();
+
+	}
+	else
+	{
+	$(".Renal_involvement").hide();
+
+
+	}
+	});
+	$(".Renal_involvement").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_mol_alpha_thal').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Alpha_thal_test").show();
+
+	}
+	else
+	{
+	$(".Alpha_thal_test").hide();
+
+
+	}
+	});
+	$(".Alpha_thal_test").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_mol_beta_thal').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Beta_Thalassemia_test").show();
+
+	}
+	else
+	{
+	$(".Beta_Thalassemia_test").hide();
+
+
+	}
+	});
+	$(".Beta_Thalassemia_test").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_mol_beta_thal_opt_8').on('change', function(){
+	var demovalue = $(this).val();
+	if($(this).is(':checked')){
+	$("#id_th_mol_beta_thal_other_spec ").show();
+	$("label[for='Beta_test_other_label']").show();
+
+	}
+	else
+	{
+	$("#id_th_mol_beta_thal_other_spec").hide();
+    $("label[for='Beta_test_other_label']").hide();
+
+	}
+	});
+	$("#id_th_mol_beta_thal_other_spec").hide();
+    $("label[for='Beta_test_other_label']").hide();
+	});
+$(document).ready(function(){
+	$('#id_th_HPFH_test').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".HPFH_test ").show();
+
+	}
+	else
+	{
+	$(".HPFH_test").hide();
+
+
+	}
+	});
+	$(".HPFH_test").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_mol_alpha_beta_test').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Delta_beta_test ").show();
+
+	}
+	else
+	{
+	$(".Delta_beta_test").hide();
+
+
+	}
+	});
+	$(".Delta_beta_test").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_bone_marrow_treat').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Done'){
+	$(".BMT_done ").show();
+
+	}
+	else
+	{
+	$(".BMT_done").hide();
+
+
+	}
+	});
+	$(".BMT_done").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_haem_hbh_incl').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".HBH_result ").show();
+
+	}
+	else
+	{
+	$(".HBH_result").hide();
+
+
+	}
+	});
+	$(".HBH_result").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_splenectomy').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Splenectomy ").show();
+
+	}
+	else
+	{
+	$(".Splenectomy").hide();
+
+
+	}
+	});
+	$(".Splenectomy").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_neurological_abnor_option').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$("#id_th_neurological_abnor_option_other ").show();
+
+	}
+	else
+	{
+	$("#id_th_neurological_abnor_option_other").hide();
+
+
+	}
+	});
+	$("#id_th_neurological_abnor_option_other").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_renal_involvement_opts').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$("#id_th_renal_involvement_opts_other ").show();
+
+	}
+	else
+	{
+	$("#id_th_renal_involvement_opts_other").hide();
+
+
+	}
+	});
+	$("#id_th_renal_involvement_opts_other").hide();
+
+	});
+
+
+$(document).ready(function(){
+	$('#id_th_haem_var_hb').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Variant_hb_per ").show();
+
+	}
+	else
+	{
+	$(".Variant_hb_per").hide();
+
+
+	}
+	});
+	$(".Variant_hb_per").hide();
+
+	});
+
+
+$(document).ready(function(){
+	$('#id_th_hydroxyurea').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Hydroxyurea ").show();
+
+	}
+	else
+	{
+	$(".Hydroxyurea").hide();
+
+
+	}
+	});
+	$(".Hydroxyurea").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_any_other_disease').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".any_other_disease ").show();
+
+	}
+	else
+	{
+	$(".any_other_disease").hide();
+
+
+	}
+	});
+	$(".any_other_disease").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_chelation_status').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Chelation ").show();
+
+	}
+	else
+	{
+	$(".Chelation").hide();
+
+
+	}
+	});
+	$(".Chelation").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_final_diagnosis').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any other'){
+	$("#id_th_f_diag_other_specify ").show();
+    $("#id_th_comp_iron_overload_beta_thalassemia_detail").hide();
+	}
+	else if(demovalue == 'Beta thalassemia – Hb variant')
+	{
+	$("#id_th_comp_iron_overload_beta_thalassemia_detail").show();
+    $("#id_th_f_diag_other_specify ").hide();
+
+	}
+	else{
+	$("#id_th_f_diag_other_specify ").hide();
+	$("#id_th_comp_iron_overload_beta_thalassemia_detail").hide();
+	}
+	});
+	$("#id_th_f_diag_other_specify").hide();
+	$("#id_th_comp_iron_overload_beta_thalassemia_detail").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_comp_iron_overload').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_th_comp_iron_overload_detail ").show();
+
+	}
+	else
+	{
+	$("#id_th_comp_iron_overload_detail").hide();
+
+
+	}
+	});
+	$("#id_th_comp_iron_overload_detail").hide();
+
+	});
+$(document).ready(function(){
+	$('#id_th_deferasirox_dose').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$("#id_th_deferasirox_dose_other_specify ").show();
+
+	}
+	else
+	{
+	$("#id_th_deferasirox_dose_other_specify").hide();
+
+
+	}
+	});
+	$("#id_th_deferasirox_dose_other_specify").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_comp_iron_overload').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Complications_iron ").show();
+
+	}
+	else
+	{
+	$(".Complications_iron").hide();
+
+
+	}
+	});
+	$(".Complications_iron").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_hist_infection').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".History_any_infection ").show();
+
+	}
+	else
+	{
+	$(".History_any_infection").hide();
+
+
+	}
+	});
+	$(".History_any_infection").hide();
+
+	});
+
+$(document).ready(function(){
+	$('#id_th_red_cell_morphology').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".Red_cell_morphology_rule ").show();
+
+	}
+	else
+	{
+	$(".Red_cell_morphology_rule").hide();
+
+
+	}
+	});
+	$(".Red_cell_morphology_rule").hide();
+
+	});
+
+
+$(document).ready(function(){
+	$('#id_th_transfusion').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".transfusion_age ").show();
+
+	}
+	else
+	{
+	$(".transfusion_age").hide();
+
+
+	}
+	});
+	$(".transfusion_age").hide();
+
+	});
+
+
+
+$(document).ready(function(){
+	$('#id_th_pres_feature').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".pres_feature ").show();
+
+	}
+	else
+	{
+	$(".pres_feature").hide();
+
+
+	}
+	});
+	$(".pres_feature").hide();
+
+	});
+
+
+
+$(document).ready(function(){
+	$('#id_th_mol_hbh_thal_opt').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$("#id_th_mol_alpha_thal_opt_other ").show();
+	$("label[for='hbh_other_label']").show();
+
+	}
+	else
+	{
+	$("#id_th_mol_alpha_thal_opt_other").hide();
+    $("label[for='hbh_other_label']").hide();
+
+	}
+	});
+	$("#id_th_mol_alpha_thal_opt_other").hide();
+    $("label[for='hbh_other_label']").hide();
+	});
+
+
+$(document).ready(function(){
+	$('#id_th_red_cell_morphology_other').on('change', function(){
+	var demovalue = $(this).val();
+	if($(this).is(':checked')){
+	$("#id_th_red_cell_morphology_other_specify").show();
+    $("label[for='Red_cell_morphology_other']").show();
+	}
+	else
+	{
+	$("#id_th_red_cell_morphology_other_specify").hide();
+    $("label[for='Red_cell_morphology_other']").hide();
+
+	}
+	});
+	$("#id_th_red_cell_morphology_other_specify").hide();
+    $("label[for='Red_cell_morphology_other']").hide();
+	});
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+
+</style>
+<form method="POST" enctype="multipart/form-data"
+      id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Patient</label>
+                            {{form1.th_patient_edu_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.th_patient_occupation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Father</label>
+                            {{form1.th_father_edu_status|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.th_father_occupation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of  Mother</label>
+                            {{form1.th_mother_edu_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.th_mother_occupation|addclass:'form-control'}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Monthly Family Income (INR)As Per Kuppuswamy SES 2018</label>
+                            {{form1.th_monthly_income_status|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Tribal</label>
+                            {{form1.th_tribal|addclass:'form-control'}}
+                        </div>
+                        <div class="col-md-4 nont_tribal_caste">
+                            <label class="col-md font-weight-bolder text-dark text-left">Non tribal caste</label>
+                            {{form1.th_non_tribal_caste|addclass:'form-control'}}
+                        </div>
+                        <br>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+            </div>
+        </div>
+        <!---- box start ----->
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Diagnosis Details</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+            <div class="box-body" style="">
+                <div class="row ">
+                    <div class="col-md-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Diagnosis</label>
+                        {{form1.th_diagnosis_type|addclass:'form-control'}}
+                    </div>
+                    <div class="col-md-3 diagnosis_other">
+                        <label class="col-md font-weight-bolder text-dark text-left">Please specify</label>
+                        {{form1.th_diagonosis_other_specify|addclass:'form-control'}}
+                    </div>
+                    <div class="col-md-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Age of presentation</label>
+                        {{form1.th_presentation_age|addclass:'form-control'}}
+                    </div>
+                    <div class="col-md-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Age at diagnosis</label>
+                        {{form1.th_diagnosis_age|addclass:'form-control'}}
+                    </div>
+                </div>
+                <br>
+                <div class="row ">
+                    <div class="col-md-3">
+                        <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left">Presenting features</label>
+                        {{form1.th_pres_feature|addclass:'form-control'}}
+                    </div>
+
+                </div>
+                <br class="pres_feature">
+                 <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+                                <thead class="bg-info ">
+                                <tr>
+                                    <th>Features</th>
+                                    <th>Yes/No</th>
+                                    <th>Features</th>
+                                    <th>Yes/No</th>
+                                </tr>
+                                </thead>
+
+                                <tbody >
+
+                                <tr>
+                                    <td> Pallor</td>
+                                    <td>{{form1.th_pres_pallor|addclass:'form-control'}}</td>
+                                    <td>Yellowness</td>
+                                    <td> {{form1.th_pres_yellowness|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Recurrent fever</td>
+                                    <td>{{form1.th_pres_rec_fever|addclass:'form-control'}}</td>
+                                    <td>Distension of abdomen</td>
+                                    <td>  {{form1.th_pres_dist_abd|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Lethargy</td>
+                                    <td>{{form1.th_pres_lethargy|addclass:'form-control'}}</td>
+                                    <td>Fatigue</td>
+                                    <td>  {{form1.th_pres_fatigue|addclass:'form-control'}}</td>
+                                </tr>
+                                </tbody>
+                 </table>
+
+                <br>
+                <div class="row ">
+
+                    <div class="col-md-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Current age of the child/ patient</label>
+                        {{form1.th_curr_child_age|addclass:'form-control'}}
+                    </div>
+                </div>
+            </div>
+            <!-- /.box-body -->
+        </div>
+        <!---- box end ----->
+        <!---- box start ----->
+        <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Family History</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+
+            <!-- /.box-header -->
+         <div class="box-body" style="">
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left">Consanguinity</label>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Consanguinity</label>
+                    {{form1.th_consanguinity|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Similary affected sibling</label>
+                    {{form1.th_sibling_aff|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Other family members affected</label>
+                    {{form1.th_other_family_mem|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 other_family_member_affected">
+                    <label class="col-md font-weight-bolder text-dark text-left">Give details</label>
+                    {{form1.th_other_family_mem_details|addclass:'form-control'}}
+                </div>
+            </div>
+             <br>
+             <div class="row ">
+                <div class="col-md-2">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Please upload Pedigree</label>
+
+                </div>
+                 <div class="col-md-6">
+                    {{form1.th_pedigree_upload}}
+                 </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left">Current symptoms</label>
+                </div>
+            </div>
+             <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-info">
+                                <tr>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td> Fatigue</td>
+                                    <td>{{form1.th_f_fatigue|addclass:'form-control'}}</td>
+                                    <td>Dyspnoea</td>
+                                    <td> {{form1.th_f_dyspnoea|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Recurrent Fever</td>
+                                    <td>{{form1.th_f_rec_fever|addclass:'form-control'}}</td>
+                                    <td>Abdominal Pain</td>
+                                    <td> {{form1.th_f_abdominal_pain|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Chest pains</td>
+                                    <td>{{form1.th_f_chest_pain|addclass:'form-control'}}</td>
+                                    <td>Bone and joint pains</td>
+                                    <td> {{form1.th_f_bone_joint_pain|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Any other</td>
+                                    <td>{{form1.th_f_any_other|addclass:'form-control'}}</td>
+                                    <td class="symptoms_any_other_">Please specify</td>
+                                    <td class="symptoms_any_other_"> {{form1.th_f_any_other_specify|addclass:'form-control'}}</td>
+                                </tr>
+                                </tbody>
+             </table>
+            <br>
+             <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left">Past history</label>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">History of painful crisis [In sickle cell disease patients]</label>
+                    {{form1.th_f_past_hist|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Number of crisis –requiring hospitalization</label>
+                    {{form1.th_crisis_num|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Number of crisis in last 12 months</label>
+                    {{form1.th_crisis_num_last_12|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Acute chest syndrome</label>
+                    {{form1.th_acute_chest_syndrome|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hyperhemolytic crisis</label>
+                    {{form1.th_crisis_hyperhemolyitc|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hyperhemolytic crisis</label>
+                    {{form1.th_crisis_pain_pr_yr_before_hydoxyurea|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Number of pain crisis per year before starting Hydoxyurea</label>
+                    {{form1.th_crisis_pain_pr_yr_before_hydoxyurea|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Number of pain crisis per year after starting hydroxyurea</label>
+                    {{form1.th_crisis_pain_pr_yr_after_hydoxyurea|addclass:'form-control'}}
+                </div>
+            </div>
+            <br>
+             <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Any other illness requiring hospitalization</label>
+                    {{form1.th_other_illness|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Any_other_illness">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Illness</label>
+                    {{form1.th_other_illness_name|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Any_other_illness">
+                    <label class="col-md font-weight-bolder text-dark text-left" >age</label>
+                    {{form1.th_other_illness_age|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Any_other_illness">
+                    <label class="col-md font-weight-bolder text-dark text-left" >duration</label>
+                    {{form1.th_other_illness_dur|addclass:'form-control'}}
+                </div>
+
+            </div>
+         </div>
+        </div>
+            <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title">Clinical examination (at enrolment)</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+
+            <!-- /.box-header -->
+         <div class="box-body" style="">
+             <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Height(CM)</label>
+                    {{form1.th_height|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Height(Z score)</label>
+                    {{form1.th_height_z_score|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Weight(KG)</label>
+                    {{form1.th_weight|addclass:'form-control'}}
+                </div>
+                 <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Weight(Z score)</label>
+                    {{form1.th_weight_z_score|addclass:'form-control'}}
+                </div>
+             </div>
+             <br>
+             <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-info">
+                                <tr>
+                                    <th>Abnormalities</th>
+                                    <th>Yes/No</th>
+                                    <th>Abnormalities</th>
+                                    <th>Yes/No</th>
+                                </tr>
+
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>Hemolytic facies</td>
+                                    <td>{{form1.th_hemolytic_facies|addclass:'form-control'}}</td>
+                                    <td>Pallor</td>
+                                    <td> {{form1.th_pallor|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Jaundice</td>
+                                    <td>{{form1.th_jaundice|addclass:'form-control'}}</td>
+                                    <td>Edema</td>
+                                    <td> {{form1.th_edema|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Leg ulcers</td>
+                                    <td>{{form1.th_leg_ulcers|addclass:'form-control'}}</td>
+                                    <td>Hepatomegaly</td>
+                                    <td> {{form1.th_hepatomegaly|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Splenomegaly</td>
+                                    <td>{{form1.th_splenomegaly|addclass:'form-control'}}</td>
+                                    <td>Any systemic abnormalities</td>
+                                    <td> {{form1.th_any_systematic_anom|addclass:'form-control'}}
+                                    {{form1.th_any_sys_ab_specify|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Neurological abnormalities</td>
+                                    <td>{{form1.th_neurological_abnor|addclass:'form-control'}}</td>
+                                    <td class="Neurological_abnormalities_type"><b>Neurological abnormalities type</b></td>
+                                    <td class="Neurological_abnormalities_type"> {{form1.th_neurological_abnor_option|addclass:'form-control'}}
+                                                                                {{form1.th_neurological_abnor_option_other|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Renal involvement</td>
+                                    <td>{{form1.th_renal_involvement|addclass:'form-control'}}</td>
+                                    <td class="Renal_involvement"><b>Involvement type</b></td>
+                                    <td class="Renal_involvement"> {{form1.th_renal_involvement_opts|addclass:'form-control'}}
+                                                                    {{form1.th_renal_involvement_opts_other|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Swelling of feet/ body Edema</td>
+                                    <td>{{form1.th_feet_swelling|addclass:'form-control'}}</td>
+                                    <td>Leg ulcers</td>
+                                    <td> {{form1.th_clin_leg_ulcers|addclass:'form-control'}}
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Gallstones</td>
+                                    <td>{{form1.th_clin_gallstones|addclass:'form-control'}}</td>
+
+                                </tr>
+                                </tbody>
+             </table>
+
+
+            <br>
+
+             <div class="row ">
+                <div class="col-md-3">
+                    <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left">Iron Overload</label>
+                    {{form1.th_iron_overload_yes_no|addclass:'form-control'}}
+                </div>
+            </div>
+            <div class="row iron_overload_rule">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Cardiac</label>
+                    {{form1.th_iron_overload_cardiac|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Endocrine</label>
+                    {{form1.th_iron_overload_Endocrine|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Growth</label>
+                    {{form1.th_iron_overload_Growth|addclass:'form-control'}}
+                </div>
+            </div>
+             <br>
+            <div class="row ">
+
+
+                <div class="col-md-3">
+                    <i class="fa fa-fw fa-circle"></i><label class="col-md font-weight-bolder text-dark text-left" >History of any infection</label>
+                    {{form1.th_hist_infection|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 History_any_infection">
+                    <label class="col-md font-weight-bolder text-dark text-left" >History</label>
+                    {{form1.th_hist_infection_opt|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 history_other_rule">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Specify</label>
+                    {{form1.th_hist_infection_opt_other_specify|addclass:'form-control'}}
+                </div>
+            </div>
+         </div>
+        <!-- /.box-body -->
+    </div>
+    <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Lab Investigations/Results</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>at the time of diagnosis</b></h4></label>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left">Haematological tests at Diagnosis</label>
+                </div>
+            </div>
+            <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-info">
+                                <tr>
+                                    <th>Test</th>
+                                    <th>Value</th>
+                                    <th>Test</th>
+                                    <th>Value</th>
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>WBC (x10<sup>3</sup>/μl)</td>
+                                    <td>{{form1.th_haem_wbc|addclass:'form-control'}}</td>
+                                    <td>Hb(g/dl)</td>
+                                    <td> {{form1.th_haem_hb|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MCV(fl)</td>
+                                    <td>{{form1.th_haem_mcv|addclass:'form-control'}}</td>
+                                    <td>MCH(Pg)</td>
+                                    <td> {{form1.th_haem_mch|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>MCHC(g/dl)</td>
+                                    <td>{{form1.th_haem_mchc|addclass:'form-control'}}</td>
+                                    <td>RBC count(x10<sup>6</sup> /μl)</td>
+                                    <td> {{form1.th_haem_rbc_count|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>RDW (%)</td>
+                                    <td>{{form1.th_haem_rdw_per|addclass:'form-control'}}</td>
+                                    <td>PLTs(x10<sup>3</sup>/μl)</td>
+                                    <td> {{form1.th_haem_plts|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Retic count(%)</td>
+                                    <td> {{form1.th_haem_retic_count|addclass:'form-control'}}</td>
+                                    <td>HbA(%)</td>
+                                    <td>{{form1.th_haem_hba|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+
+                                    <td>HbF (N<2%)(%)</td>
+                                    <td> {{form1.th_haem_hbf|addclass:'form-control'}}</td>
+                                    <td>HbA2 (N<3.5%)(%)</td>
+                                    <td>{{form1.th_haem_hba2|addclass:'form-control'}}</td>
+                                </tr>
+                                </tbody>
+            </table>
+
+
+
+            <br>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Red cell morphology</label>
+                    {{form1.th_red_cell_morphology|addclass:'form-control'}}
+
+                </div>
+                <label class="col-md font-weight-bolder text-dark text-left Red_cell_morphology_rule">Please tick if applicable</label><br>
+                <div class="col-md-2 Red_cell_morphology_rule">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hypochromic</label>
+                    {{form1.th_red_cell_morphology_1}}
+                </div>
+                <div class="col-md-2 Red_cell_morphology_rule">
+                    <label class="col-md font-weight-bolder text-dark text-left">Microcytic</label>
+                    {{form1.th_red_cell_morphology_2}}
+                </div>
+                <div class="col-md-2 Red_cell_morphology_rule">
+                    <label class="col-md font-weight-bolder text-dark text-left">Anisocytosis</label>
+                    {{form1.th_red_cell_morphology_3}}
+                </div>
+                <div class="col-md-2 Red_cell_morphology_rule">
+                    <label class="col-md font-weight-bolder text-dark text-left">Poikilocytosis</label>
+                    {{form1.th_red_cell_morphology_4}}
+                </div>
+
+            </div>
+            <div class="row Red_cell_morphology_rule">
+                <div class="col-md-3">
+                </div>
+
+                <div class="col-md-2">
+                    <label class="col-md font-weight-bolder text-dark text-left">Target Cells</label>
+                    {{form1.th_red_cell_morphology_5}}
+                </div>
+                <div class="col-md-2">
+                    <label class="col-md font-weight-bolder text-dark text-left">Other</label>
+                    {{form1.th_red_cell_morphology_other}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" for="Red_cell_morphology_other">Please specify</label>
+                    {{form1.th_red_cell_morphology_other_specify|addclass:'form-control'}}
+                </div>
+            </div>
+                <br>
+            <div class="row">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Unstable haemoglobin</label>
+                    {{form1.th_haem_unstable_haem|addclass:'form-control'}}
+                </div>
+                 <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Variant Hb (%, retention time if HPLC based detection)</label>
+                    {{form1.th_haem_var_hb|addclass:'form-control'}}
+                </div>
+
+
+            </div>
+            <br class="Variant_hb_per">
+
+            <div class="row Variant_hb_per">
+                <div class="col-md-2">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hb S (%)</label>
+                    {{form1.th_haem_var_hb_hbs|addclass:'form-control'}}
+                </div>
+                <div class="col-md-2">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hb E - %</label>
+                    {{form1.th_haem_var_hb_hbe|addclass:'form-control'}}
+                </div>
+                <div class="col-md-2">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hb D- %</label>
+                    {{form1.th_haem_var_hb_hbd|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Other(specify) %</label>
+                    {{form1.th_haem_var_hb_other_per|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Retention time</label>
+                    {{form1.th_haem_var_hb_retention_time|addclass:'form-control'}}
+                </div>
+            </div>
+            <div class="row ">
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left">Molecular studies</label>
+                </div>
+            </div>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Alpha thal (test done, result)</label>
+                    {{form1.th_mol_alpha_thal|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Alpha_thal_test">
+                    <label class="col-md font-weight-bolder text-dark text-left">Alpha thal result</label>
+                    {{form1.th_mol_alpha_thal_opt|addclass:'form-control'}}
+
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HbH inclusions</label>
+                    {{form1.th_haem_hbh_incl|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 HBH_result">
+                    <label class="col-md font-weight-bolder text-dark text-left">HB H (result)</label>
+                    {{form1.th_mol_hbh_thal_opt|addclass:'form-control'}}
+                    {{form1.th_mol_alpha_thal_opt_other|addclass:'form-control'}}
+
+                </div>
+
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left green_box"> Beta Thalassemia genetic testing(test done, result)</label>
+                    {{form1.th_mol_beta_thal|addclass:'form-control'}}
+                </div>
+                <label class="col-md font-weight-bolder text-dark text-left Beta_Thalassemia_test">Please tick, if applicable</label><br>
+                <div class="col-md-3 Beta_Thalassemia_test">
+                    <label class="col-md font-weight-bolder text-dark text-left green_box" onmouseover= "[HBB: c.92+5G>C]">  IVS 1-5 (G>C) </label>
+                    {{form1.th_mol_beta_thal_opt_1}}
+
+                </div>
+                <div class="col-md-3 Beta_Thalassemia_test">
+                    <label class="col-md font-weight-bolder text-dark text-left">Codon 15 (G>A) [HBB: c.47G>A]</label>
+                    {{form1.th_mol_beta_thal_opt_2}}
+
+                </div>
+                <div class="col-md-3 Beta_Thalassemia_test">
+                    <label class="col-md font-weight-bolder text-dark text-left">Codon 41/42 (-TCTT) [HBB: c.126_129delCTTT]</label>
+                    {{form1.th_mol_beta_thal_opt_3}}
+
+                </div>
+            </div>
+            <div class="row Beta_Thalassemia_test">
+                <div class="col-md-3">
+
+                </div>
+
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">FS 8/9 (+G) [HBB: c.27_28insG]</label>
+                    {{form1.th_mol_beta_thal_opt_4}}
+
+                </div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">Codon 30 (G>C) [c.93 G>C]</label>
+                    {{form1.th_mol_beta_thal_opt_5}}
+
+                </div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">619bp deletion [NG_000007.3:g.71609_72227del619]</label>
+                    {{form1.th_mol_beta_thal_opt_6}}
+
+                </div>
+
+            </div>
+            <div class="row Beta_Thalassemia_test">
+                <div class="col-md-3">
+
+                </div>
+
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">IVS 1-1 (G->T) [HBB: c.92+1G>T]</label>
+                    {{form1.th_mol_beta_thal_opt_7}}
+
+                </div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">Other</label>
+                    {{form1.th_mol_beta_thal_opt_8}}
+
+                </div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" for="Beta_test_other_label">Please specify</label>
+                    {{form1.th_mol_beta_thal_other_spec|addclass:'form-control'}}
+
+                </div>
+            </div>
+
+            <br>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">INTERPRETATION</label>
+                    {{form1.th_mol_interpretaion|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HPFH (test done)</label>
+                    {{form1.th_HPFH_test|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 HPFH_test">
+                    <label class="col-md font-weight-bolder text-dark text-left">Result</label>
+                    {{form1.th_HPFH_test_result|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Delta beta thal (test done, result)</label>
+                    {{form1.th_mol_alpha_beta_test|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <div class="row Delta_beta_test">
+                <div class="col-md-12">
+                    <label class="col-md font-weight-bolder text-dark text-left">Test result</label>
+                    {{form1.th_mol_alpha_beta_test_result|addclass:'form-control'}}
+                </div>
+            </div>
+        </div>
+    </div>
+             <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Current investigations</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>Current investigations</b></h4></label>
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">current investigation date</label>
+                    {{form1.th_curr_invest_date|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Mean pretansfusion Hb(g/dl)</label>
+                    {{form1.th_curr_pretasnsfusion|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Mean post-transfusion hb (g/dl)</label>
+                    {{form1.th_curr_post_transfusion|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-6">
+                    <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left">HIV/HbSAg/HCV test details</label>
+                </div>
+            </div>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HIV</label>
+                    {{form1.th_curr_hiv|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HbSAg</label>
+                    {{form1.th_curr_hbsag|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HCV</label>
+                    {{form1.th_curr_hcv|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">treatment received</label>
+                    {{form1.th_treat_recieved|addclass:'form-control'}}
+                </div>
+
+            </div>
+            </div>
+            </div>
+        <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Biochemical tests</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+
+            <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-info">
+                                <tr>
+                                    <th>Test</th>
+                                    <th>Value</th>
+                                    <th>Test</th>
+                                    <th>Value</th>
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>Serum Ferritin(ng/mL)</td>
+                                    <td>{{form1.th_bio_serum_ferritin|addclass:'form-control'}}</td>
+                                    <td>Serum Lactate Dehydrogenase(U/L)</td>
+                                    <td> {{form1.th_bio_serum_dehyd|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Vitamin B12(pg/mL)</td>
+                                    <td>{{form1.th_bio_vitamin_b12|addclass:'form-control'}}</td>
+                                    <td>Folate levels(ng/mL)</td>
+                                    <td> {{form1.th_bio_folate_levels|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Serum  Bilirubin [Total / Conjugated]</td>
+                                    <td>{{form1.th_bio_ser_bilirubin|addclass:'form-control'}}</td>
+                                    <td>Aspartate aminotransferase.–[AST/SGOT](IU/L)</td>
+                                    <td> {{form1.th_bio_alan_amino|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Alanine aminotransferase –[ALT/SGPT](IU/L)</td>
+                                    <td>{{form1.th_bio_ser_alkline|addclass:'form-control'}}</td>
+                                    <td>Serum alkaline phosphatase(IU/L)</td>
+                                    <td> {{form1.th_bio_ser_calc|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Serum Calcium [ionized] (mg/dl)</td>
+                                    <td>{{form1.th_bio_ser_calc_ionized|addclass:'form-control'}}</td>
+                                    <td>Serum phoshorus(mg/dl)</td>
+                                    <td> {{form1.th_bio_ser_phosp|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>S creatinine(mg/dl)</td>
+                                    <td>{{form1.th_bio_s_creatinine|addclass:'form-control'}}</td>
+                                    <td>T4(µg/dl)</td>
+                                    <td> {{form1.th_bio_t4|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>TSH(mIU/L)</td>
+                                    <td>{{form1.th_bio_tsh|addclass:'form-control'}}</td>
+                                    <td>S Cortisol – early morning(µg/dl)</td>
+                                    <td> {{form1.th_bio_s_cortisol_early|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>SCortisol – Stimulates(µg/dl)</td>
+                                    <td>{{form1.th_bio_s_cortisol_stimulates|addclass:'form-control'}}</td>
+                                    <td>Blood sugar-fasting  (mg/dl)</td>
+                                    <td> {{form1.th_bio_blood_sugar_fast|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Blood sugar – post meal (mg/dl)</td>
+                                    <td>{{form1.th_bio_blood_sugar_post_meal|addclass:'form-control'}}</td>
+                                    <td>ECG</td>
+                                    <td> {{form1.th_ecg|addclass:'form-control'}}</td>
+                                </tr>
+                                <tr>
+                                    <td>ECHOcardiography</td>
+                                    <td>{{form1.th_ECHOcardiography|addclass:'form-control'}}</td>
+                                    <td>Any other </td>
+                                    <td> {{form1.th_Any_other|addclass:'form-control'}}</td>
+                                </tr>
+                                </tbody>
+            </table>
+
+        </div>
+    </div>
+    <!-- /.box-body -->
+    <!---- box start ----->
+    <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Treatment history</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                </button>
+            </div>
+            <!-- /.box-tools -->
+        </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Bone Marrow transplantation</label>
+                    {{form1.th_bone_marrow_treat|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 BMT_done">
+                    <label class="col-md font-weight-bolder text-dark text-left">BMT Outcome</label>
+                    {{form1.th_bmt_done_outcome|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hypertransfusion therapy</label>
+                    {{form1.th_hyper_trans_therapy|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Intermittent transfusions</label>
+                    {{form1.th_inter_transfusion|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Splenectomy </label>
+                    {{form1.th_splenectomy|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Splenectomy">
+                    <label class="col-md font-weight-bolder text-dark text-left">Age of Splenectomy(years) </label>
+                    {{form1.th_splenectomy_age|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Age at Diagnosis:</label>
+                    {{form1.th_diagnosis_age1|addclass:'form-control'}}
+                </div>
+                 <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Transfusion</label>
+                    {{form1.th_transfusion|addclass:'form-control'}}
+
+                </div>
+            </div>
+            <div class="row transfusion_age">
+                <div class="col-md-12">
+                    <label class="col-md font-weight-bolder text-dark text-left">Age of 1st transfusion</label>
+                    {{form1.th_transfusion_age|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Frequency of transfusions:</label>
+                    {{form1.th_transfusion_frequency|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Hydroxyurea</label>
+                    {{form1.th_hydroxyurea|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Hydroxyurea">
+                    <label class="col-md font-weight-bolder text-dark text-left">Dose</label>
+                    {{form1.th_hydroxyurea_dose|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Hydroxyurea">
+                    <label class="col-md font-weight-bolder text-dark text-left">Duration</label>
+                    {{form1.th_hydroxyurea_duration|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Pre hydroxyurea Hb g/dL [or Pre transfusion Hb g/dL]</label>
+                    {{form1.th_pre_hydroxyurea_hb|addclass:'form-control'}}
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Post hydroxyurea Hb g/dL [or Pre transfusion Hb g/dL]</label>
+                    {{form1.th_post_hydroxyurea_hb|addclass:'form-control'}}
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Pre hydroxyurea transfusion frequency</label>
+                    {{form1.th_pre_hydroxyurea_trans|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Post hydroxyurea Hb g/dL [or Pre transfusion Hb g/dL]</label>
+                    {{form1.th_post_hydroxyurea_trans|addclass:'form-control'}}
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Effect of Hydroxyurea on pain crisis in sickle cell disease patients-</label>
+                    {{form1.th_hydroxyurea_pain|addclass:'form-control'}}
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Any other disease modifying drug therapy</label>
+                    {{form1.th_any_other_disease|addclass:'form-control'}}
+                </div>
+
+
+            </div>
+
+            <div class="row any_other_disease">
+                <div class="col-md-12">
+                    <label class="col-md font-weight-bolder text-dark text-left"> specify Details</label>
+                    {{form1.th_any_other_disease_detail|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Chelation</label>
+                    {{form1.th_chelation_status|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Chelation">
+                    <label class="col-md font-weight-bolder text-dark text-left">Chelation type</label>
+                    {{form1.th_deferasirox_dose|addclass:'form-control'}}
+                    {{form1.th_deferasirox_dose_other_specify|addclass:'form-control'}}
+                </div>
+                <div class="col-md-2 Chelation">
+                    <label class="col-md font-weight-bolder text-dark text-left">Doses(mg/kg/day)</label>
+                    {{form1.th_deferiprone_dose|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3 Chelation">
+                    <label class="col-md font-weight-bolder text-dark text-left">Duration</label>
+                    {{form1.th_any_other_disease_dur|addclass:'form-control'}}
+                </div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-12">
+                    <label class="col-md font-weight-bolder text-dark text-left">Any other Medications</label>
+                    {{form1.th_other_medication|addclass:'form-control'}}
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Final diagnosis</label>
+                    {{form1.th_final_diagnosis|addclass:'form-control'}}
+                    {{form1.th_f_diag_other_specify|addclass:'form-control'}}
+                    {{form1.th_comp_iron_overload_beta_thalassemia_detail|addclass:'form-control'}}
+                </div>
+
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Complications of iron overload</label>
+                    {{form1.th_comp_iron_overload|addclass:'form-control'}}
+                    {{form1.th_comp_iron_overload_detail|addclass:'form-control'}}
+
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Impression about management</label>
+                    {{form1.th_impr_mngt|addclass:'form-control'}}
+                </div>
+            </div>
+            <hr>
+            <div class="row ">
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Filled by D.E.O. Name</label>
+                    {{form1.th_filled_by_deo_name|addclass:'form-control'}}
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Name of the clinician</label>
+                    {{form1.th_filled_by_name|addclass:'form-control'}}
+                </div>
+                <div class="col-md-4">
+                    <label class="col-md font-weight-bolder text-dark text-left">Date:</label>
+                    {{form1.th_filled_date|addclass:'form-control'}}
+                </div>
+            </div>
+        </div>
+        <!-- /.box-body -->
+    </div>
+    <!---- box end ----->
+
+    <center>
+        <button class="btn btn-primary" type="submit" id="submit1">Submit</button>
+    </center>
+    </div>
+</form>
+{% endblock %}

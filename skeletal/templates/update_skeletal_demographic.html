@@ -1,0 +1,2103 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script>
+    $(document).ready(function(){
+$('#id_sk_Development_milestones').on('change', function(){
+var demovalue = $(this).val();
+if(demovalue == 'Delayed'){
+$(".develop").show();
+
+}
+else
+{
+$(".develop").hide();
+
+}
+});
+$(".develop").hide();
+});
+
+</script>
+<script>
+			$(document).ready(function() {
+		$('.submitbtn').click(function(e) {
+			var isValid = true;
+			$('.required1').each(function() {
+				if ($.trim($(this).val()) == '') {
+					isValid = false;
+					$(this).css({
+						"border": "1px solid red",
+						"background": "#FFCECE"
+					});
+					alert($(this).attr("name") + " " + 'field is empty')
+				}
+				else {
+					$(this).css({
+						"border": "",
+						"background": ""
+					});
+				}
+			});
+			if (isValid == false)
+			e.preventDefault();
+			else
+			alert('Thank you for submitting');
+		});
+	});
+
+</script>
+<script>
+    $(document).ready(function(){
+$('#id_sk_IQ_done').on('change', function(){
+var demovalue = $(this).val();
+if(demovalue == 'Done'){
+$(".iq").show();
+
+}
+else
+{
+$(".iq").hide();
+
+}
+});
+$(".iq").hide();
+});
+
+</script>
+
+
+<script>
+    $(document).ready(function(){
+$('#id_sk_genetic_analysis_performed').on('change', function(){
+var demovalue = $(this).val();
+if(demovalue == 'Yes'){
+$(".genet").show();
+
+}
+else
+{
+$(".genet").hide();
+
+}
+});
+$(".genet").hide();
+});
+
+</script>
+
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_positive_family_history').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".positive").show();
+
+	}
+	else
+	{
+	$(".positive").hide();
+
+	}
+	});
+	$(".positive").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Consanguinity').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".consang").show();
+
+	}
+	else
+	{
+	$(".consang").hide();
+
+	}
+	});
+	$(".consang").hide();
+	});
+
+</script>
+
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Natal_History_Resuscitation_required').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".resuscitation").show();
+
+	}
+	else
+	{
+	$(".resuscitation").hide();
+
+	}
+	});
+	$(".resuscitation").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Any_Fractures').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".fractures").show();
+
+	}
+	else
+	{
+	$(".fractures").hide();
+
+	}
+	});
+	$(".fractures").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Any_surgical_intervation').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".surgical").show();
+
+	}
+	else
+	{
+	$(".surgical").hide();
+
+	}
+	});
+	$(".surgical").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Treatment_Any_Surgical_Procedure').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".surgical").show();
+
+	}
+	else
+	{
+	$(".surgical").hide();
+
+	}
+	});
+	$(".surgical").hide();
+	});
+
+</script>
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Any_other_therapy').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".other").show();
+
+	}
+	else
+	{
+	$(".other").hide();
+
+	}
+	});
+	$(".other").hide();
+	});
+
+</script>
+
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Dysmorphism').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".dysmor").show();
+
+	}
+	else
+	{
+	$(".dysmor").hide();
+
+	}
+	});
+	$(".dysmor").hide();
+	});
+
+</script>
+
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Abnormal_Hair').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".abnormal_hair").show();
+
+	}
+	else
+	{
+	$(".abnormal_hair").hide();
+
+	}
+	});
+	$(".abnormal_hair").hide();
+	});
+
+</script>
+
+<script>
+    	$(document).ready(function(){
+	$('#id_sk_Skin_pigmentary_abnormalities').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".skip_pigmentary").show();
+
+	}
+	else
+	{
+	$(".skip_pigmentary").hide();
+
+	}
+	});
+	$(".skip_pigmentary").hide();
+	});
+
+</script>
+
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+
+	hr {
+
+	width:95%;
+    border: 1px solid rgb(240, 240, 240);
+}
+</style>
+<style>
+		
+		.required1{
+		border-color: red;
+		padding: 0.5rem;
+	
+		}
+</style>
+<form method="POST"  enctype="multipart/form-data" id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}}--------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+
+        {% if form1.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+        {% if form1.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+        {% if form1.errors %}
+    {% for field in form4 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    <br>
+    <div class="box-body">
+        <div class="box-group" id="">
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+						</button>
+					</div>
+                    <!-- /.box-tools -->
+				</div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of Patient</label>
+                            {{form1.sk_Patient_education|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.sk_Patient_occupation|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of Father</label>
+                            {{form1.sk_Father_education|addclass:'form-control'}}
+						</div>
+					</div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.sk_Father_occupation|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of  Mother</label>
+                            {{form1.sk_Mother_education|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.sk_Mother_occupation|addclass:'form-control'}}
+						</div>
+					</div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Monthly Family Income (INR)As Per Kuppuswamy SES 2018</label>
+                            {{form1.sk_Monthly_family_income|addclass:'form-control'}}
+						</div>
+				</div>
+                </div>
+            </div>
+                <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Anthropometry information</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+						</button>
+					</div>
+                    <!-- /.box-tools -->
+				</div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                           <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>Anthropometry information</h4></label>
+
+						</div>
+				   </div>
+                     <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+	                        <colgroup>
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+
+                            </colgroup>
+                         <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Patient</th>
+                                <th>Percentile</th>
+                                <th>SD</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr>
+                                <th> Weight (kg) *</th>
+                                <td>
+                                        {{form1.sk_weight_patient|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_weight_percentile|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_weight_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Height (cm) *</th>
+                                <td>
+                                        {{form1.sk_height_patient|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_height_percentile|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_height_sd|addclass:'form-control required1' }}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Lower Segment * </th>
+                                <td>
+                                        {{form1.sk_Lower_segment_patient|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_segment_percentile|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_segment_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> US LS Ratio  *</th>
+                                <td>
+                                        {{form1.sk_US_LS_Ratio_patient|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_US_LS_Ratio_percentile|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_US_LS_Ratio_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                           <tr>
+                                <th> Head Circumference (cm) *</th>
+                                <td>
+                                        {{form1.sk_Head_circumference_patient|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Head_circumference_percentile|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Head_circumference_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                        <tr>
+                                <th> Arm span  *</th>
+                                <td>
+                                        {{form1.sk_Arm_span_patient|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Arm_span_percentile|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Arm_span_sd|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                         </tbody>
+                    </table>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                           <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>PRESENTING COMPLAINTS</h4></label>
+
+						</div>
+				</div>
+
+                 <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+	                        <colgroup>
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+                                <col span="1" style="width: 10%;">
+
+                            </colgroup>
+                     <thead class="bg-info ">
+                            <tr>
+                                <th></th>
+                                <th>Years</th>
+                                <th>Month</th>
+                                <th>Day</th>
+                                <th>Intrauterine</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                            <tr>
+                                <th> Age at onset of symptoms:  *</th>
+                                <td>
+                                        {{form1.sk_Age_at_onset_of_symptoms_year|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_onset_of_symptoms_month|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_onset_of_symptoms_day|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_onset_of_symptoms_Intrauterine|addclass:'form-control required1'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Age at presentation  *</th>
+                                <td>
+                                        {{form1.sk_Age_at_presentation_year|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_presentation_month|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_presentation_day|addclass:'form-control required1'}}
+                                </td>
+                               <td>
+                                        {{form1.sk_Age_at_presentation_Intrauterine|addclass:'form-control required1'}}
+                                </td>
+
+
+
+                            </tr>
+                           <tr>
+                                <th> Age at diagnosis:  *</th>
+                               <td>
+                                        {{form1.sk_Age_at_diagnosis_year|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_diagnosis_month|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_diagnosis_day|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Age_at_diagnosis_Intrauterine|addclass:'form-control required1'}}
+                                </td>
+
+
+                            </tr>
+                     </tbody>
+                    </table>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Pedigree (3 generation) upload:</label>
+
+						</div>
+                        <div class="col-xs-9">
+                                {{form1.sk_Pedigree_to_be_uploaded}}
+                        </div>
+				   </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Positive Family History: *</label>
+                            {{form1.sk_positive_family_history|addclass:'form-control required1'}}
+						</div>
+                        <div class="col-xs-3  positive">
+                            <label class="col-xs font-weight-bolder text-dark text-left">specify</label>
+                            {{form1.sk_Family_history_specify|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Consanguinity:</label>
+                            {{form1.sk_Consanguinity|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3 consang">
+                            <label class="col-xs font-weight-bolder text-dark text-left">specify</label>
+                            {{form1.sk_Consanguinity_specify|addclass:'form-control'}}
+						</div>
+					</div>
+                    <br>
+
+                <!-- /.box-body -->
+			</div>
+            <!---- box end ----->
+		</div>
+	</div>
+    <!---- box start ----->
+    <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">History Details</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                    class="fa fa-minus"></i>
+				</button>
+			</div>
+            <!-- /.box-tools -->
+		</div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="row ">
+                    <div class="col-xs-6">
+                       <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Antenatal Investigation</h4></label>
+
+                    </div>
+            </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left "><h4><b>Ultrasound findings</b></h4></label>
+
+                </div>
+            </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left ">Polyhydramnios</label>
+				    {{form1.sk_Ultrasound_Polyhydramnios|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any other antenatal investigations</label>
+				    {{form1.sk_Ultrasound_Any_other_antenatal_investigations|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Short long bones Bending</label>
+				    {{form1.sk_Ultrasound_Short_long_Bones_Bending|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Specify gestation period)</label>
+				    {{form1.sk_Ultrasound_Short_long_Bones_Bending_gestation_period|addclass:'form-control'}}
+                </div>
+			</div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Hydrops</label>
+				    {{form1.sk_Ultrasound_Hydrops|addclass:'form-control'}}
+                </div>
+			</div>
+            <hr>
+            <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>Natal History</b></h4></label>
+					</div>
+            </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Type of delivery:</label>
+				    {{form1.sk_Natal_History_Type_of_delivery|addclass:'form-control '}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Baby cried immediately after delivery:</label>
+				    {{form1.sk_Natal_History_Baby_cried_immediately_after_delivery|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Resuscitation required:</label>
+				    {{form1.sk_Natal_History_Resuscitation_required|addclass:'form-control'}}
+                </div>
+                 <div class="col-xs-3 resuscitation">
+                    <label class="col-xs font-weight-bolder text-dark text-left">If Yes Details</label>
+				    {{form1.sk_Natal_History_Resuscitation_specify|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">O 2</label>
+				    {{form1.sk_Natal_History_o_2|addclass:'form-control'}}
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Ventilation</label>
+				    {{form1.sk_Natal_History_ventilation|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">NICU Stay</label>
+				    {{form1.sk_Natal_History_NICU_stay|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+				    {{form1.sk_Natal_History_NICU_stay_specify|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Others</label>
+				    {{form1.sk_Natal_History_NICU_stay_other|addclass:'form-control'}}
+                </div>
+
+			</div>
+            <br>
+
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Birth weight (Kg)</label>
+                    {{form1.sk_Other_Birth_weight|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 famhist">
+                    <label class="col-xs font-weight-bolder text-dark text-left" >Birth Length (cm)</label>
+                    {{form1.sk_Other_Birth_length|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 famhist">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Birth head circumference (cm)</label>
+                    {{form1.sk_Other_Birth_head_circumference|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 famhist">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Short Bones</label>
+                    {{form1.sk_Other_Short_Bones|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any other malformation</label>
+                    {{form1.sk_Other_Any_other_malformation|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 famhist">
+                    <label class="col-xs font-weight-bolder text-dark text-left" >Joint contractures</label>
+                    {{form1.sk_Other_joint_contractures|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 famhist">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Fractures</label>
+                    {{form1.sk_Other_Fractures|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Gestation at delivery</label>
+				    {{form1.sk_Natal_History_NICU_stay_Gestation_at_delivery|addclass:'form-control'}}
+                </div>
+			</div>
+            <hr>
+            <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>Developmental milestones</b></h4></label>
+					</div>
+            </div>
+            <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-sm font-weight-bolder text-dark text-left">Developmental milestones:</label>
+                        {{form1.sk_Development_milestones|addclass:'form-control'}}
+                    </div>
+                <div class="col-xs-3 develop" >
+                    <label class="col-xs font-weight-bolder text-dark text-left">Motor</label>
+				    {{form1.sk_if_delayed_Motor|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 develop">
+                    <label class="col-xs font-weight-bolder text-dark text-left"> Global</label>
+                    {{form1.sk_if_delayed_Global|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 develop">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Cognitive</label>
+                    {{form1.sk_if_delayed_Cognitive|addclass:'form-control'}}
+				</div>
+			</div>
+            <hr>
+            <div class="row ">
+                    <div class="col-xs-6">
+                        <i class="fa fa-fw fa-circle"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>Significant Past History *</b></h4></label>
+					</div>
+            </div>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <!-- <label class="col-xs font-weight-bolder text-dark text-left">History</label> -->
+				    {{form1.sk_history|addclass:'form-control required1'}}
+                </div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any fractures *</label>
+                    {{form1.sk_Any_Fractures|addclass:'form-control required1'}}
+				</div>
+                <div class="col-xs-3 fractures">
+                    <label class="col-xs font-weight-bolder text-dark text-left" >if yes Number/Frequency</label>
+                    {{form1.sk_Any_Fractures_number|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left" >Any hearing impairment</label>
+                    {{form1.sk_Any_hearing_impairment|addclass:'form-control'}}
+				</div>
+
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any visual problems</label>
+				    {{form1.sk_Any_visual_problems|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Any Surgical intervention</label>
+                    {{form1.sk_Any_surgical_intervation|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3 surgical">
+                    <label class="col-xs font-weight-bolder text-dark text-left" >Specify</label>
+                    {{form1.sk_Any_surgical_intervation_specify|addclass:'form-control'}}
+				</div>
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Developmental delay</label>
+                    {{form1.sk_Development_delay|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-xs-3">
+                    <label class="col-xs font-weight-bolder text-dark text-left">IQ:</label>
+				    {{form1.sk_IQ_done|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 iq">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Value</label>
+				    {{form1.sk_IQ_done_value|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 dq">
+                    <label class="col-xs font-weight-bolder text-dark text-left">DQ:</label>
+				    {{form1.sk_DQ_done|addclass:'form-control'}}
+                </div>
+                <div class="col-xs-3 dq">
+                    <label class="col-xs font-weight-bolder text-dark text-left">Value</label>
+				    {{form1.sk_DQ_done_value|addclass:'form-control'}}
+                </div>
+            </div>
+
+
+
+
+         </div>
+
+        <!-- /.box-body -->
+	</div>
+    <!---- box end ----->
+    <!---- box start ----->
+    <div class="box box-primary box-solid">
+        <div class="box-header with-border">
+            <h3 class="box-title">Examination details</h3>
+            <div class="box-tools pull-right">
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                    class="fa fa-minus"></i>
+				</button>
+			</div>
+            <!-- /.box-tools -->
+		</div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="box-group" id="accordion">
+
+                 <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 20%;">
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+
+                            </colgroup>
+                     <thead class="bg-info ">
+                            <tr>
+                                <th><h4><b>Upper limb</b></h4></th>
+                                <th>Yes/No</th>
+                                <th>Right</th>
+                                <th>Left</th>
+                            </tr>
+                     </thead>
+                     <tbody>
+                            <tr>
+                                <th> Rhizomelic shortening </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Rhizomelic_shortening|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Rhizomelic_shortening_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Rhizomelic_shortening_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                 <th> Mesomelic shortening </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Mesomelic_shortening|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Mesomelic_shortening_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Mesomelic_shortening_left|addclass:'form-control'}}
+                                </td>
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th> Acromelic shortening </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Acromelic_shortening|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Acromelic_shortening_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Acromelic_shortening_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                           <tr>
+                                <th> Absent (A)/hypoplastic (H) radius </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_hypoplastic_radius|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_hypoplastic_radius_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_hypoplastic_radius_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Absent(A)/hypoplastic (H) ulna </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_hypoplastic_ulna|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_hypoplastic_ulna_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_hypoplastic_ulna_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Polydactyly hand (Preaxial/post axial) </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Polydactyly_hand_Preaxial|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Polydactyly_hand_Preaxial_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Polydactyly_hand_Preaxial_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Ectrodactyly </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Ectrodactyly|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Ectrodactyly_right_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Ectrodactyly_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Brachydactyly hand </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Brachydactyly_hand|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Brachydactyly_hand_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Brachydactyly_hand_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Trident hand  *</th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Trident_hand|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Trident_hand_right|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Trident_hand_left|addclass:'form-control required1'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Oligodactyly hand </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Oligodactyly_hand|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Oligodactyly_hand_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Oligodactyly_hand_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Hypoplastic thumb </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Hypoplastic_thumb|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Hypoplastic_thumb_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Hypoplastic_thumb_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Syndactyly Skin/osseous </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Syndactyly_Skin|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Syndactyly_Skin_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Syndactyly_Skin_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Joint laxity </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Joint_laxity|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Joint_laxity_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Joint_laxity_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Joint contractures </th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Joint_contractures|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Joint_contractures_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Joint_contractures_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Deformities *</th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Deformities|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Deformities_right|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Upper_limb_Deformities_left|addclass:'form-control required1'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Any other</th>
+                                <td>
+                                        {{form1.sk_Upper_limb_Any_other|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                     </tbody>
+
+                    </table>
+                        <hr>
+                     <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+	                        <colgroup>
+	                            <col span="1" style="width: 30%;">
+	                            <col span="1" style="width: 20%;">
+	                            <col span="1" style="width: 25%;">
+	                            <col span="1" style="width: 25%;">
+
+                            </colgroup>
+                         <thead class="bg-info ">
+                            <tr>
+                                <th><h4><b>Lower limb</b></h4></th>
+                                <th>Yes/No</th>
+                                <th>Right</th>
+                                <th>Left</th>
+                            </tr>
+                         </thead>
+                         <tbody>
+                            <tr>
+                                <th> Rhizomelic shortening </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Rhizomelic_shortening|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Rhizomelic_shortening_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Rhizomelic_shortening_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Mesomelic shortening </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Mesomelic_shortening|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Mesomelic_shortening_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Mesomelic_shortening_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+
+                            <tr>
+                                <th> Acromelic shortening </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Acromelic_shortening|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Acromelic_shortening_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Acromelic_shortening_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                           <tr>
+                                <th> Absent (A)/hypoplastic (H) fibula </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_fibula|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_fibula_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_fibula_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Absent(A)/hypoplastic (H) tibula </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_tibula|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_tibula_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_tibula_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                           <tr>
+                                <th> Absent(A)/hypoplastic (H) femur </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_femur|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_femur_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_hypoplastic_femur_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Polydactyly foot </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Polydactyly_foot|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Polydactyly_foot_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Polydactyly_foot_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Oligodactyly foot </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Oligodactyly_foot|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Oligodactyly_foot_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Oligodactyly_foot_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Brachydactyly foot </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Brachydactyly_foot|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Brachydactyly_foot_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Brachydactyly_foot_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Ectrodactyly foot </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Ectrodactyly_foot|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Ectrodactyly_foot_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Ectrodactyly_foot_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Hypoplastic great toe </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Hypoplastic_great_toe|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Hypoplastic_great_toe_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Hypoplastic_great_toe_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Hallux vagus </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Hallux_vagus|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Hallux_vagus_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Hallux_vagus_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Broad great toe </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Broad_great_toe|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Broad_great_toe_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Broad_great_toe_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Deviated great toe </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Deviated_great_toe|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Deviated_great_toe_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Deviated_great_toe_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Syndactyly Skin/osseous </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Syndactyly_Skin|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Syndactyly_Skin_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Syndactyly_Skin_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Joint laxity </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Joint_laxity|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Joint_laxity_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Joint_laxity_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Joint contractures </th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Joint_contractures|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Joint_contractures_right|addclass:'form-control'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Joint_contractures_left|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Deformities *</th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Deformities|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Deformities_right|addclass:'form-control required1'}}
+                                </td>
+                                <td>
+                                        {{form1.sk_Lower_limb_Deformities_left|addclass:'form-control required1'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Any other</th>
+                                <td>
+                                        {{form1.sk_Lower_limb_Any_other|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+
+                         </tbody>
+                    </table>
+
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Face(Upload photograph if present)</label>
+
+						</div>
+                        <div class="col-xs-3">
+                            {{form1.sk_Face_upload_photograph}}
+                        </div>
+				   </div>
+                   <hr>
+                <div class="row ">
+                    <div class="col-xs-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+                                <thead class="bg-success ">
+
+                            <tr>
+                                <th><h4><b>Face</b></h4></th>
+                                <th>Yes/No</th>
+                            </tr>
+                            </thead>
+                        <tbody>
+                            <tr>
+                                <th> Frenula </th>
+                                <td>
+                                        {{form1.sk_Frenula|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Cleft lip/palate (unilateral/midline/nonmidline) </th>
+                                <td>
+                                        {{form1.sk_Cleft_lip_palate|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <th> Dysmorphism (specify if yes) </th>
+                                <td>
+                                        {{form1.sk_Dysmorphism|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                        <tr class="dysmor">
+                                <td> Dysmorphism </td>
+                                <td >
+                                        {{form1.sk_Dysmorphism_specify|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                           <tr>
+                                <th> High/prominent forehead Midface hypoplasia </th>
+                                <td>
+                                        {{form1.sk_high_prominent_forehead_Midface_hypoplasia|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Abnormal Hair (specify) </th>
+                                <td>
+                                        {{form1.sk_Abnormal_Hair|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                         <tr>
+                            <tr class="abnormal_hair">
+                                <td> Abnormal Hair</td>
+                                <td>
+                                        {{form1.sk_Abnormal_Hair_specify|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Ear abnormality </th>
+                                <td>
+                                        {{form1.sk_Ear_abnormality|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Blue sclera </th>
+                                <td>
+                                        {{form1.sk_Blue_sclera|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Dentition (DI,missing teeth) </th>
+                                <td>
+                                        {{form1.sk_Dentition|addclass:'form-control'}}
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                    </div>
+                    <div class="col-xs-6">
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+                        <colgroup>
+	                            <col span="1" style="width: 60%;">
+	                            <col span="1" style="width: 40%;">
+
+
+                            </colgroup>
+
+                        <thead class="bg-success ">
+                            <tr>
+                                <th><h4><b>THORAX</b></h4></th>
+                                <th>Yes/No</th>
+                            </tr>
+                            </thead>
+                         <tbody >
+                            <tr>
+                                <th> Narrow </th>
+                                <td>
+                                        {{form1.sk_Thorax_Narrow|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Carinatum </th>
+                                <td>
+                                        {{form1.sk_Thorax_Carinatum|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+
+                            <tr>
+                                <th> Excavatum </th>
+                                <td>
+                                        {{form1.sk_Thorax_Excavatum|addclass:'form-control'}}
+                                </td>
+
+
+
+                            </tr>
+
+                            <tr>
+                                <th> Spine </th>
+                                <td>
+                                        {{form1.sk_Spine|addclass:'form-control'}}
+                                       
+                                </td>
+
+                            </tr>
+                             <tr>
+                                <th>If Spine abnormal (specify)</th>
+                                <td>{{form1.sk_Spine_abnormal|addclass:'form-control'}}</td>
+                           </tr>
+                           <tr>
+                                <th> Genitalia </th>
+                                <td>
+                                        {{form1.sk_Genitalia|addclass:'form-control'}}
+                                </td>
+
+
+
+                            </tr>
+                            <tr>
+                                <th> Skin pigmentary abnormalities (specify) </th>
+                                <td>
+                                        {{form1.sk_Skin_pigmentary_abnormalities|addclass:'form-control'}}
+                                </td>
+                            </tr>
+
+                            <tr class="skip_pigmentary">
+                                <td> Any other (specify) </td>
+                                <td>
+                                        {{form1.sk_Skin_pigmentary_specify|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+
+                            </tr>
+                            <tr>
+                                <th> Nail hypoplasia </th>
+                                <td>
+                                        {{form1.sk_Nail_hypoplasia|addclass:'form-control'}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Eye pigmentary or any other ocular abnormality (specify) </th>
+                                <td>
+                                        {{form1.sk_Eye_pigmentary_or_any_other_ocular_abnormality|addclass:'form-control'}}
+                                </td>
+
+
+                            </tr>
+                            <tr>
+                                <th> Any other (specify) </th>
+                                <td>
+                                        {{form1.sk_Eye_pigmentary_specify|addclass:'form-control'}}
+                                </td>
+
+
+
+                            </tr>
+                         </tbody >
+
+
+                    </table>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.box-body -->
+            </div>
+        </div>
+           <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Investigations Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+						</button>
+					</div>
+                    <!-- /.box-tools -->
+				</div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+
+                        <div class="col-xs-6">
+                            <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>Bone health assessment</h4></label>
+						</div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Investigation Date</label>
+                            {{form1.sk_Invetigation_Date|addclass:'form-control'}}
+						</div>
+<!--                        <div class="col-xs-3">-->
+<!--                            <label class="col-xs font-weight-bolder text-dark text-left">Bone health assessment</label>-->
+<!--                            {{form1.sk_Bone_health_assessment|addclass:'form-control'}}-->
+<!--						</div>-->
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">S Cal(mg/dl)</label>
+                            {{form1.sk_S_Cal|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Po4(mg/dl)</label>
+                            {{form1.sk_Po4|addclass:'form-control'}}
+						</div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">SAP(IU/L)</label>
+                            {{form1.sk_SAP|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Vit D(ng/ml)</label>
+                            {{form1.sk_Vit_D|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">PTH(pg/ml)</label>
+                            {{form1.sk_PTH|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">DEXA Scan (Z score) (as per indication) *</label>
+                            {{form1.sk_DEXA_Scan_Z_score|addclass:'form-control required1'}}
+						</div>
+					</div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">X Rays findings date *</label>
+                            {{form1.sk_x_ray_findings_Date|addclass:'form-control required1'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Skull AP, Lat</label>
+                            {{form1.sk_skull_ap|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Dorso lumbar Spine AP, Lat *</label>
+                            {{form1.sk_Dorso_lumbar_Spine_AP|addclass:'form-control required1'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Hands with wrist AP</label>
+                            {{form1.sk_Hands_with_wrist_AP|addclass:'form-control'}}
+						</div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Chest PA</label>
+                            {{form1.sk_Chest_PA|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Pelvis with both hip joints</label>
+                            {{form1.sk_Pelvis_with_both_hip_joints|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Long bones AP</label>
+                            {{form1.sk_Long_bones_AP|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">X ray cervical spine in extension and flexion AP, Lat *</label>
+                            {{form1.sk_X_ray_cervical_spine_in_extension_and_flexion_AP|addclass:'form-control required1'}}
+						</div>
+					</div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-12">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Any other</label>
+                            {{form1.sk_Any_other|addclass:'form-control'}}
+						</div>
+					</div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">CT Scan/ MRI Brain date</label>
+                            {{form1.sk_CT_Scan_MRI_Brain|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">CT Scan/MRI finding</label>
+                            {{form1.sk_CT_Scan2|addclass:'form-control'}}
+						</div>
+                    </div>
+                    <hr>
+<!--                    <div class="row ">-->
+<!--                        <div class="col-xs-3">-->
+<!--                            <label class="col-xs font-weight-bolder text-dark text-left">Any other investigations date</label>-->
+<!--                            {{form1.sk_any_other_investigation_date|addclass:'form-control'}}-->
+<!--						</div>-->
+                     <div class="row ">
+
+                        <div class="col-xs-12">
+                            <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>Any other investigations</h4></label>
+						</div>
+
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">BERA/Audiogram</label>
+                            {{form1.sk_BERA_Audiogram|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">VEP</label>
+                            {{form1.sk_VEP|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Ocular</label>
+                            {{form1.sk_Ocular|addclass:'form-control'}}
+						</div>
+                    </div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Thyroid Profile</label>
+                            {{form1.sk_Thyroid|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">ECHO</label>
+                            {{form1.sk_ECHO|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">USG abdomen</label>
+                            {{form1.sk_USG_abdomen|addclass:'form-control'}}
+						</div>
+					</div>
+                    <hr>
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Genetic analysis performed *</label>
+                            {{form1.sk_genetic_analysis_performed|addclass:'form-control required1'}}
+						</div>
+                       <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Please upload report</label>
+                            {{form1.sk_genetic_analysis_performed_report}}
+
+						</div>
+					</div>
+                <br>
+
+                            <div class="col-xs-3">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gene</label>
+                                {{form1.sk_Gene_molecula|addclass:'form-control'}}
+                            </div>
+
+                            <div class="col-xs-3">
+                                <label class="col-md font-weight-bolder text-dark text-left">Transcript ID</label>
+                                {{form1.sk_trans_molecul|addclass:'form-control'}}
+                            </div>
+<br>
+                            <div class="row ">
+                            <div class="col-xs-12">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 1</label>
+                            </div>
+                             <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form1.sk_mul_dna1|addclass:'form-control required1'}}
+						</div>
+
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form1.sk_mul_pro1|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form1.sk_mul_var1|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.sk_mul_var_cla1|addclass:'form-control'}}
+                            </div>
+                          <div class="col-xs-3">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form1.sk_mul_zygo1|addclass:'form-control'}}
+                          </div>
+                            </div>
+                             <br>
+                          <div class="row ">
+                            <div class="col-xs-12">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 2</label>
+                            </div>
+                             <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form1.sk_mul_dna2|addclass:'form-control'}}
+						</div>
+
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form1.sk_mul_pro2|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form1.sk_mul_var2|addclass:'form-control'}}
+						</div>
+                       <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.sk_mul_var_cla2|addclass:'form-control'}}
+						</div>
+                          <div class="col-xs-3">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form1.sk_mul_zygo2|addclass:'form-control'}}
+                          </div>
+                          </div>
+                        <div class="row ">
+                          <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Segregation  in Parents</label>
+                            {{form1.sk_mul_seg|addclass:'form-control'}}
+						</div>
+
+                           <div class="col-xs-3">
+                                <label class="col-md font-weight-bolder text-dark text-left">Father</label>
+                                {{form1.sk_father|addclass:'form-control'}}
+                            </div>
+
+                            <div class="col-xs-3">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother</label>
+                                {{form1.sk_mother|addclass:'form-control'}}
+                            </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Diagnosis</label>
+                            {{form1.sk_diagnosis|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Mention Novel findings</label>
+                            {{form1.sk_mention_novel_findings|addclass:'form-control'}}
+                        </div>
+                        </div>
+					</div>
+                </div>
+
+
+                    <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Treatment</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                            class="fa fa-minus"></i>
+						</button>
+					</div>
+                    <!-- /.box-tools -->
+				</div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                           <i class="fa fa-fw fa-circle"></i> <label class="col-xs font-weight-bolder text-dark text-left">1. (For OI) Bisphosphonates</label>
+                            {{form1.sk_Treatment_Bisphosphonates|addclass:'form-control'}}
+						</div>
+                    </div>
+<br>
+                        <div class="row ">
+                        <div class="col-xs-12">
+                            <label class="col-xs font-weight-bolder text-dark text-left">  (For OI) Bisphosphonates type</label>
+
+                        </div>
+
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Pamidronate</label>
+                            {{form1.sk_Bisphosphonates_Pamidronate}}
+                        </div>
+                            <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Zolendronate</label>
+                            {{form1.sk_Bisphosphona_Zolendronate}}
+                        </div>
+                            <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Alendronate</label>
+                            {{form1.sk_Bisphosphonate_Alendronate}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Other</label>
+                            {{form1.sk_Bisphosphon_Other}}
+                        </div>
+                    </div>
+                    <br>
+                        <div class="row">
+                            
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Date of initiation</label>
+                            {{form1.sk_date_of_inititation|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Dose</label>
+                            {{form1.sk_bisphosphonates_dose|addclass:'form-control'}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Duration of therapy</label>
+                            {{form1.sk_bisphosphonates_duration|addclass:'form-control'}}
+						</div>
+                        
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Treatment response</label>
+                            {{form1.sk_Treatment_Response|addclass:'form-control'}}
+                        </div>
+					</div>
+                    <br>
+                    <div class="row ">
+                           <div class="col-xs-12">
+                            <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">Response</label>
+
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Decrease  of fractures</label>
+                            {{form1.sk_Response_Decrease}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Improvement in Z score (DEXA)</label>
+                            {{form1.sk_Response_Improvement}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Improved QOL (subjective)</label>
+                            {{form1.sk_Response_Improved}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">other</label>
+                            {{form1.sk_Response_other}}
+                        </div>
+
+					</div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                            <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">2. Any Surgical Procedure</label>
+                            {{form1.sk_Treatment_Any_Surgical_Procedure|addclass:'form-control'}}
+                        </div>
+<!--                        <div class="col-xs-9">-->
+<!--                            <label class="col-xs font-weight-bolder text-dark text-left">if yes</label>-->
+<!--                        </div>-->
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3 surgical">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Limb lengthening</label>
+                            {{form1.sk_Any_Surgical_Procedure_Limb}}
+						</div>
+                        <div class="col-xs-3 surgical">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Hydrocephalus surgery</label>
+                            {{form1.sk_Any_Surgical_Procedure_Hydrocephalus}}
+						</div>
+                        <div class="col-xs-3 surgical">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Craniosynostosis surgery</label>
+                            {{form1.sk_Any_Surgical_Procedure_Craniosynostosis}}
+						</div>
+                        <div class="col-xs-3 surgical">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Surgery for Fractures</label>
+                            {{form1.sk_Any_Surgical_Procedure_surgery}}
+						</div>
+                        <div class="col-xs-3 surgical">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Joint Replacement</label>
+                            {{form1.sk_Any_Surgical_Procedure_joint}}
+						</div>
+                        <div class="col-xs-3 surgical">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Other</label>
+                            {{form1.sk_Any_Surgical_Procedure_other}}
+						</div>
+
+					</div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                            <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">3. Any other therapy</label>
+                            {{form1.sk_Any_other_therapy|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-3 other">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.sk_other_information|addclass:'form-control'}}
+						</div>
+
+					</div>
+                </div>
+                    </div>
+
+
+               <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title"> Final Diagnosis</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+
+            </div>
+            <!-- /.box-header -->
+
+
+            <div class="box-body" style="">
+
+           <div class="row ">
+           <div class="col-xs-3">
+            <label class="col-xs font-weight-bolder text-dark text-left">Final diagnosis *</label>
+            {{form1.sk_Final_diagnosis|addclass:'form-control required1'}}
+        </div>
+               <div class="col-xs-3">
+                     <label class="col-xs font-weight-bolder text-dark text-left">If other specify</label>
+                        {{form1.sk_diagno_other|addclass:'form-control'}}
+                 </div>
+           </div>
+
+                 </div>
+         </div>
+                  <div class="box box-primary box-solid">
+            <div class="box-header with-border">
+                <h3 class="box-title"> Final Outcome</h3>
+                <div class="box-tools pull-right">
+                    <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                        class="fa fa-minus"></i>
+                    </button>
+                </div>
+                <!-- /.box-tools -->
+            </div>
+            <!-- /.box-header -->
+                <div class="box-body" style="">
+
+           <div class="row ">
+           <div class="col-xs-3">
+            <label class="col-xs font-weight-bolder text-dark text-left">Final Outcome *</label>
+            {{form1.sk_Final_outcome|addclass:'form-control required1'}}
+        </div>
+           </div> <hr>
+                    <div class="row ">
+
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Filled By D.E.O Name:-</label>
+                            {{form1.sk_filed_by_name|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Clinician Name</label>
+                            {{form1.sk_clinician_name|addclass:'form-control'}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.sk_filled_date|addclass:'form-control'}}
+						</div>
+                    </div>
+
+					<br>
+        <center>
+            <button class="btn btn-success submitbtn" type="submit" id="submit1" name="save">Save</button>
+            <button type="submit" class="btn  btn-success submitbtn" name="submitandexit"><b>Final Submit</b></button>
+             {% if patient.quality_result == 'Fail' %}
+       <button type="submit" class="btn  btn-warning submitbtn" name="submitandqc"><b>send result to QC</b></button>
+
+       {% endif %}
+		</center>
+        </div>
+    </div>
+
+	</form>
+
+{% endblock %}

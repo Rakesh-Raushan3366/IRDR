@@ -1,0 +1,210 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+
+<form method="POST" enctype="multipart/form-data"  data-district-url="{% url 'load_district' %}" id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+
+    <div class="box-body">
+
+        <div class="box-group" id="accordion">
+
+
+                        <div class="row ">
+                            <div class="col-md-3 ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Final Diagnosis</label>
+                                {{form1.pid_final_diagnosis}}
+                            </div>
+                            <div class="col-md-3 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Date of Record:</label>
+                                {{form1.pid_date_of_record}}
+                            </div>
+                            <div class="col-md-3  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Date of Clinical examination:</label>
+                                {{form1.pid_clinical_exam_date}}
+                            </div>
+                            <div class="col-md-3  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Date of birth</label>
+                                {{form1.pid_date_of_birth}}
+                            </div>
+<!--                            <div class="col-md-2">-->
+<!--                                <label class="col-md font-weight-bolder text-dark text-left">Age </label>-->
+<!--                                {{form1.pid_age}}-->
+<!--                            </div>-->
+                        </div>
+                        <br>
+                                <div class="box box-secondary">
+	                    <div class="box-header">
+		                    <h3 class="box-title text-primary">Common Demography data</h3>
+	                    </div>
+
+                    <div class="box-body">
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Patient's Name</label>
+                                {{form1.pid_patient_name}}
+                            </div>
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left" >Father's Name</label>
+                                {{form1.pid_father_name}}
+                            </div>
+                            <div class="col-md-4  ">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother's Name </label>
+                                {{form1.pid_mother_name}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Patient's ID</label>
+                                 {{form1.pid_paitent_id}}
+
+                            </div>
+                            <div class="col-md-4 patient_class_rule" >
+                                <label class="col-md font-weight-bolder text-dark text-left" > Select patient ID</label>
+                                {{form1.pid_paitent_id_list}}
+                                {{form1.pid_patient_id_no}}
+
+                            </div>
+                            <div class="col-md-4 ">
+                                <label class="col-md font-weight-bolder text-dark text-left"> Parent ID </label>
+
+                                {{form1.pid_father_mother_id}}
+                                {{form1.pid_father_mother_id_no}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Permanent Address</label>
+                                {{form1.pid_permanent_addr}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">State </label>
+                                {{form1.pid_state}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">District </label>
+                                {{form1.pid_district}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row">
+                             <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">City / Town of Birth</label>
+                                {{form1.pid_city_name}}
+                            </div>
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Country Name</label>
+                                {{form1.pid_country_name}}
+                            </div>
+                            <div class="col-md-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Landline number with code</label>
+                                    {{form1.pid_land_line_no}}
+                                </div>
+                        </div>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Mobile No. of Patient/Parent</label>
+                                {{form1.pid_mother_mobile_no}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Alternate Mobile No.</label>
+                                {{form1.pid_father_mobile_no}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Email</label>
+                                {{form1.pid_email}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Religion</label>
+                                {{form1.pid_religion}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Caste</label>
+                                {{form1.pid_caste}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gender</label>
+                                {{form1.pid_gender}}
+                            </div>
+
+
+                        </div>
+                        <br>
+                        <div class="row">
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Referred from another facility</label>
+                                {{form1.pid_referred_status}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Referred By</label>
+                                {{form1.pid_referred_by}}
+                                {{form1.pid_referred_by_desc}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Consent Given</label>
+                                {{form1.pid_consent_given}}
+                                {{form1.pid_consent_upload}}
+                                <a href="/media/{{form1.pid_consent_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="row">
+
+
+
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left required">Assent Given</label>
+                                {{form1.pid_assent_given}}
+                                {{form1.pid_assent_upload}}
+                                <a href="/media/{{form1.pid_assent_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital Name</label>
+                                {{form1.pid_hospital_name}}
+                            </div>
+                            <div class="col-md-4">
+                                <label class="col-md font-weight-bolder text-dark text-left">Hospital Registration number</label>
+                                {{form1.pid_hospital_reg_no}}
+                            </div>
+
+                        </div>
+                        <br>
+
+                        <div class="row">
+
+                            <div class="col-md-12">
+                                <label class="col-md font-weight-bolder text-danger text-left">Note: Field mark with * are mandatory fields</label>
+
+                            </div>
+
+                        </div>
+
+                       </div>
+
+                </div>
+        </div>
+
+        </div>
+    </div>
+</form>
+{% endblock %}

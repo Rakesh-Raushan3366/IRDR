@@ -1,0 +1,1054 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+
+<center><button class="btn bg-maroon" onclick="window.print()">Print</button></center>
+<form method="POST"
+      id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Patient</label>
+                            {{form1.gl_patient_edu_status}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.gl_patient_occupation}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Father</label>
+                            {{form1.gl_father_edu_status}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.gl_father_occupation}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of  Mother</label>
+                            {{form1.gl_mother_edu_status}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.gl_mother_occupation}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Monthly Family Income (INR)As Per Kuppuswamy SES 2018</label>
+                            {{form1.gl_monthly_income_status}}
+                        </div>
+                        <br>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+                </div>
+                <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Anthropometry:</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <table class="table table-bordered">
+	                        <colgroup>
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+	                            <col span="1" style="width: 10%;">
+
+                            </colgroup>
+                            <tr>
+                                <th></th>
+                                <th>Patient</th>
+                                <th>Percentile**</th>
+                                <th>SD</th>
+                            </tr>
+                            <tr>
+                                <th> Weight </th>
+                                <td>
+                                        {{form1.gl_anth_wght_pat}}
+                                </td>
+                                <td>
+                                        {{form1.gl_anth_wght_per}}
+                                </td>
+                                <td>
+                                        {{form1.gl_anth_wght_sd}}
+                                </td>
+
+                            </tr>
+                            <tr>
+                                <th> Height </th>
+                                <td>
+                                        {{form1.gl_anth_height_pat}}
+                                </td>
+                                <td>
+                                        {{form1.gl_anth_height_per}}
+                                </td>
+                                <td>
+                                        {{form1.gl_anth_height_sd}}
+                                </td>
+
+                            </tr>
+                           <tr>
+                                <th> Head Circumference </th>
+                                <td>
+                                        {{form1.gl_anth_head_cir_pat}}
+                                </td>
+                                <td>
+                                        {{form1.gl_anth_head_cir_perc}}
+                                </td>
+                                <td>
+                                        {{form1.gl_anth_head_cir_sd}}
+                                </td>
+
+                            </tr>
+
+                    </table>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-6">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>PRESENTING COMPLAINTS</b></h4></label>
+					    </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at onset of symptoms</label>
+                            {{form1.gl_onset_age}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at presentation</label>
+                            {{form1.gl_present_age}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Age at diagnosis:</label>
+                            {{form1.gl_diag_age}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-2">
+                            <label class="col-md font-weight-bolder text-dark text-left">Upload pedigree (3 generation):</label>
+
+                        </div>
+                        <div class="col-xs-6">
+                            {{form1.gl_pedigree_upload}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Positive Family History:</label>
+                            {{form1.gl_fam_hist_status}}
+                        </div>
+                        <div class="col-xs-3 positive_family_history">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.gl_fam_hist_descr}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Consanguinity:</label>
+                            {{form1.gl_cons_status}}
+                        </div>
+                        <div class="col-xs-3 Consanguinity_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.gl_cons_degree_specify}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-6">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>Antenatal /Perinatal HISTORY</b></h4></label>
+					    </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Antenatal Ultrasound</label>
+                            {{form1.gl_anti_natal_altra}}
+                        </div>
+                        <div class="col-xs-3 antenatal_ultrasound_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">If abnormal</label>
+                            {{form1.antenatal_ultrasound_if_abnormal}}
+                            {{form1.gl_other_specify}}
+                        </div>
+                        <div class="col-xs-3 antenatal_ultrasound_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Preset/Absent status</label>
+                            {{form1.gl_antenatal_ultrasound_status}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Type of delivery</label>
+                            {{form1.gl_delivery_type}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Baby cried immediately after delivery</label>
+                            {{form1.gl_baby_cried_after_del}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Resuscitation required</label>
+                            {{form1.gl_resusciation_yes_no}}
+                        </div>
+                        <div class="col-xs-3 Resuscitation_required">
+                            <label class="col-md font-weight-bolder text-dark text-left">Please select </label>
+                            {{form1.gl_resusciation_req}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Birth weight (grams)</label>
+                            {{form1.gl_birth_weight}}
+                        </div>
+                   </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-6">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4><b>Developmental milestones</b></h4></label>
+					    </div>
+                    </div>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Developmental milestones:</label>
+                            {{form1.gl_dev_milestone}}
+                        </div>
+                        <div class="col-xs-3 Development_milestonse">
+                            <label class="col-md font-weight-bolder text-dark text-left">Motor</label>
+                            {{form1.gl_dev_motor_status}}
+                        </div>
+
+                        <div class="col-xs-3 Development_milestonse">
+                            <label class="col-md font-weight-bolder text-dark text-left">Global</label>
+                            {{form1.gl_dev_global_status}}
+                        </div>
+                        <div class="col-xs-3 Development_milestonse">
+                            <label class="col-md font-weight-bolder text-dark text-left">Cognitive</label>
+                            {{form1.gl_dev_cognitive_status}}
+                        </div>
+                    </div>
+
+                  </div>
+
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> History Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Early morning Lethargy/Seizures</label>
+                            {{form1.gl_morn_leth_seiz}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Developmental Delay</label>
+                            {{form1.gl_dev_delay}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Irritability</label>
+                            {{form1.gl_irritability}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Tremors</label>
+                            {{form1.gl_tremors}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Muscle weakness/floppy ness</label>
+                            {{form1.gl_muscle_weak_floppy}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Exercise cramping</label>
+                            {{form1.gl_exerc_cramping}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Abdominal distension</label>
+                            {{form1.gl_abdominal_dist}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Jaundice</label>
+                            {{form1.gl_jaundice}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Overwhelming Hunger</label>
+                            {{form1.gl_over_hunger}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Vomiting</label>
+                            {{form1.gl_vomiting}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Diarrhea</label>
+                            {{form1.gl_diarrhia}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Failure to gain weight</label>
+                            {{form1.gl_weight_gain_fail}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Oral ulcers</label>
+                            {{form1.gl_oral_ulcers}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Perianal ulcer</label>
+                            {{form1.gl_perianal_ulcar}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Recurrent infections</label>
+                            {{form1.gl_rec_infections}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Recurrent infections type</label>
+                            {{form1.gl_rec_infections_type}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Bony Deformity</label>
+                            {{form1.gl_bony_deforminty}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Bleeding from any site</label>
+                            {{form1.gl_site_bleeding}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Bleeding from any site type</label>
+                            {{form1.gl_site_bleeding_type}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Polyuria</label>
+                            {{form1.gl_polyurea}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Delayed puberty</label>
+                            {{form1.gl_puberty_delay}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Joint pain</label>
+                            {{form1.gl_joint_pain}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Dyspnoea on exertion</label>
+                            {{form1.gl_exertion_dyspnoea}}
+                        </div>
+                    </div>
+                    <br>
+
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+                </div>
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Clinical Examination Findings</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Doll like face</label>
+                            {{form1.gl_doll_like_face}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hepatomegaly</label>
+                            {{form1.gl_hepatomegaly}}
+                        </div>
+                        <div class="col-xs-3 Hepatomegaly_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hepatomegaly type</label>
+                            {{form1.gl_hepatomegaly_type}}
+                        </div>
+                        <div class="col-xs-3 hepatomegaly_left_lobe ">
+                            <label class="col-md font-weight-bolder text-dark text-left ">Left lobe enlargement(YES/NO)</label>
+                            {{form1.gl_hepatomegaly_left_lobe_enlargement}}
+                        </div>
+                        <div class="col-xs-3 hepatomegaly_consistency ">
+                            <label class="col-md font-weight-bolder text-dark text-left ">Consistency(please select)</label>
+                            {{form1.gl_hepatomegaly_consistency}}
+                        </div>
+                        <div class="col-xs-3 hepatomegaly_margins ">
+                            <label class="col-md font-weight-bolder text-dark text-left">Margins(please select)</label>
+                            {{form1.gl_hepatomegaly_margin}}
+                        </div>
+
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Splenomegaly</label>
+                            {{form1.gl_splenomegaly}}
+                        </div>
+                        <div class="col-xs-3 Splenomegaly_class">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify size(cm)</label>
+                            {{form1.gl_splenomegaly_size}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Renal enlargement</label>
+                            {{form1.gl_renal_enlargement}}
+                        </div>
+                     </div>
+                    <br>
+                      <div class="row ">
+
+
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Rachitic changes</label>
+                            {{form1.gl_rachitic_changes}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hypotonia</label>
+                            {{form1.gl_hypotonia}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">IQ/DQ</label>
+                            {{form1.gl_iq_status}}
+                        </div>
+                        <div class="col-xs-3 iq_dq_value">
+                            <label class="col-md font-weight-bolder text-dark text-left">Value</label>
+                            {{form1.gl_iq_value}}
+                        </div>
+                      </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any other finding</label>
+                            {{form1.gl_any_other_findings}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Congestive Heart Failure</label>
+                            {{form1.gl_cong_heart_fail}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Cor Pulomonale</label>
+                            {{form1.gl_core_pulomonable}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hypertension</label>
+                            {{form1.gl_hypertension}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+                    <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Investigations Routine(As applicable)</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hb (g/dl)</label>
+                            {{form1.gl_inv_hb}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">WBC (Total count /cumm)</label>
+                            {{form1.gl_inv_wbc}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Platelet Count (lakhs)</label>
+                            {{form1.gl_inv_platelet_count}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">ANC</label>
+                            {{form1.gl_inv_anc}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">WBC (Differnetial)</label>
+                            {{form1.gl_inv_wbc}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Absolute neutrophil counts</label>
+                            {{form1.gl_inv_abs_neutrophil_count}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">PT (sec)</label>
+                            {{form1.gl_inv_pt_sec}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">APTT (sec)</label>
+                            {{form1.gl_inv_aptt_sec}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">PH</label>
+                            {{form1.gl_inv_ph}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">HCO3</label>
+                            {{form1.gl_inv_hco_3}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Lactate</label>
+                            {{form1.gl_inv_lactate}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Anion Gap</label>
+                            {{form1.gl_inv_anion_gap}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Fasting Sugar</label>
+                            {{form1.gl_inv_fasting_sugar}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">S calcium (mg/dl)</label>
+                            {{form1.gl_inv_s_cal}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">S Phosphorus (mg/dl)</label>
+                            {{form1.gl_inv_s_phosphorous}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">S alkaline phosphatase IU</label>
+                            {{form1.gl_inv_s_alkaline}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Total bilirubin(mg/dl)</label>
+                            {{form1.gl_inv_total_bilirubin}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Direct bilirubin (mg/dl)</label>
+                            {{form1.gl_inv_direct_bilirubin}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Total protein (g/dl)</label>
+                            {{form1.gl_inv_total_protien}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Serum albumin (g/dl)</label>
+                            {{form1.gl_inv_serum_albumin}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">SGPT (IU)</label>
+                            {{form1.gl_inv_sgpt}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">SGOT (IU)</label>
+                            {{form1.gl_inv_sgot}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">γ GGT U/L</label>
+                            {{form1.gl_inv_ggt}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Serum Urea</label>
+                            {{form1.gl_inv_serum_urea}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Serum Creatinine</label>
+                            {{form1.gl_inv_serum_creatinine}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Microalbuminuria</label>
+                            {{form1.gl_inv_micro_alb}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Proteinuria</label>
+                            {{form1.gl_inv_proteinuria}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hypercalciuria</label>
+                            {{form1.gl_inv_hypercal}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hypocitrauria</label>
+                            {{form1.gl_inv_hypercitrauria}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Bld NH3</label>
+                            {{form1.gl_inv_bld}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">TG(mg/dl)</label>
+                            {{form1.gl_inv_tg}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">TC(mg/dl)</label>
+                            {{form1.gl_inv_tc}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">VLDL(mg/dl)</label>
+                            {{form1.gl_inv_vldl}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">HDL(mg/dl)</label>
+                            {{form1.gl_inv_hdl}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">LDL(mg/dl)</label>
+                            {{form1.gl_inv_ldl}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">IRON (mg/dl)</label>
+                            {{form1.gl_inv_iron}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">TIBC (mcg/dl)</label>
+                            {{form1.gl_inv_tibc}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Vit D (ng/ml)</label>
+                            {{form1.gl_inv_vit_d}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">PTH (ng/ml)</label>
+                            {{form1.gl_inv_pth}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">S. Uric Acid(mg/dl)</label>
+                            {{form1.gl_inv_s_uric_acid}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">S.CPK(U/l)</label>
+                            {{form1.gl_inv_s_cpk}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">S.AFP(ng/ml)</label>
+                            {{form1.gl_inv_s_afp}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Biotinidase(U/l)</label>
+                            {{form1.gl_inv_biotinidase}}
+                            {{form1.gl_inv_biotinidase_if_abnormal}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">TMS</label>
+                            {{form1.gl_inv_tms}}
+                            {{form1.gl_inv_tms_if_abnormal_value}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+
+
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Theroid function test</label>
+                            {{form1.gl_theroid_function_test}}
+                        </div>
+                        <div class="col-xs-3 theroid_function_est">
+                            <label class="col-md font-weight-bolder text-dark text-left">T3</label>
+                            {{form1.gl_inv_t_3}}
+                        </div>
+                        <div class="col-xs-3 theroid_function_est">
+                            <label class="col-md font-weight-bolder text-dark text-left">T4</label>
+                            {{form1.gl_inv_t_4}}
+                        </div>
+                        <div class="col-xs-3 theroid_function_est">
+                            <label class="col-md font-weight-bolder text-dark text-left">TSH</label>
+                            {{form1.gl_inv_tsh}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Urine</label>
+                            {{form1.gl_inv_urine}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Ketosis</label>
+                            {{form1.gl_ketosis}}
+                        </div>
+                    </div>
+
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+                </div>
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Radiological</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <i class="fa fa-fw fa-circle"></i><label class="col-md font-weight-bolder text-dark text-left">Ultrasonography</label>
+                            {{form1.gl_rad_ultrasono_type}}
+                        </div>
+                        <div class="col-xs-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">LiverSize , echotexture</label>
+                            {{form1.gl_rad_liversize}}
+                        </div>
+                        <div class="col-xs-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Hepatic Adenoma</label>
+                            {{form1.gl_rad_hepatic}}
+                        </div>
+                        <div class="col-xs-3 Ultrasonography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Kidney size , echotexture</label>
+                            {{form1.gl_rad_kidney_size}}
+                        </div>
+                    </div>
+                    <div class="row Ultrasonography_class_if_abnormal ">
+
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Spleen size , echotexture</label>
+                            {{form1.gl_rad_spleen_size}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Lymphnodes size</label>
+                            {{form1.gl_rad_lymphnodes_size}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Portal vein diameter</label>
+                            {{form1.gl_rad_portal_vien_dia}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any adenoma</label>
+                            {{form1.gl_rad_adenoma}}
+                        </div>
+
+                    </div>
+
+                    <div class="row Ultrasonography_class_if_abnormal">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Renal parenchymal pathology</label>
+                            {{form1.gl_renal_par_pathalogy}}
+                        </div>
+                        <div class="col-xs-3 Renal_parenchymal_pathology">
+                            <label class="col-md font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.gl_renal_par_pathalogy_specify}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Nephrocalcinosis or Urolithiasis</label>
+                            {{form1.gl_nephrocalcinosis}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Pancreatitis</label>
+                            {{form1.gl_pancreatitis}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Cholethiasis</label>
+                            {{form1.gl_cholethiasis}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Xray for bone age</label>
+                            {{form1.gl_xray_bone_age}}
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <i class="fa fa-fw fa-circle"></i><label class="col-md font-weight-bolder text-dark text-left">Echocardiography</label>
+                            {{form1.gl_echocardiography_status}}
+                        </div>
+                        <div class="col-xs-2 Echocardiography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Cardiomyopathy</label>
+                            {{form1.gl_echo_abnormal_cardio}}
+                        </div>
+                        <div class="col-xs-2 Echocardiography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Mention LVMI</label>
+                            {{form1.gl_echo_abnormal_mention_lvmi}}
+                            {{form1.gl_echo_abnormal_volvular_spcify}}
+                        </div>
+                        <div class="col-xs-2 Echocardiography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Valvular Stenosis </label>
+                            {{form1.gl_volvular_stenosis}}
+                        </div>
+                        <div class="col-xs-2 Echocardiography_class_if_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="volvlar_stenosis_label">Please select</label>
+                            {{form1.gl_volvular_stenosis_options}}
+                        </div>
+                    </div>
+
+                    <div class="row Echocardiography_class_if_abnormal">
+                        <div class="col-xs-3">
+
+                        </div>
+
+
+
+                        <div class="col-xs-2">
+                            <label class="col-md font-weight-bolder text-dark text-left">Valvular Regurgitation</label>
+                            {{form1.gl_volvular_regurgitation}}
+                        </div>
+                        <div class="col-xs-2">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="volvlar_regurgitation_label">Please select</label>
+                            {{form1.gl_volvular_regurgitation_options}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Ejection fraction</label>
+                            {{form1.gl_ejection_fraction}}
+                        </div>
+                    </div>
+
+
+                    <div class="row Echocardiography_class_if_abnormal">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Liver/Muscle (Histopathology)</label>
+                            {{form1.gl_liver_muscle}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left" for="liver_muscle_findings">Specify findings</label>
+                            {{form1.gl_liver_muscle_findings_specify}}
+                        </div>
+                    </div>
+
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+                </div>
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Genetic Diagnostic tests</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Enzyme assay</label>
+                            {{form1.gl_enzyme_assay}}
+                        </div>
+
+                    </div>
+
+                    <div class="row Enzyme_assay_if_yes">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Sample used for assay</label>
+                            {{form1.gl_enzyme_assay_type}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Patient value</label>
+                            {{form1.gl_patient_value}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Normal Control</label>
+                            {{form1.gl_normal_control}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Normal range</label>
+                            {{form1.gl_normal_range}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row Enzyme_assay_if_yes">
+                        <div class="col-xs-2 ">
+                            <label class="col-md font-weight-bolder text-dark text-left">Please upload report</label>
+
+                        </div>
+                        <div class="col-xs-6 ">
+                            {{form1.gl_enzyme_assay_report}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Molecular Diagnostics- Specific gene sequencing/ NGS</label>
+                            {{form1.gl_mol_diagnosis_desc_gene_seq}}
+                        </div>
+                        <div class="col-xs-2">
+                            <label class="col-md font-weight-bolder text-dark text-left">Please upload report</label>
+
+                        </div>
+                        <div class="col-xs-6">
+                            {{form1.gl_mol_diagnosis_report}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">DNA sequencing /deletion/duplication</label>
+                            {{form1.gl_dna_seq}}
+                        </div>
+                        <div class="col-xs-3 DNA_sequencing_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Patient</label>
+                            {{form1.gl_abormal_patient}}
+                        </div>
+                        <div class="col-xs-3 DNA_sequencing_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Father</label>
+                            {{form1.gl_abormal_father}}
+                        </div>
+                        <div class="col-xs-3 DNA_sequencing_abnormal">
+                            <label class="col-md font-weight-bolder text-dark text-left">Mother</label>
+                            {{form1.gl_abormal_mother}}
+                        </div>
+                    </div>
+                    </div>
+            </div>
+                   <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Treatment</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Diet alone</label>
+                            {{form1.gl_treat_diet_alone}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Diet+ anti-lipid</label>
+                            {{form1.gl_treat_diet_anti_lipic}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Diet+ anti-lipid + anti hyperuricemia</label>
+                            {{form1.gl_treat_diet_anti_lipic_hypouricemia}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Diet + anti-hypouricemia</label>
+                            {{form1.gl_treat_diet_anti_hypouricemia}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Supportive Therapy</label>
+                            {{form1.gl_supportive_therapy}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any surgery</label>
+                            {{form1.gl_any_surgery}}
+                            {{form1.gl_any_surgery_specify}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any organ transplantation</label>
+                            {{form1.gl_any_organ_transplantation}}
+                            {{form1.gl_any_organ_transplantation_specify}}
+                        </div>
+
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-12">
+                            <label class="col-md font-weight-bolder text-dark text-left">Any other information</label>
+                            {{form1.gl_any_other_info}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Filled By D.E.O Name</label>
+                            {{form1.gl_filled_by_name}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Name of the clinician</label>
+                            {{form1.gl_clinical_name}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Date:</label>
+                            {{form1.gl_date}}
+                        </div>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+                </div>
+
+
+            </div>
+        </div>
+        <!---- box start ----->
+
+
+</form>
+{% endblock %}

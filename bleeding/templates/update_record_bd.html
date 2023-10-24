@@ -1,0 +1,1329 @@
+
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+		
+		.required1{
+		border-color: red;
+		padding: 0.5rem;
+	
+		}
+</style>
+
+<script>
+			$(document).ready(function() {
+		$('.submitbtn').click(function(e) {
+			var isValid = true;
+			$('.required1').each(function() {
+				if ($.trim($(this).val()) == '') {
+					isValid = false;
+					$(this).css({
+						"border": "1px solid red",
+						"background": "#FFCECE"
+					});
+					alert($(this).attr("name") + " " + 'field is empty')
+				}
+				else {
+					$(this).css({
+						"border": "",
+						"background": ""
+					});
+				}
+			});
+			if (isValid == false)
+			e.preventDefault();
+			else
+			alert('Thank you for submitting');
+		});
+	});
+
+</script>
+
+
+<script>
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_bd_diagnosis_type_1').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Any other'){
+	$("#id_bd_diagnosis_type_other").show();
+	$("label[for='diagnosis_other_specify']").show();
+
+
+	}
+	else
+	{
+	$("#id_bd_diagnosis_type_other").hide();
+    $("label[for='diagnosis_other_specify']").hide();
+
+	}
+	});
+
+
+	});
+// JQuery for Bleeding details :Transfusion details
+
+   $(document).ready(function(){
+			$('#id_bd_transfusion_product').on('change', function(){
+
+			if( $("#id_bd_transfusion_product_7").is(':checked'))
+			{
+			$("#id_bd_transfusion_product_others").show();
+			$("label[for='transfusion_product_other']").show();
+
+			}
+
+			else {
+				$("#id_bd_transfusion_product_others").hide();
+				$("label[for='transfusion_product_other']").hide();
+
+			}
+		});
+
+	});
+
+
+
+
+/* j Query for Laboratory tests:Factor Deficiency */
+	$(document).ready(function(){
+	$('#id_bd_factory_deficiency').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Others'){
+	$("#id_bd_factory_deficiency_other").show();
+	$("label[for='factory_deficiency']").show();
+
+
+	}
+	else
+	{
+	$("#id_bd_factory_deficiency_other").hide();
+    $("label[for='factory_deficiency']").hide();
+
+	}
+	});
+
+
+	});
+
+
+
+/* j Query for Developmental History Records:Pre-natal Complications */
+	$(document).ready(function(){
+	$('#id_bd_blooding_fam_hist').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".famhist").show();
+
+	}
+	else
+	{
+	$(".famhist").hide();
+	$("#id_bd_fam_name").val('');
+	$("#id_bd_fam_reln").val('');
+	$("#id_bd_fam_daignosis").val('');
+
+	}
+	});
+
+	});
+/* j Query for Diagnosis Details:Mutation identified */
+ 	$(document).ready(function(){
+	$('#id_bd_mutation_identified').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$("#id_bd_mutation_type").show();
+	$("label[for='id_ident_mut']").show();
+	}
+	else
+	{
+	$("#id_bd_mutation_type").hide();
+	$("#id_bd_mutation_type").val('');
+	$("label[for='id_ident_mut']").hide();
+	}
+	});
+
+	});
+/* j Query for Diagnosis Details:carrier studies */
+	$(document).ready(function(){
+	$('#id_bd_carrier_studies').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == '1'){
+	$(".carrstud1").show();
+	$(".carrstud2").hide();
+
+	}
+	else if(demovalue == '2')
+	{
+	$(".carrstud1").hide();
+	$(".carrstud2").show();
+	$("#id_bd_mutation_type").val('');
+
+	}
+	else{
+	$(".carrstud1").hide();
+	$(".carrstud2").hide();
+	}
+	});
+
+
+	});
+/* j Query for Diagnosis Details:Antenatal studies
+	$(document).ready(function(){
+	$('#id_bd_ante_studies').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == '1'){
+	$(".antenatal1").show();
+	$(".antenatal2").hide();
+
+	}
+	else if(demovalue == '2')
+	{
+	$(".antenatal1").hide();
+	$(".antenatal2").show();
+
+
+	}
+	else{
+	$(".antenatal1").hide();
+	$(".antenatal2").hide();
+	}
+	});
+
+
+	}); */
+
+/* j Query for Bleeding details:Number of Surgeries */
+	$(document).ready(function(){
+	$('#id_bd_surgery_num').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Surgery 1'){
+	$(".surgery1").show();
+	$(".surgery2").hide();
+    $(".surgery3").hide();
+	}
+	else if(demovalue == 'Surgery 2')
+	{
+	$(".surgery1").hide();
+	$(".surgery2").show();
+    $(".surgery3").hide();
+
+	}
+	else if(demovalue == 'Surgery 3')
+	{
+	$(".surgery1").hide();
+	$(".surgery2").hide();
+    $(".surgery3").show();
+
+	}
+	else{
+	$(".surgery1").hide();
+	$(".surgery2").hide();
+    $(".surgery3").hide();
+	}
+	});
+
+	});
+/* j Query for Bleeding details:Chronic arthropathy
+	$(document).ready(function(){
+	$('#id_bd_curr_mode_treatment').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'On demand'){
+	$(".demandsel").show();
+
+	}
+	else
+	{
+	$(".demandsel").hide();
+	$("#id_bd_demand_bd_episodes").val('');
+    $("#id_bd_demand_bd_duration").val('');
+	}
+	});
+
+	}); */
+/* j Query for Bleeding details:Source of Funding for treatment
+	$(document).ready(function(){
+	$('#id_bd_funding_source').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$("#id_bd_funding_source_other").show();
+	$("label[for='id_funother']").show();
+	}
+	else
+	{
+	$("#id_bd_funding_source_other").hide();
+	$("#id_bd_funding_source_other").val('');
+	$("label[for='id_funother']").hide();
+	}
+	});
+
+	});
+
+*/
+
+/* j Query for Bleeding details:Source of Funding for treatment */
+	$(document).ready(function(){
+	$('#id_bd_curr_mode_treatment').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'On demand'){
+	$(".rule_Current_mode_treatment").show();
+
+	}
+	else
+	{
+	$(".rule_Current_mode_treatment").hide();
+
+	}
+	});
+
+
+	});
+
+	/* j Query for Bleeding details:Source of Funding for treatment */
+	$(document).ready(function(){
+	$('#id_bd_funding_source').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Other'){
+	$(".rule_Source_Funding").show();
+
+	}
+	else
+	{
+	$(".rule_Source_Funding").hide();
+
+	}
+	});
+
+
+	});
+
+
+/* j Query for Bleeding details:Chronic arthropathy */
+	$(document).ready(function(){
+	$('#id_bd_cronic_anthr').on('change', function(){
+	var demovalue = $(this).val();
+	if(demovalue == 'Yes'){
+	$(".chronicjoint").show();
+	$("label[for='id_ident_mut']").show();
+	}
+	else
+	{
+	$(".chronicjoint").hide();
+	$("#id_bd_joint").val('');
+    $("#id_bd_target_joint").val('');
+	}
+	});
+	});
+
+
+</script>
+<style>
+	ul,li {
+	list-style-type: none;
+	list-style-position: outside;
+	margin: 4;
+	padding: 0;
+	}
+	hr {
+
+	width:95%;
+    border: 1px solid rgb(240, 240, 240);
+}
+</style>
+
+<form method="POST"  enctype="multipart/form-data" id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape }}</strong>
+	</div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <br>
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!---- box start ----->
+             <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <div class="box-body" style="">
+
+                   <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Patient</label>
+                            {{form1.bd_patient_edu_status|addclass:'form-control'}}
+						</div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.bd_patient_occupation|addclass:'form-control'}}
+						</div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Father</label>
+                            {{form1.bd_father_edu_status|addclass:'form-control'}}
+						</div>
+					</div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.bd_father_occupation|addclass:'form-control'}}
+						</div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of  Mother</label>
+                            {{form1.bd_mother_edu_status|addclass:'form-control'}}
+						</div>
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.bd_mother_occupation|addclass:'form-control'}}
+						</div>
+					</div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-md-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Monthly Family Income (INR)As Per Kuppuswamy SES 2018</label>
+                            {{form1.bd_monthly_income_status|addclass:'form-control'}}
+						</div>
+                    <br>
+				</div>
+
+                <!-- /.box-body -->
+			</div>
+            <!---- box end ----->
+		</div>
+	</div>
+    <!---- box start ----->
+     <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Diagnosis Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Diagnosis</label>
+                    {{form1.bd_diagnosis_type_1|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" for="diagnosis_other_specify">Specify</label>
+                    {{form1.bd_diagnosis_type_other|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="panel box box-success">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#sddsfamilyhistory" class="collapsed" aria-expanded="false">
+                        Anthropometric Information
+                      </a>
+                    </h4>
+                  </div>
+                <div id="sddsfamilyhistory" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="box-body">
+                <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Weight (Kg)</label>
+				    {{form1.bd_anthr_weight|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Height (cm)</label>
+				    {{form1.bd_anthr_height|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Head circumference</label>
+				    {{form1.bd_anthr_head_circum|addclass:'form-control'}}
+                </div>
+			</div>
+            </div>
+            </div>
+            </div>
+            <div class="panel box box-danger">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#general_information" class="collapsed" aria-expanded="false">
+                        General information
+                      </a>
+                    </h4>
+                  </div>
+                <div id="general_information" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="box-body">
+
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Age of Diagnosis</label>
+				    {{form1.bd_diagnosis_age|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Age at first bleed</label>
+				    {{form1.bd_first_bleed_age|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Site of bleeding at the time of diagnosis</label>
+				    {{form1.bd_bleeding_site|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Blood pressure</label>
+				    {{form1.bd_blood_pressure_type|addclass:'form-control'}}
+                </div>
+			</div>
+            <br>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Family History of bleeding</label>
+                    {{form1.bd_blooding_fam_hist|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 famhist">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Name</label>
+                    {{form1.bd_fam_name|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 famhist">
+                    <label class="col-md font-weight-bolder text-dark text-left">Relationship</label>
+                    {{form1.bd_fam_reln|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 famhist">
+                    <label class="col-md font-weight-bolder text-dark text-left">Diagnosis</label>
+                    {{form1.bd_fam_daignosis|addclass:'form-control'}}
+				</div>
+			</div>
+                        </div>
+                    <div>
+                    </div>
+        </div>
+    </div>
+            </div>
+        </div>
+             <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Laboratory tests</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>        <!-- /.box-header -->
+        <div class="box-body" style="">
+
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Name of testing Center *</label>
+				    {{form1.bd_test_center_name|addclass:'form-control required1'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left"> Method of Diagnosis</label>
+                    {{form1.bd_diagnosis_method|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Blood group</label>
+                    {{form1.bd_blood_group|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >HIV status</label>
+                    {{form1.bd_hiv_status|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HBV status</label>
+				    {{form1.bd_hbv_status|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">HCV status</label>
+                    {{form1.bd_hcv_status|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Factor Deficiency *</label>
+                    {{form1.bd_factory_deficiency|addclass:'form-control required1'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" for="factory_deficiency">Specify</label>
+                    {{form1.bd_factory_deficiency_other|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Factor level (%)  *</label>
+				    {{form1.bd_factory_level_per|addclass:'form-control required1'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Severity:</label>
+                    {{form1.bd_factory_severity|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >VWF Antigen (%) *</label>
+                    {{form1.bd_vwf_antigen_per|addclass:'form-control required1'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Method</label>
+                    {{form1.bd_vwf_method|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">VWF -ristocetin cofactor assay(VWF:RCo)(%) *</label>
+				    {{form1.bd_vwf_ris_cofactor|addclass:'form-control required1'}}
+                </div>
+            </div>
+
+            <br>
+            <div class="panel box box-success">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#inhibitor_status" class="collapsed" aria-expanded="false">
+                        Inhibitor status
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="inhibitor_status" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+
+            <div class="box-body">
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Screening test</label>
+                    {{form1.bd_screening_test|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Quantitative assay</label>
+                    {{form1.bd_quant_assay|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Method</label>
+                    {{form1.bd_inhibitor_method|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Inhibitor Titer (BU/ml)</label>
+                    {{form1.bd_inhibitor_titer|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Platelet count(X103/uL)
+                    </label>
+                    {{form1.bd_platelet_count|addclass:'form-control'}}
+
+                </div>
+            </div>
+                <hr>
+                <div class="row ">
+                        <div class="col-md-6">
+                            <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Platelet aggregation</h4></label>
+					    </div>
+                </div>
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                        <colgroup>
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 25%;">
+
+
+                        </colgroup>
+                                <thead class="bg-info">
+                                <tr>
+                                    <th>Aggregation</th>
+                                    <th>Value</th><th>Aggregation</th>
+                                    <th>Value</th>
+
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>Ristocetin low dose(%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_Ristocetin_low_dose|addclass:'form-control required1'}}</td>
+                                    <td>Ristocetin high dose (%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_Ristocetin_high_dose|addclass:'form-control required1'}}</td>
+
+                                </tr><tr>
+                                    <td>ADP (%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_ADP|addclass:'form-control required1'}}</td>
+                                    <td>Collagen (%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_Collagen|addclass:'form-control required1'}}</td>
+
+                                </tr><tr>
+                                    <td>Epinephrine (%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_Epinephrine|addclass:'form-control required1'}}</td>
+                                    <td>Arachidonic acid (%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_Arachidonic_acid|addclass:'form-control required1'}}</td>
+
+                                </tr><tr>
+                                    <td>Others (%) *</td>
+                                    <td>{{form1.bd_platelet_agregatin_others|addclass:'form-control required1'}}</td>
+
+
+                                </tr>
+                                <tbody>
+                                </tbody>
+                </table>
+
+
+
+
+            <hr>
+                <div class="row ">
+                        <div class="col-md-6">
+                            <i class="fa fa-fw fa-circle"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Platelet Receptors</h4></label>
+					    </div>
+                </div>
+                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                        <colgroup>
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 25%;">
+                            <col span="1" style="width: 25%;">
+
+
+                        </colgroup>
+                                <thead class="bg-info">
+                                <tr>
+                                    <th>Receptors</th>
+                                    <th>Value</th><th>Receptors</th>
+                                    <th>Value</th>
+
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>Gb1b (%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_1|addclass:'form-control required1'}}</td>
+                                    <td>GPV (%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_2|addclass:'form-control required1'}}</td>
+                                    </tr><tr>
+                                    <td>GPIX (%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_3|addclass:'form-control required1'}}</td>
+                                    <td>GP1b/IX(%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_4|addclass:'form-control required1'}}</td>
+                                    </tr><tr>
+                                    <td>GPIIb(%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_5|addclass:'form-control required1'}}</td>
+                                    <td>GPIIIa (%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_6|addclass:'form-control required1'}}</td>
+                                    </tr><tr>
+                                    <td>GPIIb/IIIa(%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_7|addclass:'form-control required1'}}</td>
+                                    <td>Fibrinogen(%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_8|addclass:'form-control required1'}}</td>
+                                    </tr><tr>
+                                    <td>Collagen(%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_9|addclass:'form-control required1'}}</td>
+                                    <td>Others(%) *</td>
+                                    <td>{{form1.bd_platelet_receptors_others|addclass:'form-control required1'}}</td>
+                                    </tr>
+                                <tbody>
+                                </tbody>
+                </table>
+
+            <hr>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Mutation identified</label>
+				    {{form1.bd_mutation_identified|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" for="id_ident_mut">Type of Mutation</label>
+                    {{form1.bd_mutation_type|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Final Diagnosis *</label>
+                    {{form1.bd_final_diagnosis|addclass:'form-control required1'}}
+				</div>
+            </div>
+            <hr>
+            <div class="row ">
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Family Pedigree</label>
+
+				</div>
+                <div class="col-md-3">
+                    {{form1.bd_fam_pedigree}}
+                </div>
+
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Diagnostic Investigation Report</label>
+
+				</div>
+                <div class="col-md-3">
+                   {{form1.bd_diag_invest_report}}
+                </div>
+			</div>
+                        </div>
+                      </div>
+                </div>
+
+            <div class="panel box box-info">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#genetic_studies_family_members" class="collapsed" aria-expanded="false">
+                        Genetic Studies of family members
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="genetic_studies_family_members" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+        <div class="box-body">
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Carrier studies</label>
+				    {{form1.bd_carrier_studies|addclass:'form-control'}}
+                </div>
+            </div>
+            <br>
+            <div class="row carrstud1">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">1. Name of the female</label>
+                    {{form1.bd_carr_female_1_name|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">Aadhaar</label>
+                    {{form1.bd_carr_female_1_adhaar|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of birth:</label>
+                    {{form1.bd_carr_female_1_dob|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Age</label>
+                    {{form1.bd_carr_female_1_age|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">Relationship with index</label>
+                    {{form1.bd_carr_female_1_rel_index|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Status </label>
+                    {{form1.bd_carr_female_1_status|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of study</label>
+                    {{form1.bd_carr_female_1_dos|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row carrstud2">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">2. Name of the female</label>
+                    {{form1.bd_carr_female_2_name|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Aadhaar</label>
+                    {{form1.bd_carr_female_2_adhaar|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of birth:</label>
+                    {{form1.bd_carr_female_2_dob|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Age</label>
+                    {{form1.bd_carr_female_2_age|addclass:'form-control'}}
+				</div>
+                <br>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left">Relationship with index</label>
+                    {{form1.bd_carr_female_2_rel_index|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Status </label>
+                    {{form1.bd_carr_female_2_status|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of study</label>
+                    {{form1.bd_carr_female_2_dos|addclass:'form-control'}}
+				</div>
+            </div>
+            <div class="row ">
+                <div class="col-md-12 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Any other Information</label>
+                    {{form1.bd_carr_any_other_details|addclass:'form-control'}}
+				</div>
+			</div>
+            </div>
+            </div>
+            </div>
+            <div class="panel box box-danger">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#antenatal_studies" class="collapsed" aria-expanded="false">
+                        Antenatal studies
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="antenatal_studies" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                      <div class="box-body">
+                        <div class="row antenatal1">
+                <div class="col-md-3">
+                    <i class="fa fa-fw fa-circle"></i> <label class="col-md font-weight-bolder text-dark text-left">1. Name of the female</label>
+                    {{form1.bd_ante_female_1_name|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Aadhaar Number</label>
+                    {{form1.bd_ante_female_1_adhaar|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of birth:</label>
+                    {{form1.bd_ante_female_1_dob|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Age</label>
+                    {{form1.bd_ante_female_1_age|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row antenatal1">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Relationship with index</label>
+                    {{form1.bd_ante_female_1_rel_index|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Procedure</label>
+                    {{form1.bd_ante_female_1_proc|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Performed by</label>
+                    {{form1.bd_ante_female_1_per_by|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of study</label>
+                    {{form1.bd_ante_female_1_dos|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row antenatal1">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Result</label>
+                    {{form1.bd_ante_female_1_res|addclass:'form-control'}}
+				</div>
+                <div class="col-md-9">
+                    <label class="col-md font-weight-bolder text-dark text-left">Any Other Information</label>
+                    {{form1.bd_ante_other_info_1|addclass:'form-control'}}
+				</div>
+            </div>
+            <div class="row">
+
+			</div>
+            <hr>
+            <div class="row antenatal2">
+                <div class="col-md-3">
+                    <i class="fa fa-fw fa-circle"></i> <label class="col-md font-weight-bolder text-dark text-left">2. Name of the female</label>
+                    {{form1.bd_ante_female_2_name|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Aadhaar Number</label>
+                    {{form1.bd_ante_female_2_adhaar|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of birth:</label>
+                    {{form1.bd_ante_female_2_dob|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Age</label>
+                    {{form1.bd_ante_female_2_age|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row antenatal2">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Relationship with index</label>
+                    {{form1.bd_ante_female_2_rel_index|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Procedure</label>
+                    {{form1.bd_ante_female_2_proc|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Performed by</label>
+                    {{form1.bd_ante_female_2_per_by|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date of study</label>
+                    {{form1.bd_ante_female_2_dos|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row antenatal2">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Result</label>
+                    {{form1.bd_ante_female_2_res|addclass:'form-control'}}
+				</div>
+                <div class="col-md-9">
+                    <label class="col-md font-weight-bolder text-dark text-left">Any Other Information</label>
+                    {{form1.bd_ante_other_info_2|addclass:'form-control'}}
+				</div>
+			</div>
+             </div>
+                    </div>
+                    </div>
+        </div>
+    </div>
+
+
+
+    <!---- box end ----->
+    <!---- box start ----->
+     <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Bleeding details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+        <!-- /.box-header -->
+        <div class="box-body" style="">
+            <div class="box-group" id="accordion">
+                <div class="panel box box-success">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#Bleeds_details" class="collapsed" aria-expanded="false">
+                        Bleeds
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="Bleeds_details" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="box-body">
+
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-info">
+                                <tr>
+                                    <th></th>
+                                    <th>Value</th><th></th>
+                                    <th>Value</th>
+
+                                </tr>
+
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td>Total no. of bleeds (Past 12 months) *</td>
+                                    <td>{{form1.bd_bleed_past_12|addclass:'form-control required1'}}</td>
+
+                                    <td>Total no. of bleeds (Life time) *</td>
+                                    <td>{{form1.bd_bleed_life_time|addclass:'form-control required1'}}</td>
+                                </tr><tr>
+                                    <td>Spontaneous (Past 12 months) *</td>
+                                    <td>{{form1.bd_spontaneous_past_12|addclass:'form-control required1'}}</td>
+
+                                    <td>Spontaneous (Life time) *</td>
+                                    <td>{{form1.bd_spontaneous_life_time|addclass:'form-control required1'}}</td>
+                                </tr><tr>
+                                    <td>Traumatic (Past 12 months) *</td>
+                                    <td>{{form1.bd_traumatic_past_12|addclass:'form-control required1'}}</td>
+
+                                    <td>Traumatic (Life time) *</td>
+                                    <td>{{form1.bd_traumatic_life_time|addclass:'form-control required1'}}</td>
+                                </tr><tr>
+                                    <td>No. of joint haemorrhages (Past 12 months)</td>
+                                    <td>{{form1.bd_haemorrhages_past_12|addclass:'form-control'}}</td>
+
+                                    <td>No. of joint haemorrhages (Life time)</td>
+                                    <td>{{form1.bd_haemorrhages_life_time|addclass:'form-control'}}</td>
+                                </tr><tr>
+                                    <td>CNS (Past 12 months) </td>
+                                    <td>{{form1.bd_cns_past_12|addclass:'form-control'}}</td>
+
+                                    <td>CNS (Life time)</td>
+                                    <td>{{form1.bd_cns_life_time|addclass:'form-control'}}</td>
+                                </tr><tr>
+                                    <td>Muscle (Past 12 months) </td>
+                                    <td>{{form1.bd_muscle_past_12|addclass:'form-control'}}</td>
+
+                                    <td>Muscle (Life time)</td>
+                                    <td>{{form1.bd_muscle_life_time|addclass:'form-control'}}</td>
+                                </tr><tr>
+                                    <td>Mucosal bleed (Past 12 months) </td>
+                                    <td>{{form1.bd_mucosal_past_12|addclass:'form-control'}}</td>
+
+                                    <td>Mucosal bleed (Life time)</td>
+                                    <td>{{form1.bd_mucosal_life_time|addclass:'form-control'}}</td>
+                                </tr><tr>
+                                    <td>Chronic Deformity </td>
+                                    <td>{{form1.bd_chronic_def|addclass:'form-control'}}</td>
+
+                                    <td>Other</td>
+                                    <td>{{form1.bd_bleeds_others|addclass:'form-control'}}</td>
+                                </tr>
+                                </tbody>
+                    </table>
+
+
+
+
+            </div>
+            </div>
+            </div>
+                <br>
+            <div class="panel box box-danger">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#transfusion_details" class="collapsed" aria-expanded="false">
+                        Transfusion details
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="transfusion_details" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="box-body">
+
+
+                <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Age at first factor/ blood product exposure</label>
+                    {{form1.bd_first_fact_age|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left">Total exposure days from birth</label>
+                    {{form1.bd_birth_exposure_days|addclass:'form-control'}}
+				</div>
+            </div>
+                <br>
+            <div class="row ">
+                <div class="col-md-6">
+                    <label class="col-md font-weight-bolder text-dark text-left">Transfusion Product</label>
+                    {{form1.bd_transfusion_product}}
+				</div>
+                <div class="col-md-6">
+                    <label class="col-md font-weight-bolder text-dark text-left" for="transfusion_product_other">Other specify</label>
+                    {{form1.bd_transfusion_product_others |addclass:'form-control'}}
+				</div>
+            </div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Current mode of treatment</label>
+                    {{form1.bd_curr_mode_treatment|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 demandsel rule_Current_mode_treatment">
+                    <label class="col-md font-weight-bolder text-dark text-left" >How many bleeding episodes get factor treatment per year?</label>
+                    {{form1.bd_demand_bd_episodes|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 demandsel rule_Current_mode_treatment">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Duration between bleed and factor infusion?</label>
+                    {{form1.bd_demand_bd_duration|addclass:'form-control'}}
+				</div>
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Source of Funding for treatment</label>
+                    {{form1.bd_funding_source|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 rule_Source_Funding">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Please specify</label>
+                    {{form1.bd_funding_source_other|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Dose</label>
+                    {{form1.bd_dose|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Frequency</label>
+                    {{form1.bd_frequency|addclass:'form-control'}}
+				</div>
+
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Start Date</label>
+                    {{form1.bd_start_date|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Stop Date</label>
+                    {{form1.bd_end_date|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Ongoing</label>
+                    {{form1.bd_ongoing_status|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Duration</label>
+                    {{form1.bd_duration|addclass:'form-control'}}
+				</div>
+
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Self infusion skill</label>
+                    {{form1.bd_infusion_skill|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Inhibitor Status</label>
+                    {{form1.bd_inhibitor_status|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Any other information</label>
+                    {{form1.bd_any_other_info|addclass:'form-control'}}
+				</div>
+
+			</div>
+            </div>
+            </div>
+            </div>
+                <br>
+                <div class="panel box box-info">
+                  <div class="box-header with-border">
+                    <h4 class="box-title">
+                      <a data-toggle="collapse" data-parent="#accordion" href="#Surgery_details" class="collapsed" aria-expanded="false">
+                        Surgery details
+                      </a>
+                    </h4>
+                  </div>
+                  <div id="Surgery_details" class="panel-collapse collapse" aria-expanded="false" style="height: 0px;">
+                    <div class="box-body">
+
+
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Number of Surgeries</label>
+                    {{form1.bd_surgery_num|addclass:'form-control'}}
+				</div>
+            </div>
+                <br>
+            <div class="row surgery1">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Surgery 1:</label>
+				</div>
+            </div>
+            <div class="row surgery1">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date</label>
+                    {{form1.bd_surgery_date1|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Surgery </label>
+				    {{form1.bd_surgery_1|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Transfusion:</label>
+				    {{form1.bd_surgery_1_transfusin|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Specify</label>
+				    {{form1.bd_surgery_1_transfusin_others|addclass:'form-control'}}
+                </div>
+
+			</div>
+            <br>
+            <div class="row surgery2">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Surgery 2:</label>
+				</div>
+            </div>
+            <div class="row surgery2">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date</label>
+                    {{form1.bd_surgery_date2|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Surgery </label>
+				    {{form1.bd_surgery_2|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Transfusion:</label>
+				    {{form1.bd_surgery_2_transfusin|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Specify</label>
+				    {{form1.bd_surgery_2_transfusin_others|addclass:'form-control'}}
+                </div>
+
+			</div>
+            <br>
+            <div class="row  surgery3">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Surgery 3:</label>
+				</div>
+            </div>
+            <div class="row surgery3">
+                <div class="col-md-3 ">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Date</label>
+                    {{form1.bd_surgery_date3|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Surgery </label>
+				    {{form1.bd_surgery_3|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Transfusion:</label>
+				    {{form1.bd_surgery_3_transfusin|addclass:'form-control'}}
+                </div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Specify</label>
+				    {{form1.bd_surgery_3_transfusin_others|addclass:'form-control'}}
+                </div>
+
+			</div>
+            </div>
+            </div>
+            </div>
+              <br>
+            <div class="row ">
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Current level of physical disability</label>
+                    {{form1.bd_physical_dis_status|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Chronic arthropathy</label>
+                    {{form1.bd_cronic_anthr|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 chronicjoint">
+                    <label class="col-md font-weight-bolder text-dark text-left" >joint</label>
+                    {{form1.bd_joint|addclass:'form-control'}}
+				</div>
+                <div class="col-md-3 chronicjoint">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Target joint</label>
+                    {{form1.bd_target_joint|addclass:'form-control'}}
+				</div>
+
+			</div>
+            <br>
+            <div class="row ">
+                <div class="col-md-12">
+                    <label class="col-md font-weight-bolder text-dark text-left" >Other information</label>
+                    {{form1.bd_other_info|addclass:'form-control'}}
+				</div>
+            </div>
+
+            </div>
+            </div>
+            <!-- /.box-body -->
+            </div>
+		</div>
+   <center>
+            <button class="btn btn-primary submitbtn" type="submit" id="submit1" name="save">Save</button>
+            <button type="submit" class="btn  btn-success submitbtn" name="submitandexit"><b>Final submit</b></button>
+       {% if patient.quality_result == 'Fail' %}
+       <button type="submit" class="btn  btn-warning submitbtn" name="submitandqc"><b>send result to QC</b></button>
+
+       {% endif %}
+		</center>
+	</form>
+{% endblock %}

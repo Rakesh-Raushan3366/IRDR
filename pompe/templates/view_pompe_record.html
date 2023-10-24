@@ -1,0 +1,1287 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %}
+
+<center><button class="btn bg-maroon" onclick="window.print()">Print</button></center>
+<form method="POST" id="personForm" enctype="multipart/form-data"  action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+    {% if form1.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+
+    {% if form1.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label}} --------- {{ error|escape}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+
+
+    <br>
+    <div class="box-body">
+        <div class="box-group" id="accordion">
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title"> Socio Demographic Details</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of
+                                Patient</label>
+                            {{form1.pd_Patient_education}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.pd_Patient_occupation}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of
+                                Father</label>
+                            {{form1.pd_Father_education}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.pd_Father_occupation}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Education Status of
+                                Mother</label>
+                            {{form1.pd_Mother_education}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.pd_Mother_occupation}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Monthly Family Income (INR)As
+                                Per Kuppuswamy SES 2018</label>
+                            {{form1.pd_Monthly_family_income}}
+                        </div>
+                        <br>
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+                <!---- box end ----->
+            </div>
+
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Anthropometry:</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>Anthropometry Details</h4>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+                        <colgroup>
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+
+                        </colgroup>
+                        <thead class="bg-info ">
+                        <tr>
+                            <th></th>
+                            <th>Patient</th>
+                            <th>Percentile**</th>
+                            <th>SD</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th> Weight(kg)</th>
+                            <td>
+                                {{form1.pd_weight_patient}}
+                            </td>
+                            <td>
+                                {{form1.pd_weight_percentile}}
+                            </td>
+                            <td>
+                                {{form1.pd_weight_SD}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Height(cm)</th>
+                            <td>
+                                {{form1.pd_height_patient}}
+                            </td>
+                            <td>
+                                {{form1.pd_height_percentile}}
+                            </td>
+                            <td>
+                                {{form1.pd_height_SD}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Head Circumference(cm)</th>
+                            <td>
+                                {{form1.pd_Head_circumference_patient}}
+                            </td>
+                            <td>
+                                {{form1.pd_Head_circumference_percentile}}
+                            </td>
+                            <td>
+                                {{form1.pd_Head_circumference_sd}}
+                            </td>
+
+                        </tr>
+                        </tbody>
+
+                    </table>
+
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <i class="fa fa-fw fa-square"></i> <label class="col-xs font-weight-bolder text-dark text-left"><h4>PRESENTING COMPLAINTS</h4>
+                            </label>
+
+                        </div>
+                    </div>
+
+                    <table class="table table-bordered table-condensed table-striped asymtotic_symptoms pres_feature" id="example1">
+
+                        <colgroup>
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+                            <col span="1" style="width: 10%;">
+
+                        </colgroup>
+                        <thead class="bg-info ">
+                        <tr>
+                            <th></th>
+                            <th>Years</th>
+                            <th>Month</th>
+                            <th>Day</th>
+                            <th>Intrauterine</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <th> Age at onset of symptoms:</th>
+                            <td>
+                                {{form1.pd_Age_at_onset_of_symptoms_year}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_onset_of_symptoms_month}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_onset_of_symptoms_day}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_onset_of_symptoms_Intrauterine}}
+                            </td>
+
+                        </tr>
+                        <tr>
+                            <th> Age at presentation</th>
+                            <td>
+                                {{form1.pd_Age_at_presentation_year}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_presentation_month}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_presentation_day}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_presentation_Intrauterine}}
+                            </td>
+
+
+                        </tr>
+                        <tr>
+                            <th> Age at diagnosis:</th>
+                            <td>
+                                {{form1.pd_Age_at_diagnosis_year}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_diagnosis_month}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_diagnosis_day}}
+                            </td>
+                            <td>
+                                {{form1.pd_Age_at_diagnosis_Intrauterine}}
+                            </td>
+
+                        </tr>
+                        </tbody>
+                    </table>
+
+
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Upload pedigree (3
+                                generation):</label>
+ <a href="/media/{{form1.pd_Pedigree_to_be_uploaded}}" class="btn btn-success" target="_blank">Download</a>
+
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Positive Family
+                                History:</label>
+                            {{form1.pd_positive_family_history}}
+                        </div>
+                        <div class="col-xs-3 positive">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.pd_family_history_specify}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Consanguinity:</label>
+                            {{form1.pd_Consanguinity}}
+                        </div>
+                        <div class="col-xs-3 cosang">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Specify</label>
+                            {{form1.pd_Consanguinity_specify}}
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <!-- /.box-body -->
+
+                    <!---- box end ----->
+                </div>
+            </div>
+
+            <!---- box start ----->
+            <div class="box box-primary box-solid">
+                <div class="box-header with-border">
+                    <h3 class="box-title">Birth History</h3>
+                    <div class="box-tools pull-right">
+                        <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                        </button>
+                    </div>
+                    <!-- /.box-tools -->
+                </div>
+                <!-- /.box-header -->
+                <div class="box-body" style="">
+                    <div class="row ">
+                        <div class="col-xs-6">
+                            <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Antenatal
+                            Investigation</h4>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="row ">
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left ">Ultrasound Findings</label>
+                            {{form1.pd_Ultrasound_findings}}
+                        </div>
+                        <div class="col-xs-3">
+                            <label class="col-xs font-weight-bolder text-dark text-left ">Polyhydramnios</label>
+                            {{form1.pd_Polyhydramnios}}
+                        </div>
+
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Fetal echocardiography</label>
+                                {{form1.pd_Fetal_echocardiography}}
+                            </div>
+                         <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">If abnormal specify</label>
+                                {{form1.pd_Fetal_echocardiography_specify}}
+                            </div>
+                        </div>
+                        <br>
+                        <!-- /.box-header -->
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Natal History</h4>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Type of delivery:</label>
+                                {{form1.pd_Natal_History_Type_of_delivery}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Baby cried immediately
+                                    after delivery:</label>
+                                {{form1.pd_Natal_History_Baby_cried_immediately_after_delivery}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Resuscitation
+                                    required:</label>
+                                {{form1.pd_Natal_History_Resuscitation_required}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Ventilator</label>
+                                {{form1.pd_Natal_History_ventilater}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">O2/Cpap</label>
+                                {{form1.pd_Natal_History_o_2_Cpap}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Nursery stay</label>
+                                {{form1.pd_Natal_History_Nursery_stay}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Birth weight (Kg)</label>
+                                {{form1.pd_Birth_weight}}
+                            </div>
+                        </div>
+                        <!-- /.box-header -->
+                            <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-sm font-weight-bolder text-dark text-left">Developmental
+                                    milestones:</label>
+                                {{form1.pd_Development_milestones}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Motor</label>
+                                {{form1.pd_if_delayed_Motor}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left"> Global</label>
+                                {{form1.pd_if_delayed_Global}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cognitive</label>
+                                {{form1.pd_if_delayed_Cognitive}}
+                            </div>
+                        </div>
+
+                        <!-- /.box-body -->
+
+                        <!---- box end ----->
+                    </div>
+                </div>
+            </div>
+                <!---- box start ----->
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"> EXAMINATION</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>General physical
+                                examination</h4></label>
+
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Head</label>
+                                {{form1.pd_head}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Face</label>
+                                {{form1.pd_face}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Eyes Ptosis</label>
+                                {{form1.pd_Eyes_Ptosis}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Large tongue</label>
+                                {{form1.pd_Large_tongue}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Others(Specify)</label>
+                                {{form1.pd_Others_specify}}
+                            </div>
+                        </div>
+                        <br>
+
+                        <!-- /.box-header -->
+
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>System wise history and
+                                    examination</h4></label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Ever had respiratory
+                                    distress</label>
+                                {{form1.pd_Ever_had_respiratory_distress}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">No of episode of pneumonia
+                                    in the last one year </label>
+                                {{form1.pd_No_of_episode}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Ventilator or other
+                                    respiratory support</label>
+                                {{form1.pd_Ventilator_or_other_respiratory_support}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Mode of ventilation</label>
+                                {{form1.pd_Mode_of_ventilation}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Age at
+                                    ventilator/respiratory support initiation</label>
+                                {{form1.pd_Age_at_ventilator}}
+                            </div>
+
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Tracheostomy</label>
+                                {{form1.pd_Tracheostomy}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Was weaning off from
+                                    ventilator possible</label>
+                                {{form1.pd_Was_weaning_off_from_ventilator_possible}}
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i>    <label class="col-sm font-weight-bolder text-dark text-left"><h4>Gastrointestinal</h4>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Feeding
+                                    difficulties</label>
+                                {{form1.pd_Feeding_difficulties}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Feeding </label>
+                                {{form1.pd_Feeding}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">if yes date started</label>
+                                {{form1.pd_if_yes_date_started}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Protuberant abdomen</label>
+                                {{form1.pd_Protuberantabdomen}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Hepatomegaly</label>
+                                {{form1.pd_Hepatomegaly}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Size BCM (cm)</label>
+                                {{form1.pd_Size_BCM}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Span (cm)</label>
+                                {{form1.pd_Span}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Hernia</label>
+                                {{form1.pd_Hernia}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Others</label>
+                                {{form1.pd_Others}}
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>Cardiovascular</h4>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Edema</label>
+                                {{form1.pd_Edema}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cyanosis</label>
+                                {{form1.pd_Cyanosis}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cardiac medications date
+                                    started</label>
+                                {{form1.pd_Cardiac_medications_date_started}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cardiac medications
+                                    dose</label>
+                                {{form1.pd_Cardiac_medications_dose}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Heart rate</label>
+                                {{form1.pd_Heart_rate}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Gallop</label>
+                                {{form1.pd_Gallop}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">arrythmia</label>
+                                {{form1.pd_arrythmia}}
+                            </div>
+                             <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cardiac medications</label>
+                                {{form1.pd_Cardiac_medications}}
+                            </div>
+                        </div>
+                             <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">If Cardiac Yes specify</label>
+                                {{form1.pd_Cardiac_medications_specify}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                        <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title"> Neuromuscular</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+
+                        <div class="row ">
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Muscle weakness</label>
+                                {{form1.pd_Muscle_weakness}}
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Age at Onset of
+                                    weakness</label>
+                                {{form1.pd_Age_at_Onset_of_weakness}}
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Onset of weakness</label>
+                                {{form1.pd_Onset_of_weakness}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Difficulty in sitting from
+                                    lying position</label>
+                                {{form1.pd_Difficulty_in_sitting_from_lying_position}}
+                            </div>
+
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Difficulty in standing from sitting position</label>
+                                {{form1.pd_Difficulty_in_standing_from_standing_position}}
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Current Functional Status</label>
+                                {{form1.pd_Wheelchair_bound}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Age at Wheelchair
+                                    bound</label>
+                                {{form1.pd_Age_at_Wheelchair_bound}}
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Sleep disturbances
+                                    apnea</label>
+                                {{form1.pd_Sleep_disturbances_apnea}}
+                            </div>
+
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Hypotonia</label>
+                                {{form1.pd_Hypotonia}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Proximal muscle weakness in
+                                    upper extremities</label>
+                                {{form1.pd_Proximal_muscle_weakness_in_upper_extremities}}
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Distal muscle weakness in
+                                    upper extremities</label>
+                                {{form1.pd_Distal_muscle_weakness_in_upper_extremities}}
+                            </div>
+                            <div class="col-xs-4">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Proximal muscle weakness in
+                                    lower extremities</label>
+                                {{form1.pd_Proximal_muscle_weakness_in_lower_extremities}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Distal muscle weakness in
+                                    lower extremities</label>
+                                {{form1.pd_Distal_muscle_weakness_in_lower_extremities}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Neck muscle
+                                    weakness</label>
+                                {{form1.pd_Neck_muscle_weakness}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Muscle weakness in
+                                    trunk</label>
+                                {{form1.pd_Muscle_weakness_in_trunk}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Reflexes</label>
+                                {{form1.pd_Reflexes}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Modifed Gower Sign Positive</label>
+                                {{form1.pd_Gower_positive}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Contractures</label>
+                                {{form1.pd_Contractures}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Abnormal Gait</label>
+                                {{form1.pd_Abnormal_Gait}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Muscles of respiration
+                                    involved</label>
+                                {{form1.pd_Muscles_of_respiration_involved}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">bulbar and lingual
+                                    weakness</label>
+                                {{form1.pd_bulbar_and_lingual_weakness}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">if yes</label>
+                                {{form1.pd_if_yes}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Rigid spine</label>
+                                {{form1.pd_Rigid_spine}}
+                            </div>
+                        </div>
+                        <br>
+
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Central nervous
+                                system</h4></label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Higher mental
+                                    functions</label>
+                                {{form1.pd_Higher_mental_functions}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Cranial nerve
+                                    involvement</label>
+                                {{form1.pd_Cranial_nerve_involvement}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Altered or reduced visual
+                                    acuity</label>
+                                {{form1.pd_Altered_or_reduced_visual_acuity}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Hearing loss</label>
+                                {{form1.pd_Hearing_loss}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Foot drop</label>
+                                {{form1.pd_Foot_drop}}
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                        <!---- box end ----->
+                    </div>
+
+
+                <!---- box start ----->
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">INVESTIGATIONS:</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Radiography of chest to
+                                    assess for cardiomegaly</label>
+                                {{form1.pd_Radiography_of_chest_to_assess_for_cardiomegaly}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">ECG</label>
+                                {{form1.pd_ECG}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Short PR</label>
+                                {{form1.pd_Short_PR}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Tall broad QRS</label>
+                                {{form1.pd_Tall_broad_QRS}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">ECHO date</label>
+                                {{form1.pd_ECHO_date}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">ECHO</label>
+                                {{form1.pd_ECHO}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">If echo abnormal specify</label>
+                                {{form1.pd_ECHO_specify}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">PFT date</label>
+                                {{form1.pd_PFT_date}}
+                            </div>
+                             </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">PFT</label>
+                                {{form1.pd_PFT}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i> <label class="col-sm font-weight-bolder text-dark text-left"><h4>PFT Details</h4>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Supine FVC</label>
+                                {{form1.pd_PFT_Supine_FVC}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Sitting FVC</label>
+                                {{form1.pd_PFT_Sitting_FVC}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Supine FEV1</label>
+                                {{form1.pd_PFT_Supine_FEV1}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Sitting FEV1</label>
+                                {{form1.pd_PFT_Sitting_FEV1}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Mean Inspiratory
+                                    Pressure</label>
+                                {{form1.pd_PFT_Mean_Inspiratory_Pressure}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Mean Expiratory
+                                    Pressure</label>
+                                {{form1.pd_PFT_Mean_Expiratory_Pressure}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Swallow study </label>
+                                {{form1.pd_Swallow_study}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">If abnormal specify</label>
+                                {{form1.pd_Swallow_study_specify}}
+                            </div>
+
+
+                        </div>
+
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Biochemical
+                                testing</h4></label>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">CK (U/L)</label>
+                                {{form1.pd_CK}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">CK-MB (U/L)</label>
+                                {{form1.pd_CK_MB}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">AST (SGOT) (Iu/L)</label>
+                                {{form1.pd_AST}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">ALT (SGPT) (Iu/L)</label>
+                                {{form1.pd_ALT}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">LDH (Iu/L)</label>
+                                {{form1.pd_LDH}}
+                            </div>
+                        </div>
+
+                        <br>
+                         <div class="row ">
+                            <div class="col-xs-6">
+                                <i class="fa fa-fw fa-square"></i><label class="col-sm font-weight-bolder text-dark text-left"><h4>Enzyme analysis</h4></label>
+                            </div>
+                         </div>
+                        <div class="row ">
+
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Enzyme analysis
+                                    sample</label>
+                                {{form1.pd_Enzyme_analysis_done}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Sample date</label>
+                                {{form1.pd_Sample_date_done}}
+                            </div>
+                                    <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Patient </label>
+                                {{form1.pd_patien}}
+                            </div>
+                             <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Control</label>
+                                {{form1.pd_contro}}
+                            </div>
+                            <br>
+                             <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Normal Range</label>
+                                {{form1.pd_nor_ran}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">CRIM Status</label>
+                                {{form1.pd_CRIM_Status}}
+                            </div>
+                             <div class="col-xs-3">
+                                <label class="col-md font-weight-bolder text-dark text-left">Enzyme analysis
+                                    uploaded</label>
+
+                                 <a href="/media/{{form1.pd_Enzyme_analysis_uploaded}}" class="btn btn-success" target="_blank">Download</a>
+                            </div>
+                        </div>
+                        </div>
+                </div>
+                        <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Molecular Report</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+
+                    <div class="box-body" style="">
+                        <div class="row ">
+                             <div class="col-md-2 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Molecular test report </label>
+                                {{form1.pd_Causative_DNA_sequence_variat}}
+                            </div>
+<!--                            <div class="col-md-2 id_sample_source_0"><label class="col-md font-weight-bolder text-dark text-left"-->
+<!--                                       for="Causative_DNA_sequence_variation_label">If Done Upload</label>-->
+                                {{form1.pd_molecular_upload}}
+                                 <a href="/media/{{form1.pd_molecular_upload}}" class="btn btn-success" target="_blank">Download</a>
+
+                            </div>
+
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Gene</label>
+                                {{form1.pd_Gene_molecula}}
+                            </div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Transcript ID</label>
+                                {{form1.pd_trans_molecul}}
+                            </div>
+
+                            <br>
+                            <div class="col-xs-12 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 1</label>
+                            </div>
+                              <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form1.pd_mul_dna1}}
+						</div>
+
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form1.pd_mul_pro1}}
+                        </div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form1.pd_mul_var1}}
+						</div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.pd_mul_var_cla1}}
+						</div>
+                           <div class="col-md-4 id_sample_source_0">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form1.pd_mul_zygo1}}
+                          </div>
+                             <br>
+                            <div class="col-xs-12 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant 2</label>
+                            </div>
+                              <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">cDNA Change</label>
+                            {{form1.pd_mul_dna2}}
+						</div>
+
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Protein Change</label>
+                            {{form1.pd_mul_pro2}}
+                        </div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Type</label>
+                            {{form1.pd_mul_var2}}
+						</div>
+                        <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Variant Classification</label>
+                            {{form1.pd_mul_var_cla2}}
+						</div>
+                           <div class="col-md-4 id_sample_source_0">
+                              <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                             {{form1.pd_mul_zygo2}}
+                          </div>
+
+                          <div class="col-xs-4 genet">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Segregation  in Parents</label>
+                            {{form1.pd_mul_seg}}
+						</div>
+
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Father</label>
+                                {{form1.pd_father}}
+                            </div>
+                            <div class="col-md-4 id_sample_source_0">
+                                <label class="col-md font-weight-bolder text-dark text-left">Mother</label>
+                                {{form1.pd_mother}}
+                            </div>
+                        </div>
+
+            <!-- /.box-tools -->
+                </div>
+
+ <!-- /.box-header -->
+
+       <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">THERAPY</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <div class="box-body" style="">
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">ERT *</label>
+                                {{form1.pd_ERT}}
+                            </div>
+                            <div class="col-xs-3 ert">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Name of Company</label>
+                                {{form1.pd_name_of_com}}
+                            </div>
+
+                             <div class="col-xs-3 ert">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Name of Enzyme</label>
+                                {{form1.pd_ERT_enz}}
+                        </div>
+                              </div>
+                        <div class="ert">
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Date of Initiation</label>
+                                {{form1.pd_Date_Initiation}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Age of Start</label>
+                                {{form1.pd_Age_of_Start}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Dosage</label>
+                                {{form1.pd_Dosage}}
+                            </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Duration</label>
+                                {{form1.pd_Duration}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Adverse events</label>
+                                {{form1.pd_Adverse_events}}
+                            </div>
+
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Response</label>
+                                {{form1.pd_Response}}
+                            </div>
+                        </div>
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left" >Immunomodulation *</label>
+                                {{form1.pd_Immunomodulation}}
+                            </div>
+
+                             <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Methotrexate</label>
+                                    {{form1.pd_Immunomodulation_methotrexate}}
+                                </div>
+                             <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">Rituximab</label>
+                                    {{form1.pd_Immunomodulation_rituximab}}
+                                </div>
+                             <div class="col-xs-2">
+                                    <label class="col-xs font-weight-bolder text-dark text-left">IVIG</label>
+                                    {{form1.pd_Immunomodulation_ivig}}
+                                </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Current ERT Status</label>
+                                {{form1.pd_Current_ERT_Status}}
+                            </div>
+
+                        </div>
+                        <br>
+                        <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Any interruption</label>
+                                {{form1.pd_Any_interruption}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Reason for
+                                    interruption</label>
+                                {{form1.pd_Reason_for_interruption}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Duration of
+                                    interruption</label>
+                                {{form1.pd_Duration_of_interruption}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Physiotherapy</label>
+                                {{form1.pd_Ongoing}}
+                            </div>
+                        </div>
+                            <br>
+                             <div class="row ">
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Motor Scale Assessment</label>
+                                {{form1.pd_moto_sca}}
+                            </div>
+                                 <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Date of Assessment</label>
+                                {{form1.pd_Physiotherapy_date}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Quick motor function test score(QMFT)</label>
+                                {{form1.pd_moto_qmft}}
+                            </div>
+                            <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">Gait Stairs Gower Chair(GSGC Score)</label>
+                                {{form1.pd_moto_gsgc}}
+                            </div>
+
+                             </div>
+                                 <br>
+                                  <div class="row ">
+                                      <div class="col-xs-3">
+                                <label class="col-xs font-weight-bolder text-dark text-left">6 minute walk test</label>
+                                {{form1.pd_moto_wlk_ts}}
+                            </div>
+                        </div>
+
+                    </div>
+                    </div>
+
+        <!-- /.box-body -->
+                    </div>
+                        <!---- box end ----->
+
+     <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Final Diagnosis</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+    <div class="box-body" style="">
+
+        <div class="row ">
+        <div class="col-xs-3">
+         <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">Final diagnosis</label>
+         {{form1.pd_Finaldiagnosis}}
+     </div>
+     </div>
+    </div>
+    </div>
+
+ <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Final Outcome</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                    class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+    <div class="box-body" style="">
+
+        <div class="row ">
+        <div class="col-xs-3">
+         <i class="fa fa-fw fa-circle"></i><label class="col-xs font-weight-bolder text-dark text-left">Final outcome</label>
+         {{form1.pd_Finaloutcomes}}
+     </div>
+     </div>
+          <hr>
+                    <div class="row ">
+
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Filled By D.E.O Name:-</label>
+                            {{form1.pd_filed_by_DEO_name}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Clinician Name</label>
+                            {{form1.pd_clinician_name}}
+						</div>
+                        <div class="col-xs-4">
+                            <label class="col-xs font-weight-bolder text-dark text-left">Date</label>
+                            {{form1.pd_filled_date}}
+						</div>
+                </div>
+
+</form>
+{% endblock %}

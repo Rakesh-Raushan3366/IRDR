@@ -1,0 +1,85 @@
+{%  extends 'main.html' %}
+{% load extra %}
+{% block content %}
+{% load static %}
+<html lang="en">
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+
+
+<script>
+  $(function () {
+
+    $('#example1').DataTable({
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : true,
+      'info'        : true,
+      'autoWidth'   : true
+    })
+  })
+
+
+</script>
+<body>
+
+<br>
+<section class="content">
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box box-primary">
+                <div class="box-header">
+                    <h3 class="box-title">Total  Record</h3>
+                </div>
+                <div class="box-body">
+
+
+                    <br>
+
+
+                    <table class="table table-bordered table-condensed table-striped" id="example1">
+                        <thead class="bg-black">
+                        <tr>
+
+                            <th>Patient Name</th>
+                            <th>Mobile</th>
+                            <th>Gender</th>
+                            <th>Occupation</th>
+                            <th>View</th>
+                            <th>Update</th>
+
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in register %}
+                        <tr>
+                            <td>{{i.sd_Patient_name}}</td>
+                            <td>{{i.sd_Patient_mobile_no}}</td>
+                            <td>{{i.sd_gender}}</td>
+                            <td>{{i.sd_Patient_occupation}}</td>
+
+                            <td><a class="btn btn-primary" href="{% url 'view_storage_record' i.id%}">View </a></td>
+                            <td><a class="btn btn-warning" href="{% url 'update_storage_demographic' i.id%}">Update </a></td>
+
+                        </tr>
+                        {% endfor %}
+                        </tbody>
+
+                    </table>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+</section>
+<br>
+<br>
+
+</body>
+</html>
+{% endblock %}

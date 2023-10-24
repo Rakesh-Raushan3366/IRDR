@@ -1,0 +1,3299 @@
+{%  extends 'main.html' %} {% load static %} {% block content %} {% load extra %} {% load add_attr %}
+
+<center><button class="btn bg-maroon" onclick="window.print()">Print</button></center>
+<form method="POST"
+id="personForm" action="">
+    {% csrf_token %}
+    {% if form1.errors %}
+    {% for field in form1 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form2.errors %}
+    {% for field in form2 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form3.errors %}
+    {% for field in form3 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form4.errors %}
+    {% for field in form4 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form5.errors %}
+    {% for field in form5 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    {% if form6.errors %}
+    {% for field in form6 %}
+    {% for error in field.errors %}
+    <div class="alert alert-danger">
+        <strong>{{field.label|default_if_none:""}} --------- {{ error|escape |default_if_none:""}}</strong>
+    </div>
+    {% endfor %}
+    {% endfor %}
+    {% endif %}
+    <div class="">
+<!--        <ul class="nav ">-->
+<!--            <li class="active"><a href="#tab_1" data-toggle="tab" aria-expanded="true"><b>Socio-demographic</b></a>-->
+<!--            </li>-->
+<!--            <li class="border"><a href="#tab_2" data-toggle="tab" aria-expanded="true"><b>DYSTOPHINOPATHY Form</b></a></li>-->
+<!--            <li class=""><a href="#tab_3" data-toggle="tab" aria-expanded="true"><b>Spinal Muscular Atrophy</b></a></li>-->
+<!--            <li class=""><a href="#tab_4" data-toggle="tab" aria-expanded="true"><b>Limb Girdle Muscular Dystrophy</b></a></li>-->
+<!--            <li class="pull-right"><a href="#" class="text-muted"><i class="fa fa-gear"></i></a></li>-->
+<!--        </ul>-->
+        <div class="">
+            <div class="tab-pane active" id="tab_1">
+
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Socio-demographic details</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Patient</label>
+                            {{form1.NMD_patient_education|default_if_none:""}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of patient</label>
+                            {{form1.NMD_patient_occupation|default_if_none:""}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of Father</label>
+                            {{form1.NMD_father_edu_status|default_if_none:""}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of father</label>
+                            {{form1.NMD_father_occupation|default_if_none:""}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Education Status of  Mother</label>
+                            {{form1.NMD_mother_edu_status|default_if_none:""}}
+                        </div>
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Occupation of Mother</label>
+                            {{form1.NMD_mother_occupation|default_if_none:""}}
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row ">
+                        <div class="col-xs-4">
+                            <label class="col-md font-weight-bolder text-dark text-left">Monthly Family Income (INR)As Per Kuppuswamy SES 2018</label>
+                            {{form1.NMD_monthly_income_status|default_if_none:""}}
+                        </div>
+                        <br>
+                    </div>
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane" id="tab_2">
+
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">DYSTOPHINOPATHY Details</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+
+                        <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Diagnosis</label>
+                        {{form2.NMD_diagnosis_type|default_if_none:""}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Enrolment status in Registry</label>
+                        {{form2.NMD_enrollment_status|default_if_none:""}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Age at Diagnosis</label>
+                        {{form2.diagnosis_age|default_if_none:""}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Approximate age </label>
+                        {{form2.aproximate_age|default_if_none:""}}
+                    </div>
+
+                </div>
+                <br>
+                <div class="row ">
+                    <div class="col-xs-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">Age at onset of symptoms</label>
+                        {{form2.symptoms_age_onset|default_if_none:""}}
+                    </div>
+                    <div class="col-xs-3">
+                        <label class="col-md font-weight-bolder text-dark text-left">ONSET</label>
+                        {{form2.onset_age|default_if_none:""}}
+                    </div>
+
+                    <div class="col-xs-2">
+                        <label class="col-md font-weight-bolder text-dark text-left">Please upload Pedigree	</label>
+
+                    </div>
+                    <div class="col-xs-4">
+
+                         <a href="/media/{{form2.pedigree|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                    </div>
+
+                </div>
+
+                <br>
+                <div class="panel box box-secondary" >
+                    <div class="box-header with-border" >
+                        <h4 class="box-title" >
+                            <a data-toggle="collapse" data-parent="#accordion" href="#positive_family_history" aria-expanded="true" >
+                                Positive Family history
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="positive_family_history" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Positive Family history</label>
+                                    {{form2.positive_family_hist|default_if_none:""}}
+                                </div>
+                            </div>
+                            <br>
+                            <table class="table table-bordered table-condensed table-striped asymtotic_symptoms positive-family-history-class" id="example1">
+                                <thead class="bg-black">
+                                <tr>
+                                    <th>Family members</th>
+                                    <th>Yes/No</th>
+                                    <th>Number affected</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td> Siblings</td>
+                                    <td>{{form2.positive_family_siblings|default_if_none:""}}</td>
+                                    <td>{{form2.positive_family_sibling_nubmer_affected|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Cousins</td>
+                                    <td>{{form2.positive_family_cousins|default_if_none:""}}</td>
+                                    <td>{{form2.positive_family_sCousins_nubmer_affected|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Maternal uncles</td>
+                                    <td>{{form2.positive_family_Maternal_uncles|default_if_none:""}}</td>
+                                    <td>{{form2.positive_family_Maternal_uncles_nubmer_affected|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Grand maternal uncle</td>
+                                    <td>{{form2.positive_family_Grand_materna|default_if_none:""}}</td>
+                                    <td>{{form2.positive_family_Grand_materna_affected|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Mother Affected</td>
+                                    <td>{{form2.positive_family_mothers|default_if_none:""}}</td>
+                                    <td></td>
+                                </tr>
+
+                                </tbody>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#symptoms_signs_onset" aria-expanded="true">
+                                Symptoms and signs at onset
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="symptoms_signs_onset" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-black">
+                                <tr>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                    <th>Symptoms</th>
+                                    <th>Yes/No</th>
+                                </tr>
+                                </thead>
+
+                                <tbody>
+
+                                <tr>
+                                    <td> Difficulty running / walking fast</td>
+                                    <td>{{form2.difficulty_running_walking_fast|default_if_none:""}}</td>
+                                    <td>Unable to rise from low chair / floor</td>
+                                    <td>{{form2.unable_rise_low_chair_floor|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Repeated falls</td>
+                                    <td>{{form2.repeated_false|default_if_none:""}}</td>
+                                    <td>Muscle hypertrophy</td>
+                                    <td>{{form2.muscle_hypertrophy|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Mental sub normality</td>
+                                    <td>{{form2.mental_sub_normality|default_if_none:""}}</td>
+                                    <td>Learning disability</td>
+                                    <td>{{form2.learning_disability|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Delayed motor milestones</td>
+                                    <td>{{form2.delayed_motor_milestrones|default_if_none:""}}</td>
+                                    <td>Others, specify</td>
+                                    <td>{{form2.symtoms_signs_other_specify|default_if_none:""}}</td>
+                                </tr>
+                                </tbody>
+
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#clinical_examination_findings" aria-expanded="true">
+                                Clinical examination findings
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="clinical_examination_findings" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row ">
+                                <div class="col-xs-6">
+                                    <label class="col-md font-weight-bolder text-dark text-left"><h4>Anthropometric Information</h4></label>
+
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Weight (Kg)</label>
+                                    {{form2.CEF_anthropometric_wieght|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Height (cm)</label>
+                                    {{form2.CEF_anthropometric_height|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Head circumference	(cm)</label>
+                                    {{form2.CEF_anthropometric_head_circumference|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#motor_power_modified_mrc" aria-expanded="true">
+                                Motor Power: Modified MRC grading
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="motor_power_modified_mrc" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Upper limb: Proximal muscles: Grade</label>
+                                    {{form2.MP_MRC_grade_upperlimb_proximal_muscles|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Upper limb. Distal muscles: Grade</label>
+                                    {{form2.MP_MRC_grade_upperlimb_distal_muscles|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Lower limb. Proximal muscles: Grade</label>
+                                    {{form2.MP_MRC_grade_lowerlimb_proximal_muscles|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Lower limb distal: Grade</label>
+                                    {{form2.MP_MRC_grade_lowerlimb_distal_muscles|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#functional_status_first_evaluation" aria-expanded="true">
+                                Functional status at first evaluation
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="functional_status_first_evaluation" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Independently ambulant</label>
+                                    {{form2.functional_status_Independently_ambulant|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Needs physical assistance</label>
+                                    {{form2.functional_status_NeedsPhysicalAssistance|default_if_none:""}}
+                                </div>
+
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Ambulant in home</label>
+                                    {{form2.functional_status_AmbulantHome|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Wheelchair bound</label>
+                                    {{form2.functional_status_WheelchairBound|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Age at attainment</label>
+                                    {{form2.functional_status_WheelchairBound_age|default_if_none:""}}
+                                </div>
+
+
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Bed Bound</label>
+                                    {{form2.functional_status_BedBound|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Age at attainment</label>
+                                    {{form2.functional_status_BedBound_age|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Functional score available</label>
+                                    {{form2.functional_status_FunctionalScoreAvailable|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Brooke Scale for upper extremity: Grade</label>
+                                    {{form2.functional_status_BrookeScale|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Vignos Scale for lower extremity: Grade</label>
+                                    {{form2.functional_status_VignosScale|default_if_none:""}}
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#intelligence_quotient_tested" aria-expanded="true">
+                                Intelligence Quotient tested
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="intelligence_quotient_tested" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Intelligence Quotient tested</label>
+                                    {{form2.intelligent_quotient_tested|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left" for="intelligent_quotient_label">If yes IQ level:</label>
+                                    {{form2.intelligent_quotient_tested_if_yes|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#autism_collapse" aria-expanded="true">
+                                Autism
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="autism_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Autism</label>
+                                    {{form2.autism|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Contractures_collapse" aria-expanded="true">
+                                Contractures
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Contractures_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Contractures</label>
+                                    {{form2.Contractures_dmd|default_if_none:""}}
+                                </div>
+                            </div>
+                            <div class="row Contractures-class">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Ankle</label>
+                                    {{form2.Contractures_ankle|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Knee</label>
+                                    {{form2.Contractures_knee|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Hips</label>
+                                    {{form2.Contractures_hips|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Elbows</label>
+                                    {{form2.Contractures_elbows|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Scoliosis_collapse" aria-expanded="true">
+                                Scoliosis
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Scoliosis_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Scoliosis</label>
+                                    {{form2.Scoliosis_dmd|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Kyphosis_collapse" aria-expanded="true">
+                                Kyphosis
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Kyphosis_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Kyphosis</label>
+                                    {{form2.Kyphosis_dmd|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Respiratory_difficulty_collapse" aria-expanded="true">
+                                Respiratory difficulty
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Respiratory_difficulty_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Respiratory difficulty</label>
+                                    {{form2.Respiratory_difficulty|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Laboratory_Investigations_collapse" aria-expanded="true">
+                                Laboratory Investigations
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Laboratory_Investigations_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Serum CK level</label>
+                                    {{form2.LaboratoryInvestigation_serum_ck_lvel|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                        <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#CardiacEvaluation_collapse" aria-expanded="true">
+                                Cardiac Evaluation
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="CardiacEvaluation_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Cardiac Evaluation</label>
+                                    {{form2.LaboratoryInvestigation_Cardiac_Evaluation|default_if_none:""}}
+                                </div>
+                            </div>
+                            <div class="row Cardiac_Evaluation_class">
+                                <div class="col-xs-3 ">
+                                    <label class="col-md font-weight-bolder text-dark text-left">EGC(done/not done)</label>
+                                    {{form2.LaboratoryInvestigation_ecg_status|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3  ecg_class">
+                                    <label class="col-md font-weight-bolder text-dark text-left">EGC status</label>
+                                    {{form2.LaboratoryInvestigation_ecg_normal_abnormal|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3  ecg_abnormal_status">
+                                    <label class="col-md font-weight-bolder text-dark text-left" for="ecg_abnormal_label">please tick , if abnormal</label>
+                                    {{form2.NMD_diagnosis_type|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#2DECHO_collapse" aria-expanded="true">
+                                2DECHO
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="2DECHO_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">2DECHO(done/not done)</label>
+                                    {{form2.LaboratoryInvestigation_2DECHO_status|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3 decho_class">
+                                    <label class="col-md font-weight-bolder text-dark text-left " for="laboratory_investigations_decho_label">if done</label>
+                                    {{form2.LaboratoryInvestigation_2DECHO_normal_abnormal|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3 LaboratoryInvestigation_abnomal">
+                                    <label class="col-md font-weight-bolder text-dark text-left ">Please tick if applicatble</label>
+                                    {{form2.NMD_diagnosis_type|default_if_none:""}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Pulmonary_function_tests_collapse" aria-expanded="true">
+                                Pulmonary function tests
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Pulmonary_function_tests_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Pulmonary function tests(done/not done)</label>
+                                    {{form2.pulmonary_function_tests|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if done</label>
+                                    {{form2.pulmonary_function_tests_normal_abnormal|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Forced Vital Capacity(in Litres)</label>
+                                    {{form2.pulmonary_function_forced_vital_capacity|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Genetic_Diagnosis_collapse" aria-expanded="true">
+                                Genetic Diagnosis confirmed by
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Genetic_Diagnosis_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">mPCR</label>
+                                    {{form2.genetic_diagnosis_confirmed_mPCR|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">MLPA</label>
+                                    {{form2.genetic_diagnosis_confirmed_MLPA|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Micro Array</label>
+                                    {{form2.genetic_diagnosis_confirmed_MicroArray|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Sanger sequencing</label>
+                                    {{form2.genetic_diagnosis_confirmed_SangerSequencing|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Next Generation Sequencing</label>
+                                    {{form2.genetic_diagnosis_confirmed_next_generation|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if ticked</label>
+                                    {{form2.genetic_diagnosis_next_generation|default_if_none:""}}
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Targeted Panel</label>
+                                    {{form2.enetic_diagnosis_next_generation_TargetedPanel|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Clinical exome</label>
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Whole exome sequencing</label>
+                                    {{form2.enetic_diagnosis_next_generation_WholeExomeSequencing|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Whole genome sequencing</label>
+                                    {{form2.enetic_diagnosis_next_generation_WholeGenomeSequencing|default_if_none:""}}
+                                </div>
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-xs-2">
+                                    <label class="col-md font-weight-bolder text-dark text-left">UPLOAD THE GENETIC REPORT</label>
+
+                                </div>
+                                <div class="col-xs-6">
+
+                                     <a href="/media/{{form2.upload_genetic_report|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                                </div>
+                            </div>
+                                <br>
+                            <div class="row ">
+                                <div class="col-xs-12">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Deleted exons</label>
+                                    {{form2.NMD_diagnosis_type|default_if_none:""}}
+                                </div>
+                            </div>
+                            <div class="row ">
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">In-frame / Out-of-frame</label>
+                                    {{form2.inframe_outframe|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Del (Exons)</label>
+                                    {{form2.list_of_deleted_exons|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Duplication</label>
+                                    {{form2.list_of_duplicate_exons|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Mutation_identified_collapse" aria-expanded="true">
+                                Mutation identified
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Mutation_identified_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                <thead class="bg-black">
+                                <tr>
+                                    <th>Mutation identified</th>
+                                    <th>Yes/No</th>
+                                    <th>Mutaion(specify)</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+
+                                <tr>
+                                    <td> Missense</td>
+                                    <td>{{form2.mutation_identified_Missense|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_Missense_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td>  Non-sense</td>
+                                    <td>{{form2.mutation_identified_Nonsense|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_Nonsense_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Mutation</td>
+                                    <td>{{form2.mutation_identified_Mutation|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_Mutation_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Frameshift</td>
+                                    <td>{{form2.mutation_identified_Frameshift|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_Frameshift_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Splice site</td>
+                                    <td>{{form2.mutation_identified_Splicesite|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_Splicesite_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td> Inframe insertion</td>
+                                    <td>{{form2.mutation_identified_InframeInsertion|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_InframeInsertion_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Inframe Deletion</td>
+                                    <td>{{form2.mutation_identified_InframeDeletion|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_InframeDeletion_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td>INDEL</td>
+                                    <td>{{form2.mutation_identified_INDEL|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_INDEL_mutation|default_if_none:""}}</td>
+                                </tr>
+                                <tr>
+                                    <td>Others</td>
+                                    <td>{{form2.mutation_identified_Others|default_if_none:""}}</td>
+                                    <td>{{form2.mutation_identified_Others_mutation|default_if_none:""}}</td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#gene_collapse" aria-expanded="true">
+                                Gene (Transcript)
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="gene_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Location</label>
+                                    {{form2.gene_location|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Variant</label>
+                                    {{form2.gene_variant|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                                    {{form2.gene_Zygosity|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Disease (OMIM)</label>
+                                    {{form2.gene_Disease|default_if_none:""}}
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Inheritance</label>
+                                    {{form2.gene_Inheritance|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Classification</label>
+                                    {{form2.gene_classification|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Muscle_Biopsy_collapse" aria-expanded="true">
+                                Muscle Biopsy
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Muscle_Biopsy_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Muscle Biopsy</label>
+                                    {{form2.Muscle_Biopsy|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Muscle Immunohistochemistry</label>
+                                    {{form2.Muscle_Biopsy_MuscleImmunohistochemistry|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if yes</label>
+                                    {{form2.Muscle_Biopsy_MuscleImmunohistochemistry_if_yes|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Final_Diagnosis_collapse" aria-expanded="true">
+                                Final Diagnosis
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Final_Diagnosis_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left"> Final Diagnosis</label>
+                                    {{form2.final_diagnosis|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Current_Past_collapse" aria-expanded="true">
+                                Current/Past Treatments
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Current_Past_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Steroids</label>
+                                    {{form2.current_past_treatment_Steroids|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Age of starting steroids</label>
+                                    {{form2.current_past_treatment_Steroids_starting_age|default_if_none:""}}
+                                </div>
+
+
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Prednisone</label>
+                                    {{form2.current_past_treatment_Prednisone|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">mg/Kg/day</label>
+                                    {{form2.current_past_treatment_1|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">mg/Kg/dose/per week</label>
+                                    {{form2.current_past_treatment_2|default_if_none:""}}
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Deflazacort</label>
+                                    {{form2.current_past_treatment_Deflazacort|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Kg/day</label>
+                                    {{form2.current_past_treatment_Deflazacort_1|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Any other dosing schedule</label>
+                                    {{form2.current_past_treatment_Deflazacort_anyother_specify|default_if_none:""}}
+                                </div>
+
+                            </div>
+                            <br>
+                            <div class="row ">
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Supplements</label>
+                                    {{form2.current_past_treatment_Supplements|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Calcium</label>
+                                    {{form2.current_past_treatment_Supplements_calcium|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-4">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Vit D</label>
+                                    {{form2.current_past_treatment_Supplements_vit_D|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Respiratory_assistance_collapse" aria-expanded="true">
+                                Respiratory assistance
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Respiratory_assistance_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">BiPAP</label>
+                                    {{form2.Respiratoryassistance_BiPAP|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">If yes, from what age</label>
+                                    {{form2.Respiratoryassistance_BiPAP_age|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Ventilator</label>
+                                    {{form2.Respiratoryassistance_Ventilator|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">If yes, from what age</label>
+                                    {{form2.Respiratoryassistance_Ventilator_age|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Tendon_lengthening_collapse" aria-expanded="true">
+                                Tendon lengthening surgery
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Tendon_lengthening_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Tendon lengthening surgery</label>
+                                    {{form2.Tendon_lengthening_surgery|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">If YES, at what age</label>
+                                    {{form2.Tendon_lengthening_surgery_if_yes_age|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Surgical_correction_collapse" aria-expanded="true">
+                                Surgical correction  of scoliosis
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Surgical_correction_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Surgical correction  of scoliosis</label>
+                                    {{form2.Surgicalcorrectionscoliosis|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if Yes, Age at Surgery</label>
+                                    {{form2.Surgicalcorrectionscoliosis_if_yes_age|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Last_follow_up_collapse" aria-expanded="true">
+                                Last follow-up
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Last_follow_up_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Last follow-up</label>
+                                    {{form2.last_follow_up|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if Yes, Please select</label>
+                                    {{form2.last_follow_up_if_yes|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Age at last follow-up</label>
+                                    {{form2.last_follow_up_if_yes_age|default_if_none:""}}
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Functional_status_collapse" aria-expanded="true">
+                                Functional status
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Functional_status_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Functional status</label>
+                                    {{form2.Functionalstatus|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if known, Please select</label>
+                                    {{form2.functional_status_options|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">functional score is available</label>
+                                    {{form2.functional_score|default_if_none:""}}
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Brooke’s grade</label>
+                                    {{form2.functional_score_brooks_grade|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Vignos grade</label>
+                                    {{form2.functional_score_vignos_grade|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Outcome_collapse" aria-expanded="true">
+                                Outcome
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Outcome_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Outcome</label>
+                                    {{form2.outcome|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if dead, age at death</label>
+                                    {{form2.outcome_age|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Cause of death</label>
+                                    {{form2.oucome_cause_of_death|default_if_none:""}}
+                                </div>
+
+                            </div>
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Reason for death </label>
+                                    {{form2.outcome_death_cause|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Death occurred at</label>
+                                    {{form2.death_place|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#Carrier_status_Mother_collapse" aria-expanded="true">
+                                Carrier status of Mother
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="Carrier_status_Mother_collapse" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Carrier status of Mother </label>
+                                    {{form2.mother_carrier_status|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if Done, select oucome</label>
+                                    {{form2.mother_carrier_status_outcome|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Carrier status of sister</label>
+                                    {{form2.sister_carrier_status|default_if_none:""}}
+                                </div>
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">if Done, select outcome</label>
+                                    {{form2.sister_carrier_status_outcome|default_if_none:""}}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+                    </div>
+                </div>
+            </div>
+            <!-- /.tab-pane -->
+            <div class="tab-pane " id="tab_3">
+
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Spinal Muscular Atrophy Details</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+
+                        <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#spinal_gender" aria-expanded="true">
+                                Gender
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="spinal_gender" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row ">
+                                <div class="col-xs-3">
+                                    <label class="col-md font-weight-bolder text-dark text-left">Gender </label>
+                                    {{form3.gender|default_if_none:""}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel box box-secondary">
+                    <div class="box-header with-border">
+                        <h4 class="box-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#spinal_born_consanguineous" aria-expanded="true">
+                                Born to consanguineous parents
+                            </a>
+                        </h4>
+                    </div>
+
+                    <div id="spinal_born_consanguineous" class="panel-collapse collapse in" aria-expanded="true" >
+                        <div class="box-body" style="">
+                            <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Born to consanguineous parents</label>
+                                        {{form3.born_consanguineous_parents|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">If yes</label>
+                                        {{form3.consanguineous_parents_if_yes|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_family_history" aria-expanded="true">
+                                    Family History
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_family_history" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Sibling affected </label>
+                                        {{form3.familyHistory_sibling_affected|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Specify number</label>
+                                        {{form3.familyHistory_sibling_affected_number|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div class="row ">
+                                    <div class="col-xs-2">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Please upload pedigree diagram</label>
+
+                                    </div>
+                                    <div class="col-xs-6">
+
+                                         <a href="/media/{{form3.upload_pedegree|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_first_evaluation_age" aria-expanded="true">
+                                    Age at first evaluation
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_first_evaluation_age" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Age at first evaluation: </label>
+                                        {{form3.age_first_evaluation|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_onset_age" aria-expanded="true">
+                                    Age at onset
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_onset_age" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Age at onset</label>
+                                        {{form3.age_at_onset|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Please select</label>
+                                        {{form3.age_onset_options|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> yes/No</label>
+                                        {{form3.age_onset_options_yes_no|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_birth_condition" aria-expanded="true">
+                                    Condition at birth
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_birth_condition" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Cry</label>
+                                        {{form3.ConditionBirth_cry|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Feeding difficulty</label>
+                                        {{form3.conditionBirth_feedingDifficulty|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Respiratory distress</label>
+                                        {{form3.conditionBirth_RespiratoryDistress|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Received oxygen</label>
+                                        {{form3.conditionBirth_ReceivedOxygen|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Kept in Incubator</label>
+                                        {{form3.conditionBirth_KeptIncubator|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_arthrogryposis_birth" aria-expanded="true">
+                                    Arthrogryposis at birth
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_arthrogryposis_birth" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Arthrogryposis at birth</label>
+                                        {{form3.arthrogryposisBirth|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_recurrent_respiratory" aria-expanded="true">
+                                    Recurrent Lower respiratory infection
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_recurrent_respiratory" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Recurrent Lower respiratory infection</label>
+                                        {{form3.RecurrentLowerRespiratory|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Scoliosis" aria-expanded="true">
+                                    Scoliosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Scoliosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Scoliosis</label>
+                                        {{form3.Scoliosis_sma|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Kyphosis" aria-expanded="true">
+                                    Kyphosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Kyphosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Kyphosis</label>
+                                        {{form3.Kyphosis_sma|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Contractures" aria-expanded="true">
+                                    Contractures
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Contractures" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Contractures</label>
+                                        {{form3.Contractures|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Hip_dislocation" aria-expanded="true">
+                                    Hip dislocation
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Hip_dislocation" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Hip dislocation</label>
+                                        {{form3.HipDislocation|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Fractures" aria-expanded="true">
+                                    Fractures
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Fractures" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Fractures</label>
+                                        {{form3.Fractures|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Motor_System_examination" aria-expanded="true">
+                                    Motor System examination
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Motor_System_examination" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Minipolymyoclonus</label>
+                                        {{form3.MotorSystemExam_Minipolymyoclonus|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Tongue fasciculations</label>
+                                        {{form3.MotorSystemExam_TongueFasciculations|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Motor power: Modified MRC grade</label>
+                                        {{form3.MotorSystemExam_MotorPower_ModifiedMRCgrade|default_if_none:""}}
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Upper limb. Proximal muscles: Grade</label>
+                                        {{form3.MotorSystemExam_UpperLimb_ProximalMuscles|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Upper limb. Distal muscles: Grade</label>
+                                        {{form3.MotorSystemExam_UpperLimb_DistalMuscles|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Lower limb. Proximal muscles. Grade</label>
+                                        {{form3.MotorSystemExam_lowerLimb_ProximalMuscles|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Lower limb distal muscles . grade</label>
+                                        {{form3.MotorSystemExam_lowerLimb_DistalMuscles|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Limb_weakness" aria-expanded="true">
+                                    Limb weakness
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Limb_weakness" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Limb weakness</label>
+                                        {{form3.LimbWeakness|default_if_none:""}}
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Upper limb Proximal: Grade</label>
+                                        {{form3.LimbWeakness_if_yes_UpperLimb_ProximalGrade|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Upper limb Distal: Grade</label>
+                                        {{form3.LimbWeakness_if_yes_UpperLimb_DistalGrade|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Lower limb proximal : Grade</label>
+                                        {{form3.LimbWeakness_if_yes_LowerLimb_ProximalGrade|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Lower limb Distal: Grade</label>
+                                        {{form3.LimbWeakness_if_yes_LowerLimb_DistalGrade|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Current_motor_ability" aria-expanded="true">
+                                    Current motor ability
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Current_motor_ability" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Current motor ability</label>
+                                        {{form3.currentMotor_ability|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Wheelchair Bound</label>
+                                        {{form3.currentMotor_WheelchairBound|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> From what age</label>
+                                        {{form3.currentMotor_WheelchairBound_if_yes_age|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Bed bound</label>
+                                        {{form3.currentMotor_BedBound|default_if_none:""}}
+                                    </div>
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">From what age</label>
+                                        {{form3.currentMotor_BedBound_age|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_HMAS" aria-expanded="true">
+                                    Hammersmith Motor Ability Score (HMAS)
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_HMAS" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Hammersmith Motor Ability Score (HMAS)</label>
+                                        {{form3.HMAS|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Score</label>
+                                        {{form3.HMAS_score|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Clinical_diagnosis" aria-expanded="true">
+                                    Clinical diagnosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Clinical_diagnosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">SMA 0</label>
+                                        {{form3.clinicalDiagnosis_SMA0|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">SMA 1</label>
+                                        {{form3.clinicalDiagnosis_SMA1|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">SMA 2</label>
+                                        {{form3.clinicalDiagnosis_SMA2|default_if_none:""}}
+                                    </div>
+                                     <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">SMA 3</label>
+                                        {{form3.clinicalDiagnosis_SMA3|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">SMA 4</label>
+                                        {{form3.clinicalDiagnosis_SMA4|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Laboratory_investigations" aria-expanded="true">
+                                    Laboratory investigations
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Laboratory_investigations" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">CK level</label>
+                                        {{form3.LaboratoryInvestigation_CK_Level|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Genetic_diagnosis" aria-expanded="true">
+                                    Genetic diagnosis confirmed by
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Genetic_diagnosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Genetic diagnosis confirmed by</label>
+                                        {{form3.geneticDiagnosis|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_NAIP" aria-expanded="true">
+                                    NAIP: Deletion
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_NAIP" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">NAIP: Deletion</label>
+                                        {{form3.NAIP_deletion|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Genetic_findings" aria-expanded="true">
+                                    Genetic findings
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Genetic_findings" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Gene (Transcript):</label>
+                                        {{form3.geneticFindings_gene|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Location</label>
+                                        {{form3.geneticFindings_Location|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Variant</label>
+                                        {{form3.geneticFindings_Variant|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                                        {{form3.geneticFindings_Zygosity|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Disease (OMIM)</label>
+                                        {{form3.geneticFindings_Disease|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Inheritance</label>
+                                        {{form3.geneticFindings_Inheritance|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Classification</label>
+                                        {{form3.geneticFindings_classification|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Genetic_Diagnosis" aria-expanded="true">
+                                    Genetic Diagnosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Genetic_Diagnosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">select genetic diagnosis type</label>
+                                        {{form3.geneticDiagnosis2|default_if_none:""}}
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Final_Genetic_Diagnosis" aria-expanded="true">
+                                    Final Genetic Diagnosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Final_Genetic_Diagnosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Final Genetic Diagnosis type</label>
+                                        {{form3.final_diagnosis|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <label class="col-md font-weight-bolder text-dark text-left">UPLOAD GENETIC REPORT</label>
+
+                                    </div>
+                                    <div class="col-xs-6">
+
+                                         <a href="/media/{{form3.genetic_report_upload|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Treatment" aria-expanded="true">
+                                    Treatment
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Treatment" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Respiratory support</label>
+                                        {{form3.Treatment_RespiratorySupport|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">BIPAP</label>
+                                        {{form3.Treatment_RespiratorySupport_ifyes_BIPAP|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">IPPR</label>
+                                        {{form3.Treatment_RespiratorySupport_ifyes_IPPR|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Ventilation</label>
+                                        {{form3.Treatment_RespiratorySupport_ifyes_Ventilation|default_if_none:""}}
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Feeding" aria-expanded="true">
+                                    Feeding
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Feeding" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Oral</label>
+                                        {{form3.Feeding_Oral|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Nasogastric</label>
+                                        {{form3.Feeding_Nasogastric|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">PEG</label>
+                                        {{form3.Feeding_PEG|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Operated_scoliosis" aria-expanded="true">
+                                    Operated for scoliosis / kyphosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Operated_scoliosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Operated for scoliosis / kyphosis</label>
+                                        {{form3.OperatedScoliosis|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">age at surgery</label>
+                                        {{form3.OperatedScoliosis_ifyes_age|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Current_Past_Treatments" aria-expanded="true">
+                                    Current / Past Treatments
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Current_Past_Treatments" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Received Nusinersin</label>
+                                        {{form3.CurrentPastTreatment_ReceivedNusinersin|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Please select</label>
+                                        {{form3.CurrentPastTreatment_ReceivedNusinersin_if_yes|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Received Risdiplam</label>
+                                        {{form3.CurrentPastTreatment_ReceivedRisdiplam|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">From what age</label>
+                                        {{form3.CurrentPastTreatment_ReceivedRisdiplam_if_yes_age|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Received Zolgensma</label>
+                                        {{form3.CurrentPastTreatment_ReceivedZolgensma|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">From what age</label>
+                                        {{form3.CurrentPastTreatment_ReceivedZolgensma_if_yes_age|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Final_outcome" aria-expanded="true">
+                                    Final outcome
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Final_outcome" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Outcome</label>
+                                        {{form3.finalOutcome|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">At what age</label>
+                                        {{form3.finalOutcome_if_dead_age|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Death place</label>
+                                        {{form3.finalOutcome_death_place1|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Cause of death</label>
+                                        {{form3.finalOutcome_deathCause|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if known,Select reason </label>
+                                        {{form3.finalOutcome_deathCause_known|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Death place</label>
+                                        {{form3.finalOutcome_death_place2|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Carrier_testing " aria-expanded="true">
+                                    Carrier testing for parents
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Carrier_testing" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Carrier testing for parents</label>
+                                        {{form3.carrier_testing_parents|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#spinal_Prenatal_testing " aria-expanded="true">
+                                    Prenatal testing
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="spinal_Prenatal_testing" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Prenatal testing</label>
+                                        {{form3.prenatal_testing|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, Confirmed By</label>
+                                        {{form3.prenatal_testing_if_yes|default_if_none:""}}
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    </div>
+                    <!-- /.box-body -->
+                </div>
+            </div>
+            <div class="tab-pane" id="tab_4">
+
+                <!--
+                    <div class="alert alert-success">
+                    <strong>Scale Info:</strong> No Autism < 70, Mild Autism 70 - 106, Moderate Autism 107 - 153,
+                    Severe Autism >153
+                </div> -->
+                <div class="box box-primary box-solid">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Limb Girdle Muscular Dystrophy Details</h3>
+                        <div class="box-tools pull-right">
+                            <button type="button" class="btn btn-box-tool" data-widget="collapse"><i
+                                class="fa fa-minus"></i>
+                            </button>
+                        </div>
+                        <!-- /.box-tools -->
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body" style="">
+                        <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_gender " aria-expanded="true">
+                                    Gender
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_gender" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Gender </label>
+                                        {{form4.limb_gender|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Age_evaluation " aria-expanded="true">
+                                    Age at evaluation
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Age_evaluation" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Age at evaluation</label>
+                                        {{form4.evaluation_age|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Age_symptom_onset " aria-expanded="true">
+                                    Age at symptom onset
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Age_symptom_onset" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Age at symptom onset</label>
+                                        {{form4.limb_symptoms_onset_age|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Consanguinity " aria-expanded="true">
+                                    Consanguinity
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Consanguinity" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Consanguinity </label>
+                                        {{form4.limb_born_consanguineous_parents|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, please select</label>
+                                        {{form4.limb_consanguineous_parents_if_yes|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_MuscleHypertrophy " aria-expanded="true">
+                                    Muscle Hypertrophy
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_MuscleHypertrophy" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row ">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Muscle Hypertrophy </label>
+                                        {{form4.MuscleHypertrophy|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Muscle_wasting " aria-expanded="true">
+                                    Muscle wasting
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Muscle_wasting" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Muscle wasting</label>
+                                        {{form4.MuscleWasting|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Contractures " aria-expanded="true">
+                                    Contractures
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Contractures" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Contractures</label>
+                                        {{form4.Contractures|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> if yes, please select</label>
+                                        {{form4.Contractures_if_yes|default_if_none:""}}
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Limb_weakness " aria-expanded="true">
+                                    Limb weakness
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Limb_weakness" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Limb weakness</label>
+                                        {{form4.limb_weakness|default_if_none:""}}
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Upper limb Proximal: Grade</label>
+                                        {{form4.limb_weakness_UpperlimbProximal|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Upper limb Distal: Grade</label>
+                                        {{form4.limb_weakness_UpperlimbDistal|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Lower limb proximal : Grade</label>
+                                        {{form4.limb_weakness_LowerlimbProximal|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Lower limb Distal: Grade</label>
+                                        {{form4.limb_weakness_lowerlimbDistal|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Bulbar_weakness " aria-expanded="true">
+                                    Bulbar weakness
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Bulbar_weakness" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Bulbar weakness</label>
+                                        {{form4.BulbarWeakness|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> if yes, please select</label>
+                                        {{form4.BulbarWeakness_if_yes|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Cardiac_symptoms " aria-expanded="true">
+                                    Cardiac symptoms
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Cardiac_symptoms" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Cardiac symptoms</label>
+                                        {{form4.CardiacSymptoms|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, please select</label>
+                                        {{form4.cardiac_symptoms_options|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Respiratorysymptoms " aria-expanded="true">
+                                    Respiratory symptoms
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Respiratorysymptoms" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Respiratory symptoms</label>
+                                        {{form4.RespiratorySymptoms|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, please select</label>
+                                        {{form4.RespiratorySymptoms_options|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Inheritancepattern " aria-expanded="true">
+                                    Inheritance pattern
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Inheritancepattern" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Please select</label>
+                                        {{form4.InheritancePattern|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_PositiveFamilyhistory " aria-expanded="true">
+                                    Positive Family history
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_PositiveFamilyhistory" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Positive Family history</label>
+                                        {{form4.PositiveFamilyHistory|default_if_none:""}}
+                                    </div>
+                                </div>
+                                <br>
+                                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                    <thead class="bg-black">
+                                    <tr>
+                                        <th>Family members</th>
+                                        <th>Yes/No</th>
+                                        <th>Number affected</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr>
+                                        <td> Siblings</td>
+                                        <td>{{form4.PositiveFamilyHistory_SiblingsAffected|default_if_none:""}}</td>
+                                        <td>{{form4.PositiveFamilyHistory_SiblingsAffected_number|default_if_none:""}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Mother affected</td>
+                                        <td>{{form4.PositiveFamilyHistory_MotherAffected|default_if_none:""}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td> Father affected</td>
+                                        <td>{{form4.PositiveFamilyHistory_FatherAffected|default_if_none:""}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td> Grandmother affected</td>
+                                        <td>{{form4.PositiveFamilyHistory_GrandmotherAffected|default_if_none:""}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td> Grand Father affected</td>
+                                        <td>{{form4.PositiveFamilyHistory_GrandFatherAffected|default_if_none:""}}</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td> Cousins affected</td>
+                                        <td>{{form4.PositiveFamilyHistory_CousinsAffected|default_if_none:""}}</td>
+                                        <td>{{form4.PositiveFamilyHistory_CousinsAffected_number|default_if_none:""}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Any others</td>
+                                        <td>{{form4.PositiveFamilyHistory_AnyOther|default_if_none:""}}
+                                            {{form4.PositiveFamilyHistory_AnyOther_specify|default_if_none:""}}</td>
+                                        <td>{{form4.PositiveFamilyHistory_AnyOther_Specify_names|default_if_none:""}}</td>
+                                    </tr>
+
+                                    </tbody>
+
+
+                                </table>
+                                <br>
+                                <div class="row">
+
+                                    <div class="col-xs-2">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Please upload pedigree</label>
+
+                                    </div>
+                                    <div class="col-xs-6">
+
+                                         <a href="/media/{{form4.PositiveFamilyHistory_upload_pedidegree|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_CurrentMotorfunctionalstatus " aria-expanded="true">
+                                    Current Motor functional status
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_CurrentMotorfunctionalstatus" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">please select</label>
+                                        {{form4.current_motor|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">yes/no</label>
+                                        {{form4.CurrentMotor_yes_no|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">If Yes. From what age</label>
+                                        {{form4.CurrentMotor_if_yes_age|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_MotorSystemexamination " aria-expanded="true">
+                                    Motor System examination
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_MotorSystemexamination" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">CK level:</label>
+                                        {{form4.LaboratoryInvestigations_CK_level|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Nerveconductionstudies " aria-expanded="true">
+                                    Nerve conduction studies
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Nerveconductionstudies" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Nerve conduction studies</label>
+                                        {{form4.NerveConductionStudies|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes</label>
+                                        {{form4.NerveConductionStudies_options|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_CardiacEvaluation " aria-expanded="true">
+                                    Cardiac Evaluation
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_CardiacEvaluation" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Cardiac Evaluations</label>
+                                        {{form4.CardiacEvaluation|default_if_none:""}}
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left">ECG</label>
+                                        {{form4.CardiacEvaluation_ECG|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes</label>
+                                        {{form4.CardiacEvaluation_ECG_status|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Arrhythmia</label>
+                                        {{form4.CardiacEvaluation_ECG_status_if_abnormal_Arrhythmia|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-4">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Please select</label>
+                                        {{form4.CardiacEvaluation_ECG_status_if_abnormal_Arrhythmia_if_yes|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_2DECHO " aria-expanded="true">
+                                    2D ECHO
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_2DECHO" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">2D ECHO</label>
+                                        {{form4.limb_2DECHO|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes</label>
+                                        {{form4.limb_2DECHO_status|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> if abnormal</label>
+                                        {{form4.limb_2DECHO_if_abnormal|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> status</label>
+                                        {{form4.limb_2DECHO_yes_no|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Any other, please specify</label>
+                                        {{form4.limb_2DECHO_AnyOther|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Musclebiopsy " aria-expanded="true">
+                                    Muscle biopsy
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Musclebiopsy" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Muscle biopsy</label>
+                                        {{form4.MuscleBiopsy|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, Immunohistochemistry done</label>
+                                        {{form4.MuscleBiopsy_Immunohistochemistry|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, please select</label>
+                                        {{form4.MuscleBiopsy_if_yes|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Diagnosisconfirmedby " aria-expanded="true">
+                                    Diagnosis confirmed by
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Diagnosisconfirmedby" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Sanger</label>
+                                        {{form4.DiagnosisConfirmed_sanger|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Next generation Sequencing:</label>
+                                        {{form4.DiagnosisConfirmed_nextGenerationSeq_options|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, please select</label>
+                                        {{form4.DiagnosisConfirmed_nextGenerationSeq_options|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <br>
+                                <div class="row">
+
+                                    <div class="col-xs-2">
+                                        <label class="col-md font-weight-bolder text-dark text-left">UPLOAD GENETIC REPORT</label>
+
+                                    </div>
+                                    <div class="col-xs-2">
+
+                                         <a href="/media/{{form4.upload_genetic_report|default_if_none:""}}" class="btn btn-success" target="_blank">Download</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Mutation " aria-expanded="true">
+                                    Mutation
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Mutation" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Mutation</label>
+                                        {{form4.limb_mutation|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <br>
+                                <table class="table table-bordered table-condensed table-striped asymtotic_symptoms" id="example1">
+                                    <thead class="bg-black">
+                                    <tr>
+                                        <th>Mutation identified</th>
+                                        <th>Yes/No</th>
+                                        <th>Mutaion(specify)</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+
+                                    <tr>
+                                        <td> Missense</td>
+                                        <td>{{form4.mutationDetails_Missense|default_if_none:""}}</td>
+                                        <td>{{form4.mutationDetails_Missense_mutation|default_if_none:""}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>  Non-sense</td>
+                                        <td>{{form4.mutationDetails_Nonsense|default_if_none:""}}</td>
+                                        <td>{{form4.mutationDetails_Nonsense_mutation|default_if_none:""}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td> Splice site</td>
+                                        <td>{{form4.mutationDetails_SpliceSite|default_if_none:""}}</td>
+                                        <td>{{form4.mutationDetails_SpliceSite_mutation|default_if_none:""}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Insertion</td>
+                                        <td>{{form4.mutationDetails_Insertion|default_if_none:""}}</td>
+                                        <td>{{form4.mutationDetails_Insertion_mutation|default_if_none:""}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td> Deletions</td>
+                                        <td>{{form4.mutationDetails_Deletions|default_if_none:""}}</td>
+                                        <td>{{form4.mutationDetails_Deletions_mutation|default_if_none:""}}</td>
+                                    </tr>
+
+                                    <tr>
+                                        <td>Any others</td>
+                                        <td>{{form4.mutationDetails_AnyOther_specify|default_if_none:""}}</td>
+                                        <td>{{form4.mutationDetails_AnyOther_mutation|default_if_none:""}}</td>
+                                    </tr>
+
+                                    </tbody>
+                                </table>
+                                <br>
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <i class="fa fa-fw fa-square"></i><label class="col-md font-weight-bolder text-dark text-left"><h4><b>Mutation detected</b></h4> </label>
+
+                                    </div>
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Homozygous</label>
+                                        {{form4.MutationDetected_Homozygous|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Compound Heterozygous</label>
+                                        {{form4.MutationDetected_CompoundHeterozygous|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Heterozygous</label>
+                                        {{form4.MutationDetected_Heterozygous|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left"> Variant of unknown significance</label>
+                                        {{form4.MutationDetected_VariantUnknownSignificance|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Gene" aria-expanded="true">
+                                    Gene (Transcript)
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Gene" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Location</label>
+                                        {{form4.gene_Location|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Variant</label>
+                                        {{form4.gene_Variant|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Zygosity</label>
+                                        {{form4.gene_Zygosity|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Disease (OMIM)</label>
+                                        {{form4.gene_Disease|default_if_none:""}}
+                                    </div>
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Inheritance</label>
+                                        {{form4.gene_Inheritance|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Classification</label>
+                                        {{form4.gene_classification|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_FinalGeneticDiagnosis" aria-expanded="true">
+                                    Final Genetic Diagnosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_FinalGeneticDiagnosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">AR LGMD Type</label>
+                                        {{form4.AR_LGMD_type|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">ADLGMD</label>
+                                        {{form4.ADLGMD_type|default_if_none:""}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_SegregationpatternSanger" aria-expanded="true">
+                                    Segregation pattern by Sanger
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_SegregationpatternSanger" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Father is positive</label>
+                                        {{form4.SegregationPattern_Father|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Mother is positive</label>
+                                            {{form4.SegregationPattern_Mother|default_if_none:""}}
+                                    </div>
+                                </div>
+
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Treatmentreceived" aria-expanded="true">
+                                    Treatment received
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Treatmentreceived" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Tendon lengthening</label>
+                                        {{form4.TreatmentReceived_TendonLengthening|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">If yes, at what age</label>
+                                        {{form4.TreatmentReceived_TendonLengthening_age|default_if_none:""}}
+                                    </div>
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Scoliosis" aria-expanded="true">
+                                    Scoliosis
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Scoliosis" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Scoliosis</label>
+                                        {{form4.Scoliosis_limb|default_if_none:""}}
+                                    </div>
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Surgical correction</label>
+                                        {{form4.Scoliosis_SurgicalCorrection|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, Age at Surgery</label>
+                                        {{form4.Scoliosis_SurgicalCorrection_age|default_if_none:""}}
+                                    </div>
+
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_CardiacAbnormalities" aria-expanded="true">
+                                    For Cardiac Abnormalities
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_CardiacAbnormalities" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">On pacemaker</label>
+                                        {{form4.CardiacAbnormalities_pacemaker|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">On Prophylactic implantable cardioverter-defibrillators</label>
+                                        {{form4.CardiacAbnormalities_Prophylactic|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Cardiac Transplant</label>
+                                        {{form4.CardiacAbnormalities_CardiacTransplant|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_respiratoryassistance" aria-expanded="true">
+                                    On respiratory assistance
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_respiratoryassistance" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">On respiratory assistance</label>
+                                        {{form4.RespiratoryAssistance|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">BiPAP</label>
+                                        {{form4.RespiratoryAssistance_BiPAP|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, From what  age</label>
+                                        {{form4.RespiratoryAssistance_BiPAP_age|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Ventilator</label>
+                                        {{form4.RespiratoryAssistance_Ventilator|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">If yes, from what age</label>
+                                        {{form4.RespiratoryAssistance_Ventilator_age|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel box box-secondary">
+                        <div class="box-header with-border">
+                            <h4 class="box-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#limb_Finaloutcome" aria-expanded="true">
+                                    Final outcome
+                                </a>
+                            </h4>
+                        </div>
+
+                        <div id="limb_Finaloutcome" class="panel-collapse collapse in" aria-expanded="true" >
+                            <div class="box-body" style="">
+
+                                <div class="row">
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Final outcome at last follow-up(date)</label>
+                                        {{form4.Final_Outcome_last_followup_Date|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Outcome</label>
+                                        {{form4.Final_Outcome_status|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">At what age</label>
+                                        {{form4.Final_Outcome_if_death_age|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Cause of death</label>
+                                        {{form4.Final_Outcome_death_cause|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                                <div class="row">
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Cardiac</label>
+                                        {{form4.Final_Outcome_Cardiac|default_if_none:""}}
+                                    </div>
+
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, Death place</label>
+                                        {{form4.Final_Outcome_death_place|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">Respiratory</label>
+                                        {{form4.Final_Outcome_Respiratory|default_if_none:""}}
+                                    </div>
+                                    <div class="col-xs-3">
+                                        <label class="col-md font-weight-bolder text-dark text-left">if yes, Death place</label>
+                                        {{form4.Final_Outcome_Respiratory_place|default_if_none:""}}
+                                    </div>
+
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- /.tab-pane -->
+            </div>
+            <!-- /.tab-content -->
+        </div>
+
+    </form>
+{% endblock %}
